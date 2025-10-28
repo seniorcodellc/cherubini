@@ -18,38 +18,40 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: 16.ph,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          65.vs,
-          isFirstPage.isTrue ? _buildSkipButton : 43.vs,
-   /*       DetailsOnboardingSection(
+      body: Padding(
+        padding: 16.ph,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            65.vs,
+            isFirstPage.isTrue ? _buildSkipButton : 43.vs,
+            /*       DetailsOnboardingSection(
             onBoardingItems: onBoardingItems,
             pageController: pageController,
           ),
           isFirstPage.isTrue ? buildGetStartedButton : buildNextButton,*/
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 
   get _buildSkipButton => SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.25,
-      height: 43.h,
-      child: CustomButton(
-        text: AppStrings.skip,
-        onPressed: () {
-          context.read<OnboardingManagerCubit>().cachedNewInstall();
-        },
-        backgroundColor: AppColors.lightBrown.withOpacity(0.3),
-        borderColor: AppColors.transparent,
-        textColor: AppColors.black,
-        style: getRegularTextStyle(fontSize: 12),
-      ));
+    width: MediaQuery.sizeOf(context).width * 0.25,
+    height: 43.h,
+    child: CustomButton(
+      text: AppStrings.skip,
+      onPressed: () {
+        context.read<OnboardingManagerCubit>().cachedNewInstall();
+      },
+      backgroundColor: AppColors.acRed.withOpacity(0.3),
+      borderColor: AppColors.transparent,
+      textColor: AppColors.black,
+      style: getRegularTextStyle(fontSize: 12),
+    ),
+  );
 
-/*  get buildGetStartedButton => CustomButton(
+  /*  get buildGetStartedButton => CustomButton(
         text: AppStrings.getStart,
         onPressed: () {
           pageController.nextPage(duration: const Duration(milliseconds: 600), curve: Curves.easeIn);
@@ -59,6 +61,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         },
         style: getBoldTextStyle(color: AppColors.white),
       );*/
-
-
 }
