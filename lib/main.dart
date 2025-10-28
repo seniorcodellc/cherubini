@@ -1,14 +1,18 @@
-
 import 'package:device_preview/device_preview.dart';
 
 import 'cherubini_app.dart';
 import 'exports.dart';
 
 void main() async {
-    await init;
-  runApp(CustomEasyLocalization(
-      child:
-      DevicePreview(enabled: false, builder: (context) =>CherubiniApp())));
+  await init;
+  runApp(
+    CustomEasyLocalization(
+      child: DevicePreview(
+        enabled: false,
+        builder: (context) => CherubiniApp(),
+      ),
+    ),
+  );
 }
 
 Future get init async {
@@ -19,11 +23,11 @@ Future get init async {
   await ScreenUtil.ensureScreenSize();
 
   //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
- // FirebaseService().init;
+  // FirebaseService().init;
   // SocketService().connect;
   //hideAndroidBottomControlBar;
 
-// initialize all dependencies
+  // initialize all dependencies
   await EasyLocalization.ensureInitialized();
 }
 

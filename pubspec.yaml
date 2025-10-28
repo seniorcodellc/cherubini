@@ -65,7 +65,6 @@ dependencies:
   socket_io_client:
   arabic_numbers:
   draggable_bottom_sheet_nullsafety:
-  video_compress: ^3.1.4
   flutter_keyboard_visibility: ^6.0.0
   collection:
   group_list_view:

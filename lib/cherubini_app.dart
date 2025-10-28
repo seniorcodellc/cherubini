@@ -18,10 +18,8 @@ class _CherubiniAppState extends State<CherubiniApp> {
 
   @override
   void initState() {
-
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -32,22 +30,21 @@ class _CherubiniAppState extends State<CherubiniApp> {
     );
   }
 
-  _buildApp(BuildContext context) =>
-      GestureDetector(
-        onTap: () => hideKeyboard,
-        child: MaterialApp(
-        locale: context.locale,
-          themeMode: ThemeMode.light,
+  _buildApp(BuildContext context) => GestureDetector(
+    onTap: () => hideKeyboard,
+    child: MaterialApp(
+      locale: context.locale,
+      themeMode: ThemeMode.light,
 
-       //   builder: DevicePreview.appBuilder,
-          title: AppStrings.appName.trans,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          navigatorKey: navigatorKey,
-          color: AppColors.primaryColor,
-        //  theme: AppTheme.light(),
-          onGenerateRoute: RouteGenerator.generateRoute,
-        ),
-      );
+      builder: DevicePreview.appBuilder,
+      title: AppStrings.appName.trans,
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      navigatorKey: navigatorKey,
+      color: AppColors.primaryColor,
+      //  theme: AppTheme.light(),
+      onGenerateRoute: RouteGenerator.generateRoute,
+    ),
+  );
 }

@@ -4,6 +4,7 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
+import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import 'routes_exports.dart';
 
 class RouteGenerator {
@@ -11,10 +12,13 @@ class RouteGenerator {
   static Duration pageRouteTransitionDurationGlobal = 400.milliseconds;
   static Route<T>? generateRoute<T>(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-/*
       case Routes.splashScreen:
-        return buildPageRoute<T>(child: SplashScreen(), routeSettings: routeSettings);
-      case Routes.followUps:
+        return buildPageRoute<T>(
+          child: SplashScreen(),
+          routeSettings: routeSettings,
+        );
+      /*
+        case Routes.followUps:
         return buildPageRoute<T>(child: FollowUps(), routeSettings: routeSettings);
       case Routes.reservationDetails:
         return buildPageRoute<T>(child: ReservationDetails(), routeSettings: routeSettings);
@@ -59,7 +63,7 @@ case Routes.addInsuranceMembers:
         return buildPageRoute<T>(
           child: EnterOtpScreen(
             */
-/*         isForgetPassword: (routeSettings.arguments
+      /*         isForgetPassword: (routeSettings.arguments
                   as Map<String, dynamic>)["isForgetPassword"],
               phoneNumber:
                   (routeSettings.arguments as Map<String, dynamic>)["phone"],
@@ -68,7 +72,7 @@ case Routes.addInsuranceMembers:
               userId:
                   (routeSettings.arguments as Map<String, dynamic>)["userId"],
               countryCode: (routeSettings.arguments
-                  as Map<String, dynamic>)["countryCode"],*//*
+                  as Map<String, dynamic>)["countryCode"],*/ /*
 
           ),
           providers: [BlocProvider(create: (context) => ErrorCubit())],
@@ -97,7 +101,11 @@ case Routes.addInsuranceMembers:
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(body: Center(child: Text("No route defined for ${routeSettings.name}"))),
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text("No route defined for ${routeSettings.name}"),
+            ),
+          ),
         );
     }
   }
@@ -117,7 +125,10 @@ case Routes.addInsuranceMembers:
         settings: routeSettings,
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
-          return RotationTransition(child: child, turns: ReverseAnimation(anim));
+          return RotationTransition(
+            child: child,
+            turns: ReverseAnimation(anim),
+          );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
       );
@@ -137,7 +148,10 @@ case Routes.addInsuranceMembers:
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
             child: child,
-            position: Tween(begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(1.0, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
           );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
@@ -148,7 +162,10 @@ case Routes.addInsuranceMembers:
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
-            position: Tween(begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(0.0, 1.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
             child: child,
           );
         },
