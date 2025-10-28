@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      // route = Routes.loginRoute;
+      route = Routes.loginRoute;
       //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
       // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
       //  isNotificationEnabled = await checkNotificationPermission(context);
@@ -103,14 +103,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 "برنامج نقاط الولاء",
                 style: getSemiBoldTextStyle(
                   color: AppColors.white,
-                  fontSize: 32.sp,
+                  fontSize: 32,
                 ),
               ),
               8.vs,
               Text(
                 "نظام إدارة النقاط الذكي",
                 style: getRegularTextStyle(
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   color: AppColors.white,
                 ),
               ),

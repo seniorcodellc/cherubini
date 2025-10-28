@@ -3,17 +3,18 @@
 import '../../exports.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {super.key,
-      required this.text,
-      this.borderRadius,
-      required this.onPressed,
-      this.textColor,
-      this.borderColor,
-      this.backgroundColor,
-      this.svgIconPath,
-      this.height,
-      this.style});
+  const CustomButton({
+    super.key,
+    required this.text,
+    this.borderRadius,
+    required this.onPressed,
+    this.textColor,
+    this.borderColor,
+    this.backgroundColor,
+    this.svgIconPath,
+    this.height,
+    this.style,
+  });
   final String text;
   final double? borderRadius;
   final String? svgIconPath;
@@ -27,14 +28,15 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      height: height ?? 55.h,
+      height: height ?? 56.h,
       color: backgroundColor ?? AppColors.primaryColor,
       elevation: 0,
       highlightElevation: 0,
       onPressed: onPressed,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius?.r ?? 25.r),
-          side: BorderSide(color: borderColor ?? AppColors.primaryColor)),
+        borderRadius: BorderRadius.circular(borderRadius?.r ?? 20.r),
+        side: BorderSide(color: borderColor ?? AppColors.primaryColor),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -42,18 +44,15 @@ class CustomButton extends StatelessWidget {
           Center(
             child: Text(
               text,
-              style: style ??
+              style:
+                  style ??
                   getSemiBoldTextStyle(
-                      fontSize: 16, color: textColor ?? AppColors.white),
+                    fontSize: 16,
+                    color: textColor ?? AppColors.white,
+                  ),
             ),
           ),
-          svgIconPath != null
-              ? SizedBox(
-                  width: 8.w,
-                )
-              : const SizedBox(
-                  width: 0,
-                ),
+          svgIconPath != null ? SizedBox(width: 8.w) : const SizedBox(width: 0),
           svgIconPath != null
               ? SvgPicture.asset(
                   svgIconPath!,
@@ -61,9 +60,7 @@ class CustomButton extends StatelessWidget {
                   height: 24.w,
                   color: textColor ?? AppColors.white,
                 )
-              : const SizedBox(
-                  width: 0,
-                ),
+              : const SizedBox(width: 0),
         ],
       ),
     );

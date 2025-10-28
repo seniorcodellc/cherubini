@@ -26,9 +26,13 @@ class AppAssets {
   static String password = "${SvgImages.svgPath}password.svg";
   static String add = "${SvgImages.svgPath}add.svg";
   static String right = "${SvgImages.svgPath}right.svg";
+  static String phone = "${SvgImages.svgPath}phone.svg";
+  static String lock = "${SvgImages.svgPath}lock.svg";
+  static String eyeOn = "${SvgImages.svgPath}eye_on.svg";
 
   //! PNG
 
   static String logo = "${PngImages.imagesPath}logo.png";
+  static String loginImage = "${PngImages.imagesPath}login_image.png";
   static String splashImage = "${PngImages.imagesPath}splash_img.png";
 }
