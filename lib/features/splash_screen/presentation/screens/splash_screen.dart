@@ -29,15 +29,17 @@ class _SplashScreenState extends State<SplashScreen> {
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-  //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
-      bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
-      isNotificationEnabled = await checkNotificationPermission(context);
+      route = Routes.onBoardingRoute;
+
+      //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
+      // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
+      // isNotificationEnabled = await checkNotificationPermission(context);
      // bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
    //   print("saved language is :$isLanguageSaved");
      // print("token is :${user?.token}");
-      if (isNew.isTrue) {
-       bool cachedNewInstall = await getBlocData<ConfigurationCubit>().cachedNewInstall();
-       print("cachedNewInstall: $cachedNewInstall");
+     //  if (isNew.isTrue) {
+     //   bool cachedNewInstall = await getBlocData<ConfigurationCubit>().cachedNewInstall();
+     //   print("cachedNewInstall: $cachedNewInstall");
   /*      isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
           context,
           onSuccess: () {
@@ -47,10 +49,9 @@ class _SplashScreenState extends State<SplashScreen> {
             );
           },
         );*/
-        route = Routes.onBoardingRoute;
-      } else {
-        route = Routes.bottomNavRoute;
-      }
+      // } else {
+      //   route = Routes.bottomNavRoute;
+      // }
       /*   print("is User NULL: ${user.isNull}");
       if(isNew.isTrue) {
         route = Routes.secondSplashScreen;

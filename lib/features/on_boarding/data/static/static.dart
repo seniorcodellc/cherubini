@@ -4,17 +4,17 @@ import '../onboarding_model.dart';
 
 List<OnboardingModel> onBoardingItems = [
   OnboardingModel(
-    imagePath: "AppStrings.onBoarding1headTitle,",
+    imagePath: AppAssets.onboarding1,
     title: AppStrings.onBoarding1Title,
     subTitle: AppStrings.onBoarding1SubTitle,
   ),
   OnboardingModel(
-    imagePath: "AppStrings.onBoarding2headTitle",
+    imagePath: AppAssets.onboarding2,
     title: AppStrings.onBoarding2Title,
     subTitle: AppStrings.onBoarding2SubTitle,
   ),
   OnboardingModel(
-    imagePath: "AppStrings.onBoarding3headTitle",
+    imagePath: AppAssets.onboarding3,
     title: AppStrings.onBoarding3Title,
     subTitle: AppStrings.onBoarding3SubTitle,
   ),

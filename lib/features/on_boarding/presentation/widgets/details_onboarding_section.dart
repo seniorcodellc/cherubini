@@ -8,7 +8,7 @@ class DetailsOnboardingSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.45,
+      height: MediaQuery.of(context).size.height * 0.75,
       child: PageView.builder(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
@@ -16,12 +16,9 @@ class DetailsOnboardingSection extends StatelessWidget {
         itemBuilder: (context, index) {
           return Column(
             children: [
-              166.vs,
-              Text(
-                onBoardingItems[index].imagePath,
-                style: getRegularTextStyle(fontSize: 16),
-              ),
-              8.vs,
+              250.vs,
+            CustomPngImage(image: onBoardingItems[index].imagePath,),
+              50.vs,
               Text(onBoardingItems[index].title, style: getBoldTextStyle()),
               8.vs,
               Text(

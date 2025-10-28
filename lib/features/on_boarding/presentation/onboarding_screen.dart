@@ -1,7 +1,9 @@
+import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/features/on_boarding/presentation/widgets/details_onboarding_section.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../core/widgets/custom_button.dart';
 import '../../../exports.dart';
+import '../data/static/static.dart';
 import 'managers/onboarding_manager_cubit.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -17,39 +19,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return CustomBackground(
+      backgroundColor:Color(0xffF5F7FA),
+      child: Padding(
         padding: 16.ph,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            65.vs,
-            isFirstPage.isTrue ? _buildSkipButton : 43.vs,
-            /*       DetailsOnboardingSection(
-            onBoardingItems: onBoardingItems,
+            // isFirstPage.isTrue ? _buildSkipButton : 43.vs,
+            DetailsOnboardingSection(
             pageController: pageController,
           ),
-          isFirstPage.isTrue ? buildGetStartedButton : buildNextButton,*/
+        //  isFirstPage.isTrue ? buildGetStartedButton : buildNextButton,
           ],
         ),
       ),
     );
   }
 
-  get _buildSkipButton => SizedBox(
-    width: MediaQuery.sizeOf(context).width * 0.25,
-    height: 43.h,
-    child: CustomButton(
-      text: AppStrings.skip,
-      onPressed: () {
-        context.read<OnboardingManagerCubit>().cachedNewInstall();
-      },
-      backgroundColor: AppColors.acRed.withOpacity(0.3),
-      borderColor: AppColors.transparent,
-      textColor: AppColors.black,
-      style: getRegularTextStyle(fontSize: 12),
-    ),
-  );
+  // get _buildSkipButton => SizedBox(
+  //   width: MediaQuery.sizeOf(context).width * 0.25,
+  //   height: 43.h,
+  //   child: CustomButton(
+  //     text: AppStrings.skip,
+  //     onPressed: () {
+  //       context.read<OnboardingManagerCubit>().cachedNewInstall();
+  //     },
+  //     backgroundColor: AppColors.acRed.withOpacity(0.3),
+  //     borderColor: AppColors.transparent,
+  //     textColor: AppColors.black,
+  //     style: getRegularTextStyle(fontSize: 12),
+  //   ),
+  // );
 
   /*  get buildGetStartedButton => CustomButton(
         text: AppStrings.getStart,

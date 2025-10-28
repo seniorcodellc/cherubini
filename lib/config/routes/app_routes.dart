@@ -1,4 +1,5 @@
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
+import 'package:cherubini/features/on_boarding/presentation/onboarding_screen.dart';
 
 import 'package:nested/nested.dart';
 
@@ -15,6 +16,11 @@ class RouteGenerator {
       case Routes.splashScreen:
         return buildPageRoute<T>(
           child: SplashScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.onBoardingRoute:
+        return buildPageRoute<T>(
+          child: OnboardingScreen(),
           routeSettings: routeSettings,
         );
       /*
