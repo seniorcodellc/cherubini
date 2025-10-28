@@ -3,7 +3,6 @@ import 'package:cherubini/features/Auth/presentation/widgets/log_in_have_no_acco
 import 'package:cherubini/features/Auth/presentation/widgets/log_in_welcome_body.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_password_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/type_of_account_button.dart';
 
 import '../../../../exports.dart';
 
@@ -55,18 +54,17 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TypeOfAccountButton(
-                        text: "تسجيل تاجر",
+                      CustomElevatedButton(
                         onPressed: () {
                           Routes.registerTraderRoute.moveToAndRemoveCurrent();
                         },
+                        text: "تسجيل تاجر",
                       ),
-
-                      TypeOfAccountButton(
-                        text: "تسجيل فني",
+                      CustomElevatedButton(
                         onPressed: () {
                           Routes.registerTechRoute.moveToAndRemoveCurrent();
                         },
+                        text: "تسجيل فني",
                       ),
                     ],
                   ),

@@ -31,6 +31,7 @@ class AppAssets {
   static String eyeOn = "${SvgImages.svgPath}eye_on.svg";
   static String email = "${SvgImages.svgPath}email.svg";
   static String location = "${SvgImages.svgPath}location.svg";
+  static String questionMark = "${SvgImages.svgPath}question_mark.svg";
 
   //! PNG
 

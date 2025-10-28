@@ -1,25 +1,25 @@
 import '../../exports.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  CustomElevatedButton(
-      {Key? key,
-      this.leftIcon,
-      this.rightIcon,
-      this.boxShadow,
-      required this.onPressed,
-      required this.text,
-      this.color,
-      this.padding,
-      this.topIcon,
-      this.side = BorderSide.none,
-      this.radius = 10,
-      this.height,
-      this.elevation,
-      this.width,
-      this.textColor = AppColors.white,
-      this.style,
-      this.margin})
-      : super(key: key);
+  CustomElevatedButton({
+    Key? key,
+    this.leftIcon,
+    this.rightIcon,
+    this.boxShadow,
+    required this.onPressed,
+    required this.text,
+    this.color,
+    this.padding,
+    this.topIcon,
+    this.side = BorderSide.none,
+    this.radius = 10,
+    this.height,
+    this.elevation,
+    this.width,
+    this.textColor = AppColors.white,
+    this.style,
+    this.margin,
+  }) : super(key: key);
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final void Function()? onPressed;
@@ -42,10 +42,14 @@ class CustomElevatedButton extends StatelessWidget {
       margin: margin,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? AppColors.primaryColor,
+          fixedSize: Size(163, 40),
+          backgroundColor: color ?? AppColors.white,
           elevation: elevation,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius!), side: side),
-          padding: padding ?? EdgeInsets.symmetric(vertical: 13.h) ,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(color: AppColors.accentColor, width: 0.5),
+          ),
+          // padding: padding ?? EdgeInsets.symmetric(vertical: 13.h),
         ),
         onPressed: onPressed,
         child: Row(
@@ -57,11 +61,8 @@ class CustomElevatedButton extends StatelessWidget {
             Text(
               text,
               textAlign: TextAlign.center,
-              style: style ??
-                  getBoldTextStyle(
-                    color: AppColors.white,
-                    fontSize: 16,
-                  ),
+              style:
+                  style ?? getRegularTextStyle(color: AppColors.primaryColor),
             ),
             if (rightIcon.isNotNull) rightIcon!,
           ],
