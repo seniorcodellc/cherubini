@@ -2,11 +2,11 @@ flutter_native_splash:
   android: true
   ios: true
 
-  background_image: assets/images/background.png  # ✅ Use gradient as background
+  background_image: assets/images/logo.png  # ✅ Use gradient as background
 #  image: assets/images/splash_logo.png          # optional logo in center
 
   android_12:
-    background_image_android: assets/images/background.png
+    background_image_android: assets/images/logo.png
     branding_android: assets/images/background.png
     android_gravity: fill
     color: "#94CBF3"

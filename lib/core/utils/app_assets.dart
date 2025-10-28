@@ -31,41 +31,7 @@ class AppAssets {
   //! PNG
 
 
-  static String done="${PngImages.imagesPath}done.png";
-  static String eiadtyLogo="${PngImages.imagesPath}eiadty_logo.png";
-
-  static String splashLogo = "${PngImages.imagesPath}premiumcare.png";
-  static String visa = "${PngImages.imagesPath}visa.png";
-
-  static String profileImage="${PngImages.imagesPath}profile_image.png";
-  static String welcome="${PngImages.imagesPath}welcome.png";
-  static String notification="${SvgImages.svgPath}notification.svg";
-  static String heart="${PngImages.imagesPath}heart.png";
-  static String doctor="${PngImages.imagesPath}doctor.png";
-
-
-  static String boneClinicIcon = "${PngImages.imagesPath}bone_clinic_icon.png";
-  static String brainClinicIcon = "${PngImages.imagesPath}brain_clinic_icon.png";
-  static String callUs = "${PngImages.imagesPath}call_us.png";
-  static String consulations = "${PngImages.imagesPath}consulations.png";
-  static String contactUs = "${PngImages.imagesPath}contact_us.png";
-  static String creditCards = "${PngImages.imagesPath}credit_cards.png";
-  static String faq = "${PngImages.imagesPath}faq.png";
-  static String followUps = "${PngImages.imagesPath}follow_ups.png";
-  static String heartClinicIcon = "${PngImages.imagesPath}heart_clinic_icon.png";
-  static String homeBarIcon = "${PngImages.imagesPath}home_bar_icon.png";
-  static String insurancesIcon = "${PngImages.imagesPath}insurances_icon.png";
-  static String languages = "${PngImages.imagesPath}languages.png";
-  static String premiumcare = "${PngImages.imagesPath}premiumcare.png";
-  static String reservations = "${PngImages.imagesPath}reservations.png";
-  static String share = "${PngImages.imagesPath}share.png";
-  static String settings = "${PngImages.imagesPath}settings.png";
-  static String logout = "${PngImages.imagesPath}logout.png";
-  static String nationalId = "${PngImages.imagesPath}nationalId.png";
-  static String camera = "${PngImages.imagesPath}camera.png";
-  static String english = "${PngImages.imagesPath}english.png";
-  static String arabic = "${PngImages.imagesPath}arabic.png";
-
+  static String logo="${PngImages.imagesPath}logo.png";
 
 
 }

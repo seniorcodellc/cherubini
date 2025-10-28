@@ -188,7 +188,7 @@ class CustomNetworkImage extends StatelessWidget {
         }
       }
     } else {
-      return CustomPngImage( image: AppAssets.splashLogo);
+      return CustomPngImage( image: AppAssets.logo);
     }
   }
 
