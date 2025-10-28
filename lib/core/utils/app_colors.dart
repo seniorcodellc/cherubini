@@ -9,6 +9,7 @@ class AppColors {
   static const Color titleGray = Color(0xFF333333);
   static const errorColor = Color(0xFFED2241);
   static const Color acRed = Color(0xFFEF4444);
+  static const Color shadowColor = Color(0xFF0C0C0D);
 
   static const Color brown = Color(0xFF877257);
   static const Color grey = Color(0xFFAAAAAA);

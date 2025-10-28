@@ -21,7 +21,7 @@ class CustomTextFormField extends StatefulWidget {
     this.enabled,
     this.width,
     this.suffix,
-    this.readOnly=false,
+    this.readOnly = false,
     this.height,
     this.textAlign = TextAlign.start,
     this.textDirection,
@@ -36,7 +36,10 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType? keyboardType;
   bool obscureText;
   bool isPassword = false;
-  TextStyle? style = getRegularTextStyle(fontSize: 12, color: AppColors.taupeGray);
+  TextStyle? style = getRegularTextStyle(
+    fontSize: 12,
+    color: AppColors.taupeGray,
+  );
   final String? Function(String?)? validator;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -62,25 +65,35 @@ class CustomTextFormField extends StatefulWidget {
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
 
-
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   void initState() {
     if (widget.isPassword.isTrue) {
-      widget.obscureText=true;
+      widget.obscureText = true;
     }
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: widget.height,
-      width: widget.width,
+    return Container(
+      width: 343.w,
+      height: 48.h,
+      decoration: BoxDecoration(
+        color: widget.backgroundColor ?? AppColors.white,
+        borderRadius: BorderRadius.circular(widget.radiusOfContainer ?? 15.r),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.shadowColor.withValues(alpha: 0.1),
+            blurRadius: 4.r,
+          ),
+        ],
+      ),
       child: TextFormField(
         controller: widget.controller,
         keyboardType: widget.keyboardType,
         obscureText: widget.obscureText,
-        readOnly: widget.readOnly ,
+        readOnly: widget.readOnly,
         enabled: widget.enabled ?? true,
         validator: widget.validator,
         textAlign: widget.textAlign,
@@ -93,62 +106,44 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         autocorrect: true,
         textDirection: widget.textDirection,
         autovalidateMode: AutovalidateMode.onUserInteraction,
-        style: getRegularTextStyle(fontSize: 16, color: AppColors.darkSlateGray),
+        style: getRegularTextStyle(
+          fontSize: 16.sp,
+          color: AppColors.darkSlateGray,
+        ),
         decoration: InputDecoration(
-          contentPadding: widget.padding,
+          contentPadding:
+              widget.padding ??
+              EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           hintText: widget.hintText,
           hintStyle: widget.style,
-          fillColor: widget.backgroundColor ?? Colors.transparent,
+          border: InputBorder.none,
+          fillColor: Colors.transparent,
           filled: true,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 8.r)),
-            borderSide: BorderSide(color: AppColors.black.withValues(alpha: 0.4), width: 1.w),
+          errorStyle: getSemiBoldTextStyle(
+            color: AppColors.brown,
+            fontSize: 12.sp,
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 8.r)),
-            borderSide: BorderSide(color: AppColors.black, width: 1.w),
-          ),
-          /*     border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 12.r)),
-            borderSide: BorderSide(color: AppColors.black.withValues(alpha: 0.4)),
-          ),*/
-          /*
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 12.r)),
-            borderSide: const BorderSide(color: AppColors.lightConcrete),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 12.r)),
-            borderSide: const BorderSide(color: AppColors.lightConcrete),
-          ),
-         ,*/
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 8.r)),
-            borderSide: BorderSide(color: AppColors.brown.withValues(alpha: 0.4), width: 1.w),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(widget.radiusOfContainer ?? 8.r)),
-            borderSide: BorderSide(color: AppColors.brown.withValues(alpha: 0.4), width: 1.w),
-          ),
-          errorStyle: getSemiBoldTextStyle(color: AppColors.brown, fontSize: 12),
           prefixIconConstraints: widget.prefixIconConstraints,
           prefixIcon: widget.prefixIcon,
           suffix: widget.suffix,
           suffixText: widget.suffixText,
-          //  suffixIconConstraints: BoxConstraints(maxHeight: 20, maxWidth: 40, minWidth: 40),
-          suffixIcon: widget.suffixIcon ?? (widget.isPassword
-              ? GestureDetector(
-                  onTap: () {
-                    print("tapp");
-                    setState(() {
-                      widget.obscureText = !widget.obscureText;
-                    });
-                  },
-                  child: widget.obscureText
-                      ? Icon(Icons.visibility_off, color: AppColors.liGray)
-                      : Icon(Icons.visibility_rounded, color: AppColors.liGray),
-                )
-              : null),
+          suffixIcon:
+              widget.suffixIcon ??
+              (widget.isPassword
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          widget.obscureText = !widget.obscureText;
+                        });
+                      },
+                      child: widget.obscureText
+                          ? Icon(Icons.visibility_off, color: AppColors.liGray)
+                          : Icon(
+                              Icons.visibility_rounded,
+                              color: AppColors.liGray,
+                            ),
+                    )
+                  : null),
         ),
       ),
     );

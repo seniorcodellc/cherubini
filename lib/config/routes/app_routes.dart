@@ -4,6 +4,7 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
+import '../../features/Auth/presentation/screens/login_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import 'routes_exports.dart';
 
@@ -17,6 +18,8 @@ class RouteGenerator {
           child: SplashScreen(),
           routeSettings: routeSettings,
         );
+      case Routes.loginRoute:
+        return buildPageRoute<T>(child: LoginScreen());
       /*
         case Routes.followUps:
         return buildPageRoute<T>(child: FollowUps(), routeSettings: routeSettings);
