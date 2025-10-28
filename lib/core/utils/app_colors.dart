@@ -28,7 +28,7 @@ class AppColors {
   static const Color white = Color(0XFFFFFFFF);
   static const Color black = Color(0XFF000000);
   static const Color bgColor = Color(0XFFF5F7FA);
-  static const Color greyIcons = Color(0XFF8C8C8C);
+  static const Color grayHint = Color(0XFF8C8C8C);
   static const Color green = Color(0xFF17CE4E);
   static const Color inactiveButtonBg = Color(0XFFE4E5E5);
   static const Color transparent = Colors.transparent;
