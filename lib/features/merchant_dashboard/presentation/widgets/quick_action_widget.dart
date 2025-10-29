@@ -4,11 +4,16 @@ class QuickActionWidget extends StatelessWidget {
   const QuickActionWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(DashboardStatics.actionsList.length, (index) {
-        final model = DashboardStatics.actionsList[index];
+    return SizedBox(
+      height: 155.h, // Fixed height to contain the items
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          padding: getPadding(horizontal: 8.w), // Outer padding
+          itemCount: DashboardStatics.actionsList.length,
+          separatorBuilder: (context, index) => SizedBox(width:10.w),
+          itemBuilder: (context, index) {
+            final model = DashboardStatics.actionsList[index];
         return Container(
-          margin: getPadding(horizontal: 4.w),
           height: 135.h,
           decoration: BoxDecoration(
             color:AppColors.white,

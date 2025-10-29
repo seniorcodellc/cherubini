@@ -1,8 +1,8 @@
 import 'package:cherubini/config/utils/size_utils.dart';
 import 'package:cherubini/core/utils/app_colors.dart';
 import 'package:cherubini/core/utils/app_style.dart';
-import 'package:cherubini/features/dashboard/presentation/widgets/points_list.dart';
-import 'package:cherubini/features/dashboard/presentation/widgets/quick_action_widget.dart';
+import 'package:cherubini/features/merchant_dashboard/presentation/widgets/points_list.dart';
+import 'package:cherubini/features/merchant_dashboard/presentation/widgets/quick_action_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'last_scan_list.dart';

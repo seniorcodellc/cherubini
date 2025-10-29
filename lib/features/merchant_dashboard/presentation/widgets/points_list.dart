@@ -1,5 +1,5 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/dashboard/presentation/widgets/points_item.dart';
+import 'package:cherubini/features/merchant_dashboard/presentation/widgets/points_item.dart';
 import 'package:flutter/material.dart';
 import '../../data/statics/statics.dart';
 class PointsList extends StatelessWidget {
