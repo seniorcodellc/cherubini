@@ -1,5 +1,6 @@
 import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/widgets/entitlements_list.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/tech_points_register.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/replacing_options_list.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/summary_points_card.dart';
@@ -24,7 +25,7 @@ class TechPointsSummaryScreen extends StatelessWidget {
                 Padding(
                   padding: getPadding(horizontal: 16.w),
                   child: Text(
-                    "خيارات الاستبدال",
+                    "الاستحقاقات ",
                     style: getBoldTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,
@@ -32,7 +33,8 @@ class TechPointsSummaryScreen extends StatelessWidget {
                   ),
                 ),
                 16.vs,
-                ReplacingOptionsList(),
+                // ReplacingOptionsList(),
+                EntitlementsList(),
                 24.vs,
                 Padding(
                   padding: getPadding(horizontal: 16.w),
