@@ -9,6 +9,7 @@ class Routes {
   static const String registerAccept = "/registerAccept";
   static const String registerTraderRoute = "/registerTrader";
   static const String techDashboard = "/techDashboard";
+  static const String techPointsSummary = "/techPointsSummary";
   static const String enterOtpRoute = "/enterOtpRoute";
   static const String orderAgentRoute = "/orderAgentRoute";
   static const String individualChatRoute = "/individualChatRoute";

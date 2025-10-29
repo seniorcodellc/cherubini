@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/widgets/scan_blue_circle.dart';
 
 import '../../../merchant_dashboard/data/models/scan_model.dart';
 
@@ -15,13 +16,13 @@ class TechLastScanItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: Colors.black.withValues(alpha: 0.1),
             spreadRadius: 2.r,
             blurRadius: 6.r,
             offset: Offset(0, 2.h),
           ),
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: Colors.black.withValues(alpha: 0.1),
             spreadRadius: 0.r,
             blurRadius: 2.r,
             offset: Offset(0, 1.h),
@@ -33,18 +34,7 @@ class TechLastScanItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              width: 40.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                color: AppColors.mutedBlue,
-                borderRadius: BorderRadius.circular(10.0.r),
-              ),
-              child: Padding(
-                padding: getPadding(horizontal: 8, vertical: 8),
-                child: CustomSVGImage(asset: AppAssets.scanFilled),
-              ),
-            ),
+            ScanBlueCircle(),
             16.hs,
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,

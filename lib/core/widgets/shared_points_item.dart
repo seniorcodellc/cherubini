@@ -16,13 +16,13 @@ class SharedPointsItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
+              color: Colors.black.withValues(alpha: 0.1),
               spreadRadius: 2.r,
               blurRadius: 6.r,
               offset: Offset(0, 2.h),
             ),
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
+              color: Colors.black.withValues(alpha: 0.1),
               spreadRadius: 0.r,
               blurRadius: 2.r,
               offset: Offset(0, 1.h),

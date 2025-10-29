@@ -1,6 +1,6 @@
 import '../../../../exports.dart';
 import '../../../../core/widgets/shared_points_item.dart';
-import '../../data/repositories/tech_dashboard_statics.dart';
+import '../../data/repositories/tech_dashboard_static.dart';
 
 class TechPointsList extends StatelessWidget {
   const TechPointsList({super.key});
@@ -8,10 +8,10 @@ class TechPointsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(TechDashboardStatics.techPointsList.length, (
+      children: List.generate(TechDashboardStatic.techPointsList.length, (
         index,
       ) {
-        final model = TechDashboardStatics.techPointsList[index];
+        final model = TechDashboardStatic.techPointsList[index];
         return SharedPointsItem(model: model);
       }),
     );

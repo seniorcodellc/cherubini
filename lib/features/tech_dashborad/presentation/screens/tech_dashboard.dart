@@ -10,7 +10,6 @@ class TechDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      backgroundColor: AppColors.bgColor,
       statusBarColor: AppColors.gradientColorStart,
       child: CustomScrollView(
         slivers: [

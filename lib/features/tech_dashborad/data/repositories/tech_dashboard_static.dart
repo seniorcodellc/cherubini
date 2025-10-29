@@ -2,7 +2,7 @@ import '../../../../core/utils/app_assets.dart';
 import '../../../merchant_dashboard/data/models/points_model.dart';
 import '../../../merchant_dashboard/data/models/scan_model.dart';
 
-class TechDashboardStatics {
+class TechDashboardStatic {
   static List<PointsModel> techPointsList = [
     PointsModel(
       iconPath: AppAssets.loyaltyFilled,

@@ -43,7 +43,7 @@ class _CherubiniAppState extends State<CherubiniApp> {
       supportedLocales: context.supportedLocales,
       navigatorKey: navigatorKey,
       color: AppColors.primaryColor,
-      //  theme: AppTheme.light(),
+      theme: ThemeData(scaffoldBackgroundColor: AppColors.bgColor),
       onGenerateRoute: RouteGenerator.generateRoute,
     ),
   );

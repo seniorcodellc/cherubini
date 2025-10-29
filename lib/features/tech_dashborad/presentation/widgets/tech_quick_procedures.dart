@@ -9,10 +9,17 @@ class TechQuickProcedures extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        SharedQuickProceduresItem(asset: AppAssets.scan, text: "مسح البار كود"),
+        SharedQuickProceduresItem(
+          asset: AppAssets.scan,
+          text: "مسح البار كود",
+          onTap: () {},
+        ),
         SharedQuickProceduresItem(
           asset: AppAssets.loyaltyFilled,
           text: "النقاط",
+          onTap: () {
+            Routes.techPointsSummary.moveTo();
+          },
         ),
       ],
     );
