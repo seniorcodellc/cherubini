@@ -1,5 +1,3 @@
-
-
 import '../../../../core/utils/app_assets.dart';
 import '../models/points_model.dart';
 import '../models/quick_action_model.dart';
@@ -12,10 +10,10 @@ class DashboardStatics{
     PointsModel(iconPath: AppAssets.availablePoints, title: ' النقاط المتاحة', number: '9,250'),
   ];
   static List<QuickActionModel> actionsList= [
-    QuickActionModel(iconPath: AppAssets.history, title: 'السجلات'),
-    QuickActionModel(iconPath: AppAssets.tech, title: 'الفنيين'),
-    QuickActionModel(iconPath: AppAssets.loyalty, title: 'النقاط'),
     QuickActionModel(iconPath: AppAssets.scan, title: 'مسح\nالبار كود  ',),
+    QuickActionModel(iconPath: AppAssets.loyalty, title: 'النقاط'),
+    QuickActionModel(iconPath: AppAssets.tech, title: 'الفنيين'),
+    QuickActionModel(iconPath: AppAssets.history, title: 'السجلات'),
 
   ];
   static List<ScanModel> scanList = [

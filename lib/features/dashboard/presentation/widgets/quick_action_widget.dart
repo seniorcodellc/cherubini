@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../data/statics/statics.dart';
 
+import 'package:cherubini/exports.dart';
+
+import '../../data/statics/statics.dart';
 class QuickActionWidget extends StatelessWidget {
   const QuickActionWidget({super.key});
 
@@ -12,14 +11,14 @@ class QuickActionWidget extends StatelessWidget {
       children: List.generate(DashboardStatics.actionsList.length, (index) {
         final model = DashboardStatics.actionsList[index];
         return Container(
-          margin: EdgeInsetsGeometry.symmetric(horizontal: 10),
-          height: 150.h,
+          margin: getPadding(horizontal: 4.w),
+          height: 135.h,
           decoration: BoxDecoration(
-            color: Color(0xffFFFFFF),
+            color:AppColors.white,
             borderRadius: BorderRadius.circular(20.r),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 10.0.h),
+            padding:getPadding(horizontal: 10.0.w, vertical: 10.0.h),
             child: Column(
               children: [
                 Container(
@@ -34,14 +33,14 @@ class QuickActionWidget extends StatelessWidget {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: SvgPicture.asset(model.iconPath),
+                    padding: getPadding(all: 12.0),
+                    child: CustomSVGImage(asset:model.iconPath),
                   ),
                 ),
-                SizedBox(height: 10.0.h),
+                10.vs,
                 Text(
                   model.title,
-                  //style: AppStyless.font14PrimaryRegular,
+                  style:getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),
                   textDirection: TextDirection.rtl,
                   textAlign: TextAlign.center,
                 ),

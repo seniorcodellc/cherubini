@@ -1,12 +1,11 @@
-import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
-import 'package:cherubini/features/on_boarding/presentation/onboarding_screen.dart';
+import 'package:cherubini/features/dashboard/presentation/screens/dashboard_screen.dart';
+import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 
 import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
-import 'routes_exports.dart';
 
 class RouteGenerator {
   AnimationType? pageRouteAnimationGlobal;
@@ -21,6 +20,11 @@ class RouteGenerator {
       case Routes.onBoardingRoute:
         return buildPageRoute<T>(
           child: OnboardingScreen(),
+          routeSettings: routeSettings,
+        );
+        case Routes.dashboardRoute:
+        return buildPageRoute<T>(
+          child: DashboardScreen(),
           routeSettings: routeSettings,
         );
       /*

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cherubini/exports.dart';
 
 class DashboardHeader extends StatelessWidget {
   const DashboardHeader({super.key});
@@ -8,27 +7,27 @@ class DashboardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 195.h,
+      height: 190.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(50.0.r),
           bottomRight: Radius.circular(50.0.r),
         ),
         gradient: LinearGradient(
-            colors: [Color(0xff0F50AA),Color(0xff3495E9)],
-            begin: AlignmentGeometry.bottomLeft,
-            end: AlignmentGeometry.topRight
+            colors: [AppColors.gradientColorStart,AppColors.gradientColorEnd],
+            begin: AlignmentGeometry.topCenter,
+            end: AlignmentGeometry.bottomCenter
         )
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w,vertical: 28.0.h),
+        padding: getPadding(horizontal: 16.0.w,top: 40.0.h),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+         // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           // Text('مرحباً , أحمد' ,style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 24.sp,color: Colors.white),),
-            SizedBox(height: 10.0.h,),
-           // Text('شركة الأجهزة المتقدمة' ,style: GoogleFonts.cairo(fontWeight: FontWeight.w400,fontSize: 16.sp,color: Colors.white),)
+            Text('مرحباً , أحمد' ,style: getBoldTextStyle(fontSize: 22.sp,color: Colors.white),),
+            10.vs,
+            Text('شركة الأجهزة المتقدمة' ,style: getRegularTextStyle(fontSize: 14.sp,color: Colors.white),)
           ],
         ),
       ),

@@ -1,18 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:cherubini/core/widgets/custom_background.dart';
 import '../widgets/dashboard_body.dart';
 import '../widgets/dashboard_header.dart';
-
+import 'package:cherubini/exports.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
-  static final route = "dashboard_screen";
-
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark,),);
-    return Scaffold(
-      backgroundColor: Color(0xffF5F7FA),
-      body: CustomScrollView(
+    return CustomBackground(
+      backgroundColor: AppColors.bgColor,
+      statusBarColor: AppColors.gradientColorStart ,
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Stack(
@@ -20,7 +17,7 @@ class DashboardScreen extends StatelessWidget {
               children: [
                 const DashboardHeader(),
                 Padding(
-                  padding: const EdgeInsets.only(top: 140),
+                  padding: getPadding(top: 140),
                   child: const DashboardBody(),
                 ),
               ],

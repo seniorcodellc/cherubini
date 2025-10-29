@@ -1,4 +1,7 @@
 
+import 'package:cherubini/config/utils/size_utils.dart';
+import 'package:cherubini/core/utils/app_colors.dart';
+import 'package:cherubini/core/utils/app_style.dart';
 import 'package:cherubini/features/dashboard/presentation/widgets/points_list.dart';
 import 'package:cherubini/features/dashboard/presentation/widgets/quick_action_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,28 +15,27 @@ class DashboardBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         PointsList(),
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.0.w,vertical: 12.0.h),
+          padding: getPadding(horizontal: 16.0.w,vertical: 8.0.h),
           child: Text(
             'إجراءات سريعة',
-            // style: GoogleFonts.cairo(
-            //   fontWeight: FontWeight.bold,
-            //   fontSize: 16.sp,
-            //   color: Color(0xff0D47A1),
-            // ),
+            style: getBoldTextStyle(
+              fontSize: 14.sp,
+              color: AppColors.primaryColor,
+            ),
           ),
         ),
         QuickActionWidget(),
         Padding(
-          padding:  EdgeInsets.only(left: 16.0.w,right: 16.0.w,top: 24.0.h),
+          padding: getPadding(start: 16.0.w,end: 16.0.w,top: 16.0.h,bottom: 8.0.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Text('عرض الكل ',style: AppStyles.font14PrimaryRegular,),
-             // Text('أخر عمليات المسح ',style: AppStyles.font16PrimaryBold,),
+              Text('أخر عمليات المسح ',style: getBoldTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
+              Text('عرض الكل ',style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),),
             ],
           ),
         ),

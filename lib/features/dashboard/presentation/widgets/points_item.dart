@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:cherubini/exports.dart';
 import '../../data/models/points_model.dart';
 class PointsItem extends StatelessWidget {
   const PointsItem({super.key, required this.model});
@@ -9,9 +6,9 @@ class PointsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.0.w,vertical: 16.0.h),
+      margin: getPadding(horizontal: 16.0.w,vertical: 10.0.h),
       decoration: BoxDecoration(
-        color: Color(0xffFFFFFF),
+        color:AppColors.bgColor,
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
@@ -22,43 +19,41 @@ class PointsItem extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 14.0.h, horizontal: 16.0.w),
+        padding: getPadding(vertical: 12.0.h, horizontal: 16.0.w),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              children: [
-                Text(
-                  model.title,
-                  // style: GoogleFonts.cairo(
-                  //   fontSize: 16.sp,
-                  //   fontWeight: FontWeight.w400,
-                  //   color: Color(0xff555555),
-                  // ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  model.number,
-                  // style: GoogleFonts.cairo(
-                  //   fontSize: 20.sp,
-                  //   fontWeight: FontWeight.w400,
-                  //   color: Color(0xff1976D2),
-                  // ),
-                ),
-              ],
-            ),
-            SizedBox(width: 55.w),
             Container(
               width: 60.w,
               height: 60.h,
               decoration: BoxDecoration(
-                color: Color(0xffE3F2FD),
+                color: AppColors.mutedBlue,
                 borderRadius: BorderRadius.circular(16.0.r),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(model.iconPath),
+                padding: getPadding(all: 12.0),
+                child: CustomSVGImage(asset:model.iconPath),
               ),
+            ),
+            40.hs,
+            Column(
+              children: [
+                Text(
+                  model.title,
+                  style: getRegularTextStyle(
+                    fontSize: 14.sp,
+                    color:AppColors.subTitleColor,
+                  ),
+                ),
+                8.hs,
+                Text(
+                  model.number,
+                  style: getRegularTextStyle(
+                    fontSize: 18.sp,
+                    color: AppColors.secondaryColor,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

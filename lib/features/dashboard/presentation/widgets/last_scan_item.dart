@@ -1,9 +1,4 @@
-
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../../../core/utils/app_assets.dart';
+import 'package:cherubini/exports.dart';
 import '../../data/models/scan_model.dart';
 
 class LastScanItem extends StatelessWidget {
@@ -13,9 +8,9 @@ class LastScanItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsGeometry.symmetric(horizontal: 16.0.w,vertical: 16.0.h),
+      margin: getMargin(horizontal: 16.0.w,vertical: 8.0.h),
       decoration: BoxDecoration(
-        color: const Color(0xffFFFFFF),
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
@@ -26,37 +21,13 @@ class LastScanItem extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding:getPadding(horizontal: 16.w, vertical: 12.h),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  '${model.points} نقطه',
-                  textDirection: TextDirection.rtl,
-                  //style: AppStyless.font14AccentRegular,
-                ),
-                const Spacer(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      model.title,
-                    //  style: AppStyless.font16PrimaryRegular,
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      model.date,
-                    //  style: AppStyless.font20ForegroundRegular,
-                      textDirection: TextDirection.rtl,
-                    ),
-                  ],
-                ),
-                SizedBox(width: 12.w),
                 Container(
                   width: 60.w,
                   height: 60.h,
@@ -65,24 +36,47 @@ class LastScanItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.0.r),
                   ),
                   padding: const EdgeInsets.all(12.0),
-                  child: SvgPicture.asset(AppAssets.scanFilled),
+                  child: CustomSVGImage(asset: AppAssets.scanFilled),
+                ),
+                12.hs,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      model.title,
+                      style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
+                      // textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 4.h),
+                    Text(
+                      model.date,
+                      style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
+                      //textDirection: TextDirection.rtl,
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Text(
+                  '${model.points} نقطه',
+                 //textDirection: TextDirection.rtl,
+                style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
             Padding(
-              padding:  EdgeInsets.symmetric(vertical: 14.0.h),
+              padding:getPadding(top: 40.0.h,bottom: 14.0.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '${model.number}  منتجات ',
-                    textDirection: TextDirection.rtl,
-                   // style: AppStyless.font14ForegroundRegular,
+                    'الفني: ${model.tech}',
+                    style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),
                   Text(
-                    'الفني: ${model.tech}',
-                   // style: AppStyless.font14ForegroundRegular,
+                    '${model.number}  منتجات ',
+                    textDirection: TextDirection.rtl,
+                    style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),
                 ],
               ),

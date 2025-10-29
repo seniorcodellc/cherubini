@@ -12,12 +12,15 @@ class AppColors {
 
   static const Color brown = Color(0xFF877257);
   static const Color grey = Color(0xFFAAAAAA);
+  static const Color dots = Color(0xFFD1D5DC);
   static const descriptionColor = Color(0xFF606268);
   static const Color borderColor = Color(0xFFE2E8F0);
-  static Color borderColor2 = const Color(0xFF9e9e9e);
+  static const Color borderColor2 =  Color(0xFF9e9e9e);
   static const Color primaryColor = Color(0XFF0D47A1);
+  static const Color secondaryColor = Color(0XFF1976D2);
   static const Color gradientColorEnd = Color(0XFF3495E9);
   static const Color gradientColorStart = Color(0XFF0F50AA);
+  static const Color statusColor = Color(0XFF277DD4);
   static const Color accentColor = Color(0XFF42A5F5);
   static const Color mutedBlue = Color(0XFFE3F2FD);
   static const Color subTitleColor = Color(0XFF555555);

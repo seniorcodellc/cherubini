@@ -3,6 +3,7 @@ class Routes {
   static const String secondSplashScreen = "/secondSplashScreen";
   static const String selectLanguageRoute = "/selectLanguageRoute";
   static const String onBoardingRoute = "/onBoarding";
+  static const String dashboardRoute = "/dashboard";
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
   static const String enterOtpRoute = "/enterOtpRoute";

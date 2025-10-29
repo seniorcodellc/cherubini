@@ -33,17 +33,28 @@ class CustomButton extends StatelessWidget {
       highlightElevation: 0,
       onPressed: onPressed,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius?.r ?? 25.r),
+          borderRadius: BorderRadius.circular(borderRadius?.r ?? 20.r),
           side: BorderSide(color: borderColor ?? AppColors.primaryColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          svgIconPath != null ? 10.hs : 0.hs,
+          svgIconPath != null ? 8.hs : 0.hs,
+          svgIconPath != null
+              ? SvgPicture.asset(
+            svgIconPath!,
+            width: 6.w,
+            height: 12.w,
+            color: textColor ?? AppColors.white,
+          )
+              : const SizedBox(
+            width: 0,
+          ),
+          svgIconPath != null ? 20.hs : 0.hs,
           Center(
             child: Text(
               text,
               style: style ??
-                  getSemiBoldTextStyle(
+                  getRegularTextStyle(
                       fontSize: 16, color: textColor ?? AppColors.white),
             ),
           ),
@@ -54,16 +65,7 @@ class CustomButton extends StatelessWidget {
               : const SizedBox(
                   width: 0,
                 ),
-          svgIconPath != null
-              ? SvgPicture.asset(
-                  svgIconPath!,
-                  width: 24.w,
-                  height: 24.w,
-                  color: textColor ?? AppColors.white,
-                )
-              : const SizedBox(
-                  width: 0,
-                ),
+
         ],
       ),
     );
