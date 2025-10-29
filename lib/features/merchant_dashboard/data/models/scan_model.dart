@@ -1,5 +1,3 @@
-import 'package:cherubini/exports.dart';
-
 class ScanModel {
   final String title;
   final String date;

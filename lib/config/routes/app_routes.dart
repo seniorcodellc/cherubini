@@ -3,6 +3,7 @@ import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_trader.dart';
 import 'package:cherubini/features/auth/presentation/screens/register_accept_screen.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 
 import 'package:nested/nested.dart';
 
@@ -27,7 +28,7 @@ class RouteGenerator {
           child: OnboardingScreen(),
           routeSettings: routeSettings,
         );
-        case Routes.dashboardRoute:
+      case Routes.dashboardRoute:
         return buildPageRoute<T>(
           child: DashboardScreen(),
           routeSettings: routeSettings,
@@ -40,6 +41,8 @@ class RouteGenerator {
         return buildPageRoute<T>(child: SignUpAsTrader());
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
+      case Routes.techDashboard:
+        return buildPageRoute<T>(child: TechDashboard());
 
       /*
         case Routes.followUps:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../data/statics/statics.dart';
 import 'last_scan_item.dart';
 import 'package:cherubini/exports.dart';
+
 class LastScanList extends StatelessWidget {
   const LastScanList({super.key});
 
@@ -15,5 +16,3 @@ class LastScanList extends StatelessWidget {
     );
   }
 }
-
-

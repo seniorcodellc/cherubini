@@ -1,0 +1,64 @@
+import '../../../../exports.dart';
+
+class SharedQuickProceduresItem extends StatelessWidget {
+  const SharedQuickProceduresItem({
+    super.key,
+    required this.asset,
+    required this.text,
+  });
+  final String asset;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 164,
+      height: 119,
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(20.0.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            spreadRadius: 2,
+            blurRadius: 6,
+            offset: Offset(0, 2),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            spreadRadius: 0,
+            blurRadius: 2,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: getPadding(horizontal: 12.w, vertical: 12.h),
+            child: Container(
+              width: 56,
+              height: 56,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
+                gradient: LinearGradient(
+                  colors: [
+                    AppColors.gradientColorStart,
+                    AppColors.gradientColorEnd,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              child: CustomSVGImage(
+                asset: asset,
+                fit: BoxFit.none,
+                color: AppColors.white,
+              ),
+            ),
+          ),
+          Text(text, style: getRegularTextStyle(color: AppColors.primaryColor)),
+        ],
+      ),
+    );
+  }
+}
