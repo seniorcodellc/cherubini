@@ -2,7 +2,6 @@ import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/entitlements_list.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/tech_points_register.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/replacing_options_list.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/summary_points_card.dart';
 
 import '../../../../exports.dart';

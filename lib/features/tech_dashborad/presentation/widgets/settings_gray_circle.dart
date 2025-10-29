@@ -7,14 +7,19 @@ class SettingsGrayCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topLeft,
-      child: Container(
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          color: AppColors.bgColor,
-          borderRadius: BorderRadius.circular(50.r),
+      child: GestureDetector(
+        onTap: () {
+          Routes.operationsLog.moveTo();
+        },
+        child: Container(
+          width: 50.w,
+          height: 50.h,
+          decoration: BoxDecoration(
+            color: AppColors.bgColor,
+            borderRadius: BorderRadius.circular(50.r),
+          ),
+          child: CustomSVGImage(asset: AppAssets.settings, fit: BoxFit.none),
         ),
-        child: CustomSVGImage(asset: AppAssets.settings, fit: BoxFit.none),
       ),
     );
   }

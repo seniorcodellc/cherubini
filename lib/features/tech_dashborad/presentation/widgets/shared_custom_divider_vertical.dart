@@ -4,7 +4,6 @@ import '../../../../exports.dart';
 
 class SharedCustomDividerVertical extends StatelessWidget {
   const SharedCustomDividerVertical({super.key});
-
   @override
   Widget build(BuildContext context) {
     return CustomDivider(

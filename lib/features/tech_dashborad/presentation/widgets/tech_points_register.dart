@@ -9,7 +9,7 @@ class PointsRegister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(bottom: 23.h),
+      padding: getPadding(bottom: 30.h),
       child: Column(
         children: List.generate(
           TechPointsRegisterStatic.pointsRegisterList.length,
