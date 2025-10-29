@@ -1,20 +1,21 @@
-import 'package:cherubini/core/widgets/custom_drop_down.dart';
+import 'package:cherubini/core/widgets/custom_appbar.dart';
+import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/core/widgets/custom_text_form_field.dart';
+import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
+import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
 
-import '../../../../core/widgets/custom_appbar.dart';
-import '../../../../core/widgets/custom_background.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
+import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
-import '../widgets/shared_phone_text_field.dart';
 
-class SignUpAsTech extends StatelessWidget {
-  const SignUpAsTech({super.key});
+class SignUpAsTrader extends StatelessWidget {
+  const SignUpAsTrader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "تسجيل فني جديد"),
+      appBar: CustomAppbar(title: "تسجيل تاجر جديد"),
       child: Padding(
         padding: getPadding(horizontal: 16, vertical: 32),
         child: CustomScrollView(
@@ -49,38 +50,17 @@ class SignUpAsTech extends StatelessWidget {
                     style: getRegularTextStyle(color: AppColors.primaryColor),
                   ),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "example1@gmail .com",
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.email,
-                      fit: BoxFit.none,
-                    ),
-                  ),
+                  SharedEmailTextField(),
                   16.vs,
                   Text(
-                    "اختر التاجر",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
-                  8.vs,
-                  CustomDropDown(
-                    items: [
-                      CustDropdownMenuItem(
-                        value: 0,
-                        child: Text("اختر التاجر المرتبط به "),
-                      ),
-                    ],
-                    onChanged: () {},
-                  ),
-                  16.vs,
-                  Text(
-                    "سؤال التحقق من التاجر",
+                    "العنوان",
                     style: getRegularTextStyle(color: AppColors.primaryColor),
                   ),
                   8.vs,
                   CustomTextFormField(
-                    hintText: "أجب على سؤال  التحقق",
+                    hintText: "المدينة , الحي , الشارع",
                     prefixIcon: CustomSVGImage(
-                      asset: AppAssets.questionMark,
+                      asset: AppAssets.location,
                       fit: BoxFit.none,
                     ),
                   ),
@@ -91,8 +71,17 @@ class SignUpAsTech extends StatelessWidget {
                   ),
                   8.vs,
                   SharedPasswordTextField(),
+                  16.vs,
+                  Text(
+                    "تأكيد كلمة المرور",
+                    style: getRegularTextStyle(color: AppColors.primaryColor),
+                  ),
+                  8.vs,
+                  SharedPasswordTextField(),
                   40.vs,
                   CustomButton(text: "إنشاء حساب", onPressed: () {}),
+                  24.vs,
+                  SignUpTraderInstruction(),
                 ],
               ),
             ),

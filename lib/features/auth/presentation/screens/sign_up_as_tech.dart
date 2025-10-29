@@ -1,28 +1,30 @@
-import 'package:cherubini/core/widgets/custom_appbar.dart';
-import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/core/widgets/custom_text_form_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
+import 'package:cherubini/features/Auth/presentation/widgets/choose_trader_drop_down.dart';
 
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/custom_background.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
+import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
+import '../widgets/shared_phone_text_field.dart';
 
-class SignUpAsTrader extends StatelessWidget {
-  const SignUpAsTrader({super.key});
+class SignUpAsTech extends StatelessWidget {
+  const SignUpAsTech({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "تسجيل تاجر جديد"),
+      appBar: CustomAppbar(title: "تسجيل فني جديد"),
       child: Padding(
-        padding: getPadding(horizontal: 16, vertical: 32),
+        padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  32.vs,
                   Text(
                     "الاسم الكامل",
                     style: getRegularTextStyle(color: AppColors.primaryColor),
@@ -49,23 +51,24 @@ class SignUpAsTrader extends StatelessWidget {
                     style: getRegularTextStyle(color: AppColors.primaryColor),
                   ),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "example1@gmail .com",
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.email,
-                      fit: BoxFit.none,
-                    ),
-                  ),
+                  SharedEmailTextField(),
                   16.vs,
                   Text(
-                    "العنوان",
+                    "اختر التاجر",
+                    style: getRegularTextStyle(color: AppColors.primaryColor),
+                  ),
+                  8.vs,
+                  ChooseTraderDropDown(),
+                  16.vs,
+                  Text(
+                    "سؤال التحقق من التاجر",
                     style: getRegularTextStyle(color: AppColors.primaryColor),
                   ),
                   8.vs,
                   CustomTextFormField(
-                    hintText: "المدينة , الحي , الشارع",
+                    hintText: "أجب على سؤال  التحقق",
                     prefixIcon: CustomSVGImage(
-                      asset: AppAssets.location,
+                      asset: AppAssets.questionMark,
                       fit: BoxFit.none,
                     ),
                   ),
@@ -76,17 +79,17 @@ class SignUpAsTrader extends StatelessWidget {
                   ),
                   8.vs,
                   SharedPasswordTextField(),
-                  16.vs,
-                  Text(
-                    "تأكيد كلمة المرور",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
-                  8.vs,
-                  SharedPasswordTextField(),
                   40.vs,
                   CustomButton(text: "إنشاء حساب", onPressed: () {}),
                   24.vs,
-                  SignUpTraderInstruction(),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة",
+                      style: getRegularTextStyle(color: AppColors.grayHint),
+                    ),
+                  ),
+                  37.vs,
                 ],
               ),
             ),

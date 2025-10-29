@@ -56,13 +56,13 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       CustomElevatedButton(
                         onPressed: () {
-                          Routes.registerTraderRoute.moveToAndRemoveCurrent();
+                          Routes.registerTraderRoute.moveTo();
                         },
                         text: "تسجيل تاجر",
                       ),
                       CustomElevatedButton(
                         onPressed: () {
-                          Routes.registerTechRoute.moveToAndRemoveCurrent();
+                          Routes.registerTechRoute.moveTo();
                         },
                         text: "تسجيل فني",
                       ),
