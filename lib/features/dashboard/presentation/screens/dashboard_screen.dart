@@ -1,7 +1,7 @@
-import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/exports.dart';
+import '../../../../core/widgets/custom_background.dart';
 import '../widgets/dashboard_body.dart';
 import '../widgets/dashboard_header.dart';
-import 'package:cherubini/exports.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
   @override

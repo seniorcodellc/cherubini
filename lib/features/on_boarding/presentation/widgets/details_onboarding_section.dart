@@ -1,13 +1,10 @@
+import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/on_boarding/presentation/widgets/onboarding_buttons.dart';
-
-import '../../../../exports.dart';
 import '../../data/static/static.dart';
 import 'onboarding_dots.dart';
 
 class DetailsOnboardingSection extends StatefulWidget {
   const DetailsOnboardingSection({super.key});
-
-
   @override
   State<DetailsOnboardingSection> createState() => _DetailsOnboardingSectionState();
 }

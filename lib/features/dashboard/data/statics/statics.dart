@@ -1,3 +1,4 @@
+import 'package:cherubini/exports.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../models/points_model.dart';
 import '../models/quick_action_model.dart';

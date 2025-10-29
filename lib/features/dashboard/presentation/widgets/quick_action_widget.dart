@@ -1,10 +1,7 @@
-
 import 'package:cherubini/exports.dart';
-
 import '../../data/statics/statics.dart';
 class QuickActionWidget extends StatelessWidget {
   const QuickActionWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Row(

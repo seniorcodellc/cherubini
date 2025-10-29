@@ -3,5 +3,9 @@ class PointsModel {
   final String title;
   final String number;
 
-  PointsModel({required this.iconPath, required this.title,required this.number});
+  PointsModel({
+    required this.iconPath,
+    required this.title,
+    required this.number,
+  });
 }

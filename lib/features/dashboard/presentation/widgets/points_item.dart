@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/exports.dart';
 import '../../data/models/points_model.dart';
 class PointsItem extends StatelessWidget {
   const PointsItem({super.key, required this.model});

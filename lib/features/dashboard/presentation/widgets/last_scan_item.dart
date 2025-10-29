@@ -1,6 +1,5 @@
 import 'package:cherubini/exports.dart';
 import '../../data/models/scan_model.dart';
-
 class LastScanItem extends StatelessWidget {
   const LastScanItem({super.key, required this.model});
   final ScanModel model;
@@ -59,8 +58,8 @@ class LastScanItem extends StatelessWidget {
                 const Spacer(),
                 Text(
                   '${model.points} نقطه',
-                 //textDirection: TextDirection.rtl,
-                style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
+                  //textDirection: TextDirection.rtl,
+                  style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
                 ),
               ],
             ),

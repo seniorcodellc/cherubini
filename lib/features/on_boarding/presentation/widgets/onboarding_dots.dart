@@ -1,3 +1,4 @@
+import 'package:cherubini/exports.dart';
 import '../../../../exports.dart';
 
 class OnboardingDots extends StatelessWidget {
@@ -5,9 +6,7 @@ class OnboardingDots extends StatelessWidget {
     super.key,
     required this.currentPage,
   });
-
   final int currentPage;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +28,7 @@ class OnboardingDots extends StatelessWidget {
               decoration: ShapeDecoration(
                 color: index == currentPage ? AppColors.primaryColor : AppColors.dots,
                 shape:index == currentPage ?RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.r)
+                    borderRadius: BorderRadius.circular(15.r)
                 ): CircleBorder(),
               ),
             ),

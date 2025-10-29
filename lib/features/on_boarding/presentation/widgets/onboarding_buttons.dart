@@ -1,10 +1,8 @@
 import 'package:cherubini/exports.dart';
-
+import 'package:cherubini/exports.dart';
 class OnboardingButtons extends StatelessWidget {
   const OnboardingButtons({super.key, required this.onTap});
-
   final VoidCallback  onTap;
-
   @override
   Widget build(BuildContext context) {
     return Column(

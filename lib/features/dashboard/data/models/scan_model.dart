@@ -1,3 +1,5 @@
+import 'package:cherubini/exports.dart';
+
 class ScanModel {
   final String title;
   final String date;
@@ -5,5 +7,11 @@ class ScanModel {
   final String tech;
   final String number;
 
-  ScanModel({required this.title, required this.date, required this.points, required this.tech, required this.number});
+  ScanModel({
+    required this.title,
+    required this.date,
+    required this.points,
+    required this.tech,
+    required this.number,
+  });
 }

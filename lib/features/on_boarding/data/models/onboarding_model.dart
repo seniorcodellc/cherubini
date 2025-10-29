@@ -1,3 +1,4 @@
+import 'package:cherubini/exports.dart';
 class OnboardingModel {
   final String imagePath;
   final String title ;

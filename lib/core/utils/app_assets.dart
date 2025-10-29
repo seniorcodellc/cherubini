@@ -26,6 +26,7 @@ class AppAssets {
   static String right="${SvgImages.svgPath}right.svg";
 
   // loyalty app
+  //! icons
   static  String gift = '${SvgImages.svgPath}gift.svg';
   static  String loyalty = '${SvgImages.svgPath}loyalty.svg';
   static  String loyaltyFilled = '${SvgImages.svgPath}loyalty_filled.svg';
@@ -48,13 +49,10 @@ class AppAssets {
   static  String location = '${SvgImages.svgPath}location.svg';
   static  String splash= '${SvgImages.svgPath}splash.svg';
   static  String login= '${SvgImages.svgPath}login.svg';
-
   //! PNG
-
   static String logo="${PngImages.imagesPath}logo.png";
   static String onboarding1="${PngImages.imagesPath}oboarding1.png";
   static String onboarding2="${PngImages.imagesPath}onboarding2.png";
   static String onboarding3="${PngImages.imagesPath}onboarding3.png";
-
 
 }
