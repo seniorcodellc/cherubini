@@ -4,6 +4,7 @@ import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dar
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_trader.dart';
 import 'package:cherubini/features/auth/presentation/screens/register_accept_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
 
 import 'package:nested/nested.dart';
@@ -13,6 +14,7 @@ import '../../exports.dart';
 import '../../features/Auth/presentation/screens/login_screen.dart';
 import '../../features/merchant_dashboard/presentation/screens/dashboard_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
+import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
 
 class RouteGenerator {
   AnimationType? pageRouteAnimationGlobal;
@@ -46,6 +48,10 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechDashboard());
       case Routes.techPointsSummary:
         return buildPageRoute<T>(child: TechPointsSummaryScreen());
+      case Routes.settings:
+        return buildPageRoute<T>(child: TechSettingsScreen());
+      case Routes.operationsLog:
+        return buildPageRoute<T>(child: TechOperationsLogScreen());
 
       /*
         case Routes.followUps:

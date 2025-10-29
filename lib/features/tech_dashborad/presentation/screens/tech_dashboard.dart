@@ -19,7 +19,7 @@ class TechDashboard extends StatelessWidget {
               children: [
                 const SharedDashboardHeader(),
                 Padding(
-                  padding: getPadding(top: 145),
+                  padding: getPadding(top: 145.h, bottom: 30.h),
                   child: const TechDashboardBody(),
                 ),
               ],

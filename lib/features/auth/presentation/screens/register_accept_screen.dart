@@ -1,4 +1,5 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/core/widgets/second_shared_custom_button.dart';
 import 'package:cherubini/features/auth/presentation/widgets/register_accept_body.dart';
 
 import '../../../../exports.dart';
@@ -35,15 +36,7 @@ class RegisterAcceptScreen extends StatelessWidget {
               ),
             ),
             71.vs,
-            CustomButton(
-              borderColor: AppColors.mutedBlue,
-              textColor: AppColors.primaryColor,
-              backgroundColor: AppColors.inactiveButtonBg,
-              text: "العودة لتسجيل الدخول",
-              onPressed: () {
-                Routes.loginRoute.moveTo();
-              },
-            ),
+            SecondSharedCustomButton(text: "العودة لتسجيل الدخول"),
           ],
         ),
       ),
