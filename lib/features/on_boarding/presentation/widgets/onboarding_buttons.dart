@@ -1,18 +1,21 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/exports.dart';
 class OnboardingButtons extends StatelessWidget {
-  const OnboardingButtons({super.key, required this.onTap});
+  const OnboardingButtons({super.key, required this.onTap, required this.text});
   final VoidCallback  onTap;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        100.vs,
+        40.vs,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
-              onTap: (){},
+              onTap: (){
+                Routes.dashboardRoute.moveTo();
+              },
               child: Text(
                 'تخطي',
                 style: getRegularTextStyle(
@@ -22,8 +25,8 @@ class OnboardingButtons extends StatelessWidget {
               ),
             ),
             CustomButton(
-              text: 'التالي',
-              svgIconPath: AppAssets.leftArrow,
+              text: text,
+              svgIconPath: AppAssets.arrowLeft,
               onPressed: onTap,
               height: 50.0.h,
             ),

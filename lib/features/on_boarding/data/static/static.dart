@@ -21,10 +21,3 @@ class OnboardingStatics {
   ];
 }
 
-
-
-
-
-
-
-

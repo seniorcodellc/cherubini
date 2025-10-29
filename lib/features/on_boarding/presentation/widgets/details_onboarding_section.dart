@@ -1,10 +1,13 @@
-import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/on_boarding/presentation/widgets/onboarding_buttons.dart';
+
+import '../../../../exports.dart';
 import '../../data/static/static.dart';
 import 'onboarding_dots.dart';
 
 class DetailsOnboardingSection extends StatefulWidget {
   const DetailsOnboardingSection({super.key});
+
+
   @override
   State<DetailsOnboardingSection> createState() => _DetailsOnboardingSectionState();
 }
@@ -16,10 +19,10 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
     if (currentPage < OnboardingStatics.onBoardingItems.length - 1) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 200),
-        curve: Curves.easeInCirc,
+        curve: Curves.easeInOut,
       );
     } else {
-      Routes.dashboardRoute.moveTo();
+      Routes.loginRoute.moveTo();
     }
   }
 
@@ -41,7 +44,7 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              220.vs,
+              180.vs,
               CustomPngImage(image: OnboardingStatics.onBoardingItems[index].imagePath,),
               35.vs,
               Text(
@@ -65,7 +68,10 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
               ),
               10.vs,
               OnboardingDots(currentPage: currentPage,),
-              OnboardingButtons(onTap: () { nextPage(); },),
+              100.vs,
+             OnboardingButtons(onTap: (){nextPage();}, text: currentPage == OnboardingStatics.onBoardingItems.length - 1
+                 ? 'ابدأ الآن '
+                 : 'التالي',)
             ],
           ),
         );
@@ -73,4 +79,3 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
     );
   }
 }
-

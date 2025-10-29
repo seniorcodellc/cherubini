@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:cherubini/core/widgets/custom_background.dart';
+
 import '../../../../config/local_notification/local_notification.dart';
 import '../../../../exports.dart';
 
@@ -30,25 +32,26 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       route = Routes.onBoardingRoute;
-
       //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
       // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
-      // isNotificationEnabled = await checkNotificationPermission(context);
-     // bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
-   //   print("saved language is :$isLanguageSaved");
-     // print("token is :${user?.token}");
-     //  if (isNew.isTrue) {
-     //   bool cachedNewInstall = await getBlocData<ConfigurationCubit>().cachedNewInstall();
-     //   print("cachedNewInstall: $cachedNewInstall");
-  /*      isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
-          context,
-          onSuccess: () {
-            NotificationsService().showSimpleNotification(
-              title: 'أهلا بك فى عيادتى',
-              description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
-            );
-          },
-        );*/
+      //  isNotificationEnabled = await checkNotificationPermission(context);
+      // bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
+      //   print("saved language is :$isLanguageSaved");
+      // print("token is :${user?.token}");
+      // if (isNew.isTrue) {
+      //   bool cachedNewInstall = await getBlocData<ConfigurationCubit>()
+      //       .cachedNewInstall();
+      //   print("cachedNewInstall: $cachedNewInstall");
+      //   /*      isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
+      //     context,
+      //     onSuccess: () {
+      //       NotificationsService().showSimpleNotification(
+      //         title: 'أهلا بك فى عيادتى',
+      //         description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
+      //       );
+      //     },
+      //   );*/
+      //   route = Routes.onBoardingRoute;
       // } else {
       //   route = Routes.bottomNavRoute;
       // }
@@ -71,19 +74,47 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return CustomBackground(
+      statusBarColor: AppColors.gradientColorStart,
+
+      child: Stack(
         alignment: Alignment.center,
         children: [
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(color: AppColors.white),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  AppColors.gradientColorStart,
+                  AppColors.gradientColorEnd,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
           ),
-          SizedBox(
-            width: 200.w,
-            height: 200.h,
-            child: Image.asset(AppAssets.logo, fit: BoxFit.fill),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomPngImage(image: AppAssets.splashImage),
+              32.vs,
+              Text(
+                "برنامج نقاط الولاء",
+                style: getSemiBoldTextStyle(
+                  color: AppColors.white,
+                  fontSize: 32,
+                ),
+              ),
+              8.vs,
+              Text(
+                "نظام إدارة النقاط الذكي",
+                style: getRegularTextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                ),
+              ),
+            ],
           ),
         ],
       ),

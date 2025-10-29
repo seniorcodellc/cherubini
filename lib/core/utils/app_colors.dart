@@ -9,6 +9,7 @@ class AppColors {
   static const Color titleGray = Color(0xFF333333);
   static const errorColor = Color(0xFFED2241);
   static const Color acRed = Color(0xFFEF4444);
+  static const Color shadowColor = Color(0xFF0C0C0D);
 
   static const Color brown = Color(0xFF877257);
   static const Color grey = Color(0xFFAAAAAA);
@@ -30,7 +31,7 @@ class AppColors {
   static const Color white = Color(0XFFFFFFFF);
   static const Color black = Color(0XFF000000);
   static const Color bgColor = Color(0XFFF5F7FA);
-  static const Color greyIcons = Color(0XFF8C8C8C);
+  static const Color grayHint = Color(0XFF8C8C8C);
   static const Color green = Color(0xFF17CE4E);
   static const Color inactiveButtonBg = Color(0XFFE4E5E5);
   static const Color transparent = Colors.transparent;

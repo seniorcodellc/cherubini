@@ -5,20 +5,24 @@ class Routes {
   static const String onBoardingRoute = "/onBoarding";
   static const String dashboardRoute = "/dashboard";
   static const String loginRoute = "/login";
-  static const String registerRoute = "/register";
+  static const String registerTechRoute = "/registerTech";
+  static const String registerAccept = "/registerAccept";
+  static const String registerTraderRoute = "/registerTrader";
   static const String enterOtpRoute = "/enterOtpRoute";
   static const String orderAgentRoute = "/orderAgentRoute";
   static const String individualChatRoute = "/individualChatRoute";
   static const String passportPreviewScreen = "/passportPreviewScreen";
   static const String photoPreviewScreen = "/photoPreviewScreen";
-  static const String personalCameraCaptureScreen = "/personalCameraCaptureScreen";
+  static const String personalCameraCaptureScreen =
+      "/personalCameraCaptureScreen";
   static const String enterPhoneNumberRoute = "/enterPhoneNumberRoute";
   static const String passportCameraScreen = "/passportCameraScreen";
   static const String requestSuccessScreen = "/requestSuccessScreen";
   static const String mapAreaRoute = "/mapAreaRoute";
   static const String addWalletScreen = "/addWalletScreen";
   static const String imageGalleryZoomScreen = "/imageGalleryZoomScreen";
-  static const String auctionAfterIncreaseAmountRoute = "/auctionAfterIncreaseAmountRoute";
+  static const String auctionAfterIncreaseAmountRoute =
+      "/auctionAfterIncreaseAmountRoute";
   static const String consultationsRoute = "/consultationsRoute";
   static const String reservationSteps = "/reservationSteps";
   static const String resetPasswordRoute = "/resetPasswordRoute";
@@ -57,10 +61,12 @@ class Routes {
   static const String paymentMethodScreen = "/paymentMethodScreen";
   static const String uploadDocumentsScreen = "/uploadDocumentsScreen";
   static const String accountDetailsScreen = "/accountDetailsScreen";
-  static const String showAllFeaturedPropertiesScreen = "/showAllFeaturedPropertiesScreen";
+  static const String showAllFeaturedPropertiesScreen =
+      "/showAllFeaturedPropertiesScreen";
   static const String delegationScreen = "/delegationScreen";
   static const String authorizationScreen = "/authorizationScreen";
-  static const String walletDepositRequestScreen = "/walletDepositRequestScreen";
+  static const String walletDepositRequestScreen =
+      "/walletDepositRequestScreen";
   static const String reservationDetails = "/reservationDetails";
   static const String followUps = "/followUps";
   static const String completed = "/completed";

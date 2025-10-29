@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-
 import '../../exports.dart';
 
 class CustomBackground extends StatelessWidget {
@@ -23,6 +22,7 @@ class CustomBackground extends StatelessWidget {
   final Key? scaffoldKey;
   PreferredSizeWidget? appBar;
   Widget? bottomNavRoute;
+
   CustomBackground({
     required this.child,
     this.showPadding = true,
@@ -51,9 +51,11 @@ class CustomBackground extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: statusBarColor,
-        statusBarBrightness:
-            statusBarColor.isEqualTo(AppColors.white) ? Brightness.dark : null,
-        statusBarIconBrightness: statusBarColor.isEqualTo(AppColors.white) ||
+        statusBarBrightness: statusBarColor.isEqualTo(AppColors.white)
+            ? Brightness.dark
+            : null,
+        statusBarIconBrightness:
+            statusBarColor.isEqualTo(AppColors.white) ||
                 statusBarColor.isEqualTo(AppColors.transparent)
             ? Brightness.dark
             : Brightness.light,
@@ -74,5 +76,7 @@ class CustomBackground extends StatelessWidget {
   }
 
   Widget? get buildChild => showSafeArea.isTrueGetWidgetOrAnotherWidget(
-      SafeArea(child: child), child);
+    SafeArea(child: child),
+    child,
+  );
 }
