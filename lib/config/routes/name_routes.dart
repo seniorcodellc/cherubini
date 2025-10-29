@@ -5,6 +5,7 @@ class Routes {
   static const String onBoardingRoute = "/onBoarding";
   static const String loginRoute = "/login";
   static const String registerTechRoute = "/registerTech";
+  static const String registerAccept = "/registerAccept";
   static const String registerTraderRoute = "/registerTrader";
   static const String enterOtpRoute = "/enterOtpRoute";
   static const String orderAgentRoute = "/orderAgentRoute";

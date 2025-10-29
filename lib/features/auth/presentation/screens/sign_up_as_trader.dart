@@ -5,6 +5,7 @@ import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_f
 import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
 
 import '../../../../exports.dart';
+import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
 
 class SignUpAsTrader extends StatelessWidget {
@@ -49,13 +50,7 @@ class SignUpAsTrader extends StatelessWidget {
                     style: getRegularTextStyle(color: AppColors.primaryColor),
                   ),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "example1@gmail .com",
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.email,
-                      fit: BoxFit.none,
-                    ),
-                  ),
+                  SharedEmailTextField(),
                   16.vs,
                   Text(
                     "العنوان",
