@@ -12,6 +12,8 @@ class AppAssets {
   //! SVG
 
   static String home = "${SvgImages.svgPath}home.svg";
+  static String logOut = "${SvgImages.svgPath}log_out.svg";
+  static String bill = "${SvgImages.svgPath}bill.svg";
   static String prods = "${SvgImages.svgPath}prods.svg";
   static String company = "${SvgImages.svgPath}company.svg";
   static String download = "${SvgImages.svgPath}download.svg";
@@ -22,7 +24,6 @@ class AppAssets {
   static String failure = "${SvgImages.svgPath}dialog_failure.svg";
   static String arrowBack = "${SvgImages.svgPath}arrow_back.svg";
   static String arrowLeft = "${SvgImages.svgPath}arrow_left.svg";
-  static String arrowRight = "${SvgImages.svgPath}right_arrow.svg";
   static String eyeIcon = "${SvgImages.svgPath}eye.svg";
   static String eyeOffIcon = "${SvgImages.svgPath}eye_off.svg";
   static String arrow = "${SvgImages.svgPath}arrow.svg";
@@ -49,13 +50,6 @@ class AppAssets {
   static String loyalty = "${SvgImages.svgPath}loyalty.svg";
   static String tech = "${SvgImages.svgPath}tech.svg";
   static String history = "${SvgImages.svgPath}history.svg";
-  static String activeProfile = "${SvgImages.svgPath}profile_circle.svg";
-  static String waitingProfile = "${SvgImages.svgPath}waiting_profile.svg";
-  static String accept = "${SvgImages.svgPath}accept.svg";
-  static String cancel = "${SvgImages.svgPath}cancel.svg";
-  static String cameraScan = "${SvgImages.svgPath}camera_scan.svg";
-  static String successScan = "${SvgImages.svgPath}success_scan.svg";
-  static String errorScan = "${SvgImages.svgPath}error_scan.svg";
 
   //! PNG
 
