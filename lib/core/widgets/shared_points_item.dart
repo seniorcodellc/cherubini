@@ -1,5 +1,4 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/exports.dart';
 import '../../features/merchant_dashboard/data/models/points_model.dart';
 
 class SharedPointsItem extends StatelessWidget {
@@ -18,15 +17,15 @@ class SharedPointsItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.2),
-              spreadRadius: 2,
-              blurRadius: 6,
-              offset: Offset(0, 2),
+              spreadRadius: 2.r,
+              blurRadius: 6.r,
+              offset: Offset(0, 2.h),
             ),
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.2),
-              spreadRadius: 0,
-              blurRadius: 2,
-              offset: Offset(0, 1),
+              spreadRadius: 0.r,
+              blurRadius: 2.r,
+              offset: Offset(0, 1.h),
             ),
           ],
         ),
