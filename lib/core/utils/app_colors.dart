@@ -5,8 +5,11 @@ class AppColors {
   static final AppColors _instance = AppColors._();
   factory AppColors() => _instance;
 
-  static const Color red = Colors.red;
   static const Color titleGray = Color(0xFF333333);
+  static const Color green = Color(0xFF14AE4E);
+  static const Color red = Color(0xFFD4183D);
+  static const Color mutedGreen = Color(0xFFDBFCE7);
+  static const Color mutedRed = Color(0xFFFFE2E2);
   static const errorColor = Color(0xFFED2241);
   static const Color acRed = Color(0xFFEF4444);
   static const Color shadowColor = Color(0xFF0C0C0D);
@@ -16,7 +19,7 @@ class AppColors {
   static const Color dots = Color(0xFFD1D5DC);
   static const descriptionColor = Color(0xFF606268);
   static const Color borderColor = Color(0xFFE2E8F0);
-  static const Color borderColor2 =  Color(0xFF9e9e9e);
+  static const Color borderColor2 = Color(0xFF9e9e9e);
   static const Color primaryColor = Color(0XFF0D47A1);
   static const Color secondaryColor = Color(0XFF1976D2);
   static const Color gradientColorEnd = Color(0XFF3495E9);
@@ -32,7 +35,6 @@ class AppColors {
   static const Color black = Color(0XFF000000);
   static const Color bgColor = Color(0XFFF5F7FA);
   static const Color grayHint = Color(0XFF8C8C8C);
-  static const Color green = Color(0xFF17CE4E);
   static const Color inactiveButtonBg = Color(0XFFE4E5E5);
   static const Color transparent = Colors.transparent;
   static const Color darkBlue = Color(0xff151528);

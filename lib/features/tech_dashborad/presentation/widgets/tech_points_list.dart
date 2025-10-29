@@ -1,6 +1,6 @@
 import '../../../../exports.dart';
 import '../../../../core/widgets/shared_points_item.dart';
-import '../../data/repositories/tech_dashboard_static.dart';
+import '../../data/statics/tech_dashboard_static.dart';
 
 class TechPointsList extends StatelessWidget {
   const TechPointsList({super.key});

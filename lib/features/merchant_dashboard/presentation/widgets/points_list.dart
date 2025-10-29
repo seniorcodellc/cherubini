@@ -1,7 +1,7 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/core/widgets/shared_points_item.dart';
 import 'package:flutter/material.dart';
-import '../../../tech_dashborad/data/repositories/tech_dashboard_static.dart';
+import '../../../tech_dashborad/data/statics/tech_dashboard_static.dart';
 import '../../data/statics/statics.dart';
 
 class PointsList extends StatelessWidget {
