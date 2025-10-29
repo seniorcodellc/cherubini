@@ -5,13 +5,15 @@ abstract class PngImages {
 abstract class SvgImages {
   static String svgPath = "assets/icons/";
 
-///Icons svg
+  ///Icons svg
 }
 
 class AppAssets {
   //! SVG
 
   static String home = "${SvgImages.svgPath}home.svg";
+  static String company = "${SvgImages.svgPath}company.svg";
+  static String settings = "${SvgImages.svgPath}settings.svg";
   static String profile = "${SvgImages.svgPath}profile.svg";
   static String visits = "${SvgImages.svgPath}visits.svg";
   static String success = "${SvgImages.svgPath}dialog_success.svg";
@@ -43,7 +45,6 @@ class AppAssets {
   static String loyalty = "${SvgImages.svgPath}loyalty.svg";
   static String tech = "${SvgImages.svgPath}tech.svg";
   static String history = "${SvgImages.svgPath}history.svg";
-
 
   //! PNG
 

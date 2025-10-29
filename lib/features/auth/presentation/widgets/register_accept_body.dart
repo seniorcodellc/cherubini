@@ -9,7 +9,7 @@ class RegisterAcceptBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        15.vs,
+        // 15.vs,
         CustomSVGImage(asset: AppAssets.clockCircle),
         32.vs,
         Text(

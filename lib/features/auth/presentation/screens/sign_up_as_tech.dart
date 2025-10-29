@@ -1,4 +1,7 @@
 import 'package:cherubini/features/Auth/presentation/widgets/choose_trader_drop_down.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
+import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
 
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
@@ -25,58 +28,30 @@ class SignUpAsTech extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   32.vs,
-                  Text(
-                    "الاسم الكامل",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "الاسم الكامل"),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "أدخل ااسمك بالكامل",
-                    style: getRegularTextStyle(color: AppColors.grayHint),
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.profile,
-                      fit: BoxFit.none,
-                    ),
-                  ),
+                  SharedEnterNameTextField(),
                   16.vs,
-                  Text(
-                    "رقم الجوال",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
                   8.vs,
                   SharedPhoneTextField(),
                   16.vs,
-                  Text(
-                    "البريد الإلكترروني",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني"),
                   8.vs,
                   SharedEmailTextField(),
                   16.vs,
-                  Text(
-                    "اختر التاجر",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "اختر التاجر"),
                   8.vs,
                   ChooseTraderDropDown(),
                   16.vs,
-                  Text(
-                    "سؤال التحقق من التاجر",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "سؤال التحقق من التاجر"),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "أجب على سؤال  التحقق",
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.questionMark,
-                      fit: BoxFit.none,
-                    ),
+                  CustomLoginSignupTextfield(
+                    hint: "أجب على سؤال  التحقق",
+                    asset: AppAssets.questionMark,
                   ),
                   16.vs,
-                  Text(
-                    "كلمة المرور",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
                   8.vs,
                   SharedPasswordTextField(),
                   40.vs,

@@ -1,4 +1,4 @@
-import '../../../../core/widgets/custom_text_form_field.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import '../../../../exports.dart';
 
 class SharedPhoneTextField extends StatelessWidget {
@@ -6,9 +6,9 @@ class SharedPhoneTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTextFormField(
-      hintText: "568912345",
-      prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
+    return CustomLoginSignupTextfield(
+      hint: "568912345",
+      asset: AppAssets.phone,
     );
   }
 }

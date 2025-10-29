@@ -21,7 +21,7 @@ class RegisterAcceptWaiting extends StatelessWidget {
           " إعلامك عند الموافقة.",
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
-        21.vs,
+        20.vs,
         RegisterAcceptMessage(),
       ],
     );
