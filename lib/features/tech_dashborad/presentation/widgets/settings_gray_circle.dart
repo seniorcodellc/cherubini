@@ -9,7 +9,7 @@ class SettingsGrayCircle extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: GestureDetector(
         onTap: () {
-          Routes.operationsLog.moveTo();
+          Routes.settings.moveTo();
         },
         child: Container(
           width: 50.w,

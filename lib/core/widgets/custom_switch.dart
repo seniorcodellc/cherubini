@@ -8,16 +8,19 @@ class CustomSwitch extends StatefulWidget {
 }
 
 class _CustomSwitchState extends State<CustomSwitch> {
-  bool isOn=false;
+  bool isOn = false;
   @override
   Widget build(BuildContext context) {
     return Switch(
       activeTrackColor: AppColors.primaryColor,
-      value: isOn, onChanged: (value) {
-      isOn=value;
-      setState(() {
-
-      });
-    },);
+      inactiveThumbColor: AppColors.white,
+      inactiveTrackColor: AppColors.inactiveTrackSwitch,
+      trackOutlineColor: MaterialStateProperty.all(AppColors.transparent),
+      value: isOn,
+      onChanged: (value) {
+        isOn = value;
+        setState(() {});
+      },
+    );
   }
 }
