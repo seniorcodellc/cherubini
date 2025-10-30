@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
       child: Padding(
-        padding: getPadding(horizontal: 16.w,top: 79.h),
+        padding: getPadding(horizontal: 16.w, top: 79.h),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -47,7 +47,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   32.vs,
-                  CustomButton(text: "تسجيل الدخول", onPressed: () {}),
+                  CustomButton(
+                    text: "تسجيل الدخول",
+                    onPressed: () {
+                      Routes.techDashboard.moveTo();
+                    },
+                  ),
                   42.vs,
                   LogInHaveNoAccountRow(),
                   32.vs,

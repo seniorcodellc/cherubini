@@ -42,17 +42,25 @@ class LastScanItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      model.title, style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
+                      model.title,
+                      style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
+                      // textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      model.date, style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
+                      model.date,
+                      style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
+                      //textDirection: TextDirection.rtl,
                     ),
                   ],
                 ),
                 const Spacer(),
-                Text('${model.points} نقطه', style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),),
+                Text(
+                  '${model.points} نقطه',
+                  //textDirection: TextDirection.rtl,
+                  style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
+                ),
               ],
             ),
             Padding(

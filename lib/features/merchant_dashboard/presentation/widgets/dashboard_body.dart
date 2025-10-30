@@ -17,7 +17,7 @@ class DashboardBody extends StatelessWidget {
       children: [
         PointsList(),
         Padding(
-          padding: getPadding(horizontal: 16.0.w,vertical: 8.0.h),
+          padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
           child: Text(
             'إجراءات سريعة',
             style: getBoldTextStyle(
@@ -28,12 +28,29 @@ class DashboardBody extends StatelessWidget {
         ),
         QuickActionWidget(),
         Padding(
-          padding: getPadding(start: 16.0.w,end: 16.0.w,top: 16.0.h,bottom: 8.0.h),
+          padding: getPadding(
+            start: 16.0.w,
+            end: 16.0.w,
+            top: 16.0.h,
+            bottom: 8.0.h,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('أخر عمليات المسح ',style: getBoldTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-              Text('عرض الكل ',style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),),
+              Text(
+                'أخر عمليات المسح ',
+                style: getBoldTextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              Text(
+                'عرض الكل ',
+                style: getRegularTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
+              ),
             ],
           ),
         ),
