@@ -5,12 +5,12 @@ class QuickActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 155.h, // Fixed height to contain the items
+      height: 155.h,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           padding: getPadding(horizontal: 8.w), // Outer padding
           itemCount: DashboardStatics.actionsList.length,
-          separatorBuilder: (context, index) => SizedBox(width:10.w),
+          separatorBuilder: (context, index) => 10.hs,
           itemBuilder: (context, index) {
             final model = DashboardStatics.actionsList[index];
         return Container(

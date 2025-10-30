@@ -37,7 +37,6 @@ class DashboardBody extends StatelessWidget {
             ],
           ),
         ),
-        LastScanList(),
       ],
     );
   }

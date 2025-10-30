@@ -2,6 +2,7 @@ import 'package:cherubini/exports.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../widgets/dashboard_body.dart';
 import '../widgets/dashboard_header.dart';
+import '../widgets/last_scan_list.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
   @override
@@ -23,6 +24,8 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
           ),
+          SliverFillRemaining(child: LastScanList(),
+              )
         ],
       ),
     );

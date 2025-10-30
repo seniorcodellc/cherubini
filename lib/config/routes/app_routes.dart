@@ -1,3 +1,4 @@
+import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
@@ -30,6 +31,11 @@ class RouteGenerator {
         case Routes.dashboardRoute:
         return buildPageRoute<T>(
           child: DashboardScreen(),
+          routeSettings: routeSettings,
+        );
+        case Routes.merchantManagementRoute:
+        return buildPageRoute<T>(
+          child: MerchantManagementScreen(),
           routeSettings: routeSettings,
         );
       case Routes.loginRoute:

@@ -7,11 +7,14 @@ class PointsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(DashboardStatics.pointsList.length, (index) {
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(), 
+      itemCount: DashboardStatics.pointsList.length,
+      itemBuilder: (context, index) {
         final model = DashboardStatics.pointsList[index];
         return PointsItem(model: model);
-      }),
+      },
     );
   }
 }
