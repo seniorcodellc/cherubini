@@ -1,4 +1,4 @@
-import 'package:cherubini/features/tech_dashborad/data/repositories/tech_dashboard_static.dart';
+import 'package:cherubini/features/tech_dashborad/data/statics/tech_dashboard_static.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/tech_last_scan_item.dart';
 
 import '../../../../exports.dart';

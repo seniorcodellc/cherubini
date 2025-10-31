@@ -5,13 +5,17 @@ abstract class PngImages {
 abstract class SvgImages {
   static String svgPath = "assets/icons/";
 
-///Icons svg
+  ///Icons svg
 }
 
 class AppAssets {
   //! SVG
 
   static String home = "${SvgImages.svgPath}home.svg";
+  static String prods = "${SvgImages.svgPath}prods.svg";
+  static String company = "${SvgImages.svgPath}company.svg";
+  static String download = "${SvgImages.svgPath}download.svg";
+  static String settings = "${SvgImages.svgPath}settings.svg";
   static String profile = "${SvgImages.svgPath}profile.svg";
   static String visits = "${SvgImages.svgPath}visits.svg";
   static String success = "${SvgImages.svgPath}dialog_success.svg";
@@ -23,6 +27,7 @@ class AppAssets {
   static String eyeOffIcon = "${SvgImages.svgPath}eye_off.svg";
   static String arrow = "${SvgImages.svgPath}arrow.svg";
   static String calendar = "${SvgImages.svgPath}calendar.svg";
+  static String grayCalendar = "${SvgImages.svgPath}gray_calender.svg";
   static String clock = "${SvgImages.svgPath}clock.svg";
   static String userName = "${SvgImages.svgPath}userName.svg";
   static String password = "${SvgImages.svgPath}password.svg";
@@ -51,7 +56,6 @@ class AppAssets {
   static String cameraScan = "${SvgImages.svgPath}camera_scan.svg";
   static String successScan = "${SvgImages.svgPath}success_scan.svg";
   static String errorScan = "${SvgImages.svgPath}error_scan.svg";
-
 
   //! PNG
 

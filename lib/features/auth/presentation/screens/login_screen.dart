@@ -3,6 +3,7 @@ import 'package:cherubini/features/Auth/presentation/widgets/log_in_have_no_acco
 import 'package:cherubini/features/Auth/presentation/widgets/log_in_welcome_body.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_password_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 
 import '../../../../exports.dart';
 
@@ -24,18 +25,11 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   LogInWelcomeBody(),
                   32.vs,
-                  Text(
-                    "رقم الجوال",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
                   8.vs,
-
                   SharedPhoneTextField(),
                   16.vs,
-                  Text(
-                    "كلمة المرور",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
                   8.vs,
                   SharedPasswordTextField(),
                   8.vs,

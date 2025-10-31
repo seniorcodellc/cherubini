@@ -41,7 +41,7 @@ class BarCodeDetails extends StatelessWidget {
               child: Text(
                 'هذا المنتج غير مسجل في النظام. تم إرسال \n تنبيه للمسؤول مع بيانات الفني والتاجر.',
               textAlign: TextAlign.right,
-              style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.orange),),
+              style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.orange2),),
             ),
           ),
         ],

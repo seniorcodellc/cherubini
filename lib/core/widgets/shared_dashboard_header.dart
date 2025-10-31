@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_gray_circle.dart';
 
 class SharedDashboardHeader extends StatelessWidget {
   const SharedDashboardHeader({super.key});
@@ -21,18 +22,27 @@ class SharedDashboardHeader extends StatelessWidget {
       ),
       child: Padding(
         padding: getPadding(horizontal: 16.0.w, top: 40.0.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'مرحباً , محمد',
-              style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'مرحباً , محمد',
+                  style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
+                ),
+                10.vs,
+                Text(
+                  'فني معتمد',
+                  style: getRegularTextStyle(
+                    fontSize: 16.sp,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            10.vs,
-            Text(
-              'فني معتمد',
-              style: getRegularTextStyle(fontSize: 16.sp, color: Colors.white),
-            ),
+            SettingsGrayCircle(),
           ],
         ),
       ),

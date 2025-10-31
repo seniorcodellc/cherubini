@@ -23,9 +23,9 @@ class WaitingButtons extends StatelessWidget {
           CustomButton(
             text: 'رفض',
             onPressed: () {},
-            backgroundColor: AppColors.errorColor,
+            backgroundColor: AppColors.errorColor2,
             svgIconPath: AppAssets.cancel,
-            borderColor: AppColors.errorColor,
+            borderColor: AppColors.errorColor2,
             height: 42.h,
             width: 146.w,
           ),

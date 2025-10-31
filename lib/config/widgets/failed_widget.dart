@@ -39,7 +39,7 @@ class FailedWidget extends StatelessWidget {
                     child: Center(
                       child: Icon(
                         Icons.close,
-                        color: AppColors.errorColor,
+                        color: AppColors.errorColor2,
                         size: width != null ? width! * 0.20 : 100,
                       ),
                     ),

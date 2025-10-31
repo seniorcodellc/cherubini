@@ -1,8 +1,11 @@
 import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/core/widgets/custom_text_form_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
+import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
+import 'package:cherubini/features/auth/presentation/widgets/gonernment_place_row.dart';
+import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
 
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
@@ -24,58 +27,39 @@ class SignUpAsTrader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "الاسم الكامل",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "الاسم الكامل"),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "أدخل ااسمك بالكامل",
-                    style: getRegularTextStyle(color: AppColors.grayHint),
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.profile,
-                      fit: BoxFit.none,
-                    ),
-                  ),
+                  SharedEnterNameTextField(),
                   16.vs,
-                  Text(
-                    "رقم الجوال",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
                   8.vs,
                   SharedPhoneTextField(),
                   16.vs,
-                  Text(
-                    "البريد الإلكترروني",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
+                  CustomLoginSignupTextfieldText(text: "اسم الشركة"),
+                  8.vs,
+                  CustomLoginSignupTextfield(
+                    hint: "أدخل اسم الشركة",
+                    asset: AppAssets.company,
                   ),
+                  16.vs,
+                  GovernmentPlaceRow(),
+                  16.vs,
+                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني"),
                   8.vs,
                   SharedEmailTextField(),
                   16.vs,
-                  Text(
-                    "العنوان",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "العنوان"),
                   8.vs,
-                  CustomTextFormField(
-                    hintText: "المدينة , الحي , الشارع",
-                    prefixIcon: CustomSVGImage(
-                      asset: AppAssets.location,
-                      fit: BoxFit.none,
-                    ),
+                  CustomLoginSignupTextfield(
+                    hint: "المدينة , الحي , الشارع",
+                    asset: AppAssets.location,
                   ),
                   16.vs,
-                  Text(
-                    "كلمة المرور",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
                   8.vs,
                   SharedPasswordTextField(),
                   16.vs,
-                  Text(
-                    "تأكيد كلمة المرور",
-                    style: getRegularTextStyle(color: AppColors.primaryColor),
-                  ),
+                  CustomLoginSignupTextfieldText(text: "تأكيد كلمة المرور"),
                   8.vs,
                   SharedPasswordTextField(),
                   40.vs,

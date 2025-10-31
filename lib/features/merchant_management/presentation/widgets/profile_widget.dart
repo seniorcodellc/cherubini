@@ -22,15 +22,15 @@ final bool isActive;
                 decoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(20.0.r),
-                    border: Border.all(color:AppColors.green,width: 1.5)
+                    border: Border.all(color:AppColors.green2,width: 1.5)
                 ),
                 child: Padding(
                   padding: getPadding(vertical: 2.0.h,horizontal: 16.0.w),
                   child: Row(
                     children: [
-                      CustomSVGImage(asset: AppAssets.check,color: AppColors.green,height: 18.0.h,width: 18.0.w,),
+                      CustomSVGImage(asset: AppAssets.check,color: AppColors.green2,height: 18.0.h,width: 18.0.w,),
                       8.hs,
-                      Text(model.status,style: getRegularTextStyle(fontSize: 15.sp,color: AppColors.green),)
+                      Text(model.status,style: getRegularTextStyle(fontSize: 15.sp,color: AppColors.green2),)
                     ],
                   ),
                 ),
@@ -38,15 +38,15 @@ final bool isActive;
                 decoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(20.0.r),
-                    border: Border.all(color:AppColors.errorColor,width: 1.5)
+                    border: Border.all(color:AppColors.errorColor2,width: 1.5)
                 ),
                 child: Padding(
                   padding: getPadding(vertical: 2.0.h,horizontal: 16.0.w),
                   child: Row(
                     children: [
-                      CustomSVGImage(asset: AppAssets.check,color: AppColors.errorColor,height: 18.0.h,width: 18.0.w,),
+                      CustomSVGImage(asset: AppAssets.check,color: AppColors.errorColor2,height: 18.0.h,width: 18.0.w,),
                       8.hs,
-                      Text(model.status,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.errorColor),)
+                      Text(model.status,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.errorColor2),)
                     ],
                   ),
                 ),

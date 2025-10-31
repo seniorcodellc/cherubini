@@ -4,6 +4,8 @@ class Routes {
   static const String selectLanguageRoute = "/selectLanguageRoute";
   static const String onBoardingRoute = "/onBoarding";
   static const String dashboardRoute = "/dashboard";
+  static const String settings = "/settings";
+  static const String operationsLog = "/operationsLog";
   static const String loginRoute = "/login";
   static const String registerTechRoute = "/registerTech";
   static const String registerAccept = "/registerAccept";

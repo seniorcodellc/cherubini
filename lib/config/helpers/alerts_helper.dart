@@ -7,7 +7,7 @@ import '../widgets/custom_dialog.dart';
 showSnackBar({required String message, required AlertTypes alertType, Duration? duration}) {
   Color backgroundColor = AppColors.white;
   if (alertType == AlertTypes.success) {
-    backgroundColor = AppColors.green;
+    backgroundColor = AppColors.green2;
   } else if (alertType == AlertTypes.error) {
     backgroundColor = AppColors.red;
   } else if (alertType == AlertTypes.loading) {
