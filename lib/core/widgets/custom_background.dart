@@ -68,7 +68,8 @@ class CustomBackground extends StatelessWidget {
         floatingActionButton: floatingActionButton ?? const SizedBox(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         resizeToAvoidBottomInset: true,
-        appBar: appBar,
+        appBar: showAppbar ? appBar : null,
+
         extendBody: extendBody,
         body: buildChild,
       ),
