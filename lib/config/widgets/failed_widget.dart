@@ -39,7 +39,7 @@ class FailedWidget extends StatelessWidget {
                     child: Center(
                       child: Icon(
                         Icons.close,
-                        color: AppColors.errorColor2,
+                        color: AppColors.errorColor,
                         size: width != null ? width! * 0.20 : 100,
                       ),
                     ),
@@ -61,8 +61,9 @@ class FailedWidget extends StatelessWidget {
                 AppStrings.reservationFailedDesc.trans,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: width.isNotNull ? 16 - width! * .01 : 16,
-                    color: Colors.grey),
+                  fontSize: width.isNotNull ? 16 - width! * .01 : 16,
+                  color: Colors.grey,
+                ),
               ),
             ],
           ),

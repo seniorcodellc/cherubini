@@ -6,7 +6,7 @@ class WaitingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(top:12.0.h,bottom: 12.0.h),
+      padding: getPadding(top: 12.0.h, bottom: 12.0.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -23,9 +23,9 @@ class WaitingButtons extends StatelessWidget {
           CustomButton(
             text: 'رفض',
             onPressed: () {},
-            backgroundColor: AppColors.errorColor2,
+            backgroundColor: AppColors.errorColor,
             svgIconPath: AppAssets.cancel,
-            borderColor: AppColors.errorColor2,
+            borderColor: AppColors.errorColor,
             height: 42.h,
             width: 146.w,
           ),

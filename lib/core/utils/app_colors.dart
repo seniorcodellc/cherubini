@@ -6,6 +6,7 @@ class AppColors {
   factory AppColors() => _instance;
 
   static const Color titleGray = Color(0xFF333333);
+  static const Color whiteLight = Color(0XFFFEFEFF);
   static const Color inactiveTrackSwitch = Color(0xFFA7A9B7);
   static const Color green = Color(0xFF14AE4E);
   static const Color red = Color(0xFFD4183D);
@@ -16,6 +17,10 @@ class AppColors {
   static const errorColor = Color(0xFFED2241);
   static const Color acRed = Color(0xFFEF4444);
   static const Color shadowColor = Color(0xFF0C0C0D);
+  static const Color borderColor3 = Color(0xFF8DAED8);
+  static const Color borderColor4 = Color(0xFFFFD6A7);
+  static const Color orange2 = Color(0xFFD95A00);
+  static const Color lightOrange = Color(0xFFFFF7ED);
 
   static const Color brown = Color(0xFF877257);
   static const Color grey = Color(0xFFAAAAAA);

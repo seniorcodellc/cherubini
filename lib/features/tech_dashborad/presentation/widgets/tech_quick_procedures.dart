@@ -12,7 +12,9 @@ class TechQuickProcedures extends StatelessWidget {
         SharedQuickProceduresItem(
           asset: AppAssets.scan,
           text: "مسح البار كود",
-          onTap: () {},
+          onTap: () {
+            Routes.scanRoute.moveTo();
+          },
         ),
         SharedQuickProceduresItem(
           asset: AppAssets.loyaltyFilled,

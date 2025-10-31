@@ -70,9 +70,9 @@ class EntitlementsListItem extends StatelessWidget {
                     model.isDone == true
                         ? SharedDoneOrNotContainer(
                             text: "تم الصرف",
-                            textColor: AppColors.green2,
+                            textColor: AppColors.green,
                             bgColor: AppColors.mutedGreen,
-                            borderColor: AppColors.green2,
+                            borderColor: AppColors.green,
                           )
                         : SharedDoneOrNotContainer(
                             text: "لم يتم الصرف",
