@@ -3,7 +3,7 @@ import 'package:dotted_border/dotted_border.dart';
 
 class SharedScanContainer extends StatelessWidget {
   const SharedScanContainer({super.key, required this.asset});
-final String asset ;
+  final String asset;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,8 +25,10 @@ final String asset ;
               top: 50.0.h,
               bottom: 40.0.h,
             ),
-            child: Directionality(textDirection: TextDirection.ltr,
-            child: CustomSVGImage(asset:asset)),
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: CustomSVGImage(asset: asset),
+            ),
           ),
         ),
       ),
