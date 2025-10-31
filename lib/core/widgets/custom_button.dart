@@ -13,6 +13,7 @@ class CustomButton extends StatelessWidget {
     this.svgIconPath,
     this.height,
     this.style,
+    this.width,
   });
   final String text;
   final double? borderRadius;
@@ -22,11 +23,13 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final Color? backgroundColor;
   final double? height;
+  final double? width;
   final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      minWidth: width,
       height: height ?? 56.h,
       color: backgroundColor ?? AppColors.primaryColor,
       elevation: 0,
@@ -39,7 +42,16 @@ class CustomButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          svgIconPath != null ? 20.hs : 0.hs,
+          svgIconPath != null ? 10.hs : 0.hs,
+          svgIconPath != null
+              ? SvgPicture.asset(
+            svgIconPath!,
+            width: 24.w,
+            height: 24.w,
+            color: textColor ?? AppColors.white,
+          )
+              : const SizedBox(width: 0),
+          svgIconPath != null ? SizedBox(width: 8.w) : const SizedBox(width: 0),
           Center(
             child: Text(
               text,
@@ -51,17 +63,6 @@ class CustomButton extends StatelessWidget {
                   ),
             ),
           ),
-          svgIconPath != null ? SizedBox(width: 8.w) : const SizedBox(width: 0),
-          svgIconPath != null
-              ? SvgPicture.asset(
-            svgIconPath!,
-            width: 24.w,
-            height: 24.w,
-            color: textColor ?? AppColors.white,
-          )
-              : const SizedBox(width: 0),
-          svgIconPath != null ? 20.hs : 0.hs,
-
         ],
       ),
     );

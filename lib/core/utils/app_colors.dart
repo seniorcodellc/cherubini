@@ -13,10 +13,14 @@ class AppColors {
 
   static const Color brown = Color(0xFF877257);
   static const Color grey = Color(0xFFAAAAAA);
+  static const Color orange = Color(0xFFD95A00);
+  static const Color lightOrange = Color(0xFFFFF7ED);
   static const Color dots = Color(0xFFD1D5DC);
   static const descriptionColor = Color(0xFF606268);
   static const Color borderColor = Color(0xFFE2E8F0);
   static const Color borderColor2 =  Color(0xFF9e9e9e);
+  static const Color borderColor3 =  Color(0xFF8DAED8);
+  static const Color borderColor4 =  Color(0xFFFFD6A7);
   static const Color primaryColor = Color(0XFF0D47A1);
   static const Color secondaryColor = Color(0XFF1976D2);
   static const Color gradientColorEnd = Color(0XFF3495E9);
@@ -29,6 +33,7 @@ class AppColors {
   static const Color circleBgPurple = Color(0XFF5547FA);
   static const Color circleBgAqua = Color(0XFF00A4C8);
   static const Color white = Color(0XFFFFFFFF);
+  static const Color whiteLight = Color(0XFFFEFEFF);
   static const Color black = Color(0XFF000000);
   static const Color bgColor = Color(0XFFF5F7FA);
   static const Color grayHint = Color(0XFF8C8C8C);

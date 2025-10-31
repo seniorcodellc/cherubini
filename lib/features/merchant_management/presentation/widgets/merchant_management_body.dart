@@ -18,7 +18,6 @@ class _MerchantManagementBodyState extends State<MerchantManagementBody> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        // Toggle as first item
         SliverToBoxAdapter(
           child: ManagementToggle(
             onTabSelected: (value) {
@@ -29,11 +28,7 @@ class _MerchantManagementBodyState extends State<MerchantManagementBody> {
             selectedTab: selectedTab,
           ),
         ),
-
-        // Add some spacing
         SliverToBoxAdapter(child: 16.hs),
-
-        // AnimatedSwitcher for list content
         SliverToBoxAdapter(
           child: AnimatedSwitcher(
             duration: const Duration(milliseconds: 250),

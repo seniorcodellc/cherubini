@@ -48,6 +48,10 @@ class AppAssets {
   static String waitingProfile = "${SvgImages.svgPath}waiting_profile.svg";
   static String accept = "${SvgImages.svgPath}accept.svg";
   static String cancel = "${SvgImages.svgPath}cancel.svg";
+  static String cameraScan = "${SvgImages.svgPath}camera_scan.svg";
+  static String successScan = "${SvgImages.svgPath}success_scan.svg";
+  static String errorScan = "${SvgImages.svgPath}error_scan.svg";
+
 
   //! PNG
 

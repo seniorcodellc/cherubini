@@ -4,8 +4,8 @@ import '../widgets/dashboard_body.dart';
 import '../widgets/last_scan_list.dart';
 import '../../../../core/widgets/shared_dashboard_header.dart';
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+class MerchantDashboardScreen extends StatelessWidget {
+  const MerchantDashboardScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return CustomBackground(

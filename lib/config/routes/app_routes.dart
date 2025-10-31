@@ -4,6 +4,9 @@ import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_trader.dart';
 import 'package:cherubini/features/auth/presentation/screens/register_accept_screen.dart';
+import 'package:cherubini/features/scan/presentation/screens/error_scan_screen.dart';
+import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
+import 'package:cherubini/features/scan/presentation/screens/success_scan_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
 
@@ -32,12 +35,27 @@ class RouteGenerator {
         );
       case Routes.dashboardRoute:
         return buildPageRoute<T>(
-          child: DashboardScreen(),
+          child: MerchantDashboardScreen(),
           routeSettings: routeSettings,
         );
         case Routes.merchantManagementRoute:
         return buildPageRoute<T>(
           child: MerchantManagementScreen(),
+          routeSettings: routeSettings,
+        );
+        case Routes.scanRoute:
+        return buildPageRoute<T>(
+          child: ScanScreen(),
+          routeSettings: routeSettings,
+        );
+        case Routes.successScanRoute:
+        return buildPageRoute<T>(
+          child: SuccessScanScreen(),
+          routeSettings: routeSettings,
+        );
+        case Routes.errorScanRoute:
+        return buildPageRoute<T>(
+          child: ErrorScanScreen(),
           routeSettings: routeSettings,
         );
       case Routes.loginRoute:

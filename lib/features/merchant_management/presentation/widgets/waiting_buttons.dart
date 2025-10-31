@@ -17,6 +17,7 @@ class WaitingButtons extends StatelessWidget {
             svgIconPath: AppAssets.accept,
             borderColor: AppColors.primaryColor,
             height: 42.h,
+            width: 146.w,
           ),
           18.hs,
           CustomButton(
@@ -26,6 +27,7 @@ class WaitingButtons extends StatelessWidget {
             svgIconPath: AppAssets.cancel,
             borderColor: AppColors.errorColor,
             height: 42.h,
+            width: 146.w,
           ),
         ],
       ),
