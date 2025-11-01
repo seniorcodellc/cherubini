@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                   CustomButton(
                     text: "تسجيل الدخول",
                     onPressed: () {
-                      Routes.techDashboard.moveTo();
+                      Routes.bottomNavRoute.moveTo();
                     },
                   ),
                   42.vs,
