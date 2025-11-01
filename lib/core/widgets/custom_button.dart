@@ -42,15 +42,13 @@ class CustomButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          svgIconPath != null ? 10.hs : 0.hs,
-          svgIconPath != null
-              ? SvgPicture.asset(
+          svgIconPath != null ? 5.hs : 0.hs,
+          svgIconPath != null ? SvgPicture.asset(
             svgIconPath!,
-            width: 24.w,
-            height: 24.w,
+            width: 20.w,
+            height: 20.w,
             color: textColor ?? AppColors.white,
-          )
-              : const SizedBox(width: 0),
+          ) : const SizedBox(width: 0),
           svgIconPath != null ? SizedBox(width: 8.w) : const SizedBox(width: 0),
           Center(
             child: Text(

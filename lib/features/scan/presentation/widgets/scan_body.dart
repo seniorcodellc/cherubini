@@ -13,7 +13,10 @@ class ScanBody extends StatelessWidget {
         150.vs,
        SharedScanContainer(asset: AppAssets.cameraScan,),
         150.vs,
-        CustomScanButton(text: 'ابدا المسح', icon: AppAssets.scan)
+        Padding(
+          padding: getPadding(horizontal: 16.0.w),
+          child: CustomScanButton(text: 'ابدا المسح', icon: AppAssets.scan),
+        )
       ],
     );
   }

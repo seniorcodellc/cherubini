@@ -30,6 +30,7 @@ class CustomTextFormField extends StatefulWidget {
     this.inputFormatters,
     this.backgroundColor,
     this.prefixIconConstraints,
+    this.shadow,
   });
   final String? hintText;
   final TextEditingController? controller;
@@ -60,6 +61,7 @@ class CustomTextFormField extends StatefulWidget {
   TextDirection? textDirection;
   BoxConstraints? prefixIconConstraints;
   final Color? backgroundColor;
+  final double? shadow ;
   List<TextInputFormatter>? inputFormatters;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -84,7 +86,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         borderRadius: BorderRadius.circular(widget.radiusOfContainer ?? 15.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.shadowColor.withValues(alpha: 0.1),
+            color: AppColors.shadowColor.withValues(alpha:widget.shadow ?? 0.1),
             blurRadius: 4.r,
           ),
         ],
