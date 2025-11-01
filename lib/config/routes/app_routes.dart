@@ -1,3 +1,4 @@
+import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
@@ -42,22 +43,22 @@ class RouteGenerator {
           child: MerchantDashboardScreen(),
           routeSettings: routeSettings,
         );
-        case Routes.merchantManagementRoute:
+      case Routes.merchantManagementRoute:
         return buildPageRoute<T>(
           child: MerchantManagementScreen(),
           routeSettings: routeSettings,
         );
-        case Routes.scanRoute:
+      case Routes.scanRoute:
         return buildPageRoute<T>(
           child: ScanScreen(),
           routeSettings: routeSettings,
         );
-        case Routes.successScanRoute:
+      case Routes.successScanRoute:
         return buildPageRoute<T>(
           child: SuccessScanScreen(),
           routeSettings: routeSettings,
         );
-        case Routes.errorScanRoute:
+      case Routes.errorScanRoute:
         return buildPageRoute<T>(
           child: ErrorScanScreen(),
           routeSettings: routeSettings,
@@ -88,6 +89,10 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechSettingsScreen());
       case Routes.operationsLog:
         return buildPageRoute<T>(child: TechOperationsLogScreen());
+      case Routes.bottomNavRoute:
+        return buildPageRoute<T>(
+          child: CustomBottomNavBar(key: CustomBottomNavBar.navBarKey),
+        );
 
       /*
         case Routes.followUps:

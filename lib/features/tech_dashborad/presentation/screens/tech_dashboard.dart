@@ -1,6 +1,4 @@
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/tech_dashboard_body.dart';
-
-import '../../../../core/widgets/custom_background.dart';
 import '../../../../exports.dart';
 import '../../../../core/widgets/shared_dashboard_header.dart';
 
@@ -9,24 +7,21 @@ class TechDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBackground(
-      statusBarColor: AppColors.gradientColorStart,
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Stack(
-              alignment: AlignmentGeometry.topCenter,
-              children: [
-                const SharedDashboardHeader(),
-                Padding(
-                  padding: getPadding(top: 145.h, bottom: 30.h),
-                  child: const TechDashboardBody(),
-                ),
-              ],
-            ),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Stack(
+            alignment: AlignmentGeometry.topCenter,
+            children: [
+              const SharedDashboardHeader(),
+              Padding(
+                padding: getPadding(top: 145.h, bottom: 30.h),
+                child: const TechDashboardBody(),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

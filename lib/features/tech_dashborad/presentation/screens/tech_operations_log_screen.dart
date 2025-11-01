@@ -10,20 +10,17 @@ class TechOperationsLogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBackground(
-      appBar: CustomAppbar(title: "سجل العمليات"),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: getPadding(vertical: 30.h),
-              child: Column(
-                children: [OperationsLogHeader(), 24.vs, OperationsLogsList()],
-              ),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: getPadding(vertical: 30.h),
+            child: Column(
+              children: [OperationsLogHeader(), 24.vs, OperationsLogsList()],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

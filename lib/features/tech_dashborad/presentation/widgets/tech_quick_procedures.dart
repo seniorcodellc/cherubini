@@ -1,3 +1,4 @@
+import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/shared_quick_procedures_item.dart';
 
 import '../../../../exports.dart';
@@ -20,7 +21,8 @@ class TechQuickProcedures extends StatelessWidget {
           asset: AppAssets.loyaltyFilled,
           text: "النقاط",
           onTap: () {
-            Routes.techPointsSummary.moveTo();
+            CustomBottomNavBar.navBarKey.currentState?.selectedIndex == 2;
+            // Routes.techPointsSummary.moveTo();
           },
         ),
       ],
