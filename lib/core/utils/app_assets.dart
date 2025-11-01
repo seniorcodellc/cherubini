@@ -40,6 +40,7 @@ class AppAssets {
   static String userName = "${SvgImages.svgPath}userName.svg";
   static String password = "${SvgImages.svgPath}password.svg";
   static String add = "${SvgImages.svgPath}add.svg";
+  static String addProduct = "${SvgImages.svgPath}add_product.svg";
   static String right = "${SvgImages.svgPath}right.svg";
   static String phone = "${SvgImages.svgPath}phone.svg";
   static String lock = "${SvgImages.svgPath}lock.svg";
@@ -57,6 +58,9 @@ class AppAssets {
   static String loyalty = "${SvgImages.svgPath}loyalty.svg";
   static String tech = "${SvgImages.svgPath}tech.svg";
   static String history = "${SvgImages.svgPath}history.svg";
+  static String warranty = "${SvgImages.svgPath}warranty.svg";
+  static String info = "${SvgImages.svgPath}info.svg";
+  static String print = "${SvgImages.svgPath}print.svg";
 
   //! PNG
 

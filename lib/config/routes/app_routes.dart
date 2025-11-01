@@ -10,6 +10,7 @@ import 'package:cherubini/features/scan/presentation/screens/success_scan_screen
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
+import 'package:cherubini/features/warranty/presentation/screens/warranty_screen.dart';
 
 import 'package:nested/nested.dart';
 
@@ -58,6 +59,11 @@ class RouteGenerator {
         case Routes.errorScanRoute:
         return buildPageRoute<T>(
           child: ErrorScanScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.warrantyRoute:
+        return buildPageRoute<T>(
+          child: WarrantyScreen(),
           routeSettings: routeSettings,
         );
       case Routes.loginRoute:

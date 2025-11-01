@@ -6,10 +6,7 @@ final String text ;
 final String icon ;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: getPadding(horizontal: 16.0.w),
-      child: CustomButton(text: text, onPressed: (){Routes.successScanRoute.moveTo();},svgIconPath: icon,height: 58.h,),
-    );
+    return CustomButton(text: text, onPressed: (){Routes.successScanRoute.moveTo();},svgIconPath: icon,height: 58.h,);
 
   }
 }
