@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      route = Routes.warrantyRoute;
+      route = Routes.onBoardingRoute;
       //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
       // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
       //  isNotificationEnabled = await checkNotificationPermission(context);

@@ -14,7 +14,8 @@ class Routes {
   static const String scanRoute = "/scan";
   static const String successScanRoute = "/successScan";
   static const String errorScanRoute = "/errorScan";
-  static const String warrantyRoute = "/warranty";
+  static const String merchantWarrantyRoute = "/merchantWarranty";
+  static const String techWarrantyRoute = "/techWarranty";
   static const String techDashboard = "/techDashboard";
   static const String techPointsSummary = "/techPointsSummary";
   static const String enterOtpRoute = "/enterOtpRoute";

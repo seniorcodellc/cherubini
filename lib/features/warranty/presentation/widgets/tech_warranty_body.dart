@@ -1,11 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/warranty/presentation/widgets/warranty_container.dart';
 import 'package:cherubini/features/warranty/presentation/widgets/warranty_produce.dart';
 import '../../../../core/widgets/custom_scan_button.dart';
 import '../widgets/product_list_section.dart';
+import 'client_details.dart';
 
-class MerchantWarrantyBody extends StatelessWidget {
-  const MerchantWarrantyBody({super.key});
+class TechWarrantyBody extends StatelessWidget {
+  const TechWarrantyBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class MerchantWarrantyBody extends StatelessWidget {
                 35.vs,
                 const CreateWarrantyContainer(),
                 24.vs,
-                const ProductListSection(isMerchant: true,),
+                ClientDetails(),
+                24.vs,
+                const ProductListSection(isMerchant: false,),
                 30.vs,
                 const WarrantyProduce(),
                 40.vs,

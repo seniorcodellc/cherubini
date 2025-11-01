@@ -61,6 +61,7 @@ class AppAssets {
   static String warranty = "${SvgImages.svgPath}warranty.svg";
   static String info = "${SvgImages.svgPath}info.svg";
   static String print = "${SvgImages.svgPath}print.svg";
+  static String delete = "${SvgImages.svgPath}delete.svg";
 
   //! PNG
 

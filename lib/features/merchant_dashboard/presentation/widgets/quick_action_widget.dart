@@ -5,16 +5,16 @@ class QuickActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 155.h,
+      height: 135.h,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
-          padding: getPadding(horizontal: 8.w), // Outer padding
+          padding: getPadding(horizontal: 8.w),
           itemCount: DashboardStatics.actionsList.length,
           separatorBuilder: (context, index) => 10.hs,
           itemBuilder: (context, index) {
             final model = DashboardStatics.actionsList[index];
         return GestureDetector(
-          onTap: (){Routes.merchantManagementRoute.moveTo();},
+          onTap: model.onTap,
           child: Container(
             height: 135.h,
             decoration: BoxDecoration(

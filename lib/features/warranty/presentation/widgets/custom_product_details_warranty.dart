@@ -1,8 +1,19 @@
+// lib/features/warranty/presentation/widgets/custom_product_details_warranty.dart
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/warranty/presentation/widgets/warranty_custom_text_field.dart';
 
 class CustomProductDetailsWarranty extends StatelessWidget {
-  const CustomProductDetailsWarranty({super.key});
+  final int index;
+  final bool showDelete;
+  final VoidCallback? onDelete;
+  final bool isMerchant;
+  const CustomProductDetailsWarranty({
+    super.key,
+    required this.index,
+    required this.showDelete,
+    this.onDelete,
+    required this.isMerchant,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +37,48 @@ class CustomProductDetailsWarranty extends StatelessWidget {
             Padding(
               padding: getPadding(top: 16.0.h),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomSVGImage(asset: AppAssets.info),
-                  4.hs,
-                  Text(
-                    'منتج',
-                    style: getRegularTextStyle(
-                      fontSize: 14.sp,
-                      color: AppColors.primaryColor,
-                    ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 24.w,
+                        height: 24.h,
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryColor,
+                          borderRadius: BorderRadius.circular(5.0.r),
+                        ),
+                        child: Center(
+                          child: Text(
+                            '$index',
+                            style: getRegularTextStyle(
+                              fontSize: 14.sp,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      4.hs,
+                      Text(
+                        'منتج',
+                        style: getRegularTextStyle(
+                          fontSize: 14.sp,
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                    ],
                   ),
+                  if (showDelete)
+                    GestureDetector(
+                      onTap: onDelete,
+                      child: CustomSVGImage(asset: AppAssets.delete),
+                    ),
                 ],
               ),
             ),
-            WarrantyCustomTextField(hint: 'الرقم التسلسلي',),
-            WarrantyCustomTextField(hint: 'اسم المنتج',),
-            WarrantyCustomTextField(hint: 'تاريخ القراءة',),
+            const WarrantyCustomTextField(hint: 'الرقم التسلسلي'),
+            const WarrantyCustomTextField(hint: 'اسم المنتج'),
+            isMerchant? const WarrantyCustomTextField(hint: 'تاريخ القراءة'): 0.vs,
             8.vs,
           ],
         ),
