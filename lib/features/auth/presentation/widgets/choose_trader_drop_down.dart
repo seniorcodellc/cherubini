@@ -21,6 +21,7 @@ class _ChooseTraderDropDownState extends State<ChooseTraderDropDown> {
         ],
       ),
       child: DropdownButtonFormField(
+        validator: (text) => text.validateName.isFalse?AppStrings.nameError:null,
         dropdownColor: AppColors.white,
         isExpanded: true,
         decoration: InputDecoration(
