@@ -1,13 +1,17 @@
 import '../../../../exports.dart';
 
 class CustomLoginSignupTextfieldText extends StatelessWidget {
-  const CustomLoginSignupTextfieldText({super.key, required this.text});
+  final Widget child;
+  const CustomLoginSignupTextfieldText({super.key, required this.text, required this.child});
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: getRegularTextStyle(color: AppColors.primaryColor),
+    return Column(
+      children: [
+        Text(text, style: getRegularTextStyle(color: AppColors.primaryColor)),
+        8.vs,
+        child,
+      ],
     );
   }
 }

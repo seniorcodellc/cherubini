@@ -3,7 +3,7 @@ import 'package:cherubini/core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 
 class CustomLoginSignupTextfield extends StatelessWidget {
-  const CustomLoginSignupTextfield({
+  CustomLoginSignupTextfield({
     super.key,
     required this.hint,
     required this.asset,

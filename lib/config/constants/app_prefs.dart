@@ -2,6 +2,7 @@
 
 
 import '../../exports.dart';
+import '../../features/auth/data/model/user_response_model.dart';
 //import '../../features/auth/data/model/user_response_model.dart';
 
 class AppPrefs {
@@ -9,7 +10,7 @@ class AppPrefs {
   static String language = 'ar';
   static String? deviceToken;
   static String? profileImage;
-  //static UserModel? user;
+  static UserModel? user;
 
   static final SharedPreferences _preferences = ServiceLocator().getIt<SharedPreferences>();
   static const String prefsUsersKey = 'CACHED_USERS';

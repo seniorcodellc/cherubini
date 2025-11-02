@@ -1,5 +1,6 @@
 import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/core/widgets/custom_text_form_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
@@ -12,8 +13,10 @@ import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
 
 class SignUpAsTrader extends StatelessWidget {
-  const SignUpAsTrader({super.key});
-
+  SignUpAsTrader({super.key});
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController companyNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -27,41 +30,58 @@ class SignUpAsTrader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomLoginSignupTextfieldText(text: "الاسم الكامل"),
-                  8.vs,
-                  SharedEnterNameTextField(),
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
-                  8.vs,
-                  SharedPhoneTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "اسم الشركة"),
-                  8.vs,
-                  CustomLoginSignupTextfield(
-                    hint: "أدخل اسم الشركة",
-                    asset: AppAssets.company,
+                  CustomLoginSignupTextfieldText(
+                    text: "رقم الجوال",
+                    child: SharedPhoneTextField(),
                   ),
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "اسم الشركة",
+                    child: CustomTextFormField(
+                      controller: companyNameController,
+                      hintText: "أدخل اسم الشركة",
+                      suffixIcon: CustomSVGImage(asset: AppAssets.company),
+                      validator: (text) => text.validateName.isFalse
+                          ? AppStrings.nameError
+                          : null,
+                    ),
+                  ),
+
                   16.vs,
                   GovernmentPlaceRow(),
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني"),
-                  8.vs,
-                  SharedEmailTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "العنوان"),
-                  8.vs,
-                  CustomLoginSignupTextfield(
-                    hint: "المدينة , الحي , الشارع",
-                    asset: AppAssets.location,
+                  CustomLoginSignupTextfieldText(
+                    text: "البريد الإلكترروني",
+                    child: SharedEmailTextField(
+                      emailController: emailController,
+                    ),
                   ),
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
-                  8.vs,
-                  SharedPasswordTextField(),
+                  CustomLoginSignupTextfieldText(
+                    text: "العنوان",
+                    child: CustomLoginSignupTextfield(
+                      hint: "المدينة , الحي , الشارع",
+                      asset: AppAssets.location,
+                    ),
+                  ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "تأكيد كلمة المرور"),
-                  8.vs,
-                  SharedPasswordTextField(),
+                  CustomLoginSignupTextfieldText(
+                    text: "كلمة المرور",
+                    child: SharedPasswordTextField(
+                      passwordController: passwordController,
+                    ),
+                  ),
+
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "تأكيد كلمة المرور",
+                    child: SharedPasswordTextField(
+                      passwordController: passwordController,
+                    ),
+                  ),
+
                   40.vs,
                   CustomButton(text: "إنشاء حساب", onPressed: () {}),
                   24.vs,

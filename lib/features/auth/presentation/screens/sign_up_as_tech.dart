@@ -9,11 +9,11 @@ import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
-import '../widgets/shared_phone_text_field.dart';
 
 class SignUpAsTech extends StatelessWidget {
-  const SignUpAsTech({super.key});
-
+  SignUpAsTech({super.key});
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -28,32 +28,52 @@ class SignUpAsTech extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   32.vs,
-                  CustomLoginSignupTextfieldText(text: "الاسم الكامل"),
-                  8.vs,
-                  SharedEnterNameTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
-                  8.vs,
-                  SharedPhoneTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني"),
-                  8.vs,
-                  SharedEmailTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "اختر التاجر"),
-                  8.vs,
-                  ChooseTraderDropDown(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "سؤال التحقق من التاجر"),
-                  8.vs,
-                  CustomLoginSignupTextfield(
-                    hint: "أجب على سؤال  التحقق",
-                    asset: AppAssets.questionMark,
+                  CustomLoginSignupTextfieldText(
+                    text: "الاسم الكامل",
+                    child: SharedEnterNameTextField(),
                   ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
-                  8.vs,
-                  SharedPasswordTextField(),
+                  CustomLoginSignupTextfieldText(
+                    text: "رقم الجوال",
+
+                    child: CustomTextFormField(
+                      hintText: "568912345",
+                      prefixIcon: CustomSVGImage(asset: AppAssets.phone),
+                    ),
+                  ),
+
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "البريد الإلكترروني",
+                    child: SharedEmailTextField(
+                      emailController: emailController,
+                    ),
+                  ),
+
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "اختر التاجر",
+                    child: ChooseTraderDropDown(),
+                  ),
+
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "سؤال التحقق من التاجر",
+                    child: CustomLoginSignupTextfield(
+                      hint: "أجب على سؤال  التحقق",
+                      asset: AppAssets.questionMark,
+                    ),
+                  ),
+
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "كلمة المرور",
+                    child: SharedPasswordTextField(
+                      passwordController: passwordController,
+                    ),
+                  ),
+
                   40.vs,
                   CustomButton(
                     text: "إنشاء حساب",

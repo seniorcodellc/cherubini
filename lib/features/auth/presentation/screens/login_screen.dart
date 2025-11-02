@@ -8,8 +8,8 @@ import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup
 import '../../../../exports.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
+   LoginScreen({super.key});
+final GlobalKey _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -19,55 +19,59 @@ class LoginScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LogInWelcomeBody(),
-                  32.vs,
-                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
-                  8.vs,
-                  SharedPhoneTextField(),
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
-                  8.vs,
-                  SharedPasswordTextField(),
-                  8.vs,
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      "نسيت كلمة المرور؟",
-                      style: getRegularTextStyle(color: AppColors.accentColor),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LogInWelcomeBody(),
+                    32.vs,
+                    CustomLoginSignupTextfieldText(text: "رقم الجوال",
+                      child:   SharedPhoneTextField() ,
                     ),
-                  ),
-                  32.vs,
-                  CustomButton(
-                    text: "تسجيل الدخول",
-                    onPressed: () {
-                      Routes.bottomNavRoute.moveTo();
-                    },
-                  ),
-                  42.vs,
-                  LogInHaveNoAccountRow(),
-                  32.vs,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomElevatedButton(
-                        onPressed: () {
-                          Routes.registerTraderRoute.moveTo();
-                        },
-                        text: "تسجيل تاجر",
+                    16.vs,
+                    CustomLoginSignupTextfieldText(text: "كلمة المرور",
+                      child:        SharedPasswordTextField(),
+                    ),
+
+                    8.vs,
+                    Align(
+                      alignment: AlignmentDirectional.bottomStart,
+                      child: Text(
+                        "نسيت كلمة المرور؟",
+                        style: getRegularTextStyle(color: AppColors.accentColor),
                       ),
-                      CustomElevatedButton(
-                        onPressed: () {
-                          Routes.registerTechRoute.moveTo();
-                        },
-                        text: "تسجيل فني",
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                    32.vs,
+                    CustomButton(
+                      text: "تسجيل الدخول",
+                      onPressed: () {
+                        Routes.bottomNavRoute.moveTo();
+                      },
+                    ),
+                    42.vs,
+                    LogInHaveNoAccountRow(),
+                    32.vs,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomElevatedButton(
+                          onPressed: () {
+                            Routes.registerTraderRoute.moveTo();
+                          },
+                          text: "تسجيل تاجر",
+                        ),
+                        CustomElevatedButton(
+                          onPressed: () {
+                            Routes.registerTechRoute.moveTo();
+                          },
+                          text: "تسجيل فني",
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:cherubini/features/on_boarding/presentation/managers/onboarding_manager_cubit.dart';
 import 'package:cherubini/features/on_boarding/presentation/widgets/onboarding_buttons.dart';
 
 import '../../../../exports.dart';
@@ -7,7 +8,6 @@ import 'onboarding_dots.dart';
 class DetailsOnboardingSection extends StatefulWidget {
   const DetailsOnboardingSection({super.key});
 
-
   @override
   State<DetailsOnboardingSection> createState() => _DetailsOnboardingSectionState();
 }
@@ -15,13 +15,11 @@ class DetailsOnboardingSection extends StatefulWidget {
 class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
   final PageController pageController = PageController();
   int currentPage = 0;
-  void nextPage() {
+  void nextPage() async {
     if (currentPage < OnboardingStatics.onBoardingItems.length - 1) {
-      pageController.nextPage(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.easeInOut,
-      );
+      pageController.nextPage(duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
     } else {
+      await context.read<OnboardingManagerCubit>().cachedNewInstall();
       Routes.loginRoute.moveTo();
     }
   }
@@ -45,14 +43,11 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               180.vs,
-              CustomPngImage(image: OnboardingStatics.onBoardingItems[index].imagePath,),
+              CustomPngImage(image: OnboardingStatics.onBoardingItems[index].imagePath),
               35.vs,
               Text(
                 OnboardingStatics.onBoardingItems[index].title,
-                style: getSemiBoldTextStyle(
-                  fontSize: 24.sp,
-                  color: AppColors.primaryColor,
-                ),
+                style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.primaryColor),
               ),
               10.vs,
               Padding(
@@ -60,18 +55,18 @@ class _DetailsOnboardingSectionState extends State<DetailsOnboardingSection> {
                 child: Text(
                   OnboardingStatics.onBoardingItems[index].subTitle,
                   textAlign: TextAlign.center,
-                  style: getRegularTextStyle(
-                    fontSize: 14.sp,
-                    color: AppColors.subTitleColor,
-                  ),
+                  style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.subTitleColor),
                 ),
               ),
               10.vs,
-              OnboardingDots(currentPage: currentPage,),
+              OnboardingDots(currentPage: currentPage),
               100.vs,
-             OnboardingButtons(onTap: (){nextPage();}, text: currentPage == OnboardingStatics.onBoardingItems.length - 1
-                 ? 'ابدأ الآن '
-                 : 'التالي',)
+              OnboardingButtons(
+                onTap: () {
+                  nextPage();
+                },
+                text: currentPage == OnboardingStatics.onBoardingItems.length - 1 ? 'ابدأ الآن ' : 'التالي',
+              ),
             ],
           ),
         );
