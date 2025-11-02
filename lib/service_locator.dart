@@ -21,6 +21,7 @@ class ServiceLocator {
   Future<void> get init async {
     await registerPrefs;
     registerNetwork;
+    registerPermission;
     registerOnboarding;
   }
 
@@ -69,4 +70,6 @@ class ServiceLocator {
       () => CacheImpl(sharedPreferences: getIt<SharedPreferences>()),
     );
   }
+  get registerPermission => getIt.registerLazySingleton(() => PermissionManager());
+
 }

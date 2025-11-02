@@ -28,32 +28,41 @@ class SignUpAsTech extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   32.vs,
-                  CustomLoginSignupTextfieldText(text: "الاسم الكامل"),
-                  8.vs,
-                  SharedEnterNameTextField(),
+                  CustomLoginSignupTextfieldText(text: "الاسم الكامل",
+                  child: SharedEnterNameTextField(),
+                  ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "رقم الجوال"),
-                  8.vs,
+                  CustomLoginSignupTextfieldText(text: "رقم الجوال",
+
+                  child:
                   SharedPhoneTextField(),
+                    ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني"),
-                  8.vs,
-                  SharedEmailTextField(),
+                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني",
+                  child: SharedEmailTextField(),
+                  ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "اختر التاجر"),
-                  8.vs,
-                  ChooseTraderDropDown(),
+                  CustomLoginSignupTextfieldText(text: "اختر التاجر",
+                  child:    ChooseTraderDropDown(),
+                  ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "سؤال التحقق من التاجر"),
-                  8.vs,
-                  CustomLoginSignupTextfield(
+                  CustomLoginSignupTextfieldText(text: "سؤال التحقق من التاجر",
+                  child: CustomLoginSignupTextfield(
                     hint: "أجب على سؤال  التحقق",
                     asset: AppAssets.questionMark,
                   ),
+                  ),
+
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "كلمة المرور"),
-                  8.vs,
-                  SharedPasswordTextField(),
+                  CustomLoginSignupTextfieldText(text: "كلمة المرور",
+
+                  child: SharedPasswordTextField(),
+                  ),
+
                   40.vs,
                   CustomButton(
                     text: "إنشاء حساب",

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/features/on_boarding/presentation/managers/onboarding_manager_cubit.dart';
 
 import '../../../../config/local_notification/local_notification.dart';
 import '../../../../exports.dart';
@@ -31,7 +32,21 @@ class _SplashScreenState extends State<SplashScreen> {
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      route = Routes.onBoardingRoute;
+      bool isNew = await getBlocData<OnboardingManagerCubit>().isNewInstalled();
+      if (isNew.isTrue) {
+        isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
+          context,
+          onSuccess: () {
+            NotificationsService().showSimpleNotification(
+              title: 'أهلا بك فى تطبيق نقاط الولاء',
+              description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
+            );
+          },
+        );
+        route = Routes.onBoardingRoute;
+      } else {
+        route = Routes.loginRoute;
+      }
       //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
       // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
       //  isNotificationEnabled = await checkNotificationPermission(context);
@@ -85,10 +100,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  AppColors.gradientColorStart,
-                  AppColors.gradientColorEnd,
-                ],
+                colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -99,21 +111,9 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
-              Text(
-                "برنامج نقاط الولاء",
-                style: getSemiBoldTextStyle(
-                  color: AppColors.white,
-                  fontSize: 32,
-                ),
-              ),
+              Text("برنامج نقاط الولاء", style: getSemiBoldTextStyle(color: AppColors.white, fontSize: 32)),
               8.vs,
-              Text(
-                "نظام إدارة النقاط الذكي",
-                style: getRegularTextStyle(
-                  fontSize: 16,
-                  color: AppColors.white,
-                ),
-              ),
+              Text("نظام إدارة النقاط الذكي", style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
             ],
           ),
         ],
