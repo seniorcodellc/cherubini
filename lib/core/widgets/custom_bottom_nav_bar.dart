@@ -6,8 +6,8 @@ import '../../exports.dart';
 import '../../features/tech_dashborad/data/statics/bottom_nav_bar_static.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
-  static final GlobalKey<_CustomBottomNavBarState> navBarKey =
-      GlobalKey<_CustomBottomNavBarState>();
+  // static final GlobalKey<_CustomBottomNavBarState> navBarKey =
+  //     GlobalKey<_CustomBottomNavBarState>();
   const CustomBottomNavBar({super.key});
 
   @override
@@ -37,7 +37,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           BottomNavBarStatic.screens[selectedIndex].systemBarColor ??
           AppColors.white,
       bottomNavRoute: Container(
-        key: CustomBottomNavBar.navBarKey,
         height: 64.h,
         width: 375.w,
         decoration: BoxDecoration(

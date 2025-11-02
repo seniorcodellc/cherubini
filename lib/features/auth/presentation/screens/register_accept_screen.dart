@@ -36,7 +36,12 @@ class RegisterAcceptScreen extends StatelessWidget {
               ),
             ),
             71.vs,
-            SecondSharedCustomButton(text: "العودة لتسجيل الدخول"),
+            SecondSharedCustomButton(
+              text: "العودة لتسجيل الدخول",
+              onPressed: () {
+                Routes.loginRoute.moveTo();
+              },
+            ),
           ],
         ),
       ),

@@ -91,7 +91,9 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechOperationsLogScreen());
       case Routes.bottomNavRoute:
         return buildPageRoute<T>(
-          child: CustomBottomNavBar(key: CustomBottomNavBar.navBarKey),
+          child: CustomBottomNavBar(
+            // key: CustomBottomNavBar.navBarKey
+          ),
         );
 
       /*
