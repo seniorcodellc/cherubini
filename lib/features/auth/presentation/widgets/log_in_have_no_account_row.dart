@@ -12,7 +12,7 @@ class LogInHaveNoAccountRow extends StatelessWidget {
         HorizontalCustomDivider(),
         17.hs,
         Text(
-          "ليس لديك حساب؟",
+          AppStrings.haveNoAccountAr,
           style: getRegularTextStyle(color: AppColors.subTitleColor),
         ),
         17.hs,

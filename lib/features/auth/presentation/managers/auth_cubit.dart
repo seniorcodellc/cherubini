@@ -7,6 +7,7 @@ import '../../data/model/request_model/register_request_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
+import '../../data/model/tech_sign_up_model.dart';
 import '../../data/model/user_response_model.dart';
 import '../../data/model/response_model/forget_password_response_model.dart';
 import '../../domain/usecase/auth_use_case.dart';
@@ -23,8 +24,8 @@ class AuthCubit extends Cubit<CubitStates> {
       either: authUseCase.login(login: loginModel),
       startingMessage: AppStrings.signIn.trans,
       onSuccess: (UserDataModel? data) async {
-        userModel  = data?.userModel;
-     //     getBlocData<BottomNavOperationCubit>().changIndex(0);
+        userModel = data?.userModel;
+        //     getBlocData<BottomNavOperationCubit>().changIndex(0);
         Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       },
     );
@@ -37,22 +38,25 @@ class AuthCubit extends Cubit<CubitStates> {
       requestId = null;
       AppPrefs.token = null;
       AppPrefs.user = null;
-     // getBlocData<BottomNavOperationCubit>().changIndex(0);
+      // getBlocData<BottomNavOperationCubit>().changIndex(0);
       Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       emit(LoadedState(data: null));
     },
   );
   RequestIdModel? registerModel;
-  register({required UserModel userModel}) async {
+  register(TechSignUpModel techSignUpModel) async {
     this.userModel = userModel;
     await executeWithDialog<RequestIdModel>(
-      either: authUseCase.register(registerRequestModel: userModel),
+      either: authUseCase.register(techSignUpModel: techSignUpModel), //
       startingMessage: AppStrings.waitingForRegistration.trans,
       onSuccess: (RequestIdModel? data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
-            NotificationsService().showSimpleNotification(title: AppStrings.verificationAccount.trans, description: "0000");
+            NotificationsService().showSimpleNotification(
+              title: AppStrings.verificationAccount.trans,
+              description: "0000",
+            );
           },
         );
         registerModel = data;
@@ -61,13 +65,16 @@ class AuthCubit extends Cubit<CubitStates> {
     );
   }
 
-  verify({required VerifyRequestModel verifyRequestModel, required bool isForgetPassword}) async {
+  verify({
+    required VerifyRequestModel verifyRequestModel,
+    required bool isForgetPassword,
+  }) async {
     await executeWithDialog<UserDataModel>(
       either: authUseCase.verify(verifyRequestModel: verifyRequestModel),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (UserDataModel? data) async {
         userModel = data?.userModel;
-      //  getBlocData<BottomNavOperationCubit>().changIndex(0);
+        //  getBlocData<BottomNavOperationCubit>().changIndex(0);
         Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
         // getUserAndToken(requestId!.requestId!);
         /*   isForgetPassword
@@ -94,9 +101,13 @@ class AuthCubit extends Cubit<CubitStates> {
     );
   }
 
-  forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel}) async {
+  forgetPassword({
+    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
+  }) async {
     await executeWithDialog<ForgetPasswordDataModel>(
-      either: authUseCase.forgetPassword(enterPhoneNumberRequestModel: enterPhoneNumberRequestModel),
+      either: authUseCase.forgetPassword(
+        enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
+      ),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (data) async {
         checkNotificationPermissionAndDoOperation(
@@ -121,7 +132,9 @@ class AuthCubit extends Cubit<CubitStates> {
 
   verifyForgetPassword({required VerifyRequestModel verifyRequestModel}) async {
     await executeWithDialog(
-      either: authUseCase.verifyForgetPassword(verifyRequestModel: verifyRequestModel),
+      either: authUseCase.verifyForgetPassword(
+        verifyRequestModel: verifyRequestModel,
+      ),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (data) async {
         /*    Routes.resetPasswordRoute.moveToAndRemoveCurrent(args: {
@@ -133,9 +146,13 @@ class AuthCubit extends Cubit<CubitStates> {
     );
   }
 
-  resetPassword({required ResetPasswordRequestModel resetPasswordRequestModel}) async {
+  resetPassword({
+    required ResetPasswordRequestModel resetPasswordRequestModel,
+  }) async {
     await executeWithDialog(
-      either: authUseCase.resetPassword(resetPasswordRequestModel: resetPasswordRequestModel),
+      either: authUseCase.resetPassword(
+        resetPasswordRequestModel: resetPasswordRequestModel,
+      ),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (data) async {
         Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
@@ -174,7 +191,7 @@ class AuthCubit extends Cubit<CubitStates> {
   // }
   //
 
-/*  deleteAccount() => executeWithDialog(
+  /*  deleteAccount() => executeWithDialog(
     either: authUseCase.deleteAccount(accountId: userModel!.id!),
     startingMessage: AppStrings.deletingAccount.trans,
     onSuccess: (_) {
@@ -203,8 +220,8 @@ class AuthCubit extends Cubit<CubitStates> {
   );
 
   void logOutDemo() {
-    userDataModel=null;
-    userModel=null;
+    userDataModel = null;
+    userModel = null;
     emit(ChangeState());
   }
 }

@@ -12,12 +12,12 @@ class SignUpTraderInstruction extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              "بالتسجيل، أنت توافق على الشروط والأحكام",
+              AppStrings.merchantInstruction1Ar,
               style: getRegularTextStyle(color: AppColors.subTitleColor),
             ),
           ),
           Text(
-            "وسياسة الخصوصية",
+            AppStrings.merchantInstruction2Ar,
             style: getRegularTextStyle(color: AppColors.subTitleColor),
           ),
         ],

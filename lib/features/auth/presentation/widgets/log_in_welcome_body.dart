@@ -15,7 +15,7 @@ class LogInWelcomeBody extends StatelessWidget {
           ),
           16.vs,
           Text(
-            "تسجيل الدخول",
+            AppStrings.loginAr,
             style: getSemiBoldTextStyle(
               fontSize: 24,
               color: AppColors.primaryColor,
@@ -23,7 +23,7 @@ class LogInWelcomeBody extends StatelessWidget {
           ),
           8.vs,
           Text(
-            "مرحباً بك في برنامج نقاط الولاء",
+            AppStrings.logInWelcomeAr,
             style: getSemiBoldTextStyle(
               fontSize: 16,
               color: AppColors.subTitleColor,

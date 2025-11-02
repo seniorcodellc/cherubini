@@ -13,16 +13,25 @@ class GovernmentPlaceRow extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomLoginSignupTextfieldText(text: "المحافظة ",child:            GovernmentPlaceDropdownButton(hint: 'أختر المحافظة') ,),
+            CustomLoginSignupTextfieldText(
+              text: AppStrings.governmentAr,
+              child: GovernmentPlaceDropdownButton(
+                hint: AppStrings.governmentHintAr,
+              ),
+            ),
           ],
         ),
         15.hs,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomLoginSignupTextfieldText(text: "المنطقة", child:             GovernmentPlaceDropdownButton(hint: 'أختر المنطقة'),
+            CustomLoginSignupTextfieldText(
+              text: AppStrings.placeAr,
+              child: GovernmentPlaceDropdownButton(
+                hint: AppStrings.placeHintAr,
+              ),
             ),
-            ],
+          ],
         ),
       ],
     );

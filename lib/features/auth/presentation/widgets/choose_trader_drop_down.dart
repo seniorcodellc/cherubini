@@ -8,7 +8,11 @@ class ChooseTraderDropDown extends StatefulWidget {
 }
 
 class _ChooseTraderDropDownState extends State<ChooseTraderDropDown> {
-  final List<String> traders = ["تاجر رقم 1", "تاجر رقم 2", "تاجر رقم 3"];
+  final List<String> traders = [
+    AppStrings.merchantOneAr,
+    AppStrings.merchantTwoAr,
+    AppStrings.merchantThreeAr,
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +25,8 @@ class _ChooseTraderDropDownState extends State<ChooseTraderDropDown> {
         ],
       ),
       child: DropdownButtonFormField(
-        validator: (text) => text.validateName.isFalse?AppStrings.nameError:null,
+        validator: (text) =>
+            text.validateName.isFalse ? AppStrings.nameError : null,
         dropdownColor: AppColors.white,
         isExpanded: true,
         decoration: InputDecoration(

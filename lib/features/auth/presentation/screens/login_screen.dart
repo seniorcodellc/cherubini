@@ -32,14 +32,14 @@ class LoginScreen extends StatelessWidget {
                     LogInWelcomeBody(),
                     32.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "البريد الإلكترروني",
+                      text: AppStrings.emailAr,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "كلمة المرور",
+                      text: AppStrings.passwordAr,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     32.vs,
                     CustomButton(
-                      text: "تسجيل الدخول",
+                      text: AppStrings.loginAr,
                       onPressed: () {
                         if (_formKey.currentState!.validate().isTrue) {
                           context.read<AuthCubit>().login(
@@ -78,13 +78,13 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Routes.registerTraderRoute.moveTo();
                           },
-                          text: "تسجيل تاجر",
+                          text: AppStrings.signUpAsMerchantAr,
                         ),
                         CustomElevatedButton(
                           onPressed: () {
                             Routes.registerTechRoute.moveTo();
                           },
-                          text: "تسجيل فني",
+                          text: AppStrings.signUpAsTechAr,
                         ),
                       ],
                     ),

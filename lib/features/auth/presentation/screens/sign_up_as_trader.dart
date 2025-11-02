@@ -2,7 +2,6 @@ import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/core/widgets/custom_text_form_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
-import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/auth/presentation/widgets/gonernment_place_row.dart';
 import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
@@ -22,7 +21,7 @@ class SignUpAsTrader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "تسجيل تاجر جديد"),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchantAr),
       child: Padding(
         padding: getPadding(horizontal: 16, vertical: 32),
         child: CustomScrollView(
@@ -33,17 +32,17 @@ class SignUpAsTrader extends StatelessWidget {
                 children: [
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "رقم الجوال",
+                    text: AppStrings.phoneNumAr,
                     child: SharedPhoneTextField(
                       phoneController: phoneController,
                     ),
                   ),
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "اسم الشركة",
+                    text: AppStrings.companyNameAr,
                     child: CustomTextFormField(
                       controller: companyNameController,
-                      hintText: "أدخل اسم الشركة",
+                      hintText: AppStrings.companyNameHintAr,
                       prefixIcon: CustomSVGImage(
                         asset: AppAssets.company,
                         fit: BoxFit.none,
@@ -58,23 +57,26 @@ class SignUpAsTrader extends StatelessWidget {
                   GovernmentPlaceRow(),
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "البريد الإلكترروني",
+                    text: AppStrings.emailAr,
                     child: SharedEmailTextField(
                       emailController: emailController,
                     ),
                   ),
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "العنوان",
-                    child: CustomLoginSignupTextfield(
-                      hint: "المدينة , الحي , الشارع",
-                      asset: AppAssets.location,
+                    text: AppStrings.addressAr,
+                    child: CustomTextFormField(
+                      hintText: AppStrings.addressHintAr,
+                      prefixIcon: CustomSVGImage(
+                        asset: AppAssets.location,
+                        fit: BoxFit.none,
+                      ),
                     ),
                   ),
 
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "كلمة المرور",
+                    text: AppStrings.passwordAr,
                     child: SharedPasswordTextField(
                       passwordController: passwordController,
                     ),
@@ -82,14 +84,17 @@ class SignUpAsTrader extends StatelessWidget {
 
                   16.vs,
                   CustomLoginSignupTextfieldText(
-                    text: "تأكيد كلمة المرور",
+                    text: AppStrings.confirmPasswordAr,
                     child: SharedPasswordTextField(
                       passwordController: passwordController,
                     ),
                   ),
 
                   40.vs,
-                  CustomButton(text: "إنشاء حساب", onPressed: () {}),
+                  CustomButton(
+                    text: AppStrings.createAccountButtonAr,
+                    onPressed: () {},
+                  ),
                   24.vs,
                   SignUpTraderInstruction(),
                 ],
