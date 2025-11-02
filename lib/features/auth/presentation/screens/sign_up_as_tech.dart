@@ -9,12 +9,14 @@ import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
+import '../widgets/shared_phone_text_field.dart';
 
 class SignUpAsTech extends StatelessWidget {
   SignUpAsTech({super.key});
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -40,9 +42,8 @@ class SignUpAsTech extends StatelessWidget {
                   CustomLoginSignupTextfieldText(
                     text: "رقم الجوال",
 
-                    child: CustomTextFormField(
-                      hintText: "568912345",
-                      prefixIcon: CustomSVGImage(asset: AppAssets.phone),
+                    child: SharedPhoneTextField(
+                      phoneController: phoneController,
                     ),
                   ),
 

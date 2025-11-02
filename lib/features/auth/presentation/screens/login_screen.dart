@@ -8,8 +8,10 @@ import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup
 import '../../../../exports.dart';
 
 class LoginScreen extends StatelessWidget {
-   LoginScreen({super.key});
-final GlobalKey _formKey = GlobalKey<FormState>();
+  LoginScreen({super.key});
+  final GlobalKey _formKey = GlobalKey<FormState>();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -27,12 +29,14 @@ final GlobalKey _formKey = GlobalKey<FormState>();
                   children: [
                     LogInWelcomeBody(),
                     32.vs,
-                    CustomLoginSignupTextfieldText(text: "رقم الجوال",
-                      child:   SharedPhoneTextField() ,
+                    CustomLoginSignupTextfieldText(
+                      text: "رقم الجوال",
+                      child: SharedPhoneTextField(),
                     ),
                     16.vs,
-                    CustomLoginSignupTextfieldText(text: "كلمة المرور",
-                      child:        SharedPasswordTextField(),
+                    CustomLoginSignupTextfieldText(
+                      text: "كلمة المرور",
+                      child: SharedPasswordTextField(),
                     ),
 
                     8.vs,
@@ -40,7 +44,9 @@ final GlobalKey _formKey = GlobalKey<FormState>();
                       alignment: AlignmentDirectional.bottomStart,
                       child: Text(
                         "نسيت كلمة المرور؟",
-                        style: getRegularTextStyle(color: AppColors.accentColor),
+                        style: getRegularTextStyle(
+                          color: AppColors.accentColor,
+                        ),
                       ),
                     ),
                     32.vs,
