@@ -1,12 +1,10 @@
 abstract class EndPoints {
-  // static const String baseUrl = 'https://qarar-auction.com'; //base url
-  static const String baseUrl = 'https://mobileapi.ops-premium.com/'; //base url
-  static const String api = '/api/';
-  static const String user = '${api}user/update';
-  static const String estate = '${api}estate';
+  /* domain and sub subentitry*/
+  static const String baseUrl = 'https://demo.dotstarerp.com/'; //base url
+  static const String api = '/api/LoyaltyPoints/';
 
 ///////////////////////////// authentication ////////////////////////////
-  static const String login = 'UserLogin';
+  static const String login = '${api}login';
   static const String logout = '${api}logout';
   static const String register = 'UserRegistartion';
   static const String paymentGateways = '${api}payments/payment-gateways';
@@ -99,7 +97,6 @@ abstract class EndPoints {
 
   static var adAnnouncementToFavorite = '${api}favourites/add';
   static var addEstateRequestToFavorite = '$estateRequest/favorite';
-  static var favoriteAnnouncements = '$user/favorite';
 
   static var myRequests = '${api}estate/user/requests';
   static const String myAds = '${api}estate/user/ad';

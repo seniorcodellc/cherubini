@@ -8,6 +8,7 @@ class SharedPasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      controller: passwordController,
       hintText: "*************",
       prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
       suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),

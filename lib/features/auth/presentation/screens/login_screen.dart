@@ -1,16 +1,19 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/log_in_have_no_account_row.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/log_in_welcome_body.dart';
+import 'package:cherubini/features/Auth/presentation/widgets/shared_email_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/shared_password_text_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
+import 'package:cherubini/features/auth/data/model/login_model.dart';
+import 'package:cherubini/features/auth/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 
 import '../../../../exports.dart';
+import '../widgets/shared_phone_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  final GlobalKey _formKey = GlobalKey<FormState>();
-  TextEditingController phoneController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -31,12 +34,16 @@ class LoginScreen extends StatelessWidget {
                     32.vs,
                     CustomLoginSignupTextfieldText(
                       text: "رقم الجوال",
-                      child: SharedPhoneTextField(),
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: "كلمة المرور",
-                      child: SharedPasswordTextField(),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     8.vs,
@@ -53,7 +60,10 @@ class LoginScreen extends StatelessWidget {
                     CustomButton(
                       text: "تسجيل الدخول",
                       onPressed: () {
-                        Routes.bottomNavRoute.moveTo();
+                        if (_formKey.currentState!.validate().isTrue){
+                          context.read<AuthCubit>().login(LoginModel(email:
+                          emailController.text, password: passwordController.text));
+                      }
                       },
                     ),
                     42.vs,

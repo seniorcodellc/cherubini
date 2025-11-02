@@ -1,4 +1,6 @@
 
+import 'package:cherubini/features/auth/data/model/login_model.dart';
+
 import '../../../../exports.dart';
 import '../../data/model/request_model/edit_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
@@ -13,8 +15,8 @@ class AuthUseCase {
   AuthUseCase({required this.authRepo});
 
   Future<Either<Failure, ResponseModel>> login(
-          {required String phone,required String password}) async =>
-      authRepo.login(phone: phone, password: password);
+          {required LoginModel login}) async =>
+      authRepo.login(login: login);
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
   Future<Either<Failure, ResponseModel>> register(
           {required UserModel registerRequestModel}) async =>

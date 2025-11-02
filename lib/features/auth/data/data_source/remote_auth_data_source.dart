@@ -1,5 +1,7 @@
 
 import '../../../../exports.dart';
+import '../model/login_model.dart';
+import '../model/login_response_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
 import '../model/request_model/resend_code_request_model.dart';
 import '../model/request_model/reset_password_request_model.dart';
@@ -9,7 +11,7 @@ import '../model/response_model/logout_response_model.dart';
 import '../model/user_response_model.dart';
 
 abstract class AuthRemoteDataSource {
-  Future<ResponseModel> login({required String phone, required String password});
+  Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
   Future<ResponseModel> register({required UserModel registerRequestModel});
   Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel});
@@ -26,11 +28,19 @@ abstract class AuthRemoteDataSource {
 class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl({required super.dioConsumer});
   @override
-  Future<ResponseModel> login({required String phone, required String password}) => addData(
+
+  Future<ResponseModel> login({required LoginModel login}) => addData(
     endPoint: EndPoints.login,
-    data: {"Mobile": phone, "password": password},
-    getFromJsonFunction: UserResponseModel.fromJson,
+    data: login.toJson(),
+    getFromJsonFunction: LoginResponseModel.fromJson,
   );
+
+
+
+
+
+
+
   @override
   Future<ResponseModel> logout() => addData(endPoint: EndPoints.logout, getFromJsonFunction: LogoutResponseModel.fromJson);
   @override
@@ -73,7 +83,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
   );
   @override
   Future<ResponseModel> editProfile({required UserModel userEdit}) => updateData(
-    endPoint: "${EndPoints.user}/${userEdit.id}",
+    endPoint: "${EndPoints.login}/${userEdit.id}",
     data: userEdit.toJson(),
     isFormData: true,
     getFromJsonFunction: RequestIdResponseModel.fromJson,

@@ -1,5 +1,6 @@
 
 import '../../../../exports.dart';
+import '../../data/model/login_model.dart';
 import '../../data/model/request_model/edit_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
@@ -8,7 +9,7 @@ import '../../data/model/request_model/verify_request_model.dart';
 import '../../data/model/user_response_model.dart';
 
 abstract class AuthRepo {
-  Future<Either<Failure, ResponseModel>> login({required String phone,required String password});
+  Future<Either<Failure, ResponseModel>> login({required LoginModel login});
   Future<Either<Failure, ResponseModel>> logout();
   Future<Either<Failure, ResponseModel>> register({required UserModel registerRequestModel});
   Future<Either<Failure, ResponseModel>> verify({required VerifyRequestModel verifyRequestModel});

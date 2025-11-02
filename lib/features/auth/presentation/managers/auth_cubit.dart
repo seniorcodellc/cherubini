@@ -1,3 +1,5 @@
+import 'package:cherubini/features/auth/data/model/login_model.dart';
+
 import '../../../../config/local_notification/local_notification.dart';
 import '../../../../exports.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
@@ -16,12 +18,12 @@ class AuthCubit extends Cubit<CubitStates> {
   RequestIdModel? requestId;
   UserDataModel? userDataModel;
   UserModel? userModel;
-  login({required String phone, required String password}) async {
+  login(LoginModel loginModel) async {
     await executeWithDialog<UserDataModel?>(
-      either: authUseCase.login(phone: phone, password: password),
+      either: authUseCase.login(login: loginModel),
       startingMessage: AppStrings.signIn.trans,
       onSuccess: (UserDataModel? data) async {
-        userModel = data?.userModel;
+        userModel  = data?.userModel;
      //     getBlocData<BottomNavOperationCubit>().changIndex(0);
         Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       },

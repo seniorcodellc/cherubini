@@ -1,5 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'exports.dart';
+import 'features/auth/data/data_source/local_auth_data_source.dart';
+import 'features/auth/data/data_source/remote_auth_data_source.dart';
+import 'features/auth/data/repositories/auth_repo_impl.dart';
+import 'features/auth/domain/repositories/auth_repo.dart';
+import 'features/auth/domain/usecase/auth_use_case.dart';
+import 'features/auth/presentation/managers/auth_cubit.dart';
 import 'features/on_boarding/data/data_sources/onboarding_local_data_source.dart';
 import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
@@ -23,6 +29,14 @@ class ServiceLocator {
     registerNetwork;
     registerPermission;
     registerOnboarding;
+    registerAuthDependencies;
+  }
+  get registerAuthDependencies {
+    getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
+    getIt.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(authLocalDataSource: getIt(), authRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<AuthUseCase>(() => AuthUseCase(authRepo: getIt()));
+    getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(authUseCase: getIt()));
   }
 
   get registerNetwork {

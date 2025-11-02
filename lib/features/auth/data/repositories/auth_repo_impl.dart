@@ -4,6 +4,7 @@ import '../../../../exports.dart';
 import '../../domain/repositories/auth_repo.dart';
 import '../data_source/local_auth_data_source.dart';
 import '../data_source/remote_auth_data_source.dart';
+import '../model/login_model.dart';
 import '../model/request_model/edit_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
 import '../model/request_model/resend_code_request_model.dart';
@@ -17,8 +18,8 @@ class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.authRemoteDataSource, required this.authLocalDataSource});
 
   @override
-  Future<Either<Failure, ResponseModel>> login({required String phone, required String password}) => executeImpl<UserDataModel>(
-    () => authRemoteDataSource.login(phone: phone, password: password),
+  Future<Either<Failure, ResponseModel>> login({required LoginModel login}) => executeImpl<UserDataModel>(
+    () => authRemoteDataSource.login(login: login),
     localWrite: (data) => authLocalDataSource.cacheUser(user: data),
   );
   @override

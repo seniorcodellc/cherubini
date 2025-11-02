@@ -1,7 +1,6 @@
 import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/core/widgets/custom_text_form_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
 import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_instruction.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
@@ -11,11 +10,13 @@ import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_t
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
+import '../widgets/shared_phone_text_field.dart';
 
 class SignUpAsTrader extends StatelessWidget {
   SignUpAsTrader({super.key});
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   TextEditingController companyNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,9 @@ class SignUpAsTrader extends StatelessWidget {
                   16.vs,
                   CustomLoginSignupTextfieldText(
                     text: "رقم الجوال",
-                    child: SharedPhoneTextField(),
+                    child: SharedPhoneTextField(
+                      phoneController: phoneController,
+                    ),
                   ),
                   16.vs,
                   CustomLoginSignupTextfieldText(
