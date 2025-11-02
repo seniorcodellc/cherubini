@@ -14,6 +14,7 @@ class SignUpAsTech extends StatelessWidget {
   SignUpAsTech({super.key});
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -30,7 +31,9 @@ class SignUpAsTech extends StatelessWidget {
                   32.vs,
                   CustomLoginSignupTextfieldText(
                     text: "الاسم الكامل",
-                    child: SharedEnterNameTextField(),
+                    child: SharedEnterNameTextField(
+                      nameController: nameController,
+                    ),
                   ),
 
                   16.vs,
