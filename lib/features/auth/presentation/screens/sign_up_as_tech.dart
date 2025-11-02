@@ -2,18 +2,17 @@ import 'package:cherubini/features/Auth/presentation/widgets/choose_trader_drop_
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
-
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
 import '../widgets/shared_phone_text_field.dart';
 
 class SignUpAsTech extends StatelessWidget {
-  const SignUpAsTech({super.key});
-
+   SignUpAsTech({super.key});
+TextEditingController emailController = TextEditingController();
+TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -29,14 +28,13 @@ class SignUpAsTech extends StatelessWidget {
                 children: [
                   32.vs,
                   CustomLoginSignupTextfieldText(text: "الاسم الكامل",
-                  child: SharedEnterNameTextField(),
+                  child: SharedEnterNameTextField(nameController: nameController,),
                   ),
 
                   16.vs,
                   CustomLoginSignupTextfieldText(text: "رقم الجوال",
-
                   child:
-                  SharedPhoneTextField(),
+                  SharedPhoneTextField(emailController: emailController,),
                     ),
 
                   16.vs,

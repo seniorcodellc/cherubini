@@ -5,8 +5,6 @@ import 'package:cherubini/features/Auth/presentation/widgets/sign_up_trader_inst
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/auth/presentation/widgets/gonernment_place_row.dart';
-import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
-
 import '../../../../exports.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
@@ -27,36 +25,47 @@ class SignUpAsTrader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "رقم الجوال", child:      SharedPhoneTextField(), ),
+                  CustomLoginSignupTextfieldText(
+                    text: "رقم الجوال",
+                    child: SharedPhoneTextField(),
+                  ),
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "اسم الشركة",child:   CustomLoginSignupTextfield(
-                    hint: "أدخل اسم الشركة",
-                    asset: AppAssets.company,
-                  ) ,),
-
-
+                  CustomLoginSignupTextfieldText(
+                    text: "اسم الشركة",
+                    child: CustomLoginSignupTextfield(
+                      hint: "أدخل اسم الشركة",
+                      asset: AppAssets.company,
+                    ),
+                  ),
                   16.vs,
                   GovernmentPlaceRow(),
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "البريد الإلكترروني",child:           SharedEmailTextField() ,),
-
-
-                  16.vs,
-                  CustomLoginSignupTextfieldText(text: "العنوان",child:   CustomLoginSignupTextfield(
-                    hint: "المدينة , الحي , الشارع",
-                    asset: AppAssets.location,
-                  ) ,),
-
+                  CustomLoginSignupTextfieldText(
+                    text: "البريد الإلكترروني",
+                    child: SharedEmailTextField(),
+                  ),
 
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "كلمة المرور",child:       SharedPasswordTextField(),),
-
+                  CustomLoginSignupTextfieldText(
+                    text: "العنوان",
+                    child: CustomLoginSignupTextfield(
+                      hint: "المدينة , الحي , الشارع",
+                      asset: AppAssets.location,
+                    ),
+                  ),
 
                   16.vs,
-                  CustomLoginSignupTextfieldText(text: "تأكيد كلمة المرور", child:     SharedPasswordTextField(),),
+                  CustomLoginSignupTextfieldText(
+                    text: "كلمة المرور",
+                    child: SharedPasswordTextField(),
+                  ),
 
+                  16.vs,
+                  CustomLoginSignupTextfieldText(
+                    text: "تأكيد كلمة المرور",
+                    child: SharedPasswordTextField(),
+                  ),
 
                   40.vs,
                   CustomButton(text: "إنشاء حساب", onPressed: () {}),
