@@ -7,6 +7,10 @@ class HorizontalCustomDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomDivider(width: 106, height: 0.5, color: AppColors.accentColor);
+    return CustomDivider(
+      width: 100.w,
+      height: 0.5.h,
+      color: AppColors.accentColor,
+    );
   }
 }

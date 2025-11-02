@@ -44,7 +44,10 @@ class SignUpAsTrader extends StatelessWidget {
                     child: CustomTextFormField(
                       controller: companyNameController,
                       hintText: "أدخل اسم الشركة",
-                      suffixIcon: CustomSVGImage(asset: AppAssets.company),
+                      prefixIcon: CustomSVGImage(
+                        asset: AppAssets.company,
+                        fit: BoxFit.none,
+                      ),
                       validator: (text) => text.validateName.isFalse
                           ? AppStrings.nameError
                           : null,

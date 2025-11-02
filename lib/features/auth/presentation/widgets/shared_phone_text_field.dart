@@ -10,7 +10,7 @@ class SharedPhoneTextField extends StatelessWidget {
     return CustomTextFormField(
       hintText: "568912345",
       controller: phoneController,
-      prefixIcon: CustomSVGImage(asset: AppAssets.phone),
+      prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
       validator: (text) =>
           text.validatePhone.isFalse ? AppStrings.phoneError : null,
     );
