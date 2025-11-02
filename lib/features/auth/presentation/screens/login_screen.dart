@@ -8,7 +8,6 @@ import 'package:cherubini/features/auth/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 
 import '../../../../exports.dart';
-import '../widgets/shared_phone_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -33,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                     LogInWelcomeBody(),
                     32.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "رقم الجوال",
+                      text: "البريد الإلكترروني",
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -45,10 +44,9 @@ class LoginScreen extends StatelessWidget {
                         passwordController: passwordController,
                       ),
                     ),
-
                     8.vs,
                     Align(
-                      alignment: AlignmentDirectional.bottomStart,
+                      alignment: AlignmentDirectional.bottomEnd,
                       child: Text(
                         "نسيت كلمة المرور؟",
                         style: getRegularTextStyle(
@@ -60,10 +58,14 @@ class LoginScreen extends StatelessWidget {
                     CustomButton(
                       text: "تسجيل الدخول",
                       onPressed: () {
-                        if (_formKey.currentState!.validate().isTrue){
-                          context.read<AuthCubit>().login(LoginModel(email:
-                          emailController.text, password: passwordController.text));
-                      }
+                        if (_formKey.currentState!.validate().isTrue) {
+                          context.read<AuthCubit>().login(
+                            LoginModel(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            ),
+                          );
+                        }
                       },
                     ),
                     42.vs,

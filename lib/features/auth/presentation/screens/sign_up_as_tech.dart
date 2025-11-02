@@ -17,87 +17,95 @@ class SignUpAsTech extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  TextEditingController checkController = TextEditingController();
+  GlobalKey formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return CustomBackground(
-      backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "تسجيل فني جديد"),
-      child: Padding(
-        padding: getPadding(horizontal: 16.w),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  32.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "الاسم الكامل",
-                    child: SharedEnterNameTextField(
-                      nameController: nameController,
+    return Form(
+      key: formKey,
+      child: CustomBackground(
+        backgroundColor: AppColors.bgColor,
+        appBar: CustomAppbar(title: "تسجيل فني جديد"),
+        child: Padding(
+          padding: getPadding(horizontal: 16.w),
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    32.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "الاسم الكامل",
+                      child: SharedEnterNameTextField(
+                        nameController: nameController,
+                      ),
                     ),
-                  ),
+                    16.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "رقم الجوال",
 
-                  16.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "رقم الجوال",
-
-                    child: SharedPhoneTextField(
-                      phoneController: phoneController,
+                      child: SharedPhoneTextField(
+                        phoneController: phoneController,
+                      ),
                     ),
-                  ),
 
-                  16.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "البريد الإلكترروني",
-                    child: SharedEmailTextField(
-                      emailController: emailController,
+                    16.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "البريد الإلكترروني",
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
-                  ),
 
-                  16.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "اختر التاجر",
-                    child: ChooseTraderDropDown(),
-                  ),
-
-                  16.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "سؤال التحقق من التاجر",
-                    child: CustomLoginSignupTextfield(
-                      hint: "أجب على سؤال  التحقق",
-                      asset: AppAssets.questionMark,
+                    16.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "اختر التاجر",
+                      child: ChooseTraderDropDown(),
                     ),
-                  ),
 
-                  16.vs,
-                  CustomLoginSignupTextfieldText(
-                    text: "كلمة المرور",
-                    child: SharedPasswordTextField(
-                      passwordController: passwordController,
+                    16.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "سؤال التحقق من التاجر",
+                      child: CustomTextFormField(
+                        controller: checkController,
+                        hintText: "أجب على سؤال  التحقق",
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.questionMark,
+                          fit: BoxFit.none,
+                        ),
+                      ),
                     ),
-                  ),
 
-                  40.vs,
-                  CustomButton(
-                    text: "إنشاء حساب",
-                    onPressed: () {
-                      Routes.registerAccept.moveTo();
-                    },
-                  ),
-                  24.vs,
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة",
-                      style: getRegularTextStyle(color: AppColors.grayHint),
+                    16.vs,
+                    CustomLoginSignupTextfieldText(
+                      text: "كلمة المرور",
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
-                  ),
-                  37.vs,
-                ],
+
+                    40.vs,
+                    CustomButton(
+                      text: "إنشاء حساب",
+                      onPressed: () {
+                        Routes.registerAccept.moveTo();
+                      },
+                    ),
+                    24.vs,
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة",
+                        style: getRegularTextStyle(color: AppColors.grayHint),
+                      ),
+                    ),
+                    37.vs,
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
