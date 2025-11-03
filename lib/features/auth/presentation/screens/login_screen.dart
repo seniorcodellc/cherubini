@@ -1,13 +1,12 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/log_in_have_no_account_row.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/log_in_welcome_body.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_email_text_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_password_text_field.dart';
 import 'package:cherubini/features/auth/data/model/login_model.dart';
 import 'package:cherubini/features/auth/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
-
 import '../../../../exports.dart';
+import '../widgets/log_in_have_no_account_row.dart';
+import '../widgets/log_in_welcome_body.dart';
+import '../widgets/shared_email_text_field.dart';
+import '../widgets/shared_password_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});

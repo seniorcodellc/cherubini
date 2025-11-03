@@ -1,15 +1,13 @@
-
-import 'package:cherubini/features/auth/data/model/login_model.dart';
-
 import '../../../../exports.dart';
+import '../../data/model/login_model.dart';
 import '../../data/model/request_model/edit_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
+import '../../data/model/request_model/register_request_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
 import '../../data/model/user_response_model.dart';
 import '../repositories/auth_repo.dart';
-
 class AuthUseCase {
   AuthRepo authRepo;
   AuthUseCase({required this.authRepo});
@@ -19,8 +17,8 @@ class AuthUseCase {
       authRepo.login(login: login);
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
   Future<Either<Failure, ResponseModel>> register(
-          {required UserModel registerRequestModel}) async =>
-      authRepo.register(registerRequestModel: registerRequestModel);
+          {required RegisterRequestModel registerModel}) async =>
+      authRepo.register(registerModel: registerModel);
   Future<Either<Failure, ResponseModel>> verify(
           {required VerifyRequestModel verifyRequestModel}) async =>
       authRepo.verify(verifyRequestModel: verifyRequestModel);

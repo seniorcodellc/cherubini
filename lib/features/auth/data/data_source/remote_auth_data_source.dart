@@ -1,4 +1,6 @@
 
+import 'package:cherubini/features/auth/data/model/request_model/register_request_model.dart';
+
 import '../../../../exports.dart';
 import '../model/login_model.dart';
 import '../model/login_response_model.dart';
@@ -8,12 +10,13 @@ import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
 import '../model/response_model/forget_password_response_model.dart';
 import '../model/response_model/logout_response_model.dart';
+import '../model/response_model/register_response_model.dart';
 import '../model/user_response_model.dart';
 
 abstract class AuthRemoteDataSource {
   Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
-  Future<ResponseModel> register({required UserModel registerRequestModel});
+  Future<ResponseModel> register({required RegisterRequestModel registerModel});
   Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel});
   Future<ResponseModel> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
   Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
@@ -28,29 +31,20 @@ abstract class AuthRemoteDataSource {
 class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl({required super.dioConsumer});
   @override
-
   Future<ResponseModel> login({required LoginModel login}) => addData(
     endPoint: EndPoints.login,
     data: login.toJson(),
     getFromJsonFunction: LoginResponseModel.fromJson,
   );
-
-
-
-
-
-
-
   @override
   Future<ResponseModel> logout() => addData(endPoint: EndPoints.logout, getFromJsonFunction: LogoutResponseModel.fromJson);
   @override
-  Future<ResponseModel> register({required UserModel registerRequestModel}) => addData(
-    endPoint: EndPoints.register,
-    data: registerRequestModel.toJson(),
+  Future<ResponseModel> register({required RegisterRequestModel registerModel}) => addData(
+    endPoint: EndPoints.registerMerchant,
+    data: registerModel.toJson(),
     //  isFormData: true,
-    getFromJsonFunction: RequestIdResponseModel.fromJson,
+    getFromJsonFunction: RegisterResponseModel.fromJson,
   );
-
   @override
   Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel}) => addData(
     endPoint: EndPoints.verify,
@@ -88,7 +82,6 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
     isFormData: true,
     getFromJsonFunction: RequestIdResponseModel.fromJson,
   );
-
   @override
   Future<ResponseModel> deleteAccount({required int accountId}) => remoteExecute(
     request: dioConsumer.deleteRequest(path: "${EndPoints.deleteAccount}/$accountId"),

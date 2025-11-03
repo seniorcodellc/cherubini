@@ -1,14 +1,13 @@
-import 'package:cherubini/features/auth/data/model/login_model.dart';
-
+import 'package:cherubini/exports.dart';
 import '../../../../config/local_notification/local_notification.dart';
-import '../../../../exports.dart';
+import '../../data/model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
 import '../../data/model/request_model/register_request_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
-import '../../data/model/user_response_model.dart';
 import '../../data/model/response_model/forget_password_response_model.dart';
+import '../../data/model/user_response_model.dart';
 import '../../domain/usecase/auth_use_case.dart';
 
 class AuthCubit extends Cubit<CubitStates> {
@@ -43,20 +42,20 @@ class AuthCubit extends Cubit<CubitStates> {
     },
   );
   RequestIdModel? registerModel;
-  register({required UserModel userModel}) async {
+  register({required RegisterRequestModel registerMerchantModel}) async {
     this.userModel = userModel;
     await executeWithDialog<RequestIdModel>(
-      either: authUseCase.register(registerRequestModel: userModel),
+      either: authUseCase.register(registerModel: registerMerchantModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
       onSuccess: (RequestIdModel? data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
             NotificationsService().showSimpleNotification(title: AppStrings.verificationAccount.trans, description: "0000");
+            registerModel = data;
+            Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
           },
         );
-        registerModel = data;
-        Routes.enterOtpRoute.moveTo();
       },
     );
   }

@@ -7,6 +7,7 @@ import '../data_source/remote_auth_data_source.dart';
 import '../model/login_model.dart';
 import '../model/request_model/edit_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
+import '../model/request_model/register_request_model.dart';
 import '../model/request_model/resend_code_request_model.dart';
 import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
@@ -26,8 +27,8 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, ResponseModel>> logout() =>
       executeImpl<Null>(() => authRemoteDataSource.logout(), localWrite: (data) => authLocalDataSource.clearUser());
   @override
-  Future<Either<Failure, ResponseModel>> register({required UserModel registerRequestModel}) =>
-      executeImpl(() => authRemoteDataSource.register(registerRequestModel: registerRequestModel));
+  Future<Either<Failure, ResponseModel>> register({required RegisterRequestModel registerModel}) =>
+      executeImpl(() => authRemoteDataSource.register(registerModel: registerModel));
 
   @override
   Future<Either<Failure, ResponseModel>> verify({required VerifyRequestModel verifyRequestModel}) => executeImpl<UserDataModel>(
