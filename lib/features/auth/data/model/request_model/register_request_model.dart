@@ -4,8 +4,8 @@ class RegisterRequestModel {
   String? phone;
   String? password;
   String? passwordConfirmation;
-  String? governorateId;
-  String? regionId;
+  int? governorateId;
+  int? regionId;
 
     RegisterRequestModel({
     this.phone,

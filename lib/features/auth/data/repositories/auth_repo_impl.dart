@@ -1,4 +1,4 @@
-
+import 'package:cherubini/features/auth/data/model/tech_sign_up_model.dart';
 import '../../../../config/constants/app_prefs.dart';
 import '../../../../exports.dart';
 import '../../domain/repositories/auth_repo.dart';
@@ -16,41 +16,78 @@ import '../model/user_response_model.dart';
 class AuthRepoImpl extends AuthRepo {
   final AuthRemoteDataSource authRemoteDataSource;
   final AuthLocalDataSource authLocalDataSource;
-  AuthRepoImpl({required this.authRemoteDataSource, required this.authLocalDataSource});
+  AuthRepoImpl({
+    required this.authRemoteDataSource,
+    required this.authLocalDataSource,
+  });
 
   @override
-  Future<Either<Failure, ResponseModel>> login({required LoginModel login}) => executeImpl<UserDataModel>(
-    () => authRemoteDataSource.login(login: login),
-    localWrite: (data) => authLocalDataSource.cacheUser(user: data),
+  Future<Either<Failure, ResponseModel>> login({required LoginModel login}) =>
+      executeImpl<UserDataModel>(
+        () => authRemoteDataSource.login(login: login),
+        localWrite: (data) => authLocalDataSource.cacheUser(user: data),
+      );
+  @override
+  Future<Either<Failure, ResponseModel>> logout() => executeImpl<Null>(
+    () => authRemoteDataSource.logout(),
+    localWrite: (data) => authLocalDataSource.clearUser(),
   );
   @override
-  Future<Either<Failure, ResponseModel>> logout() =>
-      executeImpl<Null>(() => authRemoteDataSource.logout(), localWrite: (data) => authLocalDataSource.clearUser());
-  @override
-  Future<Either<Failure, ResponseModel>> register({required RegisterRequestModel registerModel}) =>
-      executeImpl(() => authRemoteDataSource.register(registerModel: registerModel));
+  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterRequestModel registerModel}) =>
+      executeImpl(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
+
 
   @override
-  Future<Either<Failure, ResponseModel>> verify({required VerifyRequestModel verifyRequestModel}) => executeImpl<UserDataModel>(
+  Future<Either<Failure, ResponseModel>> registerTech({
+    required TechSignUpModel techSignUpModel,
+  }) => executeImpl(
+    () => authRemoteDataSource.registerTech(techSignUpModel: techSignUpModel),
+  );
+
+  @override
+  Future<Either<Failure, ResponseModel>> verify({
+    required VerifyRequestModel verifyRequestModel,
+  }) => executeImpl<UserDataModel>(
     () => authRemoteDataSource.verify(verifyRequestModel: verifyRequestModel),
-        localWrite: (data) async => authLocalDataSource.cacheUser(user: data),
+    localWrite: (data) async => authLocalDataSource.cacheUser(user: data),
   );
   @override
-  Future<Either<Failure, ResponseModel>> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel}) =>
-      executeImpl(() => authRemoteDataSource.forgetPassword(enterPhoneNumberRequestModel: enterPhoneNumberRequestModel));
+  Future<Either<Failure, ResponseModel>> forgetPassword({
+    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
+  }) => executeImpl(
+    () => authRemoteDataSource.forgetPassword(
+      enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
+    ),
+  );
 
   @override
-  Future<Either<Failure, ResponseModel>> verifyForgetPassword({required VerifyRequestModel verifyRequestModel}) =>
-      executeImpl(() => authRemoteDataSource.verifyForgetPassword(verifyRequestModel: verifyRequestModel));
+  Future<Either<Failure, ResponseModel>> verifyForgetPassword({
+    required VerifyRequestModel verifyRequestModel,
+  }) => executeImpl(
+    () => authRemoteDataSource.verifyForgetPassword(
+      verifyRequestModel: verifyRequestModel,
+    ),
+  );
 
   @override
-  Future<Either<Failure, ResponseModel>> resetPassword({required ResetPasswordRequestModel resetPasswordRequestModel}) =>
-      executeImpl(() => authRemoteDataSource.resetPassword(resetPasswordRequestModel: resetPasswordRequestModel));
+  Future<Either<Failure, ResponseModel>> resetPassword({
+    required ResetPasswordRequestModel resetPasswordRequestModel,
+  }) => executeImpl(
+    () => authRemoteDataSource.resetPassword(
+      resetPasswordRequestModel: resetPasswordRequestModel,
+    ),
+  );
   @override
-  Future<Either<Failure, ResponseModel>> reSendCode({required ReSendRequestModel resendRequestModel}) =>
-      executeImpl(() => authRemoteDataSource.reSendCode(resendRequestModel: resendRequestModel));
+  Future<Either<Failure, ResponseModel>> reSendCode({
+    required ReSendRequestModel resendRequestModel,
+  }) => executeImpl(
+    () =>
+        authRemoteDataSource.reSendCode(resendRequestModel: resendRequestModel),
+  );
   @override
-  Future<Either<Failure, ResponseModel>> editProfile({required UserModel userEdit}) => executeImpl<UserModel>(
+  Future<Either<Failure, ResponseModel>> editProfile({
+    required UserModel userEdit,
+  }) => executeImpl<UserModel>(
     () => authRemoteDataSource.editProfile(userEdit: userEdit),
     /*       localWrite: (data) async {
         return authLocalDataSource.cacheUser(user: data..token=AppPrefs.token);
@@ -58,7 +95,9 @@ class AuthRepoImpl extends AuthRepo {
   );
 
   @override
-  Future<Either<Failure, ResponseModel>> deleteAccount({required int accountId}) => executeImpl<Null>(
+  Future<Either<Failure, ResponseModel>> deleteAccount({
+    required int accountId,
+  }) => executeImpl<Null>(
     () => authRemoteDataSource.deleteAccount(accountId: accountId),
     localWrite: (data) async {
       return authLocalDataSource.clearUser();
@@ -73,10 +112,10 @@ class AuthRepoImpl extends AuthRepo {
   //     );
 
   @override
-  Future<Either<Failure, ResponseModel>> getUser() => executeCache(() => authLocalDataSource.getUser());
+  Future<Either<Failure, ResponseModel>> getUser() =>
+      executeCache(() => authLocalDataSource.getUser());
 
   @override
-  Future<Either<Failure, ResponseModel>> clearUser() => executeCache(() => authLocalDataSource.clearUser());
-
-
+  Future<Either<Failure, ResponseModel>> clearUser() =>
+      executeCache(() => authLocalDataSource.clearUser());
 }

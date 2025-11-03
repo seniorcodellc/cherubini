@@ -24,14 +24,14 @@ class RegisterAcceptMessage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على",
+                  AppStrings.acceptMessage1Ar,
                   style: getRegularTextStyle(
                     fontSize: 16,
                     color: AppColors.grayHint,
                   ),
                 ),
                 Text(
-                  " حسابك",
+                  AppStrings.acceptMessage2Ar,
                   style: getRegularTextStyle(
                     fontSize: 16,
                     color: AppColors.grayHint,

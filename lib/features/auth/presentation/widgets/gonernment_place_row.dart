@@ -14,8 +14,10 @@ class GovernmentPlaceRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomLoginSignupTextfieldText(
-              text: "المحافظة ",
-              child: GovernmentPlaceDropdownButton(hint: 'أختر المحافظة'),
+              text: AppStrings.governmentAr,
+              child: GovernmentPlaceDropdownButton(
+                hint: AppStrings.governmentHintAr,
+              ),
             ),
           ],
         ),
@@ -24,8 +26,10 @@ class GovernmentPlaceRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomLoginSignupTextfieldText(
-              text: "المنطقة",
-              child: GovernmentPlaceDropdownButton(hint: 'أختر المنطقة'),
+              text: AppStrings.placeAr,
+              child: GovernmentPlaceDropdownButton(
+                hint: AppStrings.placeHintAr,
+              ),
             ),
           ],
         ),

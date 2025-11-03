@@ -1,5 +1,4 @@
 import 'package:cherubini/features/Auth/presentation/widgets/choose_trader_drop_down.dart';
-import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/auth/presentation/widgets/shared_enter_name_text_field.dart';
 
@@ -7,6 +6,8 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
+import '../../data/model/tech_sign_up_model.dart';
+import '../managers/auth_cubit.dart';
 import '../widgets/shared_email_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
 import '../widgets/shared_phone_text_field.dart';
@@ -18,14 +19,14 @@ class SignUpAsTech extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController checkController = TextEditingController();
-  GlobalKey formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: _formKey,
       child: CustomBackground(
         backgroundColor: AppColors.bgColor,
-        appBar: CustomAppbar(title: "تسجيل فني جديد"),
+        appBar: CustomAppbar(title: AppStrings.signUpAsNewTechAr),
         child: Padding(
           padding: getPadding(horizontal: 16.w),
           child: CustomScrollView(
@@ -36,14 +37,14 @@ class SignUpAsTech extends StatelessWidget {
                   children: [
                     32.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "الاسم الكامل",
+                      text: AppStrings.fullNameAr,
                       child: SharedEnterNameTextField(
                         nameController: nameController,
                       ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "رقم الجوال",
+                      text: AppStrings.phoneNumAr,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -52,7 +53,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "البريد الإلكترروني",
+                      text: AppStrings.emailAr,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -60,16 +61,16 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "اختر التاجر",
+                      text: AppStrings.chooseMerchantAr,
                       child: ChooseTraderDropDown(),
                     ),
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "سؤال التحقق من التاجر",
+                      text: AppStrings.merchantCheckAr,
                       child: CustomTextFormField(
                         controller: checkController,
-                        hintText: "أجب على سؤال  التحقق",
+                        hintText: AppStrings.merchantCheckHintAr,
                         prefixIcon: CustomSVGImage(
                           asset: AppAssets.questionMark,
                           fit: BoxFit.none,
@@ -79,7 +80,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
-                      text: "كلمة المرور",
+                      text: AppStrings.passwordAr,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -87,16 +88,30 @@ class SignUpAsTech extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: "إنشاء حساب",
+                      text: AppStrings.createAccountButtonAr,
+
                       onPressed: () {
-                        Routes.registerAccept.moveTo();
+                        if (_formKey.currentState!.validate().isTrue) {
+                          context.read<AuthCubit>().registerTech(
+                            TechSignUpModel(
+                              // confirmPassword: passwordController.text,
+                              name: nameController.text,
+                              phone: phoneController.text,
+                              email: emailController.text,
+                              merchantId: 1,
+                              password: passwordController.text,
+
+                              // check: checkController.text,
+                            ),
+                          );
+                        }
                       },
                     ),
                     24.vs,
                     Align(
-                      alignment: Alignment.center,
+                      alignment: AlignmentDirectional.center,
                       child: Text(
-                        "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة",
+                        AppStrings.techInstructionAr,
                         style: getRegularTextStyle(color: AppColors.grayHint),
                       ),
                     ),

@@ -8,11 +8,11 @@ class SharedPhoneTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      hintText: "568912345",
+      hintText: AppStrings.phoneNumHintAr,
       controller: phoneController,
       prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
       validator: (text) =>
-          text.validatePhone.isFalse ? AppStrings.phoneError : null,
+          text.validatePhone.isFalse ? AppStrings.phoneError.trans : null,
     );
   }
 }

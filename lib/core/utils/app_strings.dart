@@ -85,7 +85,7 @@ class AppStrings {
   static const String youAreLoser = "youAreLoser";
   static const String message = "message";
   static const String firstName = "firstName";
-  static const String email = "email";
+  static const String emailEn = "email";
   static const String unitProposed = "unitProposed";
   static const String phoneNumber = "phoneNumber";
   static const String unitInterest = "unitInterest";
@@ -133,7 +133,8 @@ class AppStrings {
   static const String hour = "hour";
   static const String minute = "minute";
   static const String sendingData = "sendingData";
-  static const String insurancePaymentVerification = "insurancePaymentVerification";
+  static const String insurancePaymentVerification =
+      "insurancePaymentVerification";
   static const String searchByOriginNumberOrCity = "searchByOriginNumberOrCity";
   static const String current = "current";
   static const String nextStep = "nextStep";
@@ -149,7 +150,8 @@ class AppStrings {
   static const String loginNow = "loginNow";
   static const String enterEmail = "enterEmail";
   static const String joinAsGuest = "joinAsGuest";
-  static const String didntReceiveVerificationCode = "didntReceiveVerificationCode";
+  static const String didntReceiveVerificationCode =
+      "didntReceiveVerificationCode";
   static const String registerWithUs = "registerWithUs";
   static const String termsAndConditions = "termsAndConditions";
   static const String termsAndConditionsRequired = "termsAndConditionsRequired";
@@ -182,6 +184,85 @@ class AppStrings {
   static const String seconds = "seconds";
   static const String noEstateAds = 'noEstateAds';
   static const String appName = "appName";
+
+  /// **************************** Authentication ************************************
+  static const String loginAr = "تسجيل الدخول";
+  static const String logInWelcomeAr = "مرحباً بك في برنامج نقاط الولاء";
+  static const String emailAr = "البريد الإلكترروني";
+  static const String passwordAr = "كلمة المرور";
+  static const String confirmPasswordAr = "تأكيد كلمة المرور";
+  static const String passwordHintAr = "*************";
+  static const String forgetPasswordAr = "نسيت كلمة المرور؟";
+  static const String haveNoAccountAr = "ليس لديك حساب؟";
+  static const String signUpAsMerchantAr = "تسجيل تاجر";
+  static const String signUpAsTechAr = "تسجيل فني";
+  static const String signUpAsNewTechAr = "تسجيل فني جديد";
+  static const String signUpAsNewMerchantAr = "تسجيل تاجر جديد";
+  static const String fullNameHintAr = "أدخل اسمك بالكامل";
+  static const String companyNameHintAr = "اسم الشركة";
+  static const String companyNameAr = "اسم الشركة";
+  static const String addressAr = "العنوان";
+  static const String addressHintAr = "المدينة , الحي , الشارع";
+  static const String fullNameAr = "الاسم الكامل";
+  static const String phoneNumAr = "رقم الجوال";
+  static const String phoneNumHintAr = "568912345";
+  static const String emailHintAr = "example1@gmail.com";
+  static const String chooseMerchantAr = "اختر التاجر";
+  static const String merchantOneAr = "تاجر رقم 1";
+  static const String merchantTwoAr = "تاجر رقم 2";
+  static const String merchantThreeAr = "تاجر رقم 3";
+  static const String merchantCheckAr = "سؤال التحقق من التاجر";
+  static const String merchantCheckHintAr = "أجب على سؤال  التحقق";
+  static const String createAccountButtonAr = "إنشاء حساب";
+  static const String returnToSignUpButtonAr = "العودة لتسجيل الدخول";
+  static const String waitingForAcceptRegisterTextAr =
+      "في انتظار موافقة المسؤول";
+  static const String techInstructionAr =
+      "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة";
+  static const String merchantInstruction1Ar =
+      "بالتسجيل، أنت توافق على الشروط والأحكام";
+  static const String merchantInstruction2Ar = "وسياسة الخصوصية";
+  static const String waitingStatement1Ar =
+      "تم إرسال طلب التسجيل الخاص بك. سيتم";
+  static const String waitingStatement2Ar = " مراجعته من قبل المسؤول وسيتم";
+  static const String waitingStatement3Ar = " إعلامك عند الموافقة.";
+  static const String governmentAr = "المحافظة ";
+  static const String placeAr = "المنطقة";
+  static const String governmentHintAr = 'أختر المحافظة';
+  static const String placeHintAr = 'أختر المنطقة';
+  static const String acceptMessage1Ar =
+      "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على";
+  static const String acceptMessage2Ar = " حسابك";
+
+  /// **************************** Splash ************************************
+  ///
+  static const String splashHeaderAr = 'أهلا بك فى تطبيق نقاط الولاء';
+  static const String appNameAr = "برنامج نقاط الولاء";
+  static const String splashBodyAr = "نظام إدارة النقاط الذكي";
+  static const String appDescriptionAr =
+      "تطبيق لإدارة نقاط الولاء بين التاجر والفني، يجمع النقاط عبر مسح الأكواد ويوفر تتبّع للرصيد والسجلات مع إمكانية صرف الاستحقاقات وطباعة شهادات الضمان.";
+
+  /// **************************** tech dashboard ************************************
+  static const String quickProceduresAr = 'إجراءات سريعة';
+  static const String totalPointsAr = 'إجمالى النقاط ';
+  static const String replacedPointsAr = ' النقاط المستبدلة ';
+  static const String availablePointsAr = ' النقاط المتاحة';
+  static const String lastScanOperationsAr = 'أخر عمليات المسح ';
+  static const String displayAllAr = 'عرض الكل ';
+  static const String totalOperationsAr = 'إجمالي العمليات';
+  static const String entitlementsAr = "الاستحقاقات ";
+  static const String pointsLogAr = "سجل النقاط";
+  static const String techNameAr = "محمد على";
+  static const String techDescriptionAr = "فني معتمد";
+  static const String profileEditAr = 'تعديل الملف الشخصي';
+  static const String profileChangePasswordAr = 'تغيير كلمة المرور';
+  static const String profileWarrantyCertificatesAr = 'شهادات الضمان';
+  static const String notificationsAr = "الإشعارات";
+  static const String logOutAr = "تسجيل الخروج";
+  static const String pointsNotificationsAr = "إشعارات النقاط";
+  static const String deleteNotificationsAr = "إشعارات المسح";
+  static const String systemNotificationsAr = "إشعارات النظام";
+  static const String applyForNextAcheiveAr = "التقدم للمكافأة التالية";
 
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
@@ -257,7 +338,6 @@ class AppStrings {
   static const String qrCode = 'qrCode';
   static const String workPlace = 'workPlace';
   static const String signUp = 'signUp';
-  static const String logIn = 'logIn';
   static const String orLogIn = 'orLogIn';
   static const String startingRegister = 'Starting Register...';
   static const String verificationAccount = 'verificationAccount';
@@ -266,9 +346,12 @@ class AppStrings {
   static const String onBoarding1Title = 'اكسب نقاط الولاء';
   static const String onBoarding2Title = 'مسح سهل وسريع';
   static const String onBoarding3Title = 'استبدل النقاط بجوائز';
-  static const String onBoarding1SubTitle = 'امسح الباركود واحصل على نقاط مع كل عملية شراء';
-  static const String onBoarding2SubTitle = 'نظام مسح ذكي للمنتجات وتسجيل النقاط تلقائياً';
-  static const String onBoarding3SubTitle = 'استخدم نقاطك للحصول على مكافآت وخصومات حصرية';
+  static const String onBoarding1SubTitle =
+      'امسح الباركود واحصل على نقاط مع كل عملية شراء';
+  static const String onBoarding2SubTitle =
+      'نظام مسح ذكي للمنتجات وتسجيل النقاط تلقائياً';
+  static const String onBoarding3SubTitle =
+      'استخدم نقاطك للحصول على مكافآت وخصومات حصرية';
   static const String welcomeBack = 'welcomeBack';
   static const String currentBalance = 'currentBalance';
   static const String welcomeOnBoard = 'welcomeOnBoard';
@@ -413,16 +496,21 @@ class AppStrings {
   /// **************************** Notification Selection Screens ********************************************
   static const String yesterdayText = "yesterdayText";
   static const String loanRepaymentWarningTitle = "loanRepaymentWarningTitle";
-  static const String loanRepaymentWarningDescription = "loanRepaymentWarningDescription";
-  static const String loanRepaymentWarningTimestamp = "loanRepaymentWarningTimestamp";
+  static const String loanRepaymentWarningDescription =
+      "loanRepaymentWarningDescription";
+  static const String loanRepaymentWarningTimestamp =
+      "loanRepaymentWarningTimestamp";
   static const String loanApplicationViewsTitle = "loanApplicationViewsTitle";
-  static const String loanApplicationViewsDescription = "loanApplicationViewsDescription";
-  static const String loanApplicationViewsTimestamp = "loanApplicationViewsTimestamp";
+  static const String loanApplicationViewsDescription =
+      "loanApplicationViewsDescription";
+  static const String loanApplicationViewsTimestamp =
+      "loanApplicationViewsTimestamp";
   static const String newBankCardTitle = "newBankCardTitle";
   static const String newBankCardDescription = "newBankCardDescription";
   static const String newBankCardTimestamp = "newBankCardTimestamp";
   static const String paymentSuccessfulTitle = "paymentSuccessfulTitle";
-  static const String paymentSuccessfulDescription = "paymentSuccessfulDescription";
+  static const String paymentSuccessfulDescription =
+      "paymentSuccessfulDescription";
   static const String paymentSuccessfulTimestamp = "paymentSuccessfulTimestamp";
   static const String payButtonText = "payButtonText";
 
@@ -630,11 +718,13 @@ class AppStrings {
   static const String downloadReceipt = 'downloadReceipt';
   static const String send = 'send';
   static const String scanCard = 'scanCard';
-  static const String putYourCardInsideTheRectangle = 'putYourCardInsideTheRectangle';
+  static const String putYourCardInsideTheRectangle =
+      'putYourCardInsideTheRectangle';
   static const String myPaid = 'myPaid';
   static const String completed = 'completed';
   static const String canceled = 'canceled';
-  static const String thereAreNoPaymentTransactions = 'thereAreNoPaymentTransactions';
+  static const String thereAreNoPaymentTransactions =
+      'thereAreNoPaymentTransactions';
   static const String paymentRequest = 'paymentRequest';
   static const String lastPayments = 'lastPayments';
   static const String amount = 'amount';
@@ -663,7 +753,8 @@ class AppStrings {
   static const String requestDeposit = 'requestDeposit';
   static const String bankName = 'bankName';
   static const String note = 'note';
-  static const String theAmountMustNotBeLessThan = 'the_amount_must_not_be_less_than';
+  static const String theAmountMustNotBeLessThan =
+      'the_amount_must_not_be_less_than';
   static const String requestWithdrawNotes = 'requestWithdrawNotes';
   static const String remainingAmount = 'remainingAmount';
   static const String or = 'or';
@@ -671,11 +762,14 @@ class AppStrings {
   static const String hopeTheFollowingForm = 'hopeTheFollowingForm';
   static const String orderNumber = 'orderNumber';
   static const String bankIban = 'bankIban';
-  static const String yourRequestHasBeenSubmittedSuccessfully = 'yourRequestHasBeenSubmittedSuccessfully';
+  static const String yourRequestHasBeenSubmittedSuccessfully =
+      'yourRequestHasBeenSubmittedSuccessfully';
   static const String accountName = 'accountName';
-  static const String internationalBankAccountNumber = 'internationalBankAccountNumber';
+  static const String internationalBankAccountNumber =
+      'internationalBankAccountNumber';
   static const String depositRequestWallet = 'depositRequestWallet';
-  static const String depositRequestSubmittedSuccessfully = 'depositRequestSubmittedSuccessfully';
+  static const String depositRequestSubmittedSuccessfully =
+      'depositRequestSubmittedSuccessfully';
   static const String fieldIsRequired = 'fieldIsRequired';
   static const String enter = 'enter';
   static const String enterAmount = 'enterAmount';
@@ -691,21 +785,25 @@ class AppStrings {
   static const String whatToAdd = 'whatToAdd';
   static const String useWalletAsDefault = 'useWalletAsDefault';
   static const String removeFromFavorite = 'removeFromFavorite';
-  static const String pleaseReadTheConditionsWell = 'pleaseReadTheConditionsWell';
-  static const String addAResidentRegistrationAgency = 'addAResidentRegistrationAgency';
+  static const String pleaseReadTheConditionsWell =
+      'pleaseReadTheConditionsWell';
+  static const String addAResidentRegistrationAgency =
+      'addAResidentRegistrationAgency';
   static const String requestForeignOwner = 'requestForeignOwner';
   static const String nationality = 'nationality';
   static const String passportOrIdNumber = 'passportOrIdNumber';
   static const String uploadDelegationImage = 'uploadDelegationImage';
 
-  static const String addAgencyOrRegistrationOfAForeignResident = 'addAgencyOrRegistrationOfAForeignResident';
+  static const String addAgencyOrRegistrationOfAForeignResident =
+      'addAgencyOrRegistrationOfAForeignResident';
 
   static const String yesRemove = 'yesRemove';
   static const String cancelReason = 'cancelReason';
   static const String errorInBidding = 'errorInBidding';
   static const String incorrectInfo = 'incorrectInfo';
   static const String noFunding = 'noFunding';
-  static const String addDelegationOrAuthorization = 'addDelegationOrAuthorization';
+  static const String addDelegationOrAuthorization =
+      'addDelegationOrAuthorization';
   static const String deliveryDelay = 'deliveryDelay';
   static const String changeNeeds = 'changeNeeds';
   static const String other = 'other';
@@ -714,7 +812,8 @@ class AppStrings {
   static const String meters = 'meters ';
   static const String specialProperty = 'specialProperty ';
   static const String reReservation = 'reReservation ';
-  static const String requestReservedSuccessfully = 'requestReservedSuccessfully';
+  static const String requestReservedSuccessfully =
+      'requestReservedSuccessfully';
   static const String paymentSuccessDescription = 'paymentSuccessDescription';
   static const String returnToThePropertyToBid = 'returnToThePropertyToBid';
 
@@ -760,11 +859,11 @@ class AppStrings {
   static const String insuranceCardPhoto = "insuranceCardPhoto";
   static const String addDependentMembers = "addDependentMembers";
 
-  static const String  emailError="emailError";
+  static const String emailError = "emailError";
 
-  static const String  availableTime="availableTime";
+  static const String availableTime = "availableTime";
 
-  static var reservationSteps="reservationSteps";
+  static var reservationSteps = "reservationSteps";
   static const String reservationType = "reservationType";
   static const String cash = "cash";
   static const String insurance = "insurance";
@@ -772,9 +871,9 @@ class AppStrings {
   static const String visaCard = "visaCard";
   static const String total = "total";
 
-  static const String completeReservation="completeReservation";
+  static const String completeReservation = "completeReservation";
 
-  static const String myReservations="myReservations";
+  static const String myReservations = "myReservations";
   static const String followUpBooking = "followUpBooking";
   static const String bookingDetails = "bookingDetails";
   static const String enterCardNumberError = "enterCardNumberError";
@@ -790,7 +889,7 @@ class AppStrings {
   static const String cvvCode = "cvvCode";
   static const String saveVisaCard = "saveVisaCard";
 
-  static const String delete="delete";
+  static const String delete = "delete";
   static const String addCreditCard = "addCreditCard";
 
   static const String enterCardDetails = "enterCardDetails";
@@ -806,5 +905,4 @@ class AppStrings {
   static const String mother = "mother";
   static const String wife = "wife";
   static const String son = "son";
-
 }

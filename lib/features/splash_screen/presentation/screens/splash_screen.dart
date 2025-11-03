@@ -38,8 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
           context,
           onSuccess: () {
             NotificationsService().showSimpleNotification(
-              title: 'أهلا بك فى تطبيق نقاط الولاء',
-              description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
+              title: AppStrings.splashHeaderAr,
+              description: AppStrings.appDescriptionAr,
             );
           },
         );
@@ -100,7 +100,10 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
+                colors: [
+                  AppColors.gradientColorStart,
+                  AppColors.gradientColorEnd,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -111,9 +114,21 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
-              Text("برنامج نقاط الولاء", style: getSemiBoldTextStyle(color: AppColors.white, fontSize: 32)),
+              Text(
+                AppStrings.appNameAr,
+                style: getSemiBoldTextStyle(
+                  color: AppColors.white,
+                  fontSize: 32,
+                ),
+              ),
               8.vs,
-              Text("نظام إدارة النقاط الذكي", style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
+              Text(
+                AppStrings.splashBodyAr,
+                style: getRegularTextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                ),
+              ),
             ],
           ),
         ],

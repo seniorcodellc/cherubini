@@ -1,5 +1,3 @@
-import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield.dart';
-
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 
@@ -10,11 +8,11 @@ class SharedEnterNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      hintText: "أدخل ااسمك بالكامل",
+      hintText: AppStrings.fullNameHintAr,
       prefixIcon: CustomSVGImage(asset: AppAssets.profile, fit: BoxFit.none),
-      validator: (text) => text.validateName.isFalse?AppStrings.nameError:null,
+      validator: (text) =>
+          text.validateName.isFalse ? AppStrings.nameError.trans : null,
       controller: nameController,
-
     );
   }
 }

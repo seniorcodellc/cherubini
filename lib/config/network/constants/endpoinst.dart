@@ -3,11 +3,11 @@ abstract class EndPoints {
   static const String baseUrl = 'https://demo.dotstarerp.com/'; //base url
   static const String api = '/api/LoyaltyPoints/';
 
-///////////////////////////// authentication ////////////////////////////
+  ///////////////////////////// authentication ////////////////////////////
   static const String login = '${api}login';
   static const String logout = '${api}logout';
-  static const String register = '${api}UserRegistartion';
   static const String registerMerchant = '${api}registerMerchant';
+  static const String register = '${api}registerTechnician';
   static const String paymentGateways = '${api}payments/payment-gateways';
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';
@@ -20,7 +20,7 @@ abstract class EndPoints {
   static const String resetPassword = '${api}reset-password';
   static const String userLogout = '${api}logout';
   static const String bookProperty = '${api}property/book';
-  static const String bookBidding = '${api}property/book_bidding' ;
+  static const String bookBidding = '${api}property/book_bidding';
   static const String notification = '${api}user/notification';
   static const String transactions = '${api}payments/transactions';
   static const String cancelBook = '${api}user/bookings/cancel';
@@ -30,7 +30,7 @@ abstract class EndPoints {
       '${api}user/notification/unread-count';
   static const String readNotifications = '${api}user/notification/read';
   static const String confirmationCode = '${api}send_sms';
-///////////////////////////// home ////////////////////////////
+  ///////////////////////////// home ////////////////////////////
   static const String properties = '${api}home/properties';
   static const String procurationForiegn = '${api}procuration_foriegn';
   static const String featuredProperties = '${api}home/featured-properties';
@@ -78,7 +78,7 @@ abstract class EndPoints {
 
   static const String estateMarket = '${api}estate/market';
 
-///////////////////////////// setting ////////////////////////////
+  ///////////////////////////// setting ////////////////////////////
 
   static const String deleteAccount = '${api}user';
   static const String subscriptions = '${api}package';
@@ -120,17 +120,18 @@ abstract class EndPoints {
   static var repostOrderRequest = '$estateRequest/repost';
   static var repostEstate = '$estateAd/repost';
 
-  static String userAndToken="DefToken";
+  static String userAndToken = "DefToken";
 
-  static String clinicCategories="GetClinicList";
+  static String clinicCategories = "GetClinicList";
 
-  static var imageBaseUrl="${baseUrl}Contents/IMG/";
-  static var allDoctors="${baseUrl}GetDoctorList";
-  static var allDoctorsByClinic="${baseUrl}GetDoctorListByClinic";
-  static var allDoctorsByClinicAndDate="${baseUrl}GetDoctorListByClinicAndDate";
-  static var allDoctorsSearch="${baseUrl}DoctorSearch";
+  static var imageBaseUrl = "${baseUrl}Contents/IMG/";
+  static var allDoctors = "${baseUrl}GetDoctorList";
+  static var allDoctorsByClinic = "${baseUrl}GetDoctorListByClinic";
+  static var allDoctorsByClinicAndDate =
+      "${baseUrl}GetDoctorListByClinicAndDate";
+  static var allDoctorsSearch = "${baseUrl}DoctorSearch";
 
-  static String companies="GetCompanyList";
+  static String companies = "GetCompanyList";
 
-  static String insurancePolicy="GetPolicyLis";
+  static String insurancePolicy = "GetPolicyLis";
 }

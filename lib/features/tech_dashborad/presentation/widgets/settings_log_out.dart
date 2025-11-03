@@ -33,7 +33,7 @@ class SettingsLogOut extends StatelessWidget {
             CustomSVGImage(asset: AppAssets.logOut),
             8.hs,
             Text(
-              "تسجيل الخروج",
+              AppStrings.logOutAr,
               style: getRegularTextStyle(fontSize: 16, color: AppColors.red),
             ),
           ],
