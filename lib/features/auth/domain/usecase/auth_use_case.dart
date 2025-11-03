@@ -16,6 +16,7 @@ class AuthUseCase {
   Future<Either<Failure, ResponseModel>> login({
     required LoginModel login,
   }) async => authRepo.login(login: login);
+
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
 
   Future<Either<Failure, ResponseModel>> register({
