@@ -1,6 +1,7 @@
 {
   "appName": "Qarar Auction",
   "phoneError": "Phone Error",
+  "nameError": "Name Error",
   "gallery": "Gallery",
   "camera": "Camera",
   "visits": "visits",

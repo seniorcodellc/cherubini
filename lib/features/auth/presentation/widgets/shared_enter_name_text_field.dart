@@ -11,7 +11,7 @@ class SharedEnterNameTextField extends StatelessWidget {
       hintText: AppStrings.fullNameHintAr,
       prefixIcon: CustomSVGImage(asset: AppAssets.profile, fit: BoxFit.none),
       validator: (text) =>
-          text.validateName.isFalse ? AppStrings.nameError : null,
+          text.validateName.isFalse ? AppStrings.nameError.trans : null,
       controller: nameController,
     );
   }

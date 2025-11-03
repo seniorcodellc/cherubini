@@ -94,7 +94,7 @@ class SignUpAsTech extends StatelessWidget {
                         if (_formKey.currentState!.validate().isTrue) {
                           context.read<AuthCubit>().register(
                             TechSignUpModel(
-                              confirmPassword: passwordController.text,
+                              // confirmPassword: passwordController.text,
                               name: nameController.text,
                               phone: phoneController.text,
                               email: emailController.text,

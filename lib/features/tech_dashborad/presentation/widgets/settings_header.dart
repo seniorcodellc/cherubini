@@ -56,14 +56,14 @@ class SettingsHeader extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    "محمد على",
+                    AppStrings.techNameAr,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,
                     ),
                   ),
                   Text(
-                    "فني معتمد",
+                    AppStrings.techDescriptionAr,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.subTitleColor,

@@ -60,7 +60,7 @@ class AuthCubit extends Cubit<CubitStates> {
           },
         );
         registerModel = data;
-        Routes.enterOtpRoute.moveTo();
+        Routes.registerAccept.moveTo();
       },
     );
   }

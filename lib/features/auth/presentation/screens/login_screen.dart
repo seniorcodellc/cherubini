@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: AlignmentDirectional.bottomEnd,
                       child: Text(
-                        "نسيت كلمة المرور؟",
+                        AppStrings.forgetPasswordAr,
                         style: getRegularTextStyle(
                           color: AppColors.accentColor,
                         ),

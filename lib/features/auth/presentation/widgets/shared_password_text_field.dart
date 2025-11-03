@@ -13,7 +13,7 @@ class SharedPasswordTextField extends StatelessWidget {
       prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
       suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
       validator: (text) =>
-          text.validatePassword.isFalse ? AppStrings.passwordError : null,
+          text.validatePassword.isFalse ? AppStrings.passwordError.trans : null,
     );
   }
 }

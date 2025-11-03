@@ -5,9 +5,9 @@ import '../../../../exports.dart';
 class SettingsNotificationsList extends StatelessWidget {
   SettingsNotificationsList({super.key});
   List<String> notifications = [
-    "إشعارات النقاط",
-    "إشعارات المسح",
-    "إشعارات النظام",
+    AppStrings.pointsNotificationsAr,
+    AppStrings.deleteNotificationsAr,
+    AppStrings.systemNotificationsAr,
   ];
   @override
   Widget build(BuildContext context) {

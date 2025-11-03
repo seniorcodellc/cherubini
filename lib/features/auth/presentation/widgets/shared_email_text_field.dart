@@ -11,7 +11,7 @@ class SharedEmailTextField extends StatelessWidget {
       hintText: AppStrings.emailHintAr,
       prefixIcon: CustomSVGImage(asset: AppAssets.email, fit: BoxFit.none),
       validator: (text) =>
-          text.validateEmail.isFalse ? AppStrings.emailError : null,
+          text.validateEmail.isFalse ? AppStrings.emailError.trans : null,
     );
   }
 }

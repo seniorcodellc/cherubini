@@ -192,24 +192,25 @@ class AppStrings {
   static const String passwordAr = "كلمة المرور";
   static const String confirmPasswordAr = "تأكيد كلمة المرور";
   static const String passwordHintAr = "*************";
+  static const String forgetPasswordAr = "نسيت كلمة المرور؟";
   static const String haveNoAccountAr = "ليس لديك حساب؟";
   static const String signUpAsMerchantAr = "تسجيل تاجر";
   static const String signUpAsTechAr = "تسجيل فني";
   static const String signUpAsNewTechAr = "تسجيل فني جديد";
   static const String signUpAsNewMerchantAr = "تسجيل تاجر جديد";
-  static const String fullNameHintAr = "الاسم الكامل";
+  static const String fullNameHintAr = "أدخل اسمك بالكامل";
   static const String companyNameHintAr = "اسم الشركة";
   static const String companyNameAr = "اسم الشركة";
   static const String addressAr = "العنوان";
   static const String addressHintAr = "المدينة , الحي , الشارع";
-  static const String fullNameAr = "أدخل ااسمك بالكامل";
+  static const String fullNameAr = "الاسم الكامل";
   static const String phoneNumAr = "رقم الجوال";
   static const String phoneNumHintAr = "568912345";
   static const String emailHintAr = "example1@gmail.com";
   static const String chooseMerchantAr = "اختر التاجر";
   static const String merchantOneAr = "تاجر رقم 1";
-  static const String merchantTwoAr = "تاجر رقم 1";
-  static const String merchantThreeAr = "تاجر رقم 1";
+  static const String merchantTwoAr = "تاجر رقم 2";
+  static const String merchantThreeAr = "تاجر رقم 3";
   static const String merchantCheckAr = "سؤال التحقق من التاجر";
   static const String merchantCheckHintAr = "أجب على سؤال  التحقق";
   static const String createAccountButtonAr = "إنشاء حساب";
@@ -232,6 +233,36 @@ class AppStrings {
   static const String acceptMessage1Ar =
       "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على";
   static const String acceptMessage2Ar = " حسابك";
+
+  /// **************************** Splash ************************************
+  ///
+  static const String splashHeaderAr = 'أهلا بك فى تطبيق نقاط الولاء';
+  static const String appNameAr = "برنامج نقاط الولاء";
+  static const String splashBodyAr = "نظام إدارة النقاط الذكي";
+  static const String appDescriptionAr =
+      "تطبيق لإدارة نقاط الولاء بين التاجر والفني، يجمع النقاط عبر مسح الأكواد ويوفر تتبّع للرصيد والسجلات مع إمكانية صرف الاستحقاقات وطباعة شهادات الضمان.";
+
+  /// **************************** tech dashboard ************************************
+  static const String quickProceduresAr = 'إجراءات سريعة';
+  static const String totalPointsAr = 'إجمالى النقاط ';
+  static const String replacedPointsAr = ' النقاط المستبدلة ';
+  static const String availablePointsAr = ' النقاط المتاحة';
+  static const String lastScanOperationsAr = 'أخر عمليات المسح ';
+  static const String displayAllAr = 'عرض الكل ';
+  static const String totalOperationsAr = 'إجمالي العمليات';
+  static const String entitlementsAr = "الاستحقاقات ";
+  static const String pointsLogAr = "سجل النقاط";
+  static const String techNameAr = "محمد على";
+  static const String techDescriptionAr = "فني معتمد";
+  static const String profileEditAr = 'تعديل الملف الشخصي';
+  static const String profileChangePasswordAr = 'تغيير كلمة المرور';
+  static const String profileWarrantyCertificatesAr = 'شهادات الضمان';
+  static const String notificationsAr = "الإشعارات";
+  static const String logOutAr = "تسجيل الخروج";
+  static const String pointsNotificationsAr = "إشعارات النقاط";
+  static const String deleteNotificationsAr = "إشعارات المسح";
+  static const String systemNotificationsAr = "إشعارات النظام";
+  static const String applyForNextAcheiveAr = "التقدم للمكافأة التالية";
 
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";

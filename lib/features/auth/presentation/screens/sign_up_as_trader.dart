@@ -17,6 +17,7 @@ class SignUpAsTrader extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController companyNameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -30,6 +31,12 @@ class SignUpAsTrader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  CustomLoginSignupTextfieldText(
+                    text: AppStrings.fullNameAr,
+                    child: SharedEnterNameTextField(
+                      nameController: nameController,
+                    ),
+                  ),
                   16.vs,
                   CustomLoginSignupTextfieldText(
                     text: AppStrings.phoneNumAr,
