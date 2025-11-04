@@ -12,7 +12,7 @@ class MerchantWarrantyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-        appBar:CustomAppbar(title: "شهادة الضمان"),
+        appBar:CustomAppbar(title: AppStrings.warrantyCertificate),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -28,7 +28,7 @@ class MerchantWarrantyScreen extends StatelessWidget {
                      WarrantyProduce(),
                     40.vs,
                     CustomScanButton(
-                      text: 'طباعة شهادة الضمان',
+                      text: AppStrings.printWarranty,
                       icon: AppAssets.print,
                     ),
                     20.vs,

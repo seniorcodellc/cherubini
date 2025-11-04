@@ -11,7 +11,7 @@ class ErrorScanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "مسح الباركود "),
+      appBar: CustomAppbar(title: AppStrings.scanCode),
       child: Column(
         children: [
           Padding(
@@ -22,7 +22,7 @@ class ErrorScanScreen extends StatelessWidget {
           24.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),
-            child: CustomButton(text: 'مسح باركود آخر',textColor: AppColors.primaryColor, onPressed: (){Routes.errorScanRoute.moveTo();},height: 58.h,backgroundColor: AppColors.whiteLight,borderColor: AppColors.borderColor3,),
+            child: CustomButton(text: AppStrings.scanOtherCode,textColor: AppColors.primaryColor, onPressed: (){Routes.errorScanRoute.moveTo();},height: 58.h,backgroundColor: AppColors.whiteLight,borderColor: AppColors.borderColor3,),
           )
         ],
       ),

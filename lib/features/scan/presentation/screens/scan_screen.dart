@@ -11,7 +11,7 @@ class ScanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "مسح الباركود "),
+      appBar: CustomAppbar(title:AppStrings.scanCode),
       child:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -20,7 +20,7 @@ class ScanScreen extends StatelessWidget {
           150.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),
-            child: CustomScanButton(text: 'ابدا المسح', icon: AppAssets.scan),
+            child: CustomScanButton(text: AppStrings.startScan, icon: AppAssets.scan),
           )
         ],
       ),

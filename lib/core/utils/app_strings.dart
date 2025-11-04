@@ -303,7 +303,30 @@ class AppStrings {
   /// **************************** Operations History ************************************
   static const String operationsHistoryAr = 'سجل العمليات';
   static const String products = 'المنتجات';
+  static const String product = 'منتج';
   static const String publishWarranty = 'اصدار شهادة ضمان';
+  /// **************************** settings ************************************
+  static const String settingsAr = 'الإعدادت';
+  static const String editProfile = 'تعديل الملف الشخصي';
+  static const String changePasswordAr = 'تغيير كلمة المرور';
+  static const String warrantyCertificates = 'شهادات الضمان';
+  /// **************************** scan ************************************
+  static const String startScan = 'ابدا المسح';
+  static const String scanOtherCode = 'مسح باركود آخر';
+  static const String serialNumber = 'الرقم التسلسلي';
+  static const String productName = 'اسم المنتج';
+  static const String earnedPoints = 'النقاط المكتسبة';
+  static const String unavailableMessage = 'هذا المنتج غير مسجل في النظام. تم إرسال تنبيه للمسؤول مع بيانات الفني والتاجر.';
+  /// **************************** warranty ************************************
+  static const String warrantyCertificate = 'شهادة الضمان';
+  static const String createWarranty = 'إنشاء شهادة ضمان';
+  static const String addProductWarrantyMessage = 'أضف المنتجات التي تريد إصدار شهادة ضمان لها';
+  static const String addProduct = 'إضافة منتج';
+  static const String clientName = 'اسم العميل';
+  static const String enterClientName = 'أدخل اسم العميل';
+  static const String printWarranty ='طباعة شهادة الضمان';
+  static const String publishWarrantyMessage = 'سيتم إصدار شهادة ضمان لجميع المنتجات المدرجة بتاريخ اليوم ومدة ضمان سنة واحدة';
+  static const String readDate = 'تاريخ القراءه';
 
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
