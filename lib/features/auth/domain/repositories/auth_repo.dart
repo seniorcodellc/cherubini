@@ -1,7 +1,7 @@
 import '../../../../exports.dart';
-import 'package:cherubini/features/auth/data/model/login_model.dart';
+import '../../data/model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
-import '../../data/model/request_model/register_request_model.dart';
+import '../../data/model/request_model/register_merchant_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
@@ -11,7 +11,7 @@ import '../../data/model/user_response_model.dart';
 abstract class AuthRepo {
   Future<Either<Failure, ResponseModel>> login({required LoginModel login});
   Future<Either<Failure, ResponseModel>> logout();
-  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterRequestModel registerModel});
+  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterMerchantModel registerModel});
   Future<Either<Failure, ResponseModel>> verify({required VerifyRequestModel verifyRequestModel});
   Future<Either<Failure, ResponseModel>> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
   Future<Either<Failure, ResponseModel>> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});

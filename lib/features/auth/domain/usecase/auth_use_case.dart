@@ -1,16 +1,16 @@
-import '../../../../exports.dart';
+import 'package:dartz/dartz.dart';
+import '../../../../config/failures/failure.dart';
+import '../../../../config/network/model/response_model.dart';
 import '../../data/model/login_model.dart';
-import '../../data/model/request_model/edit_model.dart';
-import 'package:cherubini/features/auth/data/model/login_model.dart';
-import '../../../../exports.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
-import '../../data/model/request_model/register_request_model.dart';
+import '../../data/model/request_model/register_merchant_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
 import '../../data/model/tech_sign_up_model.dart';
 import '../../data/model/user_response_model.dart';
 import '../repositories/auth_repo.dart';
+
 class AuthUseCase {
   AuthRepo authRepo;
   AuthUseCase({required this.authRepo});
@@ -20,7 +20,7 @@ class AuthUseCase {
   }) async => authRepo.login(login: login);
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
   Future<Either<Failure, ResponseModel>> registerMerchant(
-          {required RegisterRequestModel registerModel}) async =>
+          {required RegisterMerchantModel registerModel}) async =>
       authRepo.registerMerchant(registerModel: registerModel);
   Future<Either<Failure, ResponseModel>> verify(
           {required VerifyRequestModel verifyRequestModel}) async =>

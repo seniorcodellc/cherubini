@@ -6,6 +6,8 @@ import 'package:cherubini/features/merchant_dashboard/presentation/widgets/quick
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/utils/app_strings.dart';
+
 class DashboardBody extends StatelessWidget {
   const DashboardBody({super.key});
 
@@ -18,7 +20,7 @@ class DashboardBody extends StatelessWidget {
         Padding(
           padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
           child: Text(
-            'إجراءات سريعة',
+            AppStrings.quickProceduresAr,
             style: getBoldTextStyle(
               fontSize: 14.sp,
               color: AppColors.primaryColor,
@@ -37,14 +39,14 @@ class DashboardBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'أخر عمليات المسح ',
+               AppStrings.lastScanOperationsAr,
                 style: getBoldTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.primaryColor,
                 ),
               ),
               Text(
-                'عرض الكل ',
+                AppStrings.displayAllAr,
                 style: getRegularTextStyle(
                   fontSize: 12.sp,
                   color: AppColors.primaryColor,

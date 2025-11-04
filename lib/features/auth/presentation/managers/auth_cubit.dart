@@ -2,7 +2,7 @@ import 'package:cherubini/exports.dart';
 import '../../../../config/local_notification/local_notification.dart';
 import '../../data/model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
-import '../../data/model/request_model/register_request_model.dart';
+import '../../data/model/request_model/register_merchant_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
@@ -65,7 +65,7 @@ class AuthCubit extends Cubit<CubitStates> {
       },
     );
   }
-  registerMerchant(RegisterRequestModel registerRequestModel) async {
+  registerMerchant(RegisterMerchantModel registerRequestModel) async {
     this.userModel = userModel;
     await executeWithDialog<RequestIdModel>(
       either: authUseCase.registerMerchant(registerModel: registerRequestModel),

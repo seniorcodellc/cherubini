@@ -7,7 +7,7 @@ abstract class EndPoints {
   static const String login = '${api}login';
   static const String logout = '${api}logout';
   static const String registerMerchant = '${api}registerMerchant';
-  static const String register = '${api}registerTechnician';
+  static const String registerTech = '${api}registerTechnician';
   static const String paymentGateways = '${api}payments/payment-gateways';
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';

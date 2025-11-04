@@ -7,7 +7,7 @@ import '../data_source/remote_auth_data_source.dart';
 import '../model/login_model.dart';
 import '../model/request_model/edit_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
-import '../model/request_model/register_request_model.dart';
+import '../model/request_model/register_merchant_model.dart';
 import '../model/request_model/resend_code_request_model.dart';
 import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
@@ -33,7 +33,7 @@ class AuthRepoImpl extends AuthRepo {
     localWrite: (data) => authLocalDataSource.clearUser(),
   );
   @override
-  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterRequestModel registerModel}) =>
+  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterMerchantModel registerModel}) =>
       executeImpl(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
 
 

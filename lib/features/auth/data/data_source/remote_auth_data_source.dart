@@ -1,7 +1,7 @@
 import 'package:cherubini/features/auth/data/model/tech_sign_up_model.dart';
 import 'package:cherubini/features/auth/data/model/tech_sign_up_response_model.dart';
 
-import 'package:cherubini/features/auth/data/model/request_model/register_request_model.dart';
+import 'package:cherubini/features/auth/data/model/request_model/register_merchant_model.dart';
 
 import '../../../../exports.dart';
 import '../model/login_model.dart';
@@ -12,13 +12,13 @@ import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
 import '../model/response_model/forget_password_response_model.dart';
 import '../model/response_model/logout_response_model.dart';
-import '../model/response_model/register_response_model.dart';
+import '../model/response_model/register_merchant_response_model.dart';
 import '../model/user_response_model.dart';
 
 abstract class AuthRemoteDataSource {
   Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
-  Future<ResponseModel> registerMerchant({required RegisterRequestModel registerModel});
+  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel});
   Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel});
   Future<ResponseModel> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
   Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
@@ -41,16 +41,16 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
   @override
   Future<ResponseModel> logout() => addData(endPoint: EndPoints.logout, getFromJsonFunction: LogoutResponseModel.fromJson);
   @override
-  Future<ResponseModel> registerMerchant({required RegisterRequestModel registerModel}) => addData(
+  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel}) => addData(
     endPoint: EndPoints.registerMerchant,
     data: registerModel.toJson(),
     //  isFormData: true,
-    getFromJsonFunction: RegisterResponseModel.fromJson,
+    getFromJsonFunction: RegisterMerchantResponseModel.fromJson,
   );
   @override
   Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel}) =>
       addData(
-        endPoint: EndPoints.register,
+        endPoint: EndPoints.registerTech,
         data: techSignUpModel.toJson(),
         //  isFormData: true,
         getFromJsonFunction: TechSignUpResponseModel.fromJson,

@@ -1,4 +1,4 @@
-class RegisterRequestModel {
+class RegisterMerchantModel {
   String? name;
   String? email;
   String? phone;
@@ -7,7 +7,7 @@ class RegisterRequestModel {
   int? governorateId;
   int? regionId;
 
-    RegisterRequestModel({
+    RegisterMerchantModel({
     this.phone,
     this.password,
     this.email,
