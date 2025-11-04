@@ -1,7 +1,9 @@
-import 'package:cherubini/features/auth/data/model/login_model.dart';
-
-import '../../../../exports.dart';
+import 'package:dartz/dartz.dart';
+import '../../../../config/failures/failure.dart';
+import '../../../../config/network/model/response_model.dart';
+import '../../data/model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
+import '../../data/model/request_model/register_merchant_model.dart';
 import '../../data/model/request_model/resend_code_request_model.dart';
 import '../../data/model/request_model/reset_password_request_model.dart';
 import '../../data/model/request_model/verify_request_model.dart';
@@ -18,18 +20,20 @@ class AuthUseCase {
   }) async => authRepo.login(login: login);
 
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
-
-  Future<Either<Failure, ResponseModel>> register({
+  Future<Either<Failure, ResponseModel>> registerMerchant(
+          {required RegisterMerchantModel registerModel}) async =>
+      authRepo.registerMerchant(registerModel: registerModel);
+  Future<Either<Failure, ResponseModel>> verify(
+          {required VerifyRequestModel verifyRequestModel}) async =>
+      authRepo.verify(verifyRequestModel: verifyRequestModel);
+  Future<Either<Failure, ResponseModel>> forgetPassword(
+          {required EnterPhoneNumberRequestModel
+              enterPhoneNumberRequestModel}) async =>
+      authRepo.forgetPassword(
+          enterPhoneNumberRequestModel: enterPhoneNumberRequestModel);
+  Future<Either<Failure, ResponseModel>> registerTech({
     required TechSignUpModel techSignUpModel,
-  }) async => authRepo.register(techSignUpModel: techSignUpModel);
-  Future<Either<Failure, ResponseModel>> verify({
-    required VerifyRequestModel verifyRequestModel,
-  }) async => authRepo.verify(verifyRequestModel: verifyRequestModel);
-  Future<Either<Failure, ResponseModel>> forgetPassword({
-    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
-  }) async => authRepo.forgetPassword(
-    enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
-  );
+  }) async => authRepo.registerTech(techSignUpModel: techSignUpModel);
   Future<Either<Failure, ResponseModel>> verifyForgetPassword({
     required VerifyRequestModel verifyRequestModel,
   }) async =>

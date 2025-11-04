@@ -92,7 +92,7 @@ class SignUpAsTech extends StatelessWidget {
 
                       onPressed: () {
                         if (_formKey.currentState!.validate().isTrue) {
-                          context.read<AuthCubit>().register(
+                          context.read<AuthCubit>().registerTech(
                             TechSignUpModel(
                               // confirmPassword: passwordController.text,
                               name: nameController.text,

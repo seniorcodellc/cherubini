@@ -1,5 +1,4 @@
 import 'package:cherubini/features/auth/data/model/tech_sign_up_model.dart';
-
 import '../../../../config/constants/app_prefs.dart';
 import '../../../../exports.dart';
 import '../../domain/repositories/auth_repo.dart';
@@ -8,6 +7,7 @@ import '../data_source/remote_auth_data_source.dart';
 import '../model/login_model.dart';
 import '../model/request_model/edit_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
+import '../model/request_model/register_merchant_model.dart';
 import '../model/request_model/resend_code_request_model.dart';
 import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
@@ -33,10 +33,15 @@ class AuthRepoImpl extends AuthRepo {
     localWrite: (data) => authLocalDataSource.clearUser(),
   );
   @override
-  Future<Either<Failure, ResponseModel>> register({
+  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterMerchantModel registerModel}) =>
+      executeImpl(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
+
+
+  @override
+  Future<Either<Failure, ResponseModel>> registerTech({
     required TechSignUpModel techSignUpModel,
   }) => executeImpl(
-    () => authRemoteDataSource.register(techSignUpModel: techSignUpModel),
+    () => authRemoteDataSource.registerTech(techSignUpModel: techSignUpModel),
   );
 
   @override

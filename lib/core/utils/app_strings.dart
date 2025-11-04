@@ -264,6 +264,22 @@ class AppStrings {
   static const String systemNotificationsAr = "إشعارات النظام";
   static const String applyForNextAcheiveAr = "التقدم للمكافأة التالية";
 
+  /// **************************** Merchant dashboard ************************************
+  static const String merchantNameAr = "محمد على";
+  static const String merchantCompanyNameAr = "شركة الأجهزة المتقدمة";
+  static const String techManagement = "إدارة الفنيين";
+  static const String pointsSummaryAr = "ملخص النقاط";
+  static const String operationHistory = "سجل العمليات";
+  static const String scanCode = "مسح البار كود";
+  static const String helloText = "مرحباً , أحمد";
+
+  /// **************************** bottom nav bar tabs ************************************
+  static const String homeAr = "الرئيسية";
+  static const String pointsAr = "النقاط";
+  static const String logsAr = "السجلات";
+  static const String operationsLogsAr = 'سجل العمليات';
+  static const String settingsAr = "الإعدادات";
+
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";

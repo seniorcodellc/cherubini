@@ -1,6 +1,8 @@
 import 'package:cherubini/features/auth/data/model/tech_sign_up_model.dart';
 import 'package:cherubini/features/auth/data/model/tech_sign_up_response_model.dart';
 
+import 'package:cherubini/features/auth/data/model/request_model/register_merchant_model.dart';
+
 import '../../../../exports.dart';
 import '../model/login_model.dart';
 import '../model/login_response_model.dart';
@@ -10,35 +12,25 @@ import '../model/request_model/reset_password_request_model.dart';
 import '../model/request_model/verify_request_model.dart';
 import '../model/response_model/forget_password_response_model.dart';
 import '../model/response_model/logout_response_model.dart';
+import '../model/response_model/register_merchant_response_model.dart';
 import '../model/user_response_model.dart';
 
 abstract class AuthRemoteDataSource {
   Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
-  Future<ResponseModel> register({required TechSignUpModel techSignUpModel});
-  Future<ResponseModel> verify({
-    required VerifyRequestModel verifyRequestModel,
-  });
-  Future<ResponseModel> forgetPassword({
-    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
-  });
-  Future<ResponseModel> verifyForgetPassword({
-    required VerifyRequestModel verifyRequestModel,
-  });
-  Future<ResponseModel> resetPassword({
-    required ResetPasswordRequestModel resetPasswordRequestModel,
-  });
-  Future<ResponseModel> reSendCode({
-    required ReSendRequestModel resendRequestModel,
-  });
+  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel});
+  Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel});
+  Future<ResponseModel> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
+  Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
+  Future<ResponseModel> resetPassword({required ResetPasswordRequestModel resetPasswordRequestModel});
+  Future<ResponseModel> reSendCode({required ReSendRequestModel resendRequestModel});
+  Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel});
   Future<ResponseModel> editProfile({required UserModel userEdit});
-
   Future<ResponseModel> deleteAccount({required int accountId});
   // Future<ResponseModel> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
 }
 
-class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
-    implements AuthRemoteDataSource {
+class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl({required super.dioConsumer});
   @override
   Future<ResponseModel> login({required LoginModel login}) => addData(
@@ -47,14 +39,18 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
     getFromJsonFunction: LoginResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> logout() => addData(
-    endPoint: EndPoints.logout,
-    getFromJsonFunction: LogoutResponseModel.fromJson,
+  Future<ResponseModel> logout() => addData(endPoint: EndPoints.logout, getFromJsonFunction: LogoutResponseModel.fromJson);
+  @override
+  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel}) => addData(
+    endPoint: EndPoints.registerMerchant,
+    data: registerModel.toJson(),
+    //  isFormData: true,
+    getFromJsonFunction: RegisterMerchantResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> register({required TechSignUpModel techSignUpModel}) =>
+  Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel}) =>
       addData(
-        endPoint: EndPoints.register,
+        endPoint: EndPoints.registerTech,
         data: techSignUpModel.toJson(),
         //  isFormData: true,
         getFromJsonFunction: TechSignUpResponseModel.fromJson,
@@ -101,13 +97,12 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
     getFromJsonFunction: RequestIdResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> editProfile({required UserModel userEdit}) =>
-      updateData(
-        endPoint: "${EndPoints.login}/${userEdit.id}",
-        data: userEdit.toJson(),
-        isFormData: true,
-        getFromJsonFunction: RequestIdResponseModel.fromJson,
-      );
+  Future<ResponseModel> editProfile({required UserModel userEdit}) => updateData(
+    endPoint: "${EndPoints.login}/${userEdit.id}",
+    data: userEdit.toJson(),
+    isFormData: true,
+    getFromJsonFunction: RequestIdResponseModel.fromJson,
+  );
 
   @override
   Future<ResponseModel> deleteAccount({required int accountId}) =>
