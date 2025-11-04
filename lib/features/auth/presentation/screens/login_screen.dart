@@ -1,15 +1,18 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/log_in_have_no_account_row.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/log_in_welcome_body.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_password_text_field.dart';
-import 'package:cherubini/features/Auth/presentation/widgets/shared_phone_text_field.dart';
+import 'package:cherubini/features/auth/data/model/login_model.dart';
+import 'package:cherubini/features/auth/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/auth/presentation/widgets/custom_login_signup_textfield_text.dart';
-
 import '../../../../exports.dart';
+import '../widgets/log_in_have_no_account_row.dart';
+import '../widgets/log_in_welcome_body.dart';
+import '../widgets/shared_email_text_field.dart';
+import '../widgets/shared_password_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
-   LoginScreen({super.key});
-final GlobalKey _formKey = GlobalKey<FormState>();
+  LoginScreen({super.key});
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
@@ -27,27 +30,54 @@ final GlobalKey _formKey = GlobalKey<FormState>();
                   children: [
                     LogInWelcomeBody(),
                     32.vs,
-                    CustomLoginSignupTextfieldText(text: "رقم الجوال",
-                      child:   SharedPhoneTextField() ,
+                    CustomLoginSignupTextfieldText(
+                      text: AppStrings.emailAr,
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
                     16.vs,
-                    CustomLoginSignupTextfieldText(text: "كلمة المرور",
-                      child:        SharedPasswordTextField(),
+                    CustomLoginSignupTextfieldText(
+                      text: AppStrings.passwordAr,
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
-
                     8.vs,
                     Align(
-                      alignment: AlignmentDirectional.bottomStart,
+                      alignment: AlignmentDirectional.bottomEnd,
                       child: Text(
-                        "نسيت كلمة المرور؟",
-                        style: getRegularTextStyle(color: AppColors.accentColor),
+                        AppStrings.forgetPasswordAr,
+                        style: getRegularTextStyle(
+                          color: AppColors.accentColor,
+                        ),
                       ),
                     ),
                     32.vs,
                     CustomButton(
-                      text: "تسجيل الدخول",
+                      text: AppStrings.loginAr,
                       onPressed: () {
-                        Routes.bottomNavRoute.moveTo();
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        if (dontHaveErrors(context)) {
+                          print("start api request");
+                        }
+                        if (_formKey.currentState!.validate().isTrue) {
+                          /*     context.read<AuthCubit>().login(
+                            LoginModel(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            ),
+                          ); */
+                        }
                       },
                     ),
                     42.vs,
@@ -60,13 +90,13 @@ final GlobalKey _formKey = GlobalKey<FormState>();
                           onPressed: () {
                             Routes.registerTraderRoute.moveTo();
                           },
-                          text: "تسجيل تاجر",
+                          text: AppStrings.signUpAsMerchantAr,
                         ),
                         CustomElevatedButton(
                           onPressed: () {
                             Routes.registerTechRoute.moveTo();
                           },
-                          text: "تسجيل فني",
+                          text: AppStrings.signUpAsTechAr,
                         ),
                       ],
                     ),

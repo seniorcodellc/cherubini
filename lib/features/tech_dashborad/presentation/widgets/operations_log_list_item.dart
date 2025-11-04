@@ -51,7 +51,7 @@ class OperationsLogListItem extends StatelessWidget {
               OperationsLogCardProdsList(model: model),
               16.vs,
               SecondSharedCustomButton(
-                text: 'اصدار شهادة ضمان',
+                text: AppStrings.publishWarranty,
                 onPressed: () {
                   Routes.techWarrantyRoute.moveTo();
                 },

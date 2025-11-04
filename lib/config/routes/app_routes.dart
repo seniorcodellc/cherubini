@@ -74,11 +74,26 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
       case Routes.loginRoute:
-        return buildPageRoute<T>(child: LoginScreen());
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: LoginScreen(),
+        );
       case Routes.registerTechRoute:
-        return buildPageRoute<T>(child: SignUpAsTech());
+        return buildPageRoute<T>(
+          child: SignUpAsTech(),
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+        );
       case Routes.registerTraderRoute:
-        return buildPageRoute<T>(child: SignUpAsTrader());
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: SignUpAsTrader(),
+        );
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
       case Routes.techDashboard:

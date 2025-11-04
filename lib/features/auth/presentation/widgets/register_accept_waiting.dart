@@ -10,15 +10,17 @@ class RegisterAcceptWaiting extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "تم إرسال طلب التسجيل الخاص بك. سيتم",
+          AppStrings.waitingStatement1Ar,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
         Text(
-          " مراجعته من قبل المسؤول وسيتم",
+          AppStrings.waitingStatement2Ar,
+
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
         Text(
-          " إعلامك عند الموافقة.",
+          AppStrings.waitingStatement3Ar,
+
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
         20.vs,

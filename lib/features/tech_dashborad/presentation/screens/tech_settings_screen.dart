@@ -26,7 +26,7 @@ class TechSettingsScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    "الإشعارات",
+                    AppStrings.notificationsAr,
                     style: getBoldTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,

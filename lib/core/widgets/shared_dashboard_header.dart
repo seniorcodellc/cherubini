@@ -29,12 +29,12 @@ class SharedDashboardHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'مرحباً , محمد',
+                  AppStrings.helloText,
                   style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
                 ),
                 10.vs,
                 Text(
-                  'فني معتمد',
+                  AppStrings.merchantCompanyNameAr,
                   style: getRegularTextStyle(
                     fontSize: 16.sp,
                     color: Colors.white,

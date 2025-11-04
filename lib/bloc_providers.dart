@@ -1,12 +1,15 @@
 import "package:cherubini/features/on_boarding/presentation/managers/onboarding_manager_cubit.dart";
 
 import "exports.dart";
+import "features/auth/presentation/managers/auth_cubit.dart";
 
 class BlocProviders {
   static final List<BlocProvider> providers = [
     BlocProvider<OnboardingManagerCubit>(
       create: (context) => ServiceLocator().getIt<OnboardingManagerCubit>(),
-    ),
+    ),    BlocProvider<AuthCubit>(
+        create: (context) => ServiceLocator().getIt<AuthCubit>()),
+
 
     /*    BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),
 

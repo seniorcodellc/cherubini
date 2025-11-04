@@ -60,7 +60,7 @@ class CustomProductDetailsWarranty extends StatelessWidget {
                       ),
                       4.hs,
                       Text(
-                        'منتج',
+                       AppStrings.product,
                         style: getRegularTextStyle(
                           fontSize: 14.sp,
                           color: AppColors.primaryColor,
@@ -76,9 +76,9 @@ class CustomProductDetailsWarranty extends StatelessWidget {
                 ],
               ),
             ),
-            const WarrantyCustomTextField(hint: 'الرقم التسلسلي'),
-            const WarrantyCustomTextField(hint: 'اسم المنتج'),
-            isMerchant? const WarrantyCustomTextField(hint: 'تاريخ القراءة'): 0.vs,
+            const WarrantyCustomTextField(hint: AppStrings.serialNumber),
+            const WarrantyCustomTextField(hint: AppStrings.productName),
+            isMerchant? const WarrantyCustomTextField(hint: AppStrings.readDate): 0.vs,
             8.vs,
           ],
         ),
