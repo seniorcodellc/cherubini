@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import '../../../../config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -38,21 +39,40 @@ class SignUpAsTrader extends StatelessWidget {
                   children: [
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.fullNameAr,
-                      child: SharedEnterNameTextField(nameController: nameController),
+                      child: SharedEnterNameTextField(
+                        nameController: nameController,
+                      ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.phoneNumAr,
-                      child: SharedPhoneTextField(phoneController: phoneController),
+                      child: SharedPhoneTextField(
+                        phoneController: phoneController,
+                      ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.companyNameAr,
-                      child: CustomTextFormField(
-                        controller: companyNameController,
-                        hintText: AppStrings.companyNameHintAr,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.company, fit: BoxFit.none),
-                        validator: (text) => text.validateName.isFalse ? AppStrings.nameError : null,
+                      child: Column(
+                        children: [
+                          CustomTextFormField(
+                            controller: companyNameController,
+                            hintText: AppStrings.companyNameHintAr,
+                            prefixIcon: CustomSVGImage(
+                              asset: AppAssets.company,
+                              fit: BoxFit.none,
+                            ),
+                          ),
+                          BlocBuilder<ErrorCubit, CubitStates>(
+                            builder: (context, state) => ErrorText(
+                              showError: context
+                                  .read<ErrorCubit>()
+                                  .errors
+                                  .contains(Errors.NAME_ERROR),
+                              text: getError[Errors.NAME_ERROR],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
 
@@ -61,35 +81,67 @@ class SignUpAsTrader extends StatelessWidget {
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.emailAr,
-                      child: SharedEmailTextField(emailController: emailController),
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.addressAr,
                       child: CustomTextFormField(
                         hintText: AppStrings.addressHintAr,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.location, fit: BoxFit.none),
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.location,
+                          fit: BoxFit.none,
+                        ),
                       ),
                     ),
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.passwordAr,
-                      child: SharedPasswordTextField(passwordController: passwordController),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.confirmPasswordAr,
-                      child: SharedPasswordTextField(passwordController: passwordController),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     40.vs,
                     CustomButton(
                       text: AppStrings.createAccountButtonAr,
                       onPressed: () {
-                        print(nameController.text);
-                        checkStringError(context, nameController.text, Errors.NAME_ERROR);
+                        checkStringError(
+                          context,
+                          nameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          companyNameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
                         if (dontHaveErrors(context)) {
                           print("start api request");
                         }

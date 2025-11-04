@@ -29,30 +29,69 @@ class RouteGenerator {
   static Route<T>? generateRoute<T>(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.splashScreen:
-        return buildPageRoute<T>(child: SplashScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: SplashScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.onBoardingRoute:
-        return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: OnboardingScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.dashboardRoute:
-        return buildPageRoute<T>(child: MerchantDashboardScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: MerchantDashboardScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.merchantManagementRoute:
-        return buildPageRoute<T>(child: MerchantManagementScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: MerchantManagementScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.scanRoute:
-        return buildPageRoute<T>(child: ScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: ScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.successScanRoute:
-        return buildPageRoute<T>(child: SuccessScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: SuccessScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.errorScanRoute:
-        return buildPageRoute<T>(child: ErrorScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: ErrorScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.merchantWarrantyRoute:
-        return buildPageRoute<T>(child: MerchantWarrantyScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: MerchantWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.techWarrantyRoute:
-        return buildPageRoute<T>(child: TechWarrantyScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: TechWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.loginRoute:
-        return buildPageRoute<T>(child: LoginScreen());
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: LoginScreen(),
+        );
       case Routes.registerTechRoute:
-        return buildPageRoute<T>(child: SignUpAsTech());
+        return buildPageRoute<T>(
+          child: SignUpAsTech(),
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+        );
       case Routes.registerTraderRoute:
         return buildPageRoute<T>(
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
           child: SignUpAsTrader(),
         );
       case Routes.registerAccept:
@@ -156,7 +195,11 @@ case Routes.addInsuranceMembers:
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(body: Center(child: Text("No route defined for ${routeSettings.name}"))),
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text("No route defined for ${routeSettings.name}"),
+            ),
+          ),
         );
     }
   }
@@ -176,7 +219,10 @@ case Routes.addInsuranceMembers:
         settings: routeSettings,
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
-          return RotationTransition(child: child, turns: ReverseAnimation(anim));
+          return RotationTransition(
+            child: child,
+            turns: ReverseAnimation(anim),
+          );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
       );
@@ -196,7 +242,10 @@ case Routes.addInsuranceMembers:
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
             child: child,
-            position: Tween(begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(1.0, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
           );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
@@ -207,7 +256,10 @@ case Routes.addInsuranceMembers:
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
-            position: Tween(begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(0.0, 1.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
             child: child,
           );
         },

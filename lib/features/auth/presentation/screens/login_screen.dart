@@ -57,13 +57,26 @@ class LoginScreen extends StatelessWidget {
                     CustomButton(
                       text: AppStrings.loginAr,
                       onPressed: () {
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        if (dontHaveErrors(context)) {
+                          print("start api request");
+                        }
                         if (_formKey.currentState!.validate().isTrue) {
-                          context.read<AuthCubit>().login(
+                          /*     context.read<AuthCubit>().login(
                             LoginModel(
                               email: emailController.text,
                               password: passwordController.text,
                             ),
-                          );
+                          ); */
                         }
                       },
                     ),

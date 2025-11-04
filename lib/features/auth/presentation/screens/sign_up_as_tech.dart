@@ -91,19 +91,42 @@ class SignUpAsTech extends StatelessWidget {
                       text: AppStrings.createAccountButtonAr,
 
                       onPressed: () {
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          nameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          phoneController.text,
+                          Errors.PHONE_ERROR,
+                        );
+                        if (dontHaveErrors(context)) {
+                          print("start api request");
+                        }
                         if (_formKey.currentState!.validate().isTrue) {
-                          context.read<AuthCubit>().registerTech(
-                            TechSignUpModel(
-                              // confirmPassword: passwordController.text,
-                              name: nameController.text,
-                              phone: phoneController.text,
-                              email: emailController.text,
-                              merchantId: 1,
-                              password: passwordController.text,
-
-                              // check: checkController.text,
-                            ),
-                          );
+                          // context.read<AuthCubit>().registerTech(
+                          //   TechSignUpModel(
+                          //     // confirmPassword: passwordController.text,
+                          //     name: nameController.text,
+                          //     phone: phoneController.text,
+                          //     email: emailController.text,
+                          //     merchantId: 1,
+                          //     password: passwordController.text,
+                          //
+                          //     // check: checkController.text,
+                          //   ),
+                          // );
                         }
                       },
                     ),
