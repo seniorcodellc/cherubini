@@ -1,3 +1,4 @@
+import 'package:cherubini/features/auth/data/model/response_model/governorate_response_model.dart';
 import 'package:cherubini/features/auth/data/model/tech_sign_up_model.dart';
 import 'package:cherubini/features/auth/data/model/tech_sign_up_response_model.dart';
 
@@ -27,6 +28,7 @@ abstract class AuthRemoteDataSource {
   Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel});
   Future<ResponseModel> editProfile({required UserModel userEdit});
   Future<ResponseModel> deleteAccount({required int accountId});
+  Future<ResponseModel> getGovernorate();
   // Future<ResponseModel> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
 }
 
@@ -55,7 +57,11 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
         //  isFormData: true,
         getFromJsonFunction: TechSignUpResponseModel.fromJson,
       );
-
+  @override
+  Future<ResponseModel> getGovernorate() => getData(
+    endPoint: EndPoints.governorate,
+    getFromJsonFunction: GovernorateResponseModel.fromJson,
+  );
   @override
   Future<ResponseModel> verify({
     required VerifyRequestModel verifyRequestModel,
@@ -112,6 +118,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
         ),
         fromJsonFunction: LogoutResponseModel.fromJson,
       );
+
 
   // @override
 

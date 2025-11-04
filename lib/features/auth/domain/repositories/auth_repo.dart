@@ -23,4 +23,6 @@ abstract class AuthRepo {
   // Future<Either<Failure, ResponseModel>> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
   Future<Either<Failure, ResponseModel>> getUser();
   Future<Either<Failure, ResponseModel>> clearUser();
+  Future<Either<Failure, ResponseModel>> getGovernorate();
+
 }

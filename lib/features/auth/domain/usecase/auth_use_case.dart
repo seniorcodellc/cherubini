@@ -66,4 +66,5 @@ class AuthUseCase {
 
   Future<Either<Failure, ResponseModel>> getUser() => authRepo.getUser();
   Future<Either<Failure, ResponseModel>> clearUser() => authRepo.clearUser();
+  Future<Either<Failure, ResponseModel>> getGovernorate() => authRepo.getGovernorate();
 }

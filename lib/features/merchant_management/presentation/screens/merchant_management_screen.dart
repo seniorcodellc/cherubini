@@ -19,7 +19,7 @@ class _MerchantManagementScreenState extends State<MerchantManagementScreen> {
   Widget build(BuildContext context) {
     return CustomBackground(
         backgroundColor: AppColors.bgColor,
-        appBar: CustomAppbar(title: "إدارة الفنيين "),
+        appBar: CustomAppbar(title: AppStrings.merchantManagement),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(

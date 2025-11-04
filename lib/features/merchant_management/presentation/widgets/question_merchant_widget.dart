@@ -28,11 +28,11 @@ class QuestionMerchantWidget extends StatelessWidget {
             Row(
               children: [
                 CustomSVGImage(asset: AppAssets.questionMark,color: AppColors.primaryColor,),
-                Text(' سؤال  التحقق من التاجر',style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),),
+                Text(AppStrings.techQuestion,style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),),
               ],
             ),
             4.vs,
-            Text('إجابة سؤال التحقق من التاجر',style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.grayHint),),
+            Text(AppStrings.techQuestionAnswer,style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.grayHint),),
           ],
         ),
       ),

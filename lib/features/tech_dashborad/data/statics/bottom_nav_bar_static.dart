@@ -16,7 +16,7 @@ class BottomNavBarStatic {
     BottomNavBarModel(
       asset: AppAssets.loyalty,
       tabName: AppStrings.pointsAr,
-      appBatTitle: AppStrings.pointsSummaryAr,
+      appBatTitle: AppStrings.pointsSummary,
       screen: TechPointsSummaryScreen(),
     ),
     BottomNavBarModel(

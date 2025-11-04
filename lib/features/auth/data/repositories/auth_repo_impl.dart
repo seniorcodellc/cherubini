@@ -34,8 +34,7 @@ class AuthRepoImpl extends AuthRepo {
   );
   @override
   Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterMerchantModel registerModel}) =>
-      executeImpl(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
-
+      executeImpl<UserDataModel>(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
 
   @override
   Future<Either<Failure, ResponseModel>> registerTech({
@@ -43,7 +42,11 @@ class AuthRepoImpl extends AuthRepo {
   }) => executeImpl(
     () => authRemoteDataSource.registerTech(techSignUpModel: techSignUpModel),
   );
-
+  @override
+  Future<Either<Failure, ResponseModel>> getGovernorate() =>
+      executeImpl(
+              () => authRemoteDataSource.getGovernorate()
+      );
   @override
   Future<Either<Failure, ResponseModel>> verify({
     required VerifyRequestModel verifyRequestModel,
@@ -118,4 +121,6 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, ResponseModel>> clearUser() =>
       executeCache(() => authLocalDataSource.clearUser());
+
+
 }
