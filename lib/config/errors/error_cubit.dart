@@ -23,6 +23,7 @@ Map<Errors, String> getError = {
   Errors.AGREE_ID_ERROR : AppStrings.agreementRequired.trans,
   Errors.ID_IMAGE_ERROR : AppStrings.passportOrIdNumber.trans,
   Errors.DATA_ERROR : AppStrings.didNotChangeField.trans,
+  Errors.NAME_ERROR : AppStrings.nameError.trans,
 };
 
 class ErrorCubit extends Cubit<CubitStates> {

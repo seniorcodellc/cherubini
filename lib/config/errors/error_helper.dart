@@ -51,6 +51,16 @@ checkEmptyError(BuildContext context, List? field, Errors error) {
       BlocProvider.of<ErrorCubit>(context).removeError(error);
     }
   }
+}checkStringError(BuildContext context, String? field, Errors error) {
+  print("entered");
+  if (field.isNull || field!.isEmpty) {
+    print("entered 2");
+    BlocProvider.of<ErrorCubit>(context).addValidatorError(error);
+  } else  {
+    if (BlocProvider.of<ErrorCubit>(context).errors.contains(error)) {
+      BlocProvider.of<ErrorCubit>(context).removeError(error);
+    }
+  }
 }
 
 bool dontHaveErrors(BuildContext context) => BlocProvider.of<ErrorCubit>(context).errors.isEmpty;

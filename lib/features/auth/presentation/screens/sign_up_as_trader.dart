@@ -11,6 +11,7 @@ import '../widgets/shared_enter_name_text_field.dart';
 import '../widgets/shared_password_text_field.dart';
 import '../widgets/shared_phone_text_field.dart';
 import '../widgets/sign_up_trader_instruction.dart';
+
 class SignUpAsTrader extends StatelessWidget {
   SignUpAsTrader({super.key});
   TextEditingController passwordController = TextEditingController();
@@ -37,16 +38,12 @@ class SignUpAsTrader extends StatelessWidget {
                   children: [
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.fullNameAr,
-                      child: SharedEnterNameTextField(
-                        nameController: nameController,
-                      ),
+                      child: SharedEnterNameTextField(nameController: nameController),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.phoneNumAr,
-                      child: SharedPhoneTextField(
-                        phoneController: phoneController,
-                      ),
+                      child: SharedPhoneTextField(phoneController: phoneController),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
@@ -54,13 +51,8 @@ class SignUpAsTrader extends StatelessWidget {
                       child: CustomTextFormField(
                         controller: companyNameController,
                         hintText: AppStrings.companyNameHintAr,
-                        prefixIcon: CustomSVGImage(
-                          asset: AppAssets.company,
-                          fit: BoxFit.none,
-                        ),
-                        validator: (text) => text.validateName.isFalse
-                            ? AppStrings.nameError
-                            : null,
+                        prefixIcon: CustomSVGImage(asset: AppAssets.company, fit: BoxFit.none),
+                        validator: (text) => text.validateName.isFalse ? AppStrings.nameError : null,
                       ),
                     ),
 
@@ -69,44 +61,41 @@ class SignUpAsTrader extends StatelessWidget {
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.emailAr,
-                      child: SharedEmailTextField(
-                        emailController: emailController,
-                      ),
+                      child: SharedEmailTextField(emailController: emailController),
                     ),
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.addressAr,
                       child: CustomTextFormField(
                         hintText: AppStrings.addressHintAr,
-                        prefixIcon: CustomSVGImage(
-                          asset: AppAssets.location,
-                          fit: BoxFit.none,
-                        ),
+                        prefixIcon: CustomSVGImage(asset: AppAssets.location, fit: BoxFit.none),
                       ),
                     ),
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.passwordAr,
-                      child: SharedPasswordTextField(
-                        passwordController: passwordController,
-                      ),
+                      child: SharedPasswordTextField(passwordController: passwordController),
                     ),
 
                     16.vs,
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.confirmPasswordAr,
-                      child: SharedPasswordTextField(
-                        passwordController: passwordController,
-                      ),
+                      child: SharedPasswordTextField(passwordController: passwordController),
                     ),
 
                     40.vs,
                     CustomButton(
                       text: AppStrings.createAccountButtonAr,
                       onPressed: () {
+                        print(nameController.text);
+                        checkStringError(context, nameController.text, Errors.NAME_ERROR);
+                        if (dontHaveErrors(context)) {
+                          print("start api request");
+                        }
+
                         if (_formKey.currentState!.validate().isTrue) {
-                          context.read<AuthCubit>().registerMerchant(
+                          /*        context.read<AuthCubit>().registerMerchant(
                             RegisterMerchantModel(
                               name: nameController.text,
                               email: emailController.text,
@@ -116,9 +105,8 @@ class SignUpAsTrader extends StatelessWidget {
                               governorateId: 2,
                               regionId: 1,
                             ),
-                          );
+                          );*/
                         }
-
                       },
                     ),
                     24.vs,
