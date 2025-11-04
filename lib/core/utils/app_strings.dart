@@ -263,7 +263,14 @@ class AppStrings {
   static const String deleteNotificationsAr = "إشعارات المسح";
   static const String systemNotificationsAr = "إشعارات النظام";
   static const String applyForNextAcheiveAr = "التقدم للمكافأة التالية";
-
+  /// **************************** Merchant dashboard ************************************
+  static const String merchantNameAr = "محمد على";
+  static const String merchantCompanyNameAr = "شركة الأجهزة المتقدمة";
+  static const String techManagement = "إدارة الفنيين";
+  static const String pointsSummary = "ملخص النقاط";
+  static const String operationHistory = "سجل العمليات";
+  static const String scanCode = "مسح البار كود";
+  static const String helloText = "مرحباً , أحمد";
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";

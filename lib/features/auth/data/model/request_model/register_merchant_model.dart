@@ -1,24 +1,26 @@
-/*
-class RegisterRequestModel {
+class RegisterMerchantModel {
   String? name;
   String? email;
   String? phone;
   String? password;
   String? passwordConfirmation;
-  String? countryCode;
+  int? governorateId;
+  int? regionId;
 
-  RegisterRequestModel({
+    RegisterMerchantModel({
     this.phone,
     this.password,
     this.email,
     this.name,
     this.passwordConfirmation,
-    this.countryCode,
+    this.governorateId,
+    this.regionId,
   });
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['country_code'] = countryCode;
+    map['RegionId'] = regionId;
+    map['GovernorateId'] = governorateId;
     map['phone_number'] = phone;
     map['password'] = password;
     map['password_confirmation'] = passwordConfirmation;
@@ -27,4 +29,4 @@ class RegisterRequestModel {
     return map;
   }
 }
-*/
+
