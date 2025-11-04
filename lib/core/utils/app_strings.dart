@@ -271,6 +271,40 @@ class AppStrings {
   static const String operationHistory = "سجل العمليات";
   static const String scanCode = "مسح البار كود";
   static const String helloText = "مرحباً , أحمد";
+  /// **************************** Merchant management ************************************
+  static const String merchantManagement = "إدارة الفنيين";
+  static const String activeTech = "الفنيون النشطون";
+  static const String waitingTech = "قيد الانتظار";
+  static const String active = "نشط";
+  static const String underReview = "قيد المراجعه";
+  static const String orderDate = "تاريخ الطلب";
+  static const String scanOperation = "عملية مسح";
+  static const String showDetails = "عرض التفاصيل";
+  static const String point = "نقطه";
+  static const String techQuestion = "سؤال التحقق من التاجر";
+  static const String techQuestionAnswer = "إجابة سؤال التحقق من التاجر";
+  static const String accept = "قبول";
+  static const String reject = "رفض";
+  /// **************************** Points Summary ************************************
+  static const String availablePoints = "النقاط المتاحة";
+  static const String totalAr = "الإجمالي";
+  static const String replaced = "المستبدلة";
+  static const String nextAward = "التقدم للمكافأة التالية";
+  static const String benefits = "الاستحقاقات";
+  static const String totalPoints = "مجموع النقاط";
+  static const String replacedPoints = "نقاط المستبدلة";
+  static const String pointsValue = "قيمة النقاط";
+  static const String pointsHistory = "سجل النقاط";
+  static const String techBenefitsDetails = "تفاصيل استحقاق الفني";
+  static const String paid = "تم الصرف";
+  static const String notPaid = "لم يتم الصرف";
+  static const String saveAr = "حفظ";
+  static const String cancelAr = "إلغاء";
+  /// **************************** Operations History ************************************
+  static const String operationsHistoryAr = 'سجل العمليات';
+  static const String products = 'المنتجات';
+  static const String publishWarranty = 'اصدار شهادة ضمان';
+
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";

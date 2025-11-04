@@ -31,7 +31,7 @@ class _ManagementToggleState extends State<ManagementToggle> {
         child: Row(
           children: [
             SharedToggleItem(
-              text: "الفنيون النشطون (3)",
+              text: AppStrings.activeTech,
               color: isSelected ? AppColors.white : AppColors.mutedBlue,
               style: getBoldTextStyle(
                 fontSize: 12.sp,
@@ -45,7 +45,7 @@ class _ManagementToggleState extends State<ManagementToggle> {
             ),
             4.hs,
             SharedToggleItem(
-              text: "قيد الانتظار (2)",
+              text: AppStrings.waitingTech,
               color: !isSelected ? AppColors.white : AppColors.mutedBlue,
               style: getBoldTextStyle(
                 fontSize: 12.sp,

@@ -11,7 +11,7 @@ class WaitingButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomButton(
-            text: 'قبول',
+            text: AppStrings.accept,
             onPressed: () {},
             backgroundColor: AppColors.primaryColor,
             svgIconPath: AppAssets.accept,
@@ -21,7 +21,7 @@ class WaitingButtons extends StatelessWidget {
           ),
           18.hs,
           CustomButton(
-            text: 'رفض',
+            text: AppStrings.reject,
             onPressed: () {},
             backgroundColor: AppColors.errorColor,
             svgIconPath: AppAssets.cancel,

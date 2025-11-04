@@ -28,7 +28,7 @@ class SummaryPointsCard extends StatelessWidget {
           children: [
             20.vs,
             Text(
-              "النقاط المتاحة",
+              AppStrings.availablePoints,
               style: getRegularTextStyle(color: AppColors.white, fontSize: 16),
             ),
             10.vs,
