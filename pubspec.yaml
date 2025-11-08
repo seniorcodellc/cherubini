@@ -14,6 +14,7 @@ dependencies:
   flutter_svg:
   flutter_native_splash:
   flutter_bloc:
+  pretty_bloc_observer:
   flutter_local_notifications:
   dartz:
   dio:

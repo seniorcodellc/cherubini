@@ -403,7 +403,7 @@ class AppStrings {
   static const String faqQuesstion6 = "faqQuesstion6";
   static const String addressLine1 = 'addressLine1';
   static const String addressLine2 = 'addressLine2';
-  static const String city = 'city';
+  static const String region = 'city';
   static const String zip = 'zip';
   static const String nationalID = 'nationalID';
   static const String employmentState = 'employmentState';
@@ -985,4 +985,10 @@ class AppStrings {
   static const String mother = "mother";
   static const String wife = "wife";
   static const String son = "son";
+
+  static const String governmentError="governmentError";
+
+  static const String pleaseWaitUntilApproved = "pleaseWaitUntilApproved";
+
+  static const String loggedInSuccessfully="loggedInSuccessfully";
 }

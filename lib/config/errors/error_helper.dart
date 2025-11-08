@@ -52,9 +52,7 @@ checkEmptyError(BuildContext context, List? field, Errors error) {
     }
   }
 }checkStringError(BuildContext context, String? field, Errors error) {
-  print("entered");
   if (field.isNull || field!.isEmpty) {
-    print("entered 2");
     BlocProvider.of<ErrorCubit>(context).addValidatorError(error);
   } else  {
     if (BlocProvider.of<ErrorCubit>(context).errors.contains(error)) {

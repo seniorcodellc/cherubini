@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../widgets/dashboard_body.dart';
 import '../widgets/last_scan_list.dart';

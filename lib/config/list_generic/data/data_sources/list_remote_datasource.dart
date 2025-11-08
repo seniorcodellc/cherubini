@@ -8,14 +8,14 @@ abstract class BaseListRemoteDataSource {
 abstract class RemoteExecuteAbstract {
   Future<ResponseModel> getData({
     required String endPoint,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function( dynamic data) getFromJsonFunction,
     dynamic query,
   });
 
   Future<ResponseModel> addData({
     required String endPoint,
     Map<String, dynamic>? queryParams,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
     bool isFormData = false,
     required Map<String, dynamic>? data,
   });
@@ -23,14 +23,14 @@ abstract class RemoteExecuteAbstract {
   Future<ResponseModel> updateData({
     required String endPoint,
     bool isFormData = false,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
     required dynamic data,
   });
 
   Future<ResponseModel> deleteData({
     required String endPoint,
     Map<String, dynamic>? queryParams,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
   });
 }
 
@@ -42,7 +42,7 @@ abstract class RemoteExecuteImpl extends RemoteExecuteAbstract {
   @override
   Future<ResponseModel> getData({
     required String endPoint,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
     dynamic query,
   }) => remoteExecute(
     request: dioConsumer.getRequest(path: endPoint, queryParams: query is Map ? query : query?.toJson()),
@@ -52,7 +52,7 @@ abstract class RemoteExecuteImpl extends RemoteExecuteAbstract {
   @override
   Future<ResponseModel> addData({
     required String endPoint,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
     bool isFormData = false,
     Map<String, dynamic>? queryParams,
     Map<String, dynamic>? data,
@@ -64,7 +64,7 @@ abstract class RemoteExecuteImpl extends RemoteExecuteAbstract {
   @override
   Future<ResponseModel> updateData({
     required String endPoint,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
     bool isFormData = false,
     required data,
   }) => remoteExecute(
@@ -76,7 +76,7 @@ abstract class RemoteExecuteImpl extends RemoteExecuteAbstract {
   Future<ResponseModel> deleteData({
     required String endPoint,
     Map<String, dynamic>? queryParams,
-    required ResponseModel Function(Map<String, dynamic> data) getFromJsonFunction,
+    required ResponseModel Function(dynamic data) getFromJsonFunction,
   }) => remoteExecute(
     request: dioConsumer.deleteRequest(path: endPoint, queryParams: queryParams),
     fromJsonFunction: getFromJsonFunction,

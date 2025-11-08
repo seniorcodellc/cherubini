@@ -28,7 +28,7 @@ class ItemsImageResponseModel extends ListResponseModel<ItemImageModel> {
 }
 
 class ItemModel extends Equatable {
- num? id;
+ int? id;
    String? name;
   bool? isSelected = false;
   ItemModel({

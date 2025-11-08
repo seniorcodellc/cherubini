@@ -1,11 +1,17 @@
 import 'package:get_it/get_it.dart';
 import 'exports.dart';
-import 'features/auth/data/data_source/local_auth_data_source.dart';
-import 'features/auth/data/data_source/remote_auth_data_source.dart';
-import 'features/auth/data/repositories/auth_repo_impl.dart';
-import 'features/auth/domain/repositories/auth_repo.dart';
-import 'features/auth/domain/usecase/auth_use_case.dart';
-import 'features/auth/presentation/managers/auth_cubit.dart';
+
+import 'features/authentication/data/data_source/governorates_remote_datasource.dart';
+import 'features/authentication/data/data_source/local_auth_data_source.dart';
+import 'features/authentication/data/data_source/remote_auth_data_source.dart';
+import 'features/authentication/data/repositories/auth_repo_impl.dart';
+import 'features/authentication/data/repositories/governorates_repo_impl.dart';
+import 'features/authentication/domain/repositories/auth_repo.dart';
+import 'features/authentication/domain/repositories/governorates_repo.dart';
+import 'features/authentication/domain/usecase/auth_use_case.dart' show AuthUseCase;
+import 'features/authentication/domain/usecase/governorates_use_cases.dart';
+import 'features/authentication/presentation/managers/auth_cubit.dart';
+import 'features/authentication/presentation/managers/governorates_cubit.dart';
 import 'features/on_boarding/data/data_sources/onboarding_local_data_source.dart';
 import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
@@ -30,6 +36,7 @@ class ServiceLocator {
     registerPermission;
     registerOnboarding;
     registerAuthDependencies;
+    registerGovernorates;
   }
   get registerAuthDependencies {
     getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
@@ -37,6 +44,12 @@ class ServiceLocator {
     getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(authLocalDataSource: getIt(), authRemoteDataSource: getIt()));
     getIt.registerLazySingleton<AuthUseCase>(() => AuthUseCase(authRepo: getIt()));
     getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(authUseCase: getIt()));
+  }
+  get registerGovernorates {
+    getIt.registerLazySingleton<GovernoratesRemoteDataSource>(() => GovernoratesRemoteDatasourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<GovernoratesRepo>(() => GovernoratesRepoImpl(governoratesRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<GovernoratesUseCases>(() => GovernoratesUseCases(governoratesRepo: getIt()));
+    getIt.registerLazySingleton<GovernoratesCubit>(() => GovernoratesCubit(governoratesUseCases: getIt()));
   }
 
   get registerNetwork {

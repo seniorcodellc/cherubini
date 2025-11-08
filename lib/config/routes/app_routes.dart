@@ -1,10 +1,12 @@
 import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
+import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
-import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
-import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_trader.dart';
-import 'package:cherubini/features/auth/presentation/screens/register_accept_screen.dart';
+import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_tech.dart';
+import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_trader.dart';
+import 'package:cherubini/features/authentication/presentation/screens/register_accept_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/error_scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/success_scan_screen.dart';
@@ -18,7 +20,9 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
-import '../../features/Auth/presentation/screens/login_screen.dart';
+
+import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
+import '../../features/authentication/presentation/screens/login_screen.dart';
 import '../../features/merchant_dashboard/presentation/screens/dashboard_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
@@ -90,7 +94,10 @@ class RouteGenerator {
       case Routes.registerTraderRoute:
         return buildPageRoute<T>(
           providers: [
+
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider<GovernoratesCubit>(create: (context) => GovernoratesCubit(governoratesUseCases: ServiceLocator().getIt<GovernoratesUseCases>())..getList()),
+            BlocProvider<CitiesCubit>(create: (context) =>CitiesCubit()),
           ],
           child: SignUpAsTrader(),
         );
