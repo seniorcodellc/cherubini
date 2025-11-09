@@ -6,17 +6,17 @@ class TechDashboardStatic {
   static List<PointsModel> techPointsList = [
     PointsModel(
       iconPath: AppAssets.loyaltyFilled,
-      title: AppStrings.totalPointsAr,
+      title: AppStrings.totalPoints,
       number: '12,450',
     ),
     PointsModel(
       iconPath: AppAssets.gift,
-      title: AppStrings.replacedPointsAr,
+      title: AppStrings.replacedPoints,
       number: '3,200',
     ),
     PointsModel(
       iconPath: AppAssets.availablePoints,
-      title: AppStrings.availablePointsAr,
+      title: AppStrings.availablePoints,
       number: '9,250',
     ),
   ];

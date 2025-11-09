@@ -41,15 +41,4 @@ class ProfileModel {
     balance: json['balance'],
     code: json['code'],
   );
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    'phone': phone,
-    'totalPoints': totalPoints,
-
-    'pointDelevery': pointDelevery,
-    'points': points,
-    'balance': balance,
-    'code': code,
-  };
 }

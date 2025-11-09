@@ -9,22 +9,25 @@ class MerchantOperationsLogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomBackground(
+    return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.operationsHistoryAr),
-  child: CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: getPadding(vertical: 30.h),
-            child: Column(
-              children: [OperationsLogHeader(), 24.vs, MerchantOperationLogsList()],
+      appBar: CustomAppbar(title: AppStrings.operationsHistory),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: getPadding(vertical: 30.h),
+              child: Column(
+                children: [
+                  OperationsLogHeader(),
+                  24.vs,
+                  MerchantOperationLogsList(),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-);
+        ],
+      ),
+    );
   }
 }
-

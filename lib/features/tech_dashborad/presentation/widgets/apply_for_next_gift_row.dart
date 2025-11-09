@@ -9,7 +9,7 @@ class ApplyForNextGiftRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
-          AppStrings.applyForNextAcheiveAr,
+          AppStrings.applyForNextAcheive,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.white),
         ),
         Text(

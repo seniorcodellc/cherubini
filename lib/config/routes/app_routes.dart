@@ -21,6 +21,8 @@ import 'package:cherubini/features/warranty/presentation/screens/tech_warranty_s
 
 import 'package:nested/nested.dart';
 
+import '../../core/profile/domain/use_cases/profile_use_cases.dart';
+import '../../core/profile/presentation/manager/profile_cubit.dart';
 import '../../exports.dart';
 
 import '../../features/authentication/presentation/managers/auth_cubit.dart';
@@ -48,8 +50,30 @@ class RouteGenerator {
 
       case Routes.merchantDashboardRoute:
         return buildPageRoute<T>(
+          providers: [
+            BlocProvider(
+              create: (context) => ProfileCubit(
+                profileUseCases: ServiceLocator().getIt<ProfileUseCases>(),
+              )..profile(),
+            ),
+          ],
           child: MerchantDashboardScreen(),
           routeSettings: routeSettings,
+        );
+
+      case Routes.registerTraderRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider<GovernoratesCubit>(
+              create: (context) => GovernoratesCubit(
+                governoratesUseCases: ServiceLocator()
+                    .getIt<GovernoratesUseCases>(),
+              )..getList(),
+            ),
+            BlocProvider<CitiesCubit>(create: (context) => CitiesCubit()),
+          ],
+          child: SignUpAsTrader(),
         );
 
       case Routes.merchantManagementRoute:
@@ -115,20 +139,7 @@ class RouteGenerator {
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
           ],
         );
-      case Routes.registerTraderRoute:
-        return buildPageRoute<T>(
-          providers: [
-            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
-            BlocProvider<GovernoratesCubit>(
-              create: (context) => GovernoratesCubit(
-                governoratesUseCases: ServiceLocator()
-                    .getIt<GovernoratesUseCases>(),
-              )..getList(),
-            ),
-            BlocProvider<CitiesCubit>(create: (context) => CitiesCubit()),
-          ],
-          child: SignUpAsTrader(),
-        );
+
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
       case Routes.techDashboard:

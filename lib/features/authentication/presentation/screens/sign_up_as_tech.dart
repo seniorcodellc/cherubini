@@ -24,7 +24,7 @@ class SignUpAsTech extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewTechAr),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewTech),
       child: Padding(
         padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
@@ -38,14 +38,14 @@ class SignUpAsTech extends StatelessWidget {
                   children: [
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.fullNameAr,
+                      text: AppStrings.fullName,
                       child: SharedEnterNameTextField(
                         nameController: nameController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumAr,
+                      text: AppStrings.phoneNum,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -54,7 +54,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
+                      text: AppStrings.email,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -62,13 +62,13 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.chooseMerchantAr,
+                      text: AppStrings.chooseMerchant,
                       child: ChooseTraderDropDown(),
                     ),
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.merchantCheckAr,
+                      text: AppStrings.merchantCheck,
                       child: TechAnswerVerficationQuestion(
                         checkController: checkController,
                       ),
@@ -76,7 +76,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.passwordAr,
+                      text: AppStrings.password,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -84,7 +84,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButtonAr,
+                      text: AppStrings.createAccountButton,
 
                       onPressed: () {
                         checkStringError(
@@ -136,7 +136,7 @@ class SignUpAsTech extends StatelessWidget {
                     Align(
                       alignment: AlignmentDirectional.center,
                       child: Text(
-                        AppStrings.techInstructionAr,
+                        AppStrings.techInstruction,
                         style: getRegularTextStyle(color: AppColors.grayHint),
                       ),
                     ),

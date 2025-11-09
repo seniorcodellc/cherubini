@@ -40,8 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
           context,
           onSuccess: () {
             NotificationsService().showSimpleNotification(
-              title: AppStrings.splashHeaderAr,
-              description: AppStrings.appDescriptionAr,
+              title: AppStrings.splashHeader,
+              description: AppStrings.appDescription,
             );
           },
         );
@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen> {
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
               Text(
-                AppStrings.appNameAr,
+                AppStrings.appName,
                 style: getSemiBoldTextStyle(
                   color: AppColors.white,
                   fontSize: 32,
@@ -100,7 +100,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               8.vs,
               Text(
-                AppStrings.splashBodyAr,
+                AppStrings.splashBody,
                 style: getRegularTextStyle(
                   fontSize: 16,
                   color: AppColors.white,

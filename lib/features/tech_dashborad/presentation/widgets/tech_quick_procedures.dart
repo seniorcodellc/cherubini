@@ -19,7 +19,7 @@ class TechQuickProcedures extends StatelessWidget {
         ),
         SharedQuickProceduresItem(
           asset: AppAssets.loyaltyFilled,
-          text: AppStrings.pointsAr,
+          text: AppStrings.points,
           onTap: () {
             // CustomBottomNavBar.navBarKey.currentState?.selectedIndex == 2;
             Routes.techPointsSummary.moveTo();

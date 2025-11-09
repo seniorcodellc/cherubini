@@ -10,26 +10,26 @@ class BottomNavBarStatic {
   static List<BottomNavBarModel> screens = [
     BottomNavBarModel(
       asset: AppAssets.home,
-      tabName: AppStrings.homeAr,
+      tabName: AppStrings.home,
       screen: MerchantDashboardScreen(),
       systemBarColor: AppColors.gradientColorStart,
     ),
     BottomNavBarModel(
       asset: AppAssets.loyalty,
-      tabName: AppStrings.pointsAr,
+      tabName: AppStrings.points,
       appBatTitle: AppStrings.pointsSummary,
       screen: TechPointsSummaryScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.logs,
-      tabName: AppStrings.logsAr,
-      appBatTitle: AppStrings.operationsLogsAr,
+      tabName: AppStrings.logs,
+      appBatTitle: AppStrings.operationsLogs,
       screen: TechOperationsLogScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.tabSettings,
-      tabName: AppStrings.settingsAr,
-      appBatTitle: AppStrings.settingsAr,
+      tabName: AppStrings.settings,
+      appBatTitle: AppStrings.settings,
       screen: TechSettingsScreen(),
     ),
   ];

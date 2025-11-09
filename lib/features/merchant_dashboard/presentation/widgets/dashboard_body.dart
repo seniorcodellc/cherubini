@@ -20,7 +20,7 @@ class DashboardBody extends StatelessWidget {
         Padding(
           padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
           child: Text(
-            AppStrings.quickProceduresAr,
+            AppStrings.quickProcedures,
             style: getBoldTextStyle(
               fontSize: 14.sp,
               color: AppColors.primaryColor,
@@ -39,14 +39,14 @@ class DashboardBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-               AppStrings.lastScanOperationsAr,
+                AppStrings.lastScanOperations,
                 style: getBoldTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.primaryColor,
                 ),
               ),
               Text(
-                AppStrings.displayAllAr,
+                AppStrings.displayAll,
                 style: getRegularTextStyle(
                   fontSize: 12.sp,
                   color: AppColors.primaryColor,

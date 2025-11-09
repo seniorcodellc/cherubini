@@ -10,9 +10,9 @@ class ChooseTraderDropDown extends StatefulWidget {
 
 class _ChooseTraderDropDownState extends State<ChooseTraderDropDown> {
   final List<String> traders = [
-    AppStrings.merchantOneAr,
-    AppStrings.merchantTwoAr,
-    AppStrings.merchantThreeAr,
+    AppStrings.merchantOne,
+    AppStrings.merchantTwo,
+    AppStrings.merchantThree,
   ];
   @override
   Widget build(BuildContext context) {
