@@ -33,8 +33,11 @@ class AuthRepoImpl extends AuthRepo {
     localWrite: (data) => authLocalDataSource.clearUser(),
   );
   @override
-  Future<Either<Failure, ResponseModel>> registerMerchant({required RegisterMerchantModel registerModel}) =>
-      executeImpl<UserModel>(() => authRemoteDataSource.registerMerchant(registerModel: registerModel));
+  Future<Either<Failure, ResponseModel>> registerMerchant({
+    required RegisterMerchantModel registerModel,
+  }) => executeImpl<UserModel>(
+    () => authRemoteDataSource.registerMerchant(registerModel: registerModel),
+  );
 
   @override
   Future<Either<Failure, ResponseModel>> registerTech({
@@ -43,7 +46,6 @@ class AuthRepoImpl extends AuthRepo {
     () => authRemoteDataSource.registerTech(techSignUpModel: techSignUpModel),
   );
   @override
-
   @override
   Future<Either<Failure, ResponseModel>> verify({
     required VerifyRequestModel verifyRequestModel,
@@ -60,7 +62,7 @@ class AuthRepoImpl extends AuthRepo {
     ),
   );
 
-/*
+  /*
   @override
   Future<Either<Failure, ResponseModel>> verifyForgetPassword({
     required VerifyRequestModel verifyRequestModel,
@@ -79,21 +81,21 @@ class AuthRepoImpl extends AuthRepo {
       resetPasswordRequestModel: resetPasswordRequestModel,
     ),
   );
-/*  @override
+  /*  @override
   Future<Either<Failure, ResponseModel>> reSendCode({
     required ReSendRequestModel resendRequestModel,
   }) => executeImpl(
     () =>
         authRemoteDataSource.reSendCode(resendRequestModel: resendRequestModel),
   );*/
-/*  @override
+  /*  @override
   Future<Either<Failure, ResponseModel>> editProfile({
     required UserModel userEdit,
   }) => executeImpl<UserModel>(
     () => authRemoteDataSource.editProfile(userEdit: userEdit),
-    *//*       localWrite: (data) async {
+    */ /*       localWrite: (data) async {
         return authLocalDataSource.cacheUser(user: data..token=AppPrefs.token);
-      }*//*
+      }*/ /*
   );*/
 
   @override
@@ -122,22 +124,26 @@ class AuthRepoImpl extends AuthRepo {
       executeCache(() => authLocalDataSource.clearUser());
 
   @override
-  Future<Either<Failure, ResponseModel>> editProfile({required UserModel userEdit}) {
+  Future<Either<Failure, ResponseModel>> editProfile({
+    required UserModel userEdit,
+  }) {
     // TODO: implement editProfile
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, ResponseModel>> reSendCode({required ReSendRequestModel resendRequestModel}) {
+  Future<Either<Failure, ResponseModel>> reSendCode({
+    required ReSendRequestModel resendRequestModel,
+  }) {
     // TODO: implement reSendCode
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, ResponseModel>> verifyForgetPassword({required VerifyRequestModel verifyRequestModel}) {
+  Future<Either<Failure, ResponseModel>> verifyForgetPassword({
+    required VerifyRequestModel verifyRequestModel,
+  }) {
     // TODO: implement verifyForgetPassword
     throw UnimplementedError();
   }
-
-
 }

@@ -6,6 +6,8 @@ abstract class EndPoints {
   ///////////////////////////// authentication ////////////////////////////
   static const String login = '${api}login';
   static const String logout = '${api}logout';
+  static const String profile = '${api}profile';
+
   static const String registerMerchant = '${api}registerMerchant';
   static const String registerTech = '${api}registerTechnician';
   static const String governorate = '${api}governorate';
@@ -39,7 +41,7 @@ abstract class EndPoints {
   static const String config = '${api}select/configuration';
   static const String getFavorites = '${api}favourites';
   static const String getMyAuction = '${api}user/bookings/winning-losing';
-  static const String profile = '${api}user';
+  // static const String profile = '${api}user';
   static const String bookings = '${api}user/bookings/index';
   static const String faq = '${api}faq';
   static const String settings = '${api}settings';

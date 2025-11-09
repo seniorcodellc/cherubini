@@ -20,17 +20,17 @@ class AuthUseCase {
   }) async => authRepo.login(login: login);
 
   Future<Either<Failure, ResponseModel>> logout() async => authRepo.logout();
-  Future<Either<Failure, ResponseModel>> registerMerchant(
-          {required RegisterMerchantModel registerModel}) async =>
-      authRepo.registerMerchant(registerModel: registerModel);
+  Future<Either<Failure, ResponseModel>> registerMerchant({
+    required RegisterMerchantModel registerModel,
+  }) async => authRepo.registerMerchant(registerModel: registerModel);
   /*Future<Either<Failure, ResponseModel>> verify(
           {required VerifyRequestModel verifyRequestModel}) async =>
       authRepo.verify(verifyRequestModel: verifyRequestModel);*/
-  Future<Either<Failure, ResponseModel>> forgetPassword(
-          {required EnterPhoneNumberRequestModel
-              enterPhoneNumberRequestModel}) async =>
-      authRepo.forgetPassword(
-          enterPhoneNumberRequestModel: enterPhoneNumberRequestModel);
+  Future<Either<Failure, ResponseModel>> forgetPassword({
+    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
+  }) async => authRepo.forgetPassword(
+    enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
+  );
   Future<Either<Failure, ResponseModel>> registerTech({
     required TechSignUpModel techSignUpModel,
   }) async => authRepo.registerTech(techSignUpModel: techSignUpModel);

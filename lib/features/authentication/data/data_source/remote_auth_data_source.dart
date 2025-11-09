@@ -1,4 +1,3 @@
-import 'package:cherubini/features/authentication/data/model/response_model/governorate_response_model.dart';
 import 'package:cherubini/features/authentication/data/model/request_model/tech_sign_up_model.dart';
 import 'package:cherubini/features/authentication/data/model/response_model/tech_sign_up_response_model.dart';
 
@@ -18,19 +17,30 @@ import '../model/response_model/register_merchant_response_model.dart';
 abstract class AuthRemoteDataSource {
   Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
-  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel});
- Future<ResponseModel> verify({required VerifyRequestModel verifyRequestModel});
- Future<ResponseModel> forgetPassword({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
-//  Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
-  Future<ResponseModel> resetPassword({required ResetPasswordRequestModel resetPasswordRequestModel});
-//  Future<ResponseModel> reSendCode({required ReSendRequestModel resendRequestModel});
-  Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel});
- // Future<ResponseModel> editProfile({required UserModel userEdit});
+  Future<ResponseModel> registerMerchant({
+    required RegisterMerchantModel registerModel,
+  });
+  Future<ResponseModel> verify({
+    required VerifyRequestModel verifyRequestModel,
+  });
+  Future<ResponseModel> forgetPassword({
+    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
+  });
+  //  Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
+  Future<ResponseModel> resetPassword({
+    required ResetPasswordRequestModel resetPasswordRequestModel,
+  });
+  //  Future<ResponseModel> reSendCode({required ReSendRequestModel resendRequestModel});
+  Future<ResponseModel> registerTech({
+    required TechSignUpModel techSignUpModel,
+  });
+  // Future<ResponseModel> editProfile({required UserModel userEdit});
   Future<ResponseModel> deleteAccount({required int accountId});
   // Future<ResponseModel> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
 }
 
-class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDataSource {
+class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
+    implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl({required super.dioConsumer});
   @override
   Future<ResponseModel> login({required LoginModel login}) => addData(
@@ -39,22 +49,28 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
     getFromJsonFunction: UserResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> logout() => addData(endPoint: EndPoints.logout, getFromJsonFunction: LogoutResponseModel.fromJson);
+  Future<ResponseModel> logout() => addData(
+    endPoint: EndPoints.logout,
+    getFromJsonFunction: LogoutResponseModel.fromJson,
+  );
   @override
-  Future<ResponseModel> registerMerchant({required RegisterMerchantModel registerModel}) => addData(
+  Future<ResponseModel> registerMerchant({
+    required RegisterMerchantModel registerModel,
+  }) => addData(
     endPoint: EndPoints.registerMerchant,
     data: registerModel.toJson(),
     //  isFormData: true,
     getFromJsonFunction: RegisterMerchantResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> registerTech({required TechSignUpModel techSignUpModel}) =>
-      addData(
-        endPoint: EndPoints.registerTech,
-        data: techSignUpModel.toJson(),
-        //  isFormData: true,
-        getFromJsonFunction: TechSignUpResponseModel.fromJson,
-      );
+  Future<ResponseModel> registerTech({
+    required TechSignUpModel techSignUpModel,
+  }) => addData(
+    endPoint: EndPoints.registerTech,
+    data: techSignUpModel.toJson(),
+    //  isFormData: true,
+    getFromJsonFunction: TechSignUpResponseModel.fromJson,
+  );
 
   @override
   Future<ResponseModel> verify({
@@ -72,7 +88,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
     data: enterPhoneNumberRequestModel.toJson(),
     getFromJsonFunction: ForgetPasswordResponseModel.fromJson,
   );
-/*  @override
+  /*  @override
   Future<ResponseModel> verifyForgetPassword({
     required VerifyRequestModel verifyRequestModel,
   }) => addData(
@@ -88,7 +104,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
     data: resetPasswordRequestModel.toJson(),
     getFromJsonFunction: ResponseModel.fromJson,
   );
-/*  @override
+  /*  @override
   Future<ResponseModel> reSendCode({
     required ReSendRequestModel resendRequestModel,
   }) => addData(
@@ -96,7 +112,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
     data: resendRequestModel.toJson(),
     getFromJsonFunction: RequestIdResponseModel.fromJson,
   );*/
-/*  @override
+  /*  @override
   Future<ResponseModel> editProfile({required UserModel userEdit}) => updateData(
     endPoint: "${EndPoints.login}/${userEdit.id}",
     data: userEdit.toJson(),
@@ -112,7 +128,6 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl implements AuthRemoteDa
         ),
         fromJsonFunction: LogoutResponseModel.fromJson,
       );
-
 
   // @override
 

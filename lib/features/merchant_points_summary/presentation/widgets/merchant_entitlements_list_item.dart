@@ -15,8 +15,8 @@ class MerchantEntitlementsListItem extends StatelessWidget {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        width: 343.w,
-        height: 178.h,
+        // width: 343.w,
+        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
@@ -53,14 +53,14 @@ class MerchantEntitlementsListItem extends StatelessWidget {
                         Text(
                           model.title,
                           style: getRegularTextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             color: AppColors.primaryColor,
                           ),
                         ),
                         Text(
                           model.date,
                           style: getRegularTextStyle(
-                            fontSize: 20,
+                            fontSize: 16.sp,
                             color: AppColors.grayHint,
                           ),
                         ),

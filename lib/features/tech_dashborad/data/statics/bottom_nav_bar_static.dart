@@ -1,3 +1,4 @@
+import 'package:cherubini/features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
@@ -10,7 +11,7 @@ class BottomNavBarStatic {
     BottomNavBarModel(
       asset: AppAssets.home,
       tabName: AppStrings.homeAr,
-      screen: TechDashboard(),
+      screen: MerchantDashboardScreen(),
       systemBarColor: AppColors.gradientColorStart,
     ),
     BottomNavBarModel(

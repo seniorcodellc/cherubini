@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
         UserModel? user = await getBlocData<AuthCubit>().getUser();
         print("tokkkkkkkkk  ${user?.token}");
         if (user.isNotNull) {
-          route = Routes.dashboardRoute;
+          route = Routes.merchantDashboardRoute;
         } else {
           route = Routes.loginRoute;
         }
@@ -77,7 +77,10 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
+                colors: [
+                  AppColors.gradientColorStart,
+                  AppColors.gradientColorEnd,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -88,9 +91,21 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
-              Text(AppStrings.appNameAr, style: getSemiBoldTextStyle(color: AppColors.white, fontSize: 32)),
+              Text(
+                AppStrings.appNameAr,
+                style: getSemiBoldTextStyle(
+                  color: AppColors.white,
+                  fontSize: 32,
+                ),
+              ),
               8.vs,
-              Text(AppStrings.splashBodyAr, style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
+              Text(
+                AppStrings.splashBodyAr,
+                style: getRegularTextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                ),
+              ),
             ],
           ),
         ],

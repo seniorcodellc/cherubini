@@ -11,7 +11,7 @@ class CreateWarrantyContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: Colors.black.withValues(alpha: 0.1),
             spreadRadius: 2.r,
             blurRadius: 6.r,
             offset: Offset(0, 2.h),

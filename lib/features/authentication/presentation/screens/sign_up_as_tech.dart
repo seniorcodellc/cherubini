@@ -2,10 +2,10 @@ import 'package:cherubini/features/authentication/data/model/request_model/tech_
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_enter_name_text_field.dart';
+import 'package:cherubini/features/authentication/presentation/widgets/tech_answer_verfication_question.dart';
 
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 import '../widgets/choose_trader_drop_down.dart';
 import '../widgets/shared_email_text_field.dart';
@@ -39,38 +39,47 @@ class SignUpAsTech extends StatelessWidget {
                     32.vs,
                     CustomTitleAndField(
                       text: AppStrings.fullNameAr,
-                      child: SharedEnterNameTextField(nameController: nameController),
+                      child: SharedEnterNameTextField(
+                        nameController: nameController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.phoneNumAr,
 
-                      child: SharedPhoneTextField(phoneController: phoneController),
+                      child: SharedPhoneTextField(
+                        phoneController: phoneController,
+                      ),
                     ),
 
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.emailAr,
-                      child: SharedEmailTextField(emailController: emailController),
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
 
                     16.vs,
-                    CustomTitleAndField(text: AppStrings.chooseMerchantAr, child: ChooseTraderDropDown()),
+                    CustomTitleAndField(
+                      text: AppStrings.chooseMerchantAr,
+                      child: ChooseTraderDropDown(),
+                    ),
 
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.merchantCheckAr,
-                      child: CustomTextFormField(
-                        controller: checkController,
-                        hintText: AppStrings.merchantCheckHintAr,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.questionMark, fit: BoxFit.none),
+                      child: TechAnswerVerficationQuestion(
+                        checkController: checkController,
                       ),
                     ),
 
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.passwordAr,
-                      child: SharedPasswordTextField(passwordController: passwordController),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     40.vs,
@@ -78,10 +87,31 @@ class SignUpAsTech extends StatelessWidget {
                       text: AppStrings.createAccountButtonAr,
 
                       onPressed: () {
-                        checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
-                        checkStringError(context, passwordController.text, Errors.PASSWORD_ERROR);
-                        checkStringError(context, nameController.text, Errors.NAME_ERROR);
-                        checkStringError(context, phoneController.text, Errors.PHONE_ERROR);
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          nameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          phoneController.text,
+                          Errors.PHONE_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          checkController.text,
+                          Errors.VERIFICATION_ERROR,
+                        );
                         if (dontHaveErrors(context)) {
                           print("start api request");
                           //     print("context ${context.read<AuthCubit>()}");
@@ -105,7 +135,10 @@ class SignUpAsTech extends StatelessWidget {
                     24.vs,
                     Align(
                       alignment: AlignmentDirectional.center,
-                      child: Text(AppStrings.techInstructionAr, style: getRegularTextStyle(color: AppColors.grayHint)),
+                      child: Text(
+                        AppStrings.techInstructionAr,
+                        style: getRegularTextStyle(color: AppColors.grayHint),
+                      ),
                     ),
                     37.vs,
                   ],

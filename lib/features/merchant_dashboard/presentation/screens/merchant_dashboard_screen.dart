@@ -18,7 +18,11 @@ class MerchantDashboardScreen extends StatelessWidget {
             child: Stack(
               alignment: AlignmentGeometry.topCenter,
               children: [
-                 SharedDashboardHeader(onTap: () {Routes.merchantSettings.moveTo();},),
+                SharedDashboardHeader(
+                  onTap: () {
+                    Routes.merchantSettings.moveTo();
+                  },
+                ),
                 Padding(
                   padding: getPadding(top: 140),
                   child: const DashboardBody(),
@@ -26,8 +30,7 @@ class MerchantDashboardScreen extends StatelessWidget {
               ],
             ),
           ),
-          SliverFillRemaining(child: LastScanList(),
-              )
+          SliverFillRemaining(child: LastScanList()),
         ],
       ),
     );

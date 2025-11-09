@@ -45,8 +45,8 @@ class AuthCubit extends Cubit<CubitStates> {
 
   registerTech(TechSignUpModel techSignUpModel) async {
     print("cubit");
- //   this.userModel = userModel;
-/*    await executeWithDialog<RequestIdModel>(
+    //   this.userModel = userModel;
+    /*    await executeWithDialog<RequestIdModel>(
       either: authUseCase.registerTech(techSignUpModel: techSignUpModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
       onSuccess: (RequestIdModel? data) async {
@@ -64,8 +64,8 @@ class AuthCubit extends Cubit<CubitStates> {
       },
     );*/
   }
-  registerMerchant(RegisterMerchantModel registerRequestModel) async {
 
+  registerMerchant(RegisterMerchantModel registerRequestModel) async {
     await executeWithDialog<UserModel>(
       either: authUseCase.registerMerchant(registerModel: registerRequestModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
@@ -84,7 +84,7 @@ class AuthCubit extends Cubit<CubitStates> {
     );
   }
 
-/*  verify({
+  /*  verify({
     required VerifyRequestModel verifyRequestModel,
     required bool isForgetPassword,
   }) async {
@@ -96,14 +96,14 @@ class AuthCubit extends Cubit<CubitStates> {
         //  getBlocData<BottomNavOperationCubit>().changIndex(0);
         Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
         // getUserAndToken(requestId!.requestId!);
-        *//*   isForgetPassword
+        */ /*   isForgetPassword
             ? Routes.resetPasswordRoute.moveTo()
-            : Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;*//*
+            : Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;*/ /*
       },
     );
   }*/
 
-/*  reSendCode({required ReSendRequestModel resendRequestModel}) async {
+  /*  reSendCode({required ReSendRequestModel resendRequestModel}) async {
     await executeWithDialog<RequestIdModel>(
       either: authUseCase.reSendCode(resendRequestModel: resendRequestModel),
       startingMessage: AppStrings.sendAgain.trans,
@@ -111,9 +111,9 @@ class AuthCubit extends Cubit<CubitStates> {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
-            *//*        NotificationsService().showSimpleNotification(
+            */ /*        NotificationsService().showSimpleNotification(
                 title: AppStrings.verificationAccount.trans,
-                description: data!.verificationCode.toString());*//*
+                description: data!.verificationCode.toString());*/ /*
           },
         );
       },
@@ -179,7 +179,7 @@ class AuthCubit extends Cubit<CubitStates> {
     );
   }
 
-/*  editProfile({required UserModel userEdit}) {
+  /*  editProfile({required UserModel userEdit}) {
     executeWithDialog<UserModel>(
       either: authUseCase.editProfile(userEdit: userEdit),
       startingMessage: AppStrings.waitingForEditProfile.trans,

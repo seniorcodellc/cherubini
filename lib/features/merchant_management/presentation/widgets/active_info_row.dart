@@ -10,7 +10,7 @@ class ActiveInfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(all: 8.0),
+      padding: getPadding(horizontal: 8.0.w,bottom: 14.h,top: 6.0.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [

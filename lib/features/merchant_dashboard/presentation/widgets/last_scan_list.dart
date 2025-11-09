@@ -11,7 +11,6 @@ class LastScanList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      // Disable scrolling if nested
       itemCount: DashboardStatics.scanList.length,
       itemBuilder: (context, index) {
         final model = DashboardStatics.scanList[index];
@@ -19,5 +18,4 @@ class LastScanList extends StatelessWidget {
       },
     );
   }
-
 }

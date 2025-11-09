@@ -23,6 +23,7 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
+import '../../features/authentication/presentation/managers/auth_cubit.dart';
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
@@ -40,20 +41,32 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
       case Routes.onBoardingRoute:
-        return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
-      case Routes.dashboardRoute:
+        return buildPageRoute<T>(
+          child: OnboardingScreen(),
+          routeSettings: routeSettings,
+        );
+
+      case Routes.merchantDashboardRoute:
         return buildPageRoute<T>(
           child: MerchantDashboardScreen(),
           routeSettings: routeSettings,
         );
-      case Routes.merchantDashboardRoute:
-        return buildPageRoute<T>(child: MerchantDashboardScreen(), routeSettings: routeSettings);
+
       case Routes.merchantManagementRoute:
-        return buildPageRoute<T>(child: MerchantManagementScreen(), routeSettings: routeSettings);
-        case Routes.merchantOperationsRoute:
-        return buildPageRoute<T>(child: MerchantOperationsLogScreen(), routeSettings: routeSettings);
-        case Routes.merchantPointsSummary:
-        return buildPageRoute<T>(child: MerchantPointsSummary(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: MerchantManagementScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.merchantOperationsRoute:
+        return buildPageRoute<T>(
+          child: MerchantOperationsLogScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.merchantPointsSummary:
+        return buildPageRoute<T>(
+          child: MerchantPointsSummary(),
+          routeSettings: routeSettings,
+        );
         return buildPageRoute<T>(
           child: OnboardingScreen(),
           routeSettings: routeSettings,
@@ -105,10 +118,14 @@ class RouteGenerator {
       case Routes.registerTraderRoute:
         return buildPageRoute<T>(
           providers: [
-
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
-            BlocProvider<GovernoratesCubit>(create: (context) => GovernoratesCubit(governoratesUseCases: ServiceLocator().getIt<GovernoratesUseCases>())..getList()),
-            BlocProvider<CitiesCubit>(create: (context) =>CitiesCubit()),
+            BlocProvider<GovernoratesCubit>(
+              create: (context) => GovernoratesCubit(
+                governoratesUseCases: ServiceLocator()
+                    .getIt<GovernoratesUseCases>(),
+              )..getList(),
+            ),
+            BlocProvider<CitiesCubit>(create: (context) => CitiesCubit()),
           ],
           child: SignUpAsTrader(),
         );
@@ -120,7 +137,7 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechPointsSummaryScreen());
       case Routes.settings:
         return buildPageRoute<T>(child: TechSettingsScreen());
-        case Routes.merchantSettings:
+      case Routes.merchantSettings:
         return buildPageRoute<T>(child: MerchantSettings());
       case Routes.operationsLog:
         return buildPageRoute<T>(child: TechOperationsLogScreen());
