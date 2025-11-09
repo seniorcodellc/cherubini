@@ -8,7 +8,7 @@ class TotalAndReplacedPointsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 58.h,
+      height: 65.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

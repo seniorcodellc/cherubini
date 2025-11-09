@@ -15,8 +15,8 @@ class EntitlementsListItem extends StatelessWidget {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        width: 343.w,
-        height: 178.h,
+        // width: 343.w,
+        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),

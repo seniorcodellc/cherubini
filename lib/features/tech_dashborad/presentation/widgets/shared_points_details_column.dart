@@ -12,13 +12,14 @@ class SharedPointsDetailsColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(horizontal: 8.w),
+      padding: getPadding(horizontal: 5.w),
       child: Column(
         children: [
           Text(
             pointsType,
             style: getRegularTextStyle(color: AppColors.accentColor),
           ),
+          5.vs,
           Text(
             pointsNum,
             style: getRegularTextStyle(color: AppColors.subTitleColor),
