@@ -2,7 +2,9 @@ import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_gray_circle.dart';
 
 class SharedDashboardHeader extends StatelessWidget {
-  const SharedDashboardHeader({super.key});
+  const SharedDashboardHeader({super.key, required this.onTap});
+
+  final GestureTapCallback onTap ;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class SharedDashboardHeader extends StatelessWidget {
                 ),
               ],
             ),
-            SettingsGrayCircle(),
+            SettingsGrayCircle(onTap: onTap),
           ],
         ),
       ),

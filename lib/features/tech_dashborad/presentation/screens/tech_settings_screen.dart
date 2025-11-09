@@ -17,7 +17,7 @@ class TechSettingsScreen extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               30.vs,
-              SettingsHeader(),
+              SettingsHeader(title: AppStrings.techDescriptionAr,),
               24.vs,
               SettingsUserDetailsList(),
               24.vs,

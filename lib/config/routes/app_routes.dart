@@ -1,5 +1,8 @@
 import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
+import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
+import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
+import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
 import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
@@ -19,7 +22,7 @@ import 'package:nested/nested.dart';
 import '../../exports.dart';
 
 import '../../features/Auth/presentation/screens/login_screen.dart';
-import '../../features/merchant_dashboard/presentation/screens/dashboard_screen.dart';
+import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
 
@@ -32,10 +35,14 @@ class RouteGenerator {
         return buildPageRoute<T>(child: SplashScreen(), routeSettings: routeSettings);
       case Routes.onBoardingRoute:
         return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
-      case Routes.dashboardRoute:
+      case Routes.merchantDashboardRoute:
         return buildPageRoute<T>(child: MerchantDashboardScreen(), routeSettings: routeSettings);
       case Routes.merchantManagementRoute:
         return buildPageRoute<T>(child: MerchantManagementScreen(), routeSettings: routeSettings);
+        case Routes.merchantOperationsRoute:
+        return buildPageRoute<T>(child: MerchantOperationsLogScreen(), routeSettings: routeSettings);
+        case Routes.merchantPointsSummary:
+        return buildPageRoute<T>(child: MerchantPointsSummary(), routeSettings: routeSettings);
       case Routes.scanRoute:
         return buildPageRoute<T>(child: ScanScreen(), routeSettings: routeSettings);
       case Routes.successScanRoute:
@@ -63,6 +70,8 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechPointsSummaryScreen());
       case Routes.settings:
         return buildPageRoute<T>(child: TechSettingsScreen());
+        case Routes.merchantSettings:
+        return buildPageRoute<T>(child: MerchantSettings());
       case Routes.operationsLog:
         return buildPageRoute<T>(child: TechOperationsLogScreen());
       case Routes.bottomNavRoute:

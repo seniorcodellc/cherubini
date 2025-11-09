@@ -50,6 +50,7 @@ class SignUpAsTrader extends StatelessWidget {
                     CustomLoginSignupTextfieldText(
                       text: AppStrings.companyNameAr,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomTextFormField(
                             controller: companyNameController,

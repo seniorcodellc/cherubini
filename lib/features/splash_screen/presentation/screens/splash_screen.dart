@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
         );
         route = Routes.onBoardingRoute;
       } else {
-        route = Routes.loginRoute;
+        route = Routes.merchantDashboardRoute;
       }
       //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
       // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();

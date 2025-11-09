@@ -33,7 +33,7 @@ class SettingsNotificationsList extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: getPadding(vertical: 16.h),
+        padding: getPadding(vertical: 10.h),
         child: Column(
           children: [
             NotificationsListItem(text: notifications[0]),

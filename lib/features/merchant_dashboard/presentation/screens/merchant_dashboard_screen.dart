@@ -17,7 +17,7 @@ class MerchantDashboardScreen extends StatelessWidget {
             child: Stack(
               alignment: AlignmentGeometry.topCenter,
               children: [
-                const SharedDashboardHeader(),
+                 SharedDashboardHeader(onTap: () {Routes.merchantSettings.moveTo();},),
                 Padding(
                   padding: getPadding(top: 140),
                   child: const DashboardBody(),

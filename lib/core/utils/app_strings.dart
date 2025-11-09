@@ -335,7 +335,7 @@ class AppStrings {
   static const String enterClientName = 'أدخل اسم العميل';
   static const String printWarranty = 'طباعة شهادة الضمان';
   static const String publishWarrantyMessage =
-      'سيتم إصدار شهادة ضمان لجميع المنتجات المدرجة بتاريخ اليوم ومدة ضمان سنة واحدة';
+      'سيتم إصدار شهادة ضمان لجميع المنتجات\n المدرجة بتاريخ اليوم ومدة ضمان سنة واحدة';
   static const String readDate = 'تاريخ القراءه';
 
   /// **************************** bottom nav bar tabs ************************************
