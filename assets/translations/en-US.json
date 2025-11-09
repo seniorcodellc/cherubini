@@ -414,6 +414,9 @@
   "father": "Father",
   "mother": "Mother",
   "wife": "Wife",
-  "son": "Son"
+  "son": "Son",
+  "governmentError": "this field is required",
+  "pleaseWaitUntilApproved": "please wait until get Approved",
+  "loggedInSuccessfully": "logged in successfully"
 
 }

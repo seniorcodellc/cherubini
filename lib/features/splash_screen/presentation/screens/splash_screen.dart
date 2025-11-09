@@ -5,6 +5,8 @@ import 'package:cherubini/features/on_boarding/presentation/managers/onboarding_
 import '../../../../config/local_notification/local_notification.dart';
 import '../../../../exports.dart';
 
+import '../../../authentication/data/model/response_model/login_response_model.dart';
+import '../../../authentication/presentation/managers/auth_cubit.dart';
 import '../manager/get_configration_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -45,39 +47,14 @@ class _SplashScreenState extends State<SplashScreen> {
         );
         route = Routes.onBoardingRoute;
       } else {
-        route = Routes.merchantDashboardRoute;
+        UserModel? user = await getBlocData<AuthCubit>().getUser();
+        print("tokkkkkkkkk  ${user?.token}");
+        if (user.isNotNull) {
+          route = Routes.dashboardRoute;
+        } else {
+          route = Routes.loginRoute;
+        }
       }
-      //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
-      // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
-      //  isNotificationEnabled = await checkNotificationPermission(context);
-      // bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
-      //   print("saved language is :$isLanguageSaved");
-      // print("token is :${user?.token}");
-      // if (isNew.isTrue) {
-      //   bool cachedNewInstall = await getBlocData<ConfigurationCubit>()
-      //       .cachedNewInstall();
-      //   print("cachedNewInstall: $cachedNewInstall");
-      //   /*      isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
-      //     context,
-      //     onSuccess: () {
-      //       NotificationsService().showSimpleNotification(
-      //         title: 'أهلا بك فى عيادتى',
-      //         description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
-      //       );
-      //     },
-      //   );*/
-      //   route = Routes.onBoardingRoute;
-      // } else {
-      //   route = Routes.bottomNavRoute;
-      // }
-      /*   print("is User NULL: ${user.isNull}");
-      if(isNew.isTrue) {
-        route = Routes.secondSplashScreen;
-      } else if(user != null) {
-        route = Routes.bottomNavRoute;
-      }else{
-        route = Routes.bottomNavRoute;
-      }*/
     });
   }
 
@@ -100,10 +77,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  AppColors.gradientColorStart,
-                  AppColors.gradientColorEnd,
-                ],
+                colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -114,21 +88,9 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
-              Text(
-                AppStrings.appNameAr,
-                style: getSemiBoldTextStyle(
-                  color: AppColors.white,
-                  fontSize: 32,
-                ),
-              ),
+              Text(AppStrings.appNameAr, style: getSemiBoldTextStyle(color: AppColors.white, fontSize: 32)),
               8.vs,
-              Text(
-                AppStrings.splashBodyAr,
-                style: getRegularTextStyle(
-                  fontSize: 16,
-                  color: AppColors.white,
-                ),
-              ),
+              Text(AppStrings.splashBodyAr, style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
             ],
           ),
         ],

@@ -1,13 +1,15 @@
 import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
+import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/core/pdf_handle/get_file_cubit.dart';
-import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_tech.dart';
-import 'package:cherubini/features/Auth/presentation/screens/sign_up_as_trader.dart';
-import 'package:cherubini/features/auth/presentation/screens/register_accept_screen.dart';
+import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_tech.dart';
+import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_trader.dart';
+import 'package:cherubini/features/authentication/presentation/screens/register_accept_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/error_scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/success_scan_screen.dart';
@@ -21,8 +23,9 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
-import '../../features/Auth/presentation/screens/login_screen.dart';
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
+import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
+import '../../features/authentication/presentation/screens/login_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
 
@@ -32,9 +35,17 @@ class RouteGenerator {
   static Route<T>? generateRoute<T>(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.splashScreen:
-        return buildPageRoute<T>(child: SplashScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: SplashScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.onBoardingRoute:
         return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
+      case Routes.dashboardRoute:
+        return buildPageRoute<T>(
+          child: MerchantDashboardScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.merchantDashboardRoute:
         return buildPageRoute<T>(child: MerchantDashboardScreen(), routeSettings: routeSettings);
       case Routes.merchantManagementRoute:
@@ -43,23 +54,62 @@ class RouteGenerator {
         return buildPageRoute<T>(child: MerchantOperationsLogScreen(), routeSettings: routeSettings);
         case Routes.merchantPointsSummary:
         return buildPageRoute<T>(child: MerchantPointsSummary(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: OnboardingScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.merchantManagementRoute:
+        return buildPageRoute<T>(
+          child: MerchantManagementScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.scanRoute:
-        return buildPageRoute<T>(child: ScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: ScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.successScanRoute:
-        return buildPageRoute<T>(child: SuccessScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: SuccessScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.errorScanRoute:
-        return buildPageRoute<T>(child: ErrorScanScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: ErrorScanScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.merchantWarrantyRoute:
-        return buildPageRoute<T>(child: MerchantWarrantyScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: MerchantWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.techWarrantyRoute:
-        return buildPageRoute<T>(child: TechWarrantyScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: TechWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.loginRoute:
-        return buildPageRoute<T>(child: LoginScreen());
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: LoginScreen(),
+        );
       case Routes.registerTechRoute:
-        return buildPageRoute<T>(child: SignUpAsTech());
+        return buildPageRoute<T>(
+          child: SignUpAsTech(),
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+        );
       case Routes.registerTraderRoute:
         return buildPageRoute<T>(
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider<GovernoratesCubit>(create: (context) => GovernoratesCubit(governoratesUseCases: ServiceLocator().getIt<GovernoratesUseCases>())..getList()),
+            BlocProvider<CitiesCubit>(create: (context) =>CitiesCubit()),
+          ],
           child: SignUpAsTrader(),
         );
       case Routes.registerAccept:
@@ -165,7 +215,11 @@ case Routes.addInsuranceMembers:
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(body: Center(child: Text("No route defined for ${routeSettings.name}"))),
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text("No route defined for ${routeSettings.name}"),
+            ),
+          ),
         );
     }
   }
@@ -185,7 +239,10 @@ case Routes.addInsuranceMembers:
         settings: routeSettings,
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
-          return RotationTransition(child: child, turns: ReverseAnimation(anim));
+          return RotationTransition(
+            child: child,
+            turns: ReverseAnimation(anim),
+          );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
       );
@@ -205,7 +262,10 @@ case Routes.addInsuranceMembers:
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
             child: child,
-            position: Tween(begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(1.0, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
           );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
@@ -216,7 +276,10 @@ case Routes.addInsuranceMembers:
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
-            position: Tween(begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(0.0, 1.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
             child: child,
           );
         },
