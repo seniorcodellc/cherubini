@@ -46,10 +46,10 @@ class AuthCubit extends Cubit<CubitStates> {
   );
 
   registerTech(TechSignUpModel techSignUpModel) async {
-    await executeWithDialog<UserModel>(
+    await executeWithDialog(
       either: authUseCase.registerTech(techSignUpModel: techSignUpModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
-      onSuccess: (UserModel? data) async {
+      onSuccess: (data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {

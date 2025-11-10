@@ -10,7 +10,7 @@ class TechSignUpResponseModel extends ObjectResponseModel {
 }
 
 class TechSignUpModelData {
-  int? id;
+  String? id;
 
   TechSignUpModelData({this.id});
 
