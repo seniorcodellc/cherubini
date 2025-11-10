@@ -35,10 +35,10 @@ class ClientDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('اسم العميل',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-                 WarrantyCustomTextField(hint: 'أدخل اسم العميل'),
-                Text('رقم الجوال',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-                 WarrantyCustomTextField(hint: '568912345'),
+                Text(AppStrings.clientName,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
+                 WarrantyCustomTextField(hint: AppStrings.enterClientName),
+                Text(AppStrings.phoneNumAr,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
+                 WarrantyCustomTextField(hint: AppStrings.phoneNumHintAr),
               ],
             ),
           ),

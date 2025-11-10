@@ -67,7 +67,7 @@ Future<ResponseModel> remoteExecute({
 
   /// A required function that takes a `Map<String, dynamic>` as input and returns a `ResponseModel` object.
   /// This function is used to process successful response data.
-  required ResponseModel Function(Map<String, dynamic> data) fromJsonFunction,
+  required ResponseModel Function(dynamic data) fromJsonFunction,
 }) async {
   /// Declare a variable to hold the final `ResponseModel` object.
   ResponseModel responseModel;
@@ -82,8 +82,20 @@ Future<ResponseModel> remoteExecute({
   if (response.statusCode == ResponseCode.SUCCESS) {
     /// Attempt to decode the response data as a JSON map and pass it to the `onSuccess` function
     /// to create the `ResponseModel` object for successful cases.
-    Map<String, dynamic> map = jsonDecode(data);
+    dynamic map = jsonDecode(data);
+    if(map is Map && map.containsKey('data').isFalse){
+      map={
+        'data':map,
+        'success':true
+      };
+    }else if(map is List){
+      map={
+        'data':map,
+        'success':true
+      } as Map;
+    }
     try {
+      print("enteed");
       responseModel = fromJsonFunction(map);
       responseModel.code=response.statusCode.toString();
     } catch (error) {

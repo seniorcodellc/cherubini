@@ -10,7 +10,7 @@ class ActiveInfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(all: 8.0),
+      padding: getPadding(horizontal: 8.0.w,bottom: 14.h,top: 6.0.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -18,7 +18,7 @@ class ActiveInfoRow extends StatelessWidget {
             children: [
               Text(model.points,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.accentColor),),
               8.vs,
-              Text('نقطة',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.subTitleColor),),
+              Text(AppStrings.point,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.subTitleColor),),
             ],
           ),
           20.hs,
@@ -27,7 +27,7 @@ class ActiveInfoRow extends StatelessWidget {
             children: [
               Text(model.scan,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.accentColor),),
               8.vs,
-              Text('عمليه المسح',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.subTitleColor),),
+              Text(AppStrings.scanOperation,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.subTitleColor),),
             ],
           ),
           VLine(height: 50.0.h,),
