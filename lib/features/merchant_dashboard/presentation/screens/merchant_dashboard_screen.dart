@@ -1,10 +1,9 @@
 import 'package:cherubini/config/data_generic/presentation/widgets/generic_data_view.dart';
 import 'package:cherubini/core/profile/data/models/profile_response_model.dart';
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import '../../../../core/profile/presentation/manager/profile_cubit.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../widgets/dashboard_body.dart';
+import '../widgets/dashboard_points.dart';
 import '../widgets/last_scan_list.dart';
 import '../../../../core/widgets/shared_dashboard_header.dart';
 import '../widgets/quick_action_widget.dart';

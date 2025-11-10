@@ -25,7 +25,6 @@ class GovernmentAndRegionsDropDown extends StatelessWidget {
                 governorateId=government.id;
                 regionId=null;
                 onGovernmentAndCitySelected.call(governorateId,regionId);
-
               },
             ),
           ),

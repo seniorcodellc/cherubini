@@ -46,25 +46,22 @@ class AuthCubit extends Cubit<CubitStates> {
   );
 
   registerTech(TechSignUpModel techSignUpModel) async {
-    print("cubit");
-    //   this.userModel = userModel;
-    /*    await executeWithDialog<RequestIdModel>(
+    await executeWithDialog<UserModel>(
       either: authUseCase.registerTech(techSignUpModel: techSignUpModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
-      onSuccess: (RequestIdModel? data) async {
+      onSuccess: (UserModel? data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
             NotificationsService().showSimpleNotification(
               title: AppStrings.verificationAccount.trans,
-              description: "0000",
+              description: AppStrings.pleaseWaitUntilApproved.trans,
             );
           },
         );
-        registerModel = data;
         Routes.registerAccept.moveTo();
       },
-    );*/
+    );
   }
 
   registerMerchant(RegisterMerchantModel registerRequestModel) async {

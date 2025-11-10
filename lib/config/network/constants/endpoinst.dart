@@ -7,11 +7,16 @@ abstract class EndPoints {
   static const String login = '${api}login';
   static const String logout = '${api}logout';
   static const String profile = '${api}profile';
+  static const String technicianList = '${api}technicianList';
+  static const String approved = '${api}approved?technicianId=16';
+  static const String suspend = '${api}suspend?technicianId=16';
+  static const String unSuspend = '${api}unSuspend?technicianId=16';
 
   static const String registerMerchant = '${api}registerMerchant';
   static const String history = '${api}readingHistory';
   static const String registerTech = '${api}registerTechnician';
   static const String governorate = '${api}governorate';
+  static const String merchantList = '${api}merchantsList';
   static const String paymentGateways = '${api}payments/payment-gateways';
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';

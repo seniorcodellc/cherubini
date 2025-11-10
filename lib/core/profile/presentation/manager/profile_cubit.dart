@@ -6,8 +6,7 @@ import '../../../../exports.dart';
 import '../../../../features/authentication/data/model/response_model/login_response_model.dart';
 
 class ProfileCubit extends CubitDataView<ProfileModel> {
-  ProfileCubit({required this.profileUseCases}) : super(genericUseCases: profileUseCases);
+  ProfileCubit({required this.profileUseCases})
+    : super(genericUseCases: profileUseCases);
   ProfileUseCases profileUseCases;
-
-
 }

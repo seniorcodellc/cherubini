@@ -35,7 +35,7 @@ class _MerchantManagementScreenState extends State<MerchantManagementScreen> {
             SliverToBoxAdapter(child: 16.hs),
             SliverToBoxAdapter(
               child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 250),
+                duration: const Duration(milliseconds: 200),
                 switchInCurve: Curves.easeInOut,
                 child: selectedTab
                     ? ActiveList()

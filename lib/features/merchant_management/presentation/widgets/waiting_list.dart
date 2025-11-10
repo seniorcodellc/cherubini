@@ -1,7 +1,6 @@
 import 'package:cherubini/exports.dart';
-
+import 'package:cherubini/features/merchant_management/presentation/widgets/waiting_tech_item.dart';
 import '../../data/statics/static.dart';
-import 'active_tech_item.dart';
 
 class WaitingList extends StatelessWidget {
   const WaitingList({
@@ -17,8 +16,10 @@ class WaitingList extends StatelessWidget {
       itemCount: ManagementStatics.techWaitingList.length,
       itemBuilder: (context, index) {
         final model = ManagementStatics.techWaitingList[index];
-        return ActiveTechItem(model: model, isActive: false);
+        return WaitingTechItem(model: model);
       },
     );
   }
 }
+
+
