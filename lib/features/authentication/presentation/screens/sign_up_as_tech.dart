@@ -3,7 +3,6 @@ import 'package:cherubini/features/authentication/presentation/managers/auth_cub
 import 'package:cherubini/features/authentication/presentation/widgets/custom_login_signup_textfield_text.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_enter_name_text_field.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/tech_answer_verfication_question.dart';
-
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../../../../exports.dart';
@@ -19,6 +18,8 @@ class SignUpAsTech extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController checkController = TextEditingController();
+  int? merchantId;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,12 @@ class SignUpAsTech extends StatelessWidget {
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.chooseMerchantAr,
-                      child: ChooseTraderDropDown(),
+                      child: ChooseTraderDropDown(
+                        onMerchantSelected: (merchantList)
+                        {
+                          merchantId = merchantList.id;
+                        },
+                      ),
                     ),
 
                     16.vs,
@@ -73,7 +79,6 @@ class SignUpAsTech extends StatelessWidget {
                         checkController: checkController,
                       ),
                     ),
-
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.passwordAr,
@@ -85,7 +90,6 @@ class SignUpAsTech extends StatelessWidget {
                     40.vs,
                     CustomButton(
                       text: AppStrings.createAccountButtonAr,
-
                       onPressed: () {
                         checkStringError(
                           context,
@@ -112,19 +116,18 @@ class SignUpAsTech extends StatelessWidget {
                           checkController.text,
                           Errors.VERIFICATION_ERROR,
                         );
+                        checkNullError(context, merchantId, Errors.CHOOSE_MERCHANT_ERROR);
+
                         if (dontHaveErrors(context)) {
                           print("start api request");
-                          //     print("context ${context.read<AuthCubit>()}");
-
                           context.read<AuthCubit>().registerTech(
                             TechSignUpModel(
-                              // confirmPassword: passwordController.text,
                               name: nameController.text,
                               phone: phoneController.text,
                               email: emailController.text,
-                              merchantId: 1,
+                              merchantId: merchantId,
                               password: passwordController.text,
-
+                              confirmPassword: passwordController.text,
                               // check: checkController.text,
                             ),
                           );

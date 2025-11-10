@@ -12,9 +12,9 @@ class QuestionMerchantWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: Colors.black.withValues(alpha: 0.1),
             spreadRadius: 2.r,
-            blurRadius: 6.r,
+            blurRadius: 5.r,
             offset: Offset(0, 2.h),
           ),
         ],
@@ -28,6 +28,7 @@ class QuestionMerchantWidget extends StatelessWidget {
             Row(
               children: [
                 CustomSVGImage(asset: AppAssets.questionMark,color: AppColors.primaryColor,),
+                8.hs,
                 Text(AppStrings.techQuestion,style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.primaryColor),),
               ],
             ),

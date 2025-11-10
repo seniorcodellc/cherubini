@@ -12,15 +12,20 @@ import 'exports.dart';
 
 import 'features/authentication/data/data_source/governorates_remote_datasource.dart';
 import 'features/authentication/data/data_source/local_auth_data_source.dart';
+import 'features/authentication/data/data_source/merchant_list_remote_data_source.dart';
 import 'features/authentication/data/data_source/remote_auth_data_source.dart';
 import 'features/authentication/data/repositories/auth_repo_impl.dart';
 import 'features/authentication/data/repositories/governorates_repo_impl.dart';
+import 'features/authentication/data/repositories/merchant_list_repo_impl.dart';
 import 'features/authentication/domain/repositories/auth_repo.dart';
 import 'features/authentication/domain/repositories/governorates_repo.dart';
+import 'features/authentication/domain/repositories/merchant_list_repo.dart';
 import 'features/authentication/domain/usecase/auth_use_case.dart' show AuthUseCase;
 import 'features/authentication/domain/usecase/governorates_use_cases.dart';
+import 'features/authentication/domain/usecase/merchant_list_use_cases.dart';
 import 'features/authentication/presentation/managers/auth_cubit.dart';
 import 'features/authentication/presentation/managers/governorates_cubit.dart';
+import 'features/authentication/presentation/managers/merchant_list_cubit.dart';
 import 'features/on_boarding/data/data_sources/onboarding_local_data_source.dart';
 import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
@@ -48,6 +53,7 @@ class ServiceLocator {
     registerGovernorates;
     registerProfile;
     registerHistory;
+    registerMerchantList;
   }
   get registerAuthDependencies {
     getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
@@ -62,6 +68,13 @@ class ServiceLocator {
     getIt.registerLazySingleton<GovernoratesUseCases>(() => GovernoratesUseCases(governoratesRepo: getIt()));
     getIt.registerLazySingleton<GovernoratesCubit>(() => GovernoratesCubit(governoratesUseCases: getIt()));
   }
+  get registerMerchantList{
+    getIt.registerLazySingleton<MerchantListRemoteDataSource>(() => MerchantListRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<MerchantListRepo>(() => MerchantListRepoImpl(merchantListRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<MerchantListUseCases>(() => MerchantListUseCases(merchantListRepo: getIt()));
+    getIt.registerLazySingleton<MerchantListCubit>(() => MerchantListCubit(merchantListUseCases: getIt()));
+  }
+
   get registerHistory {
     getIt.registerLazySingleton<HistoryRemoteDataSource>(() => HistoryRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<HistoryRepo>(() => HistoryRepoImpl(historyRemoteDataSource: getIt()));

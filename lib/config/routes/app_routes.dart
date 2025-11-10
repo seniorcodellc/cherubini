@@ -5,6 +5,7 @@ import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
+import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
 import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
@@ -26,6 +27,7 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
+import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
@@ -79,7 +81,13 @@ class RouteGenerator {
       case Routes.registerTechRoute:
         return buildPageRoute<T>(
           child: SignUpAsTech(),
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider<MerchantListCubit>(
+                create: (context)=>
+                MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),
+            )
+          ],
         );
       case Routes.registerTraderRoute:
         return buildPageRoute<T>(

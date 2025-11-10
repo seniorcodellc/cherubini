@@ -12,6 +12,7 @@ abstract class EndPoints {
   static const String history = '${api}readingHistory';
   static const String registerTech = '${api}registerTechnician';
   static const String governorate = '${api}governorate';
+  static const String merchantList = '${api}merchantsList';
   static const String paymentGateways = '${api}payments/payment-gateways';
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';
