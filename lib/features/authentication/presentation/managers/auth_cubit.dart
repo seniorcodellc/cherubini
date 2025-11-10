@@ -26,7 +26,9 @@ class AuthCubit extends Cubit<CubitStates> {
       onSuccess: (UserModel? data) async {
         user = data;
         //     getBlocData<BottomNavOperationCubit>().changIndex(0);
-        Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+
+        Routes.merchantDashboardRoute.moveTo();
+        // Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       },
     );
   }
