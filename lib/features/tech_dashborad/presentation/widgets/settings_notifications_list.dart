@@ -5,9 +5,9 @@ import '../../../../exports.dart';
 class SettingsNotificationsList extends StatelessWidget {
   SettingsNotificationsList({super.key});
   List<String> notifications = [
-    "إشعارات النقاط",
-    "إشعارات المسح",
-    "إشعارات النظام",
+    AppStrings.pointsNotifications,
+    AppStrings.deleteNotifications,
+    AppStrings.systemNotifications,
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class SettingsNotificationsList extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: getPadding(vertical: 16.h),
+        padding: getPadding(vertical: 10.h),
         child: Column(
           children: [
             NotificationsListItem(text: notifications[0]),

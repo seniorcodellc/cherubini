@@ -34,6 +34,7 @@ Future<R?> executeWithDialog<R>(
 
     /// The message to display in the dialog while the operation is running.
     required String startingMessage,
+      String? responseMessage,
 
     /// A function to be called with the error message if the operation fails.
     Function(String message)? onError,
@@ -79,7 +80,7 @@ Future<R?> executeWithDialog<R>(
     /// Show a custom success dialog with a timeout using `AppService.showCustomDialogWithTimer`.
     /// The timeout calls the `onSuccess` function with the data.
     await showCustomDialogWithTimer(
-      message: response.message,
+      message: response.message??responseMessage,
       dialogType: AlertTypes.success,
       onTimeOut: () {
         onSuccess.call(data);

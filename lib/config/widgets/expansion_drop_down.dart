@@ -1,7 +1,7 @@
 import '../../exports.dart';
 
 class ExpansionDropDown extends StatefulWidget {
-  final void Function(ItemModel selectedList) onSelected;
+  final void Function(ItemModel item) onSelected;
   final List<ItemModel>? items;
   final Color? borderColor;
   final TextStyle? titleStyle;
@@ -41,16 +41,9 @@ class _ExpansionDropDownState extends State<ExpansionDropDown> {
       child: GestureDetector(
         child: Container(
           decoration: BoxDecoration(
-            color: widget.backgroundColor,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              width: widget.showError ? 2 : 1,
-              color: widget.borderColor.isNotNull
-                  ? widget.borderColor!
-                  : widget.showError
-                  ? AppColors.brown
-                  : AppColors.borderColor2,
-            ),
+            color: widget.backgroundColor??AppColors.white,
+            borderRadius: BorderRadius.circular(15.r),
+
           ),
           child: Center(
             child: ExpansionTile(
@@ -60,8 +53,8 @@ class _ExpansionDropDownState extends State<ExpansionDropDown> {
               visualDensity: VisualDensity.compact,
               dense: true,
               initiallyExpanded: isExpanded,
-              tilePadding: EdgeInsetsDirectional.fromSTEB(10.w, 2.h, 10.w, 2.h),
-              childrenPadding: EdgeInsets.only(top: 10.h),
+              tilePadding: getPadding(start: 10, end: 10, vertical: 7),
+              childrenPadding: getPadding(vertical: 10.h),
               onExpansionChanged: (value) {
                 isExpanded = value;
                 print(isExpanded);
@@ -91,7 +84,7 @@ class _ExpansionDropDownState extends State<ExpansionDropDown> {
               title: Row(
                 children: [
                   Text(
-                    '${widget.title!} : ${widget.activeText ?? ''}',
+                    widget.activeText ?? widget.title.validate,
                     style:
                         widget.titleStyle ??
                         getRegularTextStyle(
@@ -156,16 +149,21 @@ class _ExpansionDropDownState extends State<ExpansionDropDown> {
     ),
   );
   get getTrailingWidget {
-    if (isExpanded.isTrue) {
-      return const Icon(
-        Icons.keyboard_arrow_up_outlined,
-        color: AppColors.black,
-      );
-    } else {
-      return const Icon(
-        Icons.keyboard_arrow_down_outlined,
-        color: AppColors.black,
-      );
+    if(widget.items.isNotNullOrEmpty){
+      if (isExpanded.isTrue) {
+        return const Icon(
+          Icons.keyboard_arrow_up_outlined,
+          color: AppColors.black,
+        );
+      } else {
+        return const Icon(
+          Icons.keyboard_arrow_down_outlined,
+          color: AppColors.black,
+        );
+      }
+    }else{
+      return SizedBox.shrink();
     }
+
   }
 }

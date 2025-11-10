@@ -13,7 +13,7 @@ class ShowDetailsButton extends StatelessWidget {
       ),
       child: Padding(
         padding: getPadding(horizontal: 4.0.w,vertical: 2.0.h),
-        child: Text('عرض التفاصيل',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
+        child: Text(AppStrings.showDetails,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
       ),
     );
   }

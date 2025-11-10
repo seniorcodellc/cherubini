@@ -1,6 +1,7 @@
 {
   "appName": "Qarar Auction",
   "phoneError": "Phone Error",
+  "nameError": "Name Error",
   "gallery": "Gallery",
   "camera": "Camera",
   "visits": "visits",
@@ -413,6 +414,9 @@
   "father": "Father",
   "mother": "Mother",
   "wife": "Wife",
-  "son": "Son"
+  "son": "Son",
+  "governmentError": "this field is required",
+  "pleaseWaitUntilApproved": "please wait until get Approved",
+  "loggedInSuccessfully": "logged in successfully"
 
 }

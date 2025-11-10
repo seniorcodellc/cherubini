@@ -1,8 +1,8 @@
 import '../../../../exports.dart';
 
 class SettingsHeader extends StatelessWidget {
-  const SettingsHeader({super.key});
-
+  const SettingsHeader({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,16 +54,17 @@ class SettingsHeader extends StatelessWidget {
               ),
               16.hs,
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "محمد على",
+                    AppStrings.techName,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,
                     ),
                   ),
                   Text(
-                    "فني معتمد",
+                    title,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.subTitleColor,

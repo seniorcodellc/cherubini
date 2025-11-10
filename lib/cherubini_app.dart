@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:country_picker/country_picker.dart';
 import 'exports.dart';
 
 class CherubiniApp extends StatefulWidget {

@@ -1,8 +1,12 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_gray_circle.dart';
 
+import '../../features/authentication/presentation/managers/auth_cubit.dart';
+
 class SharedDashboardHeader extends StatelessWidget {
-  const SharedDashboardHeader({super.key});
+  const SharedDashboardHeader({super.key, required this.onTap});
+
+  final GestureTapCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +33,13 @@ class SharedDashboardHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'مرحباً , محمد',
+                  '${AppStrings.welcome.trans} ${context.read<AuthCubit>().user?.name.validate}',
+
                   style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
                 ),
                 10.vs,
                 Text(
-                  'فني معتمد',
+                  AppStrings.merchantCompanyName,
                   style: getRegularTextStyle(
                     fontSize: 16.sp,
                     color: Colors.white,
@@ -42,7 +47,7 @@ class SharedDashboardHeader extends StatelessWidget {
                 ),
               ],
             ),
-            SettingsGrayCircle(),
+            SettingsGrayCircle(onTap: onTap),
           ],
         ),
       ),
