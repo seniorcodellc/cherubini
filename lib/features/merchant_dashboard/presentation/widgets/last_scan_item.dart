@@ -1,13 +1,14 @@
+import 'package:cherubini/core/history/data/models/history_response_model.dart';
 import 'package:cherubini/exports.dart';
 import '../../data/models/scan_model.dart';
 class LastScanItem extends StatelessWidget {
-  const LastScanItem({super.key, required this.model});
-  final ScanModel model;
+  const LastScanItem({super.key, required this.history});
+  final HistoryModel history;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: getMargin(horizontal: 16.0.w,vertical: 8.0.h),
+      margin: getMargin(horizontal: 16.0.w),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
@@ -42,14 +43,14 @@ class LastScanItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      model.title,
+                      history.detail![0].productName.toString(),
                       style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
                       // textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      model.date,
+                      DateFormat('dd/MM/yyyy').format(DateTime.parse(history.date!)).toString(),
                       style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
                       //textDirection: TextDirection.rtl,
                     ),
@@ -57,7 +58,7 @@ class LastScanItem extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${model.points} نقطه',
+                  '${history.points} نقطه',
                   //textDirection: TextDirection.rtl,
                   style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
                 ),
@@ -69,11 +70,11 @@ class LastScanItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'الفني: ${model.tech}',
+                    'الفنى خالد سعيد',
                     style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),
                   Text(
-                    '${model.number}  منتجات ',
+                    '5 منجات',
                     textDirection: TextDirection.rtl,
                     style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),

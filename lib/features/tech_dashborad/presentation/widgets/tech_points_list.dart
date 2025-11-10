@@ -1,5 +1,5 @@
 import '../../../../exports.dart';
-import '../../../../core/widgets/shared_points_item.dart';
+import '../../../../core/widgets/points_item.dart';
 import '../../data/statics/tech_dashboard_static.dart';
 
 class TechPointsList extends StatelessWidget {
@@ -12,7 +12,7 @@ class TechPointsList extends StatelessWidget {
         index,
       ) {
         final model = TechDashboardStatic.techPointsList[index];
-        return SharedPointsItem(model: model);
+        return PointsItem(model: model);
       }),
     );
     ;
