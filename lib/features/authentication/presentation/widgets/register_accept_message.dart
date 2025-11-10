@@ -7,13 +7,13 @@ class RegisterAcceptMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 311.w,
-      height: 116.h,
+      // height: 116.h,
       decoration: BoxDecoration(
         color: AppColors.mutedBlue,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Padding(
-        padding: getPadding(vertical: 15.h),
+        padding: getPadding(vertical: 12.h),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
