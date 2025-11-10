@@ -1,6 +1,5 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
-import '../../data/models/tech_active_model.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key, required this.model, required this.isActive});
@@ -53,7 +52,7 @@ class ProfileWidget extends StatelessWidget {
                             ),
                             8.hs,
                             Text(
-                              model.status,
+                              model.name!,
                               style: getRegularTextStyle(
                                 fontSize: 15.sp,
                                 color: AppColors.green,
@@ -87,7 +86,7 @@ class ProfileWidget extends StatelessWidget {
                             ),
                             8.hs,
                             Text(
-                              model.status,
+                              "",
                               style: getRegularTextStyle(
                                 fontSize: 14.sp,
                                 color: AppColors.errorColor,

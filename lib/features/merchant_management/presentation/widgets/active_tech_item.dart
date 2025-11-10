@@ -4,11 +4,10 @@ import 'package:cherubini/features/merchant_management/data/models/technician_re
 import 'package:cherubini/features/merchant_management/presentation/widgets/custom_info_widget.dart';
 import 'package:cherubini/features/merchant_management/presentation/widgets/active_info_row.dart';
 import 'package:cherubini/features/merchant_management/presentation/widgets/profile_widget.dart';
-import '../../data/models/tech_active_model.dart';
 
 class ActiveTechItem extends StatelessWidget {
   const ActiveTechItem({super.key, required this.item, required this.isActive});
-  final TechnicianModel item;
+  final item;
   final bool isActive;
   @override
   Widget build(BuildContext context) {

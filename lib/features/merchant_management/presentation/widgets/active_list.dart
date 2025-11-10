@@ -1,8 +1,6 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
 import 'package:cherubini/features/merchant_management/presentation/manager/technician_cubit.dart';
-
-import '../../data/statics/static.dart';
 import 'active_tech_item.dart';
 
 class ActiveList extends StatelessWidget {
