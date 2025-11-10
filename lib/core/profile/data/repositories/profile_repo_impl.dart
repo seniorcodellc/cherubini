@@ -1,8 +1,5 @@
-import 'package:cherubini/config/failures/failure.dart';
-import 'package:cherubini/config/network/model/response_model.dart';
-import 'package:dartz/dartz.dart';
-import '../../../../config/helpers/network_helper.dart';
-import '../../../../features/authentication/data/model/response_model/login_response_model.dart';
+import 'package:cherubini/core/profile/domain/repositories/profile_repo.dart';
+import 'package:cherubini/exports.dart';
 import '../data_sources/profile_remote_data_source.dart';
 
 class ProfileRepoImpl extends ProfileRepo {
@@ -10,12 +7,9 @@ class ProfileRepoImpl extends ProfileRepo {
   ProfileRepoImpl({required this.profileRemoteDataSource});
 
   @override
-  Future<Either<Failure, ResponseModel>> profile() => executeImpl<UserModel>(
-    () => profileRemoteDataSource.profile(),
-    // localWrite: (data) => authLocalDataSource.cacheUser(user: data),
-  );
+  Future<Either<Failure, ResponseModel>> getData({num? id, query}) =>executeImpl(() =>profileRemoteDataSource.getData() ,);
+
+
+
 }
 
-abstract class ProfileRepo {
-  Future<Either<Failure, ResponseModel>> profile();
-}

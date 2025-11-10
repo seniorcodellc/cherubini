@@ -1,8 +1,9 @@
 import 'package:cherubini/exports.dart';
+import 'package:hive/hive.dart';
 import '../../features/merchant_dashboard/data/models/points_model.dart';
 
-class SharedPointsItem extends StatelessWidget {
-  const SharedPointsItem({super.key, required this.model});
+class PointsItem extends StatelessWidget {
+  const PointsItem({super.key, required this.model});
   final PointsModel model;
   @override
   Widget build(BuildContext context) {
@@ -61,11 +62,19 @@ class SharedPointsItem extends StatelessWidget {
                     ),
                   ),
 
-                  Text(
-                    model.number,
+                  model.number.isNotNull?     Text(
+                    model.number!,
                     style: getRegularTextStyle(
                       fontSize: 20.sp,
                       color: AppColors.secondaryColor,
+                    ),
+                  ):Padding(
+                    padding: getPadding(bottom: 5.h),
+                    child: SizedBox(
+                      height: 20.h,
+                      width: 20.h,
+                      child: CircularProgressIndicator(color: AppColors.gradientColorStart,
+                      ),
                     ),
                   ),
                 ],

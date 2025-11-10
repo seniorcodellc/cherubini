@@ -9,6 +9,7 @@ abstract class EndPoints {
   static const String profile = '${api}profile';
 
   static const String registerMerchant = '${api}registerMerchant';
+  static const String history = '${api}readingHistory';
   static const String registerTech = '${api}registerTechnician';
   static const String governorate = '${api}governorate';
   static const String paymentGateways = '${api}payments/payment-gateways';

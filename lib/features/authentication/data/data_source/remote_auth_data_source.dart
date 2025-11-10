@@ -39,24 +39,24 @@ abstract class AuthRemoteDataSource {
   // Future<ResponseModel> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
 }
 
-class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
+class AuthRemoteDataSourceImpl extends RequestsImpl
     implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl({required super.dioConsumer});
   @override
-  Future<ResponseModel> login({required LoginModel login}) => addData(
+  Future<ResponseModel> login({required LoginModel login}) => postRequest(
     endPoint: EndPoints.login,
     data: login.toJson(),
     getFromJsonFunction: UserResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> logout() => addData(
+  Future<ResponseModel> logout() => postRequest(
     endPoint: EndPoints.logout,
     getFromJsonFunction: LogoutResponseModel.fromJson,
   );
   @override
   Future<ResponseModel> registerMerchant({
     required RegisterMerchantModel registerModel,
-  }) => addData(
+  }) => postRequest(
     endPoint: EndPoints.registerMerchant,
     data: registerModel.toJson(),
     //  isFormData: true,
@@ -65,7 +65,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
   @override
   Future<ResponseModel> registerTech({
     required TechSignUpModel techSignUpModel,
-  }) => addData(
+  }) => postRequest(
     endPoint: EndPoints.registerTech,
     data: techSignUpModel.toJson(),
     //  isFormData: true,
@@ -75,7 +75,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
   @override
   Future<ResponseModel> verify({
     required VerifyRequestModel verifyRequestModel,
-  }) => addData(
+  }) => postRequest(
     endPoint: EndPoints.verify,
     data: verifyRequestModel.toJson(),
     getFromJsonFunction: UserResponseModel.fromJson,
@@ -83,7 +83,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
   @override
   Future<ResponseModel> forgetPassword({
     required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
-  }) => addData(
+  }) => postRequest(
     endPoint: EndPoints.forgetPassword,
     data: enterPhoneNumberRequestModel.toJson(),
     getFromJsonFunction: ForgetPasswordResponseModel.fromJson,
@@ -99,7 +99,7 @@ class AuthRemoteDataSourceImpl extends RemoteExecuteImpl
   @override
   Future<ResponseModel> resetPassword({
     required ResetPasswordRequestModel resetPasswordRequestModel,
-  }) => addData(
+  }) => postRequest(
     endPoint: EndPoints.resetPassword,
     data: resetPasswordRequestModel.toJson(),
     getFromJsonFunction: ResponseModel.fromJson,
