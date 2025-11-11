@@ -52,6 +52,9 @@ class RouteGenerator {
         );
       case Routes.forgetPasswordRoute:
         return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
           child: ForgetPasswordScreen(),
           routeSettings: routeSettings,
         );

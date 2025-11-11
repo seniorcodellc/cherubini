@@ -145,7 +145,7 @@ class AppStrings {
   static const String all = "all";
 
   static const String enterNewPassword = "enterNewPassword";
-  static const String save = "save";
+  // static const String save = "save";
   static const String register = "register";
   static const String loginNow = "loginNow";
   static const String enterEmail = "enterEmail";
@@ -192,7 +192,7 @@ class AppStrings {
   static const String password = "كلمة المرور";
   static const String confirmPassword = "تأكيد كلمة المرور";
   static const String passwordHint = "*************";
-  static const String forgetPassword = "نسيت كلمة المرور؟";
+  static const String forgetPasswordQuestionMark = "نسيت كلمة المرور؟";
   static const String haveNoAccount = "ليس لديك حساب؟";
   static const String signUpAsMerchant = "تسجيل تاجر";
   static const String signUpAsTech = "تسجيل فني";
@@ -206,7 +206,7 @@ class AppStrings {
   static const String fullName = "الاسم الكامل";
   static const String phoneNum = "رقم الجوال";
   static const String phoneNumHint = "568912345";
-  static const String emailHint = "example1@gmail.com";
+  static const String emailHint = "أدخل البريد الالكترونى الخاص بك";
   static const String chooseMerchant = "اختر التاجر";
   static const String merchantOne = "تاجر رقم 1";
   static const String merchantTwo = "تاجر رقم 2";
@@ -231,6 +231,15 @@ class AppStrings {
   static const String acceptMessage1 =
       "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على";
   static const String acceptMessage2 = " حسابك";
+
+  /// **************************** Forget password screen ************************************
+  ///
+  static const String forgetPassword = "نسيت كلمة المرور";
+  static const String pleaseEnterYourEmail1 =
+      "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين";
+  static const String pleaseEnterYourEmail2 = "كلمة المرور";
+  static const String resetPassword = "إعادة تعيين كلمة المرور";
+  static const String yourEmail = "بريدك الإلكترونى";
 
   /// **************************** Splash ************************************
   ///
@@ -295,8 +304,8 @@ class AppStrings {
   static const String techBenefitsDetails = "تفاصيل استحقاق الفني";
   static const String paid = "تم الصرف";
   static const String notPaid = "لم يتم الصرف";
-  static const String saveAr = "حفظ";
-  static const String cancelAr = "إلغاء";
+  static const String save = "حفظ";
+  static const String cancel = "إلغاء";
 
   /// **************************** Operations History ************************************
   static const String operationsHistory = 'سجل العمليات';
@@ -458,7 +467,7 @@ class AppStrings {
   static const String changeNumber = 'changeNumber';
   static const String continueText = 'continueText';
   static const String submit = 'submit';
-  static const String resetPassword = 'resetPassword';
+  // static const String resetPassword = 'resetPassword';
   static const String passwordMustBeDifferent = 'passwordMustBeDifferent';
   static const String awesome = 'awesome';
   static const String congratulations = 'congratulations';
@@ -483,7 +492,7 @@ class AppStrings {
   static const String logout = "logout";
   static const String logoutFrommazadat = "logoutFrommazadat";
   static const String logoutFrommazadatWarning = "logoutFrommazadatWarning";
-  static const String cancel = "cancel";
+  // static const String cancel = "cancel";
 
   /// **************************** Account Info screens ********************************************
   static const String saveButtonText = "saveButtonText";

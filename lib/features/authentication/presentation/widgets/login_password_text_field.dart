@@ -36,7 +36,7 @@ class LoginPasswordTextField extends StatelessWidget {
                   Routes.forgetPasswordRoute.moveTo();
                 },
                 child: Text(
-                  AppStrings.forgetPassword,
+                  AppStrings.forgetPasswordQuestionMark,
                   style: getRegularTextStyle(color: AppColors.accentColor),
                 ),
               ),
