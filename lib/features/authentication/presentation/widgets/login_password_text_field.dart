@@ -14,6 +14,7 @@ class LoginPasswordTextField extends StatelessWidget {
         CustomTextFormField(
           controller: passwordController,
           hintText: AppStrings.passwordHint,
+          style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
           prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
           suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
         ),
