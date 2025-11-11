@@ -17,7 +17,7 @@ class TechName extends StatelessWidget {
             ),
           ),
           Text(
-            AppStrings.techNameAr,
+            AppStrings.techName,
             style: getRegularTextStyle(
               fontSize: 16,
               color: AppColors.secondaryColor,

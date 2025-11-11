@@ -23,14 +23,14 @@ class LastScanList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                AppStrings.lastScanOperationsAr,
+                AppStrings.lastScanOperations,
                 style: getBoldTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.primaryColor,
                 ),
               ),
               Text(
-                AppStrings.displayAllAr,
+                AppStrings.displayAll,
                 style: getRegularTextStyle(
                   fontSize: 12.sp,
                   color: AppColors.primaryColor,

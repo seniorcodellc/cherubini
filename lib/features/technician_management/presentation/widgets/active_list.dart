@@ -1,6 +1,6 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
-import 'package:cherubini/features/merchant_management/presentation/manager/technician_cubit.dart';
+import '../../data/models/technician_response_model/technician_response_model.dart';
+import '../manager/technician_cubit.dart';
 import 'active_tech_item.dart';
 
 class ActiveList extends StatelessWidget {
@@ -9,8 +9,7 @@ class ActiveList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GenericListView<TechnicianCubit, TechnicianModel>(
-      itemWidget: (item, items, index) =>
-          ActiveTechItem(item: item, isActive: true),
+      itemWidget: (index, items, item) => ActiveTechItem(item: item,),
       separatorWidget: 16.vs,
       shimmerWidget: (index) => SizedBox.shrink(),
     );

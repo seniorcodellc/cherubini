@@ -36,7 +36,7 @@ class SharedDashboardHeader extends StatelessWidget {
                 ),
                 10.vs,
                 Text(
-                  AppStrings.merchantCompanyNameAr,
+                  AppStrings.merchantCompanyName,
                   style: getRegularTextStyle(fontSize: 16.sp, color: Colors.white),
                 ),
               ],

@@ -11,7 +11,7 @@ class DashboardStatics{
     PointsModel(iconPath: AppAssets.availablePoints, title: ' النقاط المتاحة', number: '9,250'),
   ];
   static List<QuickActionModel> actionsList= [
-    QuickActionModel(iconPath: AppAssets.tech, title: 'اداره\nالفنيين', onTap: () { Routes.merchantManagementRoute.moveTo(); }),
+    QuickActionModel(iconPath: AppAssets.tech, title: 'اداره\nالفنيين', onTap: () { Routes.technicianManagementRoute.moveTo(); }),
     QuickActionModel(iconPath: AppAssets.loyalty, title: 'ملخص\nالنقاط', onTap: () { Routes.merchantPointsSummary.moveTo();}),
     QuickActionModel(iconPath: AppAssets.history, title: 'سجل\nالعمليات', onTap: () { Routes.merchantOperationsRoute.moveTo();  }),
     QuickActionModel(iconPath: AppAssets.scan, title: 'مسح\nالبار كود  ', onTap: () { Routes.scanRoute.moveTo();  },),

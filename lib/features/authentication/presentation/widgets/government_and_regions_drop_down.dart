@@ -18,7 +18,7 @@ class GovernmentAndRegionsDropDown extends StatelessWidget {
       children: [
         Expanded(
           child: CustomTitleAndField(
-            text: AppStrings.governmentAr,
+            text: AppStrings.government,
             child: GovernmentDropdown(
               onGovernmentSelected: (government) {
                 context.read<CitiesCubit>().setCities(government.region.validate);

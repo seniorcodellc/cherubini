@@ -11,7 +11,7 @@ class MerchantOperationsLogScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.operationsHistoryAr),
+      appBar: CustomAppbar(title: AppStrings.operationsHistory),
   child: CustomScrollView(
       slivers: [
         SliverToBoxAdapter(

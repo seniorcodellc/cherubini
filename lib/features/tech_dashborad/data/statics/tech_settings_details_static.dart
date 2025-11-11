@@ -5,15 +5,15 @@ import '../models/tech_settings_model.dart';
 class TechSettingsDetailsStatic {
   static List<TechSettingsModel> techSettingsDetailsList = [
     TechSettingsModel(
-      title: AppStrings.profileEditAr,
+      title: AppStrings.profileEdit,
       asset: AppAssets.profile,
     ),
     TechSettingsModel(
-      title: AppStrings.profileChangePasswordAr,
+      title: AppStrings.profileChangePassword,
       asset: AppAssets.lock,
     ),
     TechSettingsModel(
-      title: AppStrings.profileWarrantyCertificatesAr,
+      title: AppStrings.profileWarrantyCertificates,
       asset: AppAssets.profile,
     ),
   ];

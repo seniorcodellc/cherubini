@@ -37,8 +37,8 @@ class ClientDetails extends StatelessWidget {
               children: [
                 Text(AppStrings.clientName,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
                  WarrantyCustomTextField(hint: AppStrings.enterClientName),
-                Text(AppStrings.phoneNumAr,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-                 WarrantyCustomTextField(hint: AppStrings.phoneNumHintAr),
+                Text(AppStrings.phoneNumber,style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
+                 WarrantyCustomTextField(hint: AppStrings.phoneNumHint),
               ],
             ),
           ),

@@ -31,7 +31,7 @@ class SignUpAsTrader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchantAr),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchant),
       child: Form(
         key: _formKey,
         child: Padding(
@@ -43,17 +43,17 @@ class SignUpAsTrader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomTitleAndField(
-                      text: AppStrings.fullNameAr,
+                      text: AppStrings.fullName,
                       child: SharedEnterNameTextField(nameController: nameController),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumAr,
+                      text: AppStrings.phoneNumber,
                       child: SharedPhoneTextField(phoneController: phoneController),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.companyNameAr,
+                      text: AppStrings.companyName,
                       child: CompanyNameField(companyNameController: companyNameController),
                     ),
 
@@ -68,7 +68,7 @@ class SignUpAsTrader extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
+                      text: AppStrings.emailEn,
                       child: SharedEmailTextField(emailController: emailController),
                     ),
                     16.vs,
@@ -85,7 +85,7 @@ class SignUpAsTrader extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButtonAr,
+                      text: AppStrings.createAccountButton,
                       onPressed: () {
                         checkStringError(context, nameController.text, Errors.NAME_ERROR);
                         checkStringError(context, companyNameController.text, Errors.NAME_ERROR);

@@ -15,7 +15,7 @@ class LogInWelcomeBody extends StatelessWidget {
           ),
           16.vs,
           Text(
-            AppStrings.loginAr,
+            AppStrings.login,
             style: getSemiBoldTextStyle(
               fontSize: 24,
               color: AppColors.primaryColor,
@@ -23,7 +23,7 @@ class LogInWelcomeBody extends StatelessWidget {
           ),
           8.vs,
           Text(
-            AppStrings.logInWelcomeAr,
+            AppStrings.logInWelcome,
             style: getSemiBoldTextStyle(
               fontSize: 16,
               color: AppColors.subTitleColor,

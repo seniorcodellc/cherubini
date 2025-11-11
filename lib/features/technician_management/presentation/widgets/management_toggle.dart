@@ -1,5 +1,5 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/shared_toggle_item.dart';
+import 'package:cherubini/features/technician_management/presentation/widgets/shared_toggle_item.dart';
 
 class ManagementToggle extends StatefulWidget {
   final Function(bool) onTabSelected;

@@ -57,7 +57,7 @@ final String title ;
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.techNameAr,
+                    AppStrings.techName,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,

@@ -28,8 +28,8 @@ class BottomNavBarStatic {
     ),
     BottomNavBarModel(
       asset: AppAssets.tabSettings,
-      tabName: AppStrings.settingsAr,
-      appBatTitle: AppStrings.settingsAr,
+      tabName: AppStrings.settings,
+      appBatTitle: AppStrings.settings,
       screen: TechSettingsScreen(),
     ),
   ];

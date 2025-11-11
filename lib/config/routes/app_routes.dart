@@ -6,7 +6,6 @@ import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
-import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
@@ -33,6 +32,9 @@ import '../../features/authentication/domain/usecase/governorates_use_cases.dart
 import '../../features/authentication/presentation/screens/login_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
 import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
+import '../../features/technician_management/domain/use_cases/technician_use_case.dart';
+import '../../features/technician_management/presentation/manager/technician_cubit.dart';
+import '../../features/technician_management/presentation/screens/technician_management_screen.dart';
 
 class RouteGenerator {
   AnimationType? pageRouteAnimationGlobal;
@@ -54,15 +56,22 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
 
-      case Routes.merchantManagementRoute:
-        return buildPageRoute<T>(child: MerchantManagementScreen(), routeSettings: routeSettings);
+      case Routes.technicianManagementRoute:
+        return buildPageRoute<T>(child: TechnicianManagementScreen(), routeSettings: routeSettings);
       case Routes.merchantOperationsRoute:
         return buildPageRoute<T>(child: MerchantOperationsLogScreen(), routeSettings: routeSettings);
       case Routes.merchantPointsSummary:
         return buildPageRoute<T>(child: MerchantPointsSummary(), routeSettings: routeSettings);
         return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
-      case Routes.merchantManagementRoute:
-        return buildPageRoute<T>(child: MerchantManagementScreen(), routeSettings: routeSettings);
+
+      case Routes.technicianManagementRoute:
+        return buildPageRoute<T>(
+            providers: [
+              BlocProvider(create: (context) => TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..getList()),
+            ],
+            child: TechnicianManagementScreen(), routeSettings: routeSettings
+        );
+
       case Routes.scanRoute:
         return buildPageRoute<T>(child: ScanScreen(), routeSettings: routeSettings);
       case Routes.successScanRoute:

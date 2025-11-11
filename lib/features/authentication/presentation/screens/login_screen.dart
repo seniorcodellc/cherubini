@@ -31,22 +31,22 @@ class LoginScreen extends StatelessWidget {
                     LogInWelcomeBody(),
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
+                      text: AppStrings.emailEn,
                       child: SharedEmailTextField(emailController: emailController),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.passwordAr,
+                      text: AppStrings.password,
                       child: SharedPasswordTextField(passwordController: passwordController),
                     ),
                     8.vs,
                     Align(
                       alignment: AlignmentDirectional.bottomEnd,
-                      child: Text(AppStrings.forgetPasswordAr, style: getRegularTextStyle(color: AppColors.accentColor)),
+                      child: Text(AppStrings.forgetPassword, style: getRegularTextStyle(color: AppColors.accentColor)),
                     ),
                     32.vs,
                     CustomButton(
-                      text: AppStrings.loginAr,
+                      text: AppStrings.login,
                       onPressed: () {
                         checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
                         checkStringError(context, passwordController.text, Errors.PASSWORD_ERROR);
@@ -69,13 +69,13 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Routes.registerTraderRoute.moveTo();
                           },
-                          text: AppStrings.signUpAsMerchantAr,
+                          text: AppStrings.signUpAsMerchant,
                         ),
                         CustomElevatedButton(
                           onPressed: () {
                             Routes.registerTechRoute.moveTo();
                           },
-                          text: AppStrings.signUpAsTechAr,
+                          text: AppStrings.signUpAsTech,
                         ),
                       ],
                     ),
