@@ -276,8 +276,8 @@ class AppStrings {
   static const String scanCode = "مسح البار كود";
   static const String helloText = "مرحباً , أحمد";
 
-  /// **************************** Merchant management ************************************
-  static const String merchantManagement = "إدارة الفنيين";
+  /// **************************** tech management ************************************
+  static const String technicianManagement = "إدارة الفنيين";
   static const String activeTech = "الفنيون النشطون";
   static const String waitingTech = "قيد الانتظار";
   static const String active = "نشط";

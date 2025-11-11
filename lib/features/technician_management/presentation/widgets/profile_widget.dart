@@ -1,10 +1,10 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
 
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key, required this.model, required this.isActive});
+import '../../data/models/technician_response_model/technician_response_model.dart';
+
+class ActiveProfileWidget extends StatelessWidget {
+  const ActiveProfileWidget({super.key, required this.model});
   final TechnicianModel model;
-  final bool isActive;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,9 +12,7 @@ class ProfileWidget extends StatelessWidget {
       child: Row(
         children: [
           CustomSVGImage(
-            asset: isActive
-                ? AppAssets.activeProfile
-                : AppAssets.waitingProfile,
+            asset: AppAssets.activeProfile,
             height: 60.h,
             width: 60.w,
           ),
@@ -30,8 +28,7 @@ class ProfileWidget extends StatelessWidget {
                 ),
               ),
               8.vs,
-              isActive
-                  ? Container(
+              Container(
                       decoration: BoxDecoration(
                         color: AppColors.white,
                         borderRadius: BorderRadius.circular(20.0.r),
@@ -52,7 +49,7 @@ class ProfileWidget extends StatelessWidget {
                             ),
                             8.hs,
                             Text(
-                              model.name!,
+                              model.status as String,
                               style: getRegularTextStyle(
                                 fontSize: 15.sp,
                                 color: AppColors.green,
@@ -62,40 +59,6 @@ class ProfileWidget extends StatelessWidget {
                         ),
                       ),
                     )
-                  : Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(20.0.r),
-                        border: Border.all(
-                          color: AppColors.errorColor,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: getPadding(
-                          vertical: 2.0.h,
-                          horizontal: 16.0.w,
-                        ),
-                        child: Row(
-                          children: [
-                            CustomSVGImage(
-                              asset: AppAssets.check,
-                              color: AppColors.errorColor,
-                              height: 18.0.h,
-                              width: 18.0.w,
-                            ),
-                            8.hs,
-                            Text(
-                              "",
-                              style: getRegularTextStyle(
-                                fontSize: 14.sp,
-                                color: AppColors.errorColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
             ],
           ),
         ],

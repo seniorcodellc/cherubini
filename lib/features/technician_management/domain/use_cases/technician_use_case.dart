@@ -1,6 +1,4 @@
-import 'package:cherubini/config/list_generic/domain/use_cases/list_use_cases.dart';
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
 import '../repositories/technician_repo.dart';
 
 class TechnicianUseCase extends ListUseCases {

@@ -1,6 +1,5 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/waiting_tech_item.dart';
-
+import 'package:cherubini/features/technician_management/presentation/widgets/waiting_tech_item.dart';
 import '../../data/models/technician_response_model/technician_response_model.dart';
 import '../manager/technician_cubit.dart';
 
@@ -10,7 +9,7 @@ class WaitingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GenericListView<TechnicianCubit, TechnicianModel>(
-      itemWidget: (item, items, index) => WaitingTechItem(item: item),
+      itemWidget: (index, items, item) => WaitingTechItem(model: item,),
       separatorWidget: 16.vs,
       shimmerWidget: (index) => SizedBox.shrink(),
     );

@@ -5,21 +5,21 @@ import '../widgets/active_list.dart';
 import '../widgets/management_toggle.dart';
 import '../widgets/waiting_list.dart';
 
-class MerchantManagementScreen extends StatefulWidget {
-  const MerchantManagementScreen({super.key});
+class TechnicianManagementScreen extends StatefulWidget {
+  const TechnicianManagementScreen({super.key});
 
   @override
-  State<MerchantManagementScreen> createState() => _MerchantManagementScreenState();
+  State<TechnicianManagementScreen> createState() => _TechnicianManagementScreenState();
 }
 
-class _MerchantManagementScreenState extends State<MerchantManagementScreen> {
+class _TechnicianManagementScreenState extends State<TechnicianManagementScreen> {
   bool selectedTab = true;
 
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
         backgroundColor: AppColors.bgColor,
-        appBar: CustomAppbar(title: AppStrings.merchantManagement),
+        appBar: CustomAppbar(title: AppStrings.technicianManagement),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(

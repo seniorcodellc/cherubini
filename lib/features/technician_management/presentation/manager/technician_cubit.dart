@@ -1,6 +1,7 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
-import 'package:cherubini/features/merchant_management/domain/use_cases/technician_use_case.dart';
+
+import '../../data/models/technician_response_model/technician_response_model.dart';
+import '../../domain/use_cases/technician_use_case.dart';
 
 class TechnicianCubit extends CubitListView<TechnicianModel> {
   TechnicianUseCase technicianUseCase;

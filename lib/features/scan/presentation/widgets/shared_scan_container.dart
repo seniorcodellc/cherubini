@@ -1,9 +1,20 @@
 import 'package:cherubini/exports.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
-class SharedScanContainer extends StatelessWidget {
-  const SharedScanContainer({super.key, required this.asset});
-  final String asset;
+class ScanContainer extends StatelessWidget {
+  const ScanContainer({
+    super.key,
+    required this.controller,
+    required this.onDetect,
+    this.scannedResult,
+  });
+
+  final MobileScannerController controller;
+  final void Function(BarcodeCapture) onDetect;
+  final String? scannedResult;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,24 +25,24 @@ class SharedScanContainer extends StatelessWidget {
         borderType: BorderType.RRect,
         radius: Radius.circular(20.0.r),
         dashPattern: const [8, 4],
-        child: Container(
-          decoration: BoxDecoration(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.0.r),
+          child: Container(
             color: AppColors.mutedBlue,
-            borderRadius: BorderRadius.circular(20.0.r),
-          ),
-          child: Padding(
-            padding: getPadding(
-              horizontal: 28.0.w,
-              top: 50.0.h,
-              bottom: 40.0.h,
-            ),
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: CustomSVGImage(asset: asset),
+            height: 300.h,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                MobileScanner(
+                  controller: controller,
+                  onDetect: onDetect,
+                ),
+              ],
             ),
           ),
         ),
       ),
     );
   }
+
 }

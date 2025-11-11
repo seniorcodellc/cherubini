@@ -1,14 +1,15 @@
 import 'package:cherubini/core/widgets/h_line.dart';
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/custom_info_widget.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/active_info_row.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/profile_widget.dart';
+import 'package:cherubini/features/technician_management/presentation/widgets/profile_widget.dart';
+
+import '../../data/models/technician_response_model/technician_response_model.dart';
+import 'active_info_row.dart';
+import 'custom_info_widget.dart';
+
 
 class ActiveTechItem extends StatelessWidget {
-  const ActiveTechItem({super.key, required this.item, required this.isActive});
-  final item;
-  final bool isActive;
+  const ActiveTechItem({super.key, required this.item});
+  final TechnicianModel item;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +28,7 @@ class ActiveTechItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ProfileWidget(model: item, isActive: true),
+            ActiveProfileWidget(model: item),
             24.vs,
             CustomInfoWidget(asset: AppAssets.phone, info: ""),
             10.vs,

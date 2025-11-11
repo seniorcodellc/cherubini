@@ -29,7 +29,7 @@ class MerchantWarrantyScreen extends StatelessWidget {
                     40.vs,
                     CustomScanButton(
                       text: AppStrings.printWarranty,
-                      icon: AppAssets.print,
+                      icon: AppAssets.print, onPressed: () {  },
                     ),
                     20.vs,
                   ],

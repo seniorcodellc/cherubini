@@ -7,7 +7,6 @@ import '../../../../exports.dart';
 import '../widgets/log_in_have_no_account_row.dart';
 import '../widgets/log_in_welcome_body.dart';
 import '../widgets/shared_email_text_field.dart';
-import '../widgets/shared_password_text_field.dart';
 import '../widgets/sign_up_elevated_buttons.dart';
 
 class LoginScreen extends StatelessWidget {
