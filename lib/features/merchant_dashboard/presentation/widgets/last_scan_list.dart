@@ -23,14 +23,14 @@ class LastScanList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                AppStrings.lastScanOperationsAr,
+                AppStrings.lastScanOperations,
                 style: getBoldTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.primaryColor,
                 ),
               ),
               Text(
-                AppStrings.displayAllAr,
+                AppStrings.displayAll,
                 style: getRegularTextStyle(
                   fontSize: 12.sp,
                   color: AppColors.primaryColor,
@@ -40,13 +40,14 @@ class LastScanList extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: GenericListView<HistoryCubit,HistoryModel>(
+          child: GenericListView<HistoryCubit, HistoryModel>(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemWidget: (index, items, item) => LastScanItem(history: item,),
-              separatorWidget: 8.vs,
-              shimmerWidget: (index) => SizedBox.shrink(),)
-/*          ListView.builder(
+            itemWidget: (index, items, item) => LastScanItem(history: item),
+            separatorWidget: 8.vs,
+            shimmerWidget: (index) => SizedBox.shrink(),
+          ),
+          /*          ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: DashboardStatics.scanList.length,

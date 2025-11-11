@@ -16,7 +16,7 @@ class TechAnswerVerficationQuestion extends StatelessWidget {
       children: [
         CustomTextFormField(
           controller: checkController,
-          hintText: AppStrings.merchantCheckHintAr,
+          hintText: AppStrings.merchantCheckHint,
           prefixIcon: CustomSVGImage(
             asset: AppAssets.questionMark,
             fit: BoxFit.none,

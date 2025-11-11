@@ -31,7 +31,7 @@ class SignUpAsTrader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchantAr),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchant),
       child: Form(
         key: _formKey,
         child: Padding(
@@ -43,18 +43,24 @@ class SignUpAsTrader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomTitleAndField(
-                      text: AppStrings.fullNameAr,
-                      child: SharedEnterNameTextField(nameController: nameController),
+                      text: AppStrings.fullName,
+                      child: SharedEnterNameTextField(
+                        nameController: nameController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumAr,
-                      child: SharedPhoneTextField(phoneController: phoneController),
+                      text: AppStrings.phoneNum,
+                      child: SharedPhoneTextField(
+                        phoneController: phoneController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.companyNameAr,
-                      child: CompanyNameField(companyNameController: companyNameController),
+                      text: AppStrings.companyName,
+                      child: CompanyNameField(
+                        companyNameController: companyNameController,
+                      ),
                     ),
 
                     16.vs,
@@ -62,41 +68,80 @@ class SignUpAsTrader extends StatelessWidget {
                       onGovernmentAndCitySelected: (governmentId, cityId) {
                         print("gooo ${governmentId}");
                         print("city ${cityId}");
-                        this.governorateId=governmentId;
-                        this.regionId=cityId;
+                        this.governorateId = governmentId;
+                        this.regionId = cityId;
                       },
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
-                      child: SharedEmailTextField(emailController: emailController),
+                      text: AppStrings.email,
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.password.trans,
-                      child: SharedPasswordTextField(passwordController: passwordController),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.confirmPassword.trans,
-                      child: SharedConfirmPasswordTextField(confirmPasswordController: confirmPasswordController),
+                      child: SharedConfirmPasswordTextField(
+                        confirmPasswordController: confirmPasswordController,
+                      ),
                     ),
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButtonAr,
+                      text: AppStrings.createAccountButton,
                       onPressed: () {
-                        checkStringError(context, nameController.text, Errors.NAME_ERROR);
-                        checkStringError(context, companyNameController.text, Errors.NAME_ERROR);
-                        checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
-                        checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
-                        checkStringError(context, passwordController.text, Errors.PASSWORD_ERROR);
-                        checkStringError(context, phoneController.text, Errors.PHONE_ERROR);
-                        checkNullError(context, governorateId, Errors.GOVERNORATE_ERROR);
+                        checkStringError(
+                          context,
+                          nameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          companyNameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          phoneController.text,
+                          Errors.PHONE_ERROR,
+                        );
+                        checkNullError(
+                          context,
+                          governorateId,
+                          Errors.GOVERNORATE_ERROR,
+                        );
                         checkNullError(context, regionId, Errors.CITY_ERROR);
-                        checkBoolError(context, confirmPasswordController.text.isEqualTo(passwordController.text),
-                            Errors.MATCHING_PASSWORD_ERROR);
+                        checkBoolError(
+                          context,
+                          confirmPasswordController.text.isEqualTo(
+                            passwordController.text,
+                          ),
+                          Errors.MATCHING_PASSWORD_ERROR,
+                        );
 
                         if (dontHaveErrors(context)) {
                           print("start api request");
@@ -107,7 +152,8 @@ class SignUpAsTrader extends StatelessWidget {
                                 email: emailController.text,
                                 phone: phoneController.text,
                                 password: passwordController.text,
-                                passwordConfirmation: confirmPasswordController.text,
+                                passwordConfirmation:
+                                    confirmPasswordController.text,
                                 governorateId: governorateId,
                                 regionId: regionId,
                               ),

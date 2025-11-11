@@ -11,7 +11,7 @@ class QuickActionWidget extends StatelessWidget {
         Padding(
           padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
           child: Text(
-            AppStrings.quickProceduresAr,
+            AppStrings.quickProcedures,
             style: getBoldTextStyle(
               fontSize: 14.sp,
               color: AppColors.primaryColor,
