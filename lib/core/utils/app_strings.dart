@@ -239,6 +239,11 @@ class AppStrings {
   static const String checkCodeConclusion1 = "لم يصلك البريد الإلكتروني بعد؟ ";
   static const String checkCodeConclusion2 = "أعد الإرسال";
 
+  /// **************************** Forget password screen2 ************************************
+  ///
+  static const String assignNewPassword = "تعيين كلمة مرور جديدة";
+  static const String createNewPassword = "أنشئ كلمة مرور جديدة.";
+
   /// **************************** Forget password screen ************************************
   ///
   static const String forgetPassword = "نسيت كلمة المرور";
@@ -490,7 +495,7 @@ class AppStrings {
   static const String money = 'money';
   static const String provider = 'provider';
   static const String oil = 'oil';
-  static const String createNewPassword = 'createNewPassword';
+  // static const String createNewPassword = 'createNewPassword';
   static const String nameError = 'nameError';
   static const String settingAndPrivacy = "settingAndPrivacy";
   static const String chatSupport = "chatSupport";

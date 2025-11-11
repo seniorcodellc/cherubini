@@ -24,6 +24,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              24.vs,
               SharedForgetPasswordTitle(),
               20.vs,
               ForgetPasswordScreenHeader(),

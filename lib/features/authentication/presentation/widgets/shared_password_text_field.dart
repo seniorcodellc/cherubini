@@ -14,6 +14,7 @@ class SharedPasswordTextField extends StatelessWidget {
         CustomTextFormField(
           controller: passwordController,
           hintText: AppStrings.passwordHint,
+          style: getRegularTextStyle(fontSize: 14, color: AppColors.grayHint),
           prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
           suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
         ),

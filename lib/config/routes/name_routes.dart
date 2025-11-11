@@ -15,6 +15,7 @@ class Routes {
   static const String registerTraderRoute = "/registerTrader";
   static const String technicianManagementRoute = "/technicianManagement";
   static const String forgetPasswordRoute = "/forgetPassword";
+  static const String forgetPasswordRoute2 = "/forgetPassword2";
   static const String enterCodeRoute = "/enterCode";
   static const String merchantOperationsRoute = "/merchantOperations";
   static const String scanRoute = "/scan";

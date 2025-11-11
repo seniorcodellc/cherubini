@@ -30,6 +30,7 @@ import 'package:nested/nested.dart';
 import '../../exports.dart';
 
 import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
+import '../../features/authentication/presentation/screens/forget_password_screen2.dart';
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
@@ -127,6 +128,13 @@ class RouteGenerator {
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
           ],
           child: ForgetPasswordScreen(),
+        );
+      case Routes.forgetPasswordRoute2:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: ForgetPasswordScreen2(),
         );
       case Routes.enterCodeRoute:
         return buildPageRoute<T>(

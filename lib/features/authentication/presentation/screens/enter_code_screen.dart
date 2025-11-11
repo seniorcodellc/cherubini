@@ -23,6 +23,7 @@ class EnterCodeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              24.vs,
               SharedForgetPasswordTitle(),
               20.vs,
               Text(
@@ -38,7 +39,16 @@ class EnterCodeScreen extends StatelessWidget {
               CustomButton(
                 text: AppStrings.checkCode,
                 style: getRegularTextStyle(color: AppColors.white),
-                onPressed: () {},
+                onPressed: () {
+                  checkStringError(
+                    context,
+                    otpController.text,
+                    Errors.VERIFICATION_ERROR,
+                  );
+                  if (dontHaveErrors(context)) {
+                    Routes.forgetPasswordRoute2.moveTo();
+                  }
+                },
               ),
               32.vs,
               EnterCodeScreenConclusion(),
