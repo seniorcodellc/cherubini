@@ -17,12 +17,15 @@ class SharedPhoneTextField extends StatelessWidget {
           controller: phoneController,
           keyboardType: TextInputType.phone,
           prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
-             ),
-        BlocBuilder<ErrorCubit,CubitStates>
-
-          (builder: (context, state) => ErrorText(
+        ),
+        BlocBuilder<ErrorCubit, CubitStates>(
+          builder: (context, state) => ErrorText(
             text: getError[Errors.PHONE_ERROR],
-            showError: context.read<ErrorCubit>().errors.contains(Errors.PHONE_ERROR)),)
+            showError: context.read<ErrorCubit>().errors.contains(
+              Errors.PHONE_ERROR,
+            ),
+          ),
+        ),
       ],
     );
   }

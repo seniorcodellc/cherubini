@@ -2,7 +2,7 @@ import '../../../../exports.dart';
 
 class SettingsHeader extends StatelessWidget {
   const SettingsHeader({super.key, required this.title});
-final String title ;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Padding(

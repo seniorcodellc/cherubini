@@ -20,7 +20,7 @@ class ChooseTraderDropDown extends StatelessWidget {
               items: context.read<MerchantListCubit>().list,
               title: AppStrings.chooseMerchant,
               cubitStates: state,
-              onSelected: ( item) =>onMerchantSelected.call(item),
+              onSelected: (item) => onMerchantSelected.call(item),
             );
           },
         ),

@@ -52,5 +52,3 @@ class MerchantPointsSummary extends StatelessWidget {
     );
   }
 }
-
-

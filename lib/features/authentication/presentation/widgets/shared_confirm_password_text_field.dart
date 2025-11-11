@@ -3,7 +3,10 @@ import 'package:cherubini/config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 
 class SharedConfirmPasswordTextField extends StatelessWidget {
-  const SharedConfirmPasswordTextField({super.key, required this.confirmPasswordController});
+  const SharedConfirmPasswordTextField({
+    super.key,
+    required this.confirmPasswordController,
+  });
 
   final TextEditingController confirmPasswordController;
   @override
@@ -12,7 +15,7 @@ class SharedConfirmPasswordTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
-          controller:confirmPasswordController,
+          controller: confirmPasswordController,
           hintText: AppStrings.passwordHint,
           prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
           suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),

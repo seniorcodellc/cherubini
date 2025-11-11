@@ -46,7 +46,7 @@ class SignUpAsTech extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumber,
+                      text: AppStrings.phoneNum,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -55,7 +55,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailEn,
+                      text: AppStrings.email,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -65,8 +65,7 @@ class SignUpAsTech extends StatelessWidget {
                     CustomTitleAndField(
                       text: AppStrings.chooseMerchant,
                       child: ChooseTraderDropDown(
-                        onMerchantSelected: (merchantList)
-                        {
+                        onMerchantSelected: (merchantList) {
                           merchantId = merchantList.id;
                         },
                       ),
@@ -116,7 +115,11 @@ class SignUpAsTech extends StatelessWidget {
                           checkController.text,
                           Errors.VERIFICATION_ERROR,
                         );
-                        checkNullError(context, merchantId, Errors.CHOOSE_MERCHANT_ERROR);
+                        checkNullError(
+                          context,
+                          merchantId,
+                          Errors.CHOOSE_MERCHANT_ERROR,
+                        );
 
                         if (dontHaveErrors(context)) {
                           print("start api request");

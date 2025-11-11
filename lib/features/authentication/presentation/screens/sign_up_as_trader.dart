@@ -3,10 +3,8 @@ import 'package:cherubini/features/authentication/data/model/request_model/regis
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/company_name_field.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_confirm_password_text_field.dart';
-import '../../../../config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../widgets/custom_login_signup_textfield_text.dart';
 import '../widgets/government_and_regions_drop_down.dart';
 import '../widgets/shared_email_text_field.dart';
@@ -44,17 +42,23 @@ class SignUpAsTrader extends StatelessWidget {
                   children: [
                     CustomTitleAndField(
                       text: AppStrings.fullName,
-                      child: SharedEnterNameTextField(nameController: nameController),
+                      child: SharedEnterNameTextField(
+                        nameController: nameController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumber,
-                      child: SharedPhoneTextField(phoneController: phoneController),
+                      text: AppStrings.phoneNum,
+                      child: SharedPhoneTextField(
+                        phoneController: phoneController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.companyName,
-                      child: CompanyNameField(companyNameController: companyNameController),
+                      child: CompanyNameField(
+                        companyNameController: companyNameController,
+                      ),
                     ),
 
                     16.vs,
@@ -62,41 +66,80 @@ class SignUpAsTrader extends StatelessWidget {
                       onGovernmentAndCitySelected: (governmentId, cityId) {
                         print("gooo ${governmentId}");
                         print("city ${cityId}");
-                        this.governorateId=governmentId;
-                        this.regionId=cityId;
+                        this.governorateId = governmentId;
+                        this.regionId = cityId;
                       },
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailEn,
-                      child: SharedEmailTextField(emailController: emailController),
+                      text: AppStrings.email,
+                      child: SharedEmailTextField(
+                        emailController: emailController,
+                      ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.password.trans,
-                      child: SharedPasswordTextField(passwordController: passwordController),
+                      child: SharedPasswordTextField(
+                        passwordController: passwordController,
+                      ),
                     ),
 
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.confirmPassword.trans,
-                      child: SharedConfirmPasswordTextField(confirmPasswordController: confirmPasswordController),
+                      child: SharedConfirmPasswordTextField(
+                        confirmPasswordController: confirmPasswordController,
+                      ),
                     ),
 
                     40.vs,
                     CustomButton(
                       text: AppStrings.createAccountButton,
                       onPressed: () {
-                        checkStringError(context, nameController.text, Errors.NAME_ERROR);
-                        checkStringError(context, companyNameController.text, Errors.NAME_ERROR);
-                        checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
-                        checkStringError(context, emailController.text, Errors.EMAIL_ERROR);
-                        checkStringError(context, passwordController.text, Errors.PASSWORD_ERROR);
-                        checkStringError(context, phoneController.text, Errors.PHONE_ERROR);
-                        checkNullError(context, governorateId, Errors.GOVERNORATE_ERROR);
+                        checkStringError(
+                          context,
+                          nameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          companyNameController.text,
+                          Errors.NAME_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          emailController.text,
+                          Errors.EMAIL_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          passwordController.text,
+                          Errors.PASSWORD_ERROR,
+                        );
+                        checkStringError(
+                          context,
+                          phoneController.text,
+                          Errors.PHONE_ERROR,
+                        );
+                        checkNullError(
+                          context,
+                          governorateId,
+                          Errors.GOVERNORATE_ERROR,
+                        );
                         checkNullError(context, regionId, Errors.CITY_ERROR);
-                        checkBoolError(context, confirmPasswordController.text.isEqualTo(passwordController.text),
-                            Errors.MATCHING_PASSWORD_ERROR);
+                        checkBoolError(
+                          context,
+                          confirmPasswordController.text.isEqualTo(
+                            passwordController.text,
+                          ),
+                          Errors.MATCHING_PASSWORD_ERROR,
+                        );
 
                         if (dontHaveErrors(context)) {
                           print("start api request");
@@ -107,7 +150,8 @@ class SignUpAsTrader extends StatelessWidget {
                                 email: emailController.text,
                                 phone: phoneController.text,
                                 password: passwordController.text,
-                                passwordConfirmation: confirmPasswordController.text,
+                                passwordConfirmation:
+                                    confirmPasswordController.text,
                                 governorateId: governorateId,
                                 regionId: regionId,
                               ),

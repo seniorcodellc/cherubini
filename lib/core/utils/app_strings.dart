@@ -985,5 +985,4 @@ class AppStrings {
   static const String pleaseWaitUntilApproved = "pleaseWaitUntilApproved";
 
   static const String loggedInSuccessfully = "loggedInSuccessfully";
-
 }

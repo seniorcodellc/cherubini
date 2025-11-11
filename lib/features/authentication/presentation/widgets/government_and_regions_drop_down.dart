@@ -6,8 +6,11 @@ import '../../../../exports.dart';
 import '../../data/model/response_model/governorate_response_model.dart';
 
 class GovernmentAndRegionsDropDown extends StatelessWidget {
-  final Function(int? governmentId,int? cityId) onGovernmentAndCitySelected;
-  GovernmentAndRegionsDropDown({required this.onGovernmentAndCitySelected,super.key});
+  final Function(int? governmentId, int? cityId) onGovernmentAndCitySelected;
+  GovernmentAndRegionsDropDown({
+    required this.onGovernmentAndCitySelected,
+    super.key,
+  });
   int? governorateId;
   int? regionId;
   @override
@@ -21,10 +24,12 @@ class GovernmentAndRegionsDropDown extends StatelessWidget {
             text: AppStrings.government,
             child: GovernmentDropdown(
               onGovernmentSelected: (government) {
-                context.read<CitiesCubit>().setCities(government.region.validate);
-                governorateId=government.id;
-                regionId=null;
-                onGovernmentAndCitySelected.call(governorateId,regionId);
+                context.read<CitiesCubit>().setCities(
+                  government.region.validate,
+                );
+                governorateId = government.id;
+                regionId = null;
+                onGovernmentAndCitySelected.call(governorateId, regionId);
               },
             ),
           ),
@@ -34,10 +39,12 @@ class GovernmentAndRegionsDropDown extends StatelessWidget {
         Expanded(
           child: CustomTitleAndField(
             text: AppStrings.region.trans,
-            child: RegionsDropDown(onSelected: (city) {
-              regionId=city.id;
-              onGovernmentAndCitySelected.call(governorateId,regionId);
-            }),
+            child: RegionsDropDown(
+              onSelected: (city) {
+                regionId = city.id;
+                onGovernmentAndCitySelected.call(governorateId, regionId);
+              },
+            ),
           ),
         ),
       ],
