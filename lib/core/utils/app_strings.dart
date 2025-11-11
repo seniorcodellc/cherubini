@@ -232,6 +232,13 @@ class AppStrings {
       "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على";
   static const String acceptMessage2 = " حسابك";
 
+  /// **************************** Enter Code screen ************************************
+  static const String checkCode = "التحقق من الرمز";
+  static const String enterCodeScreenHeader =
+      "أرسلنا رابط إعادة الضبط إلى exampl1@gmail.com أدخل الرمز المكون من 5 أرقام المذكور في البريد الإلكتروني. ";
+  static const String checkCodeConclusion1 = "لم يصلك البريد الإلكتروني بعد؟ ";
+  static const String checkCodeConclusion2 = "أعد الإرسال";
+
   /// **************************** Forget password screen ************************************
   ///
   static const String forgetPassword = "نسيت كلمة المرور";
@@ -276,8 +283,8 @@ class AppStrings {
   static const String scanCode = "مسح البار كود";
   static const String helloText = "مرحباً , أحمد";
 
-  /// **************************** Merchant management ************************************
-  static const String merchantManagement = "إدارة الفنيين";
+  /// **************************** tech management ************************************
+  static const String technicianManagement = "إدارة الفنيين";
   static const String activeTech = "الفنيون النشطون";
   static const String waitingTech = "قيد الانتظار";
   static const String active = "نشط";

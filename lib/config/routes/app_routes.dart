@@ -6,8 +6,8 @@ import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
+import 'package:cherubini/features/authentication/presentation/screens/enter_code_screen.dart';
 import 'package:cherubini/features/authentication/presentation/screens/forget_password_screen.dart';
-import 'package:cherubini/features/merchant_management/presentation/screens/merchant_management_screen.dart';
 import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
@@ -21,6 +21,7 @@ import 'package:cherubini/features/scan/presentation/screens/success_scan_screen
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
+import 'package:cherubini/features/technician_management/presentation/screens/technician_management_screen.dart';
 import 'package:cherubini/features/warranty/presentation/screens/merchant_warranty_screen.dart';
 import 'package:cherubini/features/warranty/presentation/screens/tech_warranty_screen.dart';
 
@@ -50,14 +51,6 @@ class RouteGenerator {
           child: OnboardingScreen(),
           routeSettings: routeSettings,
         );
-      case Routes.forgetPasswordRoute:
-        return buildPageRoute<T>(
-          providers: [
-            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
-          ],
-          child: ForgetPasswordScreen(),
-          routeSettings: routeSettings,
-        );
 
       case Routes.merchantDashboardRoute:
         return buildPageRoute<T>(
@@ -77,11 +70,6 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
 
-      case Routes.merchantManagementRoute:
-        return buildPageRoute<T>(
-          child: MerchantManagementScreen(),
-          routeSettings: routeSettings,
-        );
       case Routes.merchantOperationsRoute:
         return buildPageRoute<T>(
           child: MerchantOperationsLogScreen(),
@@ -96,9 +84,9 @@ class RouteGenerator {
           child: OnboardingScreen(),
           routeSettings: routeSettings,
         );
-      case Routes.merchantManagementRoute:
+      case Routes.technicianManagementRoute:
         return buildPageRoute<T>(
-          child: MerchantManagementScreen(),
+          child: TechnicianManagementScreen(),
           routeSettings: routeSettings,
         );
       case Routes.scanRoute:
@@ -133,6 +121,21 @@ class RouteGenerator {
           ],
           child: LoginScreen(),
         );
+      case Routes.forgetPasswordRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: ForgetPasswordScreen(),
+        );
+      case Routes.enterCodeRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: EnterCodeScreen(),
+        );
+
       case Routes.registerTechRoute:
         return buildPageRoute<T>(
           child: SignUpAsTech(),

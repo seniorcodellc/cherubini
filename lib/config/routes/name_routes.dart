@@ -13,8 +13,9 @@ class Routes {
   static const String registerTechRoute = "/registerTech";
   static const String registerAccept = "/registerAccept";
   static const String registerTraderRoute = "/registerTrader";
+  static const String technicianManagementRoute = "/technicianManagement";
   static const String forgetPasswordRoute = "/forgetPassword";
-  static const String merchantManagementRoute = "/merchantManagement";
+  static const String enterCodeRoute = "/enterCode";
   static const String merchantOperationsRoute = "/merchantOperations";
   static const String scanRoute = "/scan";
   static const String successScanRoute = "/successScan";

@@ -1,5 +1,6 @@
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/data/models/technician_response_model/technician_response_model.dart';
+
+import '../models/technician_response_model/technician_response_model.dart';
 
 abstract class TechnicianRemoteDataSources extends ListRemoteDataSource {
   Future<ResponseModel> getApproved({num? id, query});

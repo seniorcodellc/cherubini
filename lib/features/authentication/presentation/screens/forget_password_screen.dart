@@ -42,6 +42,9 @@ class ForgetPasswordScreen extends StatelessWidget {
                     emailController.text,
                     Errors.EMAIL_ERROR,
                   );
+                  if (dontHaveErrors(context)) {
+                    Routes.enterCodeRoute.moveTo();
+                  }
                 },
               ),
             ],

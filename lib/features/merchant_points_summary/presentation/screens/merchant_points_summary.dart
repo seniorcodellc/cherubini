@@ -1,7 +1,5 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/exports.dart';
-
-import '../../../tech_dashborad/presentation/widgets/entitlements_list.dart';
 import '../../../tech_dashborad/presentation/widgets/summary_points_card.dart';
 import '../../../tech_dashborad/presentation/widgets/tech_points_register.dart';
 import '../widgets/merchant_entitlements_list.dart';

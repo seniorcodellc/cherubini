@@ -1,14 +1,15 @@
 import 'package:cherubini/core/widgets/h_line.dart';
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/custom_info_widget.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/active_info_row.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/profile_widget.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/question_merchant_widget.dart';
-import 'package:cherubini/features/merchant_management/presentation/widgets/waiting_buttons.dart';
+import 'package:cherubini/features/technician_management/presentation/widgets/question_merchant_widget.dart';
+import 'package:cherubini/features/technician_management/presentation/widgets/waiting_buttons.dart';
+import '../../data/models/technician_response_model/technician_response_model.dart';
+import 'custom_info_widget.dart';
+import 'not_active_profile_widget.dart';
+
 
 class WaitingTechItem extends StatelessWidget {
-  const WaitingTechItem({super.key, required this.item});
-  final item;
+  const WaitingTechItem({super.key, required this.model});
+  final TechnicianModel model;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +28,7 @@ class WaitingTechItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ProfileWidget(model: item, isActive: false),
+            NotActiveProfileWidget(model: model),
             24.vs,
             CustomInfoWidget(asset: AppAssets.phone, info: ""),
             10.vs,
