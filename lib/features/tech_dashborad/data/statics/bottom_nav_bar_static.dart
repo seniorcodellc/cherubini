@@ -1,4 +1,7 @@
 import 'package:cherubini/features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
+import 'package:cherubini/features/merchant_operations/presentation/screens/merchant_operations_log_screen.dart';
+import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
+import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
@@ -18,19 +21,19 @@ class BottomNavBarStatic {
       asset: AppAssets.loyalty,
       tabName: AppStrings.pointsAr,
       appBatTitle: AppStrings.pointsSummary,
-      screen: TechPointsSummaryScreen(),
+      screen: MerchantPointsSummary(),
     ),
     BottomNavBarModel(
       asset: AppAssets.logs,
       tabName: AppStrings.logsAr,
       appBatTitle: AppStrings.operationsLogsAr,
-      screen: TechOperationsLogScreen(),
+      screen: MerchantOperationsLogScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.tabSettings,
       tabName: AppStrings.settings,
       appBatTitle: AppStrings.settings,
-      screen: TechSettingsScreen(),
+      screen: MerchantSettings(),
     ),
   ];
 }

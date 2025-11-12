@@ -38,9 +38,12 @@ class PointsItem extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: getPadding(all: 12.0),
-                  child: CustomSVGImage(
-                    asset: model.iconPath,
-                    fit: BoxFit.none,
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: CustomSVGImage(
+                      asset: model.iconPath,
+                      fit: BoxFit.none,
+                    ),
                   ),
                 ),
               ),
@@ -56,21 +59,24 @@ class PointsItem extends StatelessWidget {
                     ),
                   ),
 
-                  model.number.isNotNull?     Text(
-                    model.number!,
-                    style: getRegularTextStyle(
-                      fontSize: 20.sp,
-                      color: AppColors.secondaryColor,
-                    ),
-                  ):Padding(
-                    padding: getPadding(bottom: 5.h),
-                    child: SizedBox(
-                      height: 20.h,
-                      width: 20.h,
-                      child: CircularProgressIndicator(color: AppColors.gradientColorStart,
-                      ),
-                    ),
-                  ),
+                  model.number.isNotNull
+                      ? Text(
+                          model.number!,
+                          style: getRegularTextStyle(
+                            fontSize: 20.sp,
+                            color: AppColors.secondaryColor,
+                          ),
+                        )
+                      : Padding(
+                          padding: getPadding(bottom: 5.h),
+                          child: SizedBox(
+                            height: 20.h,
+                            width: 20.h,
+                            child: CircularProgressIndicator(
+                              color: AppColors.gradientColorStart,
+                            ),
+                          ),
+                        ),
                 ],
               ),
             ],

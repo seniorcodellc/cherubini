@@ -9,9 +9,9 @@ class TechSettingsDetailsStatic {
       title: AppStrings.profileChangePassword,
       asset: AppAssets.lock,
     ),
-    TechSettingsModel(
-      title: AppStrings.profileWarrantyCertificates,
-      asset: AppAssets.profile,
-    ),
+    // TechSettingsModel(
+    //   title: AppStrings.profileWarrantyCertificates,
+    //   asset: AppAssets.profile,
+    // ),
   ];
 }

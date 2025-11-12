@@ -1,7 +1,7 @@
 import 'package:cherubini/features/tech_dashborad/data/statics/tech_settings_details_static.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_user_details_list_item.dart';
+import 'package:cherubini/core/widgets/settings_user_details_list_item.dart';
 
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class SettingsUserDetailsList extends StatelessWidget {
   const SettingsUserDetailsList({super.key});

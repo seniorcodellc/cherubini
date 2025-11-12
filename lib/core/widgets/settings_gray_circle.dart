@@ -1,9 +1,9 @@
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class SettingsGrayCircle extends StatelessWidget {
   const SettingsGrayCircle({super.key, required this.onTap});
 
-  final GestureTapCallback onTap ;
+  final GestureTapCallback onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -74,6 +74,12 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
 
+      case Routes.techDashboard:
+        return buildPageRoute<T>(
+          child: TechDashboard(),
+          routeSettings: routeSettings,
+        );
+
       case Routes.merchantOperationsRoute:
         return buildPageRoute<T>(
           child: MerchantOperationsLogScreen(),
@@ -189,8 +195,6 @@ class RouteGenerator {
         );
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
-      case Routes.techDashboard:
-        return buildPageRoute<T>(child: TechDashboard());
       case Routes.techPointsSummary:
         return buildPageRoute<T>(child: TechPointsSummaryScreen());
       case Routes.settings:
@@ -201,9 +205,19 @@ class RouteGenerator {
         return buildPageRoute<T>(child: TechOperationsLogScreen());
       case Routes.bottomNavRoute:
         return buildPageRoute<T>(
-          child: CustomBottomNavBar(
-            // key: CustomBottomNavBar.navBarKey
-          ),
+          providers: [
+            BlocProvider(
+              create: (context) => ProfileCubit(
+                profileUseCases: ServiceLocator().getIt<ProfileUseCases>(),
+              )..getData(),
+            ),
+            BlocProvider(
+              create: (context) => HistoryCubit(
+                historyUseCases: ServiceLocator().getIt<HistoryUseCases>(),
+              )..getList(),
+            ),
+          ],
+          child: CustomBottomNavBar(),
         );
 
       /*

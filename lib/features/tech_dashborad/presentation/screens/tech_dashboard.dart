@@ -13,7 +13,13 @@ class TechDashboard extends StatelessWidget {
           child: Stack(
             alignment: AlignmentGeometry.topCenter,
             children: [
-               SharedDashboardHeader(onTap: () {Routes.settings.moveTo();},),
+              SharedDashboardHeader(
+                onTap: () {
+                  Routes.settings.moveTo();
+                },
+                name: "${AppStrings.welcome.trans} ${AppStrings.techName}",
+                subTitle: AppStrings.techDescription,
+              ),
               Padding(
                 padding: getPadding(top: 145.h, bottom: 30.h),
                 child: const TechDashboardBody(),

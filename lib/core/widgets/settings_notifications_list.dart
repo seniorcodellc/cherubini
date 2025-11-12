@@ -1,13 +1,19 @@
-import '../../../../exports.dart';
+import 'package:cherubini/features/tech_dashborad/presentation/widgets/notifications_list_item.dart';
 
-class SettingsLogOut extends StatelessWidget {
-  const SettingsLogOut({super.key});
+import '../../exports.dart';
 
+class SettingsNotificationsList extends StatelessWidget {
+  SettingsNotificationsList({super.key});
+  List<String> notifications = [
+    AppStrings.pointsNotifications,
+    AppStrings.deleteNotifications,
+    AppStrings.systemNotifications,
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 343.w,
-      height: 62.h,
+      height: 154.h,
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
@@ -27,15 +33,12 @@ class SettingsLogOut extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: getPadding(horizontal: 16.w),
-        child: Row(
+        padding: getPadding(vertical: 10.h),
+        child: Column(
           children: [
-            CustomSVGImage(asset: AppAssets.logOut),
-            8.hs,
-            Text(
-              AppStrings.logOut,
-              style: getRegularTextStyle(fontSize: 16, color: AppColors.red),
-            ),
+            NotificationsListItem(text: notifications[0]),
+            NotificationsListItem(text: notifications[1]),
+            NotificationsListItem(text: notifications[2]),
           ],
         ),
       ),

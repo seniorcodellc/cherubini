@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
         UserModel? user = await getBlocData<AuthCubit>().getUser();
         print("tokkkkkkkkk  ${user?.token}");
         if (user.isNotNull) {
-          route = Routes.loginRoute;
+          route = Routes.bottomNavRoute;
         } else {
           route = Routes.loginRoute;
         }

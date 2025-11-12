@@ -18,7 +18,10 @@ class TechPointsRegisterItem extends StatelessWidget {
               color: model.bgColor,
               borderRadius: BorderRadius.circular(10.r),
             ),
-            child: CustomSVGImage(asset: model.asset, fit: BoxFit.none),
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: CustomSVGImage(asset: model.asset, fit: BoxFit.none),
+            ),
           ),
           16.hs,
           Column(
