@@ -12,6 +12,7 @@ class AppAssets {
   //! SVG
 
   static String activeProfile = "${SvgImages.svgPath}profile_circle.svg";
+  static String errorAlarm = "${SvgImages.svgPath}error_alarm.svg";
   static String logs = "${SvgImages.svgPath}logs.svg";
   static String tabSettings = "${SvgImages.svgPath}tab_settings.svg";
   static String waitingProfile = "${SvgImages.svgPath}waiting_profile.svg";

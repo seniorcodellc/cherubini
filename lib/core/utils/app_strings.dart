@@ -31,7 +31,7 @@ class AppStrings {
   static const String idNotMatch = "idNotMatch";
   static const String terms = "terms";
   static const String underPreview = "underPreview";
-  static const String notifications = "notifications";
+  // static const String notifications = "notifications";
   static const String sms = "sms";
   static const String calls = "calls";
   static const String dateType = "dateType";
@@ -253,6 +253,14 @@ class AppStrings {
   static const String resetPassword = "إعادة تعيين كلمة المرور";
   static const String yourEmail = "بريدك الإلكترونى";
 
+  /// **************************** Error Screen************************************
+  ///
+  static const String anErrorOccurred = "حدث خطأ ما ! ";
+  static const String errorScreenHeader =
+      "برجاء أعد المحاولة أو الرجوع للصفحة  الرئيسية";
+  static const String homeScreen = "الصفحة الرئيسية";
+  static const String tryAgain = "اعاده المحاولة مرة أخرى";
+
   /// **************************** Splash ************************************
   ///
   static const String splashHeader = 'أهلا بك فى تطبيق نقاط الولاء';
@@ -333,6 +341,7 @@ class AppStrings {
   static const String editProfile = 'تعديل الملف الشخصي';
   static const String changePassword = 'تغيير كلمة المرور';
   static const String warrantyCertificates = 'شهادات الضمان';
+  static const String notifications = 'الإشعارات';
 
   /// **************************** scan ************************************
   static const String startScan = 'ابدا المسح';

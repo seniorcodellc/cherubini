@@ -1,3 +1,4 @@
+import 'package:cherubini/core/error/presentation/screens/error_screen.dart';
 import 'package:cherubini/core/history/domain/use_cases/history_use_cases.dart';
 import 'package:cherubini/core/history/presentation/manager/history_cubit.dart';
 import 'package:cherubini/core/profile/domain/use_cases/profile_use_cases.dart';
@@ -89,8 +90,15 @@ class RouteGenerator {
         );
       case Routes.technicianManagementRoute:
         return buildPageRoute<T>(
-            providers: [BlocProvider(create: (context) => TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..getList()),],
-            child: TechnicianManagementScreen(), routeSettings: routeSettings
+          providers: [
+            BlocProvider(
+              create: (context) => TechnicianCubit(
+                technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>(),
+              )..getList(),
+            ),
+          ],
+          child: TechnicianManagementScreen(),
+          routeSettings: routeSettings,
         );
 
       case Routes.scanRoute:
@@ -116,6 +124,11 @@ class RouteGenerator {
       case Routes.techWarrantyRoute:
         return buildPageRoute<T>(
           child: TechWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.errorRoute:
+        return buildPageRoute<T>(
+          child: ErrorScreen(),
           routeSettings: routeSettings,
         );
       case Routes.loginRoute:
