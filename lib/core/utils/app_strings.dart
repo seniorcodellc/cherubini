@@ -31,7 +31,7 @@ class AppStrings {
   static const String idNotMatch = "idNotMatch";
   static const String terms = "terms";
   static const String underPreview = "underPreview";
-  static const String notifications = "notifications";
+  // static const String notifications = "notifications";
   static const String sms = "sms";
   static const String calls = "calls";
   static const String dateType = "dateType";
@@ -341,6 +341,7 @@ class AppStrings {
   static const String editProfile = 'تعديل الملف الشخصي';
   static const String changePassword = 'تغيير كلمة المرور';
   static const String warrantyCertificates = 'شهادات الضمان';
+  static const String notifications = 'الإشعارات';
 
   /// **************************** scan ************************************
   static const String startScan = 'ابدا المسح';

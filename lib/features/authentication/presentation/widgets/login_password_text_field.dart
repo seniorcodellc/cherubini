@@ -34,7 +34,7 @@ class LoginPasswordTextField extends StatelessWidget {
               alignment: AlignmentDirectional.bottomEnd,
               child: TextButton(
                 onPressed: () {
-                  Routes.errorRoute.moveTo();
+                  Routes.forgetPasswordRoute.moveTo();
                 },
                 child: Text(
                   AppStrings.forgetPasswordQuestionMark,
