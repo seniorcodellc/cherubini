@@ -14,15 +14,17 @@ class ActiveList extends StatelessWidget {
       shimmerWidget: (index) => SizedBox.shrink(),
     );
 
-    // ListView.builder(
-    //   key: const ValueKey(true),
-    //   shrinkWrap: true,
-    //   physics: const NeverScrollableScrollPhysics(),
-    //   itemCount: ManagementStatics.techActiveList.length,
-    //   itemBuilder: (context, index) {
-    //     final model = ManagementStatics.techActiveList[index];
-    //     return ActiveTechItem(model: model, isActive: true);
-    //   },
-    // );
+   // return ListView.builder(
+   //    key: const ValueKey(true),
+   //    shrinkWrap: true,
+   //    physics: const NeverScrollableScrollPhysics(),
+   //    itemCount: ManagementStatics.techActiveList.length,
+   //    itemBuilder: (context, index) {
+   //      final model = ManagementStatics.techActiveList[index];
+   //      return ActiveTechItem(item: model);
+   //    },
+   //  );
   }
 }
+
+

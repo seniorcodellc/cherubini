@@ -247,7 +247,7 @@ class AppStrings {
   static const String totalOperations = 'إجمالي العمليات';
   static const String entitlements = "الاستحقاقات ";
   static const String pointsLog = "سجل النقاط";
-  static const String techName = "محمد على";
+  static const String techName = "محمد على محمود";
   static const String techDescription = "فني معتمد";
   static const String profileEdit = 'تعديل الملف الشخصي';
   static const String profileChangePassword = 'تغيير كلمة المرور';
@@ -271,8 +271,11 @@ class AppStrings {
   static const String technicianManagement = "إدارة الفنيين";
   static const String activeTech = "الفنيون النشطون";
   static const String waitingTech = "قيد الانتظار";
+  static const String notActiveTech = "غير النشطين";
   static const String active = "نشط";
   static const String underReview = "قيد المراجعه";
+  static const String stopActiveTech = "ايقاف تنشيط الفنى";
+  static const String reActiveTech = "اعادة تنشيط الفنى";
   static const String orderDate = "تاريخ الطلب";
   static const String scanOperation = "عملية مسح";
   static const String showDetails = "عرض التفاصيل";

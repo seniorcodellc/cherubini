@@ -1,6 +1,5 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/technician_management/presentation/widgets/show_details_button.dart';
-
 import '../../../../core/widgets/h_line.dart';
 import '../../data/models/technician_response_model/technician_response_model.dart';
 
@@ -10,7 +9,7 @@ class ActiveInfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(horizontal: 8.0.w, bottom: 14.h, top: 6.0.h),
+      padding: getPadding(horizontal: 8.0.w, bottom: 4.h, top: 6.0.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -23,7 +22,7 @@ class ActiveInfoRow extends StatelessWidget {
                   color: AppColors.accentColor,
                 ),
               ),
-              8.vs,
+              4.vs,
               Text(
                 AppStrings.point,
                 style: getRegularTextStyle(
@@ -44,7 +43,7 @@ class ActiveInfoRow extends StatelessWidget {
                   color: AppColors.accentColor,
                 ),
               ),
-              8.vs,
+              4.vs,
               Text(
                 AppStrings.scanOperation,
                 style: getRegularTextStyle(

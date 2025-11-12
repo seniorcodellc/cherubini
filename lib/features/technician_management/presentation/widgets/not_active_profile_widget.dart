@@ -1,10 +1,11 @@
 import 'package:cherubini/exports.dart';
-
 import '../../data/models/technician_response_model/technician_response_model.dart';
 
 class NotActiveProfileWidget extends StatelessWidget {
-  const NotActiveProfileWidget({super.key, required this.model});
+  const NotActiveProfileWidget({super.key, required this.model, required this.statusIcon});
   final TechnicianModel model;
+
+  final String statusIcon ;
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +46,14 @@ class NotActiveProfileWidget extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      CustomSVGImage(
-                        asset: AppAssets.check,
-                        color: AppColors.errorColor,
-                        height: 18.0.h,
-                        width: 18.0.w,
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: CustomSVGImage(
+                          asset: statusIcon,
+                          color: AppColors.errorColor,
+                          height: 18.0.h,
+                          width: 18.0.w,
+                        ),
                       ),
                       8.hs,
                       Text(

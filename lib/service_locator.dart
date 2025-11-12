@@ -1,3 +1,7 @@
+import 'package:cherubini/features/technician_management/data/data_sources/technician_remote_data_sources.dart';
+import 'package:cherubini/features/technician_management/data/repositories/technician_repo_impl.dart';
+import 'package:cherubini/features/technician_management/domain/use_cases/technician_use_case.dart';
+import 'package:cherubini/features/technician_management/presentation/manager/technician_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'core/history/data/data_sources/history_remote_datasource.dart';
 import 'core/history/data/repositories/history_repo_impl.dart';
@@ -31,6 +35,7 @@ import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
 import 'features/on_boarding/domain/usecase/onborading_usecases.dart';
 import 'features/on_boarding/presentation/managers/onboarding_manager_cubit.dart';
+import 'features/technician_management/domain/repositories/technician_repo.dart';
 
 class ServiceLocator {
   GetIt getIt = GetIt.instance;
@@ -54,6 +59,7 @@ class ServiceLocator {
     registerProfile;
     registerHistory;
     registerMerchantList;
+    registerTechnicianList;
   }
   get registerAuthDependencies {
     getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
@@ -73,6 +79,12 @@ class ServiceLocator {
     getIt.registerLazySingleton<MerchantListRepo>(() => MerchantListRepoImpl(merchantListRemoteDataSource: getIt()));
     getIt.registerLazySingleton<MerchantListUseCases>(() => MerchantListUseCases(merchantListRepo: getIt()));
     getIt.registerLazySingleton<MerchantListCubit>(() => MerchantListCubit(merchantListUseCases: getIt()));
+  }
+  get registerTechnicianList{
+    getIt.registerLazySingleton<TechnicianRemoteDataSources>(() => TechnicianRemoteDataSourcesImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<TechnicianRepo>(() => TechnicianRepoImpl(technicianRemoteDataSources: getIt()));
+    getIt.registerLazySingleton<TechnicianUseCase>(() => TechnicianUseCase(technicianRepo: getIt()));
+    getIt.registerLazySingleton<TechnicianCubit>(() => TechnicianCubit(technicianUseCase: getIt()));
   }
 
   get registerHistory {

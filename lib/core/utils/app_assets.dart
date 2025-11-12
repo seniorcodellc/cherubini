@@ -52,6 +52,8 @@ class AppAssets {
   static String questionMark = "${SvgImages.svgPath}question_mark.svg";
   static String clockCircle = "${SvgImages.svgPath}clock_circle.svg";
   static String check = "${SvgImages.svgPath}check.svg";
+  static String checkFilled = "${SvgImages.svgPath}check_filled.svg";
+  static String checkEmpty = "${SvgImages.svgPath}check_empty.svg";
   static String scanFilled = "${SvgImages.svgPath}scan_filled.svg";
   static String loyaltyFilled = "${SvgImages.svgPath}loyalty_filled.svg";
   static String gift = "${SvgImages.svgPath}gift.svg";
@@ -64,6 +66,7 @@ class AppAssets {
   static String info = "${SvgImages.svgPath}info.svg";
   static String print = "${SvgImages.svgPath}print.svg";
   static String delete = "${SvgImages.svgPath}delete.svg";
+  static String notActive = "${SvgImages.svgPath}not_active.svg";
 
   //! PNG
 

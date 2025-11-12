@@ -6,6 +6,7 @@ import 'package:cherubini/features/tech_dashborad/presentation/widgets/shared_do
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/shared_points_details_column.dart';
 
 import '../../../../exports.dart';
+import 'details_popup.dart';
 
 class MerchantEntitlementsListItem extends StatelessWidget {
   const MerchantEntitlementsListItem({super.key, required this.model});
@@ -67,11 +68,24 @@ class MerchantEntitlementsListItem extends StatelessWidget {
                       ],
                     ),
                     Spacer(),
-                    SharedDoneOrNotContainer(
-                      text: 'عرض التفاصيل',
-                      textColor: AppColors.primaryColor,
-                      bgColor: AppColors.mutedBlue,
-                      borderColor: AppColors.primaryColor,
+                    GestureDetector(
+                      behavior: HitTestBehavior.translucent,
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => Dialog(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0.r)),
+                            insetPadding: EdgeInsets.symmetric(horizontal: 12.w),
+                            child: DetailsPopup(model: model),
+                          ),
+                        );
+                      },
+                      child: SharedDoneOrNotContainer(
+                        text: AppStrings.showDetails,
+                        textColor: AppColors.primaryColor,
+                        bgColor: AppColors.mutedBlue,
+                        borderColor: AppColors.primaryColor,
+                      ),
                     ),
                   ],
                 ),

@@ -1,14 +1,14 @@
 import 'package:cherubini/core/widgets/h_line.dart';
 import 'package:cherubini/exports.dart';
-import 'package:cherubini/features/technician_management/presentation/widgets/profile_widget.dart';
 import '../../data/models/technician_response_model/technician_response_model.dart';
 import 'active_info_row.dart';
 import 'custom_info_widget.dart';
+import 'not_active_profile_widget.dart';
 
 
-class ActiveTechItem extends StatelessWidget {
-  const ActiveTechItem({super.key, required this.item});
-  final TechnicianModel item;
+class NotActiveTechItem extends StatelessWidget {
+  const NotActiveTechItem({super.key, required this.model});
+  final TechnicianModel model;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,18 +27,18 @@ class ActiveTechItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ActiveProfileWidget(model: item),
+            NotActiveProfileWidget(model: model, statusIcon: AppAssets.notActive,),
             24.vs,
             CustomInfoWidget(asset: AppAssets.phone, info: ""),
             10.vs,
             CustomInfoWidget(asset: AppAssets.email, info: ""),
             20.vs,
             Padding(padding: getPadding(horizontal: 16.0.w), child: HLine(),),
-            ActiveInfoRow(model: item),
+            ActiveInfoRow(model: model),
             Padding(padding: getPadding(horizontal: 16.0.w), child: HLine(),),
             Padding(
               padding: getPadding(horizontal: 18.0.w,vertical: 16.0.h),
-              child: CustomButton(text: AppStrings.stopActiveTech, onPressed: (){},backgroundColor: AppColors.red,borderColor: AppColors.red,),
+              child: CustomButton(text: AppStrings.reActiveTech, onPressed: (){},backgroundColor: AppColors.primaryColor,borderColor: AppColors.primaryColor,),
 
             ),
           ],

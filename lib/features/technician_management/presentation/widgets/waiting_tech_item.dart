@@ -13,7 +13,7 @@ class WaitingTechItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(horizontal: 14.0.w, vertical: 10.h),
+      padding: getPadding(horizontal: 14.0.w, vertical: 12.h),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
@@ -28,7 +28,7 @@ class WaitingTechItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            NotActiveProfileWidget(model: model),
+            NotActiveProfileWidget(model: model, statusIcon: AppAssets.check,),
             24.vs,
             CustomInfoWidget(asset: AppAssets.phone, info: ""),
             10.vs,

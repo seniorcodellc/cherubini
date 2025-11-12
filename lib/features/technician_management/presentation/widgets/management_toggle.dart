@@ -1,61 +1,57 @@
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/technician_management/presentation/widgets/shared_toggle_item.dart';
 
-class ManagementToggle extends StatefulWidget {
-  final Function(bool) onTabSelected;
-  final bool? selectedTab;
+class ManagementToggle extends StatelessWidget {
+  final int selectedTabIndex;
+  final ValueChanged<int> onTabSelected;
 
   const ManagementToggle({
     super.key,
+    required this.selectedTabIndex,
     required this.onTabSelected,
-    this.selectedTab,
   });
 
   @override
-  State<ManagementToggle> createState() => _ManagementToggleState();
-}
-
-class _ManagementToggleState extends State<ManagementToggle> {
-  @override
   Widget build(BuildContext context) {
-    final bool isSelected = widget.selectedTab ?? true;
     return Container(
       height: 55.h,
       margin: getPadding(horizontal: 18.w),
       decoration: BoxDecoration(
         color: AppColors.mutedBlue,
         borderRadius: BorderRadius.circular(20.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 0.r,
+            blurRadius: 2.r,
+            offset: Offset(0, 1.h),
+          ),
+        ],
       ),
       child: Padding(
-        padding: getPadding(horizontal: 5.0.w),
+        padding: getPadding(horizontal: 4.w, vertical: 4.h),
         child: Row(
           children: [
             SharedToggleItem(
               text: AppStrings.activeTech,
-              color: isSelected ? AppColors.white : AppColors.mutedBlue,
-              style: getBoldTextStyle(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
-              ),
-              onTap: () {
-                if (!isSelected) {
-                  widget.onTabSelected(true);
-                }
-              },
+              isSelected: selectedTabIndex == 0,
+              onTap: () => onTabSelected(0),
             ),
             4.hs,
-            SharedToggleItem(
-              text: AppStrings.waitingTech,
-              color: !isSelected ? AppColors.white : AppColors.mutedBlue,
-              style: getBoldTextStyle(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
+            Expanded(
+              child: SharedToggleItem(
+                text: AppStrings.waitingTech,
+                isSelected: selectedTabIndex == 1,
+                onTap: () => onTabSelected(1),
               ),
-              onTap: () {
-                if (isSelected) {
-                  widget.onTabSelected(false);
-                }
-              },
+            ),
+            4.hs,
+            Expanded(
+              child: SharedToggleItem(
+                text: AppStrings.notActiveTech,
+                isSelected: selectedTabIndex == 2,
+                onTap: () => onTabSelected(2),
+              ),
             ),
           ],
         ),

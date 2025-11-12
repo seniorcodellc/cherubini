@@ -1,5 +1,4 @@
 import 'package:cherubini/exports.dart';
-
 import '../../data/models/technician_response_model/technician_response_model.dart';
 
 class ActiveProfileWidget extends StatelessWidget {
@@ -41,11 +40,14 @@ class ActiveProfileWidget extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            CustomSVGImage(
-                              asset: AppAssets.check,
-                              color: AppColors.green,
-                              height: 18.0.h,
-                              width: 18.0.w,
+                            Directionality(
+                              textDirection: TextDirection.ltr,
+                              child: CustomSVGImage(
+                                asset: AppAssets.check,
+                                color: AppColors.green,
+                                height: 18.0.h,
+                                width: 18.0.w,
+                              ),
                             ),
                             8.hs,
                             Text(
