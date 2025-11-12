@@ -14,6 +14,7 @@ class SharedEnterNameTextField extends StatelessWidget {
       children: [
         CustomTextFormField(
           hintText: AppStrings.fullNameHint,
+          style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
           prefixIcon: CustomSVGImage(
             asset: AppAssets.profile,
             fit: BoxFit.none,

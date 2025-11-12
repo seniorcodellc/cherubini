@@ -13,6 +13,7 @@ class SharedEmailTextField extends StatelessWidget {
         CustomTextFormField(
           controller: emailController,
           hintText: AppStrings.emailHint,
+          style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
           prefixIcon: CustomSVGImage(asset: AppAssets.email, fit: BoxFit.none),
         ),
         BlocBuilder<ErrorCubit, CubitStates>(

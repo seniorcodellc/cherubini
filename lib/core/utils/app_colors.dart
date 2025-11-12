@@ -6,6 +6,7 @@ class AppColors {
   factory AppColors() => _instance;
 
   static const Color titleGray = Color(0xFF333333);
+  static const Color darkGray = Color(0XFF575656);
   static const Color unselectedTab = Color(0xFF9DB2CE);
   static const Color whiteLight = Color(0XFFFEFEFF);
   static const Color inactiveTrackSwitch = Color(0xFFA7A9B7);

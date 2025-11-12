@@ -15,6 +15,7 @@ class CompanyNameField extends StatelessWidget {
         CustomTextFormField(
           controller: companyNameController,
           hintText: AppStrings.companyNameHint,
+          style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
           prefixIcon: CustomSVGImage(
             asset: AppAssets.company,
             fit: BoxFit.none,

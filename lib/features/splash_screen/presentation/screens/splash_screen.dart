@@ -10,7 +10,7 @@ import '../../../authentication/presentation/managers/auth_cubit.dart';
 import '../manager/get_configration_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

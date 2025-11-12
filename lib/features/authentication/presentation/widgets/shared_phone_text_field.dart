@@ -15,6 +15,7 @@ class SharedPhoneTextField extends StatelessWidget {
         CustomTextFormField(
           hintText: AppStrings.phoneNumHint,
           controller: phoneController,
+          style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
           keyboardType: TextInputType.phone,
           prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
         ),
