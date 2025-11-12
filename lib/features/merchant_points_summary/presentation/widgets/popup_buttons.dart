@@ -21,7 +21,7 @@ class PopupButtons extends StatelessWidget {
           16.hs,
           CustomButton(
             text: AppStrings.cancel,
-            onPressed: () {},
+            onPressed: () { pop();},
             backgroundColor: AppColors.subTitleColor,
             borderColor: AppColors.subTitleColor,
             height: 42.h,
