@@ -11,7 +11,7 @@ class PopupButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomButton(
-            text: AppStrings.saveAr,
+            text: AppStrings.save,
             onPressed: () {},
             backgroundColor: AppColors.primaryColor,
             borderColor: AppColors.primaryColor,
@@ -20,7 +20,7 @@ class PopupButtons extends StatelessWidget {
           ),
           16.hs,
           CustomButton(
-            text: AppStrings.cancelAr,
+            text: AppStrings.cancel,
             onPressed: () {},
             backgroundColor: AppColors.subTitleColor,
             borderColor: AppColors.subTitleColor,

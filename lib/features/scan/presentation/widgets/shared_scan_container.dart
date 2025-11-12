@@ -1,6 +1,5 @@
 import 'package:cherubini/exports.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScanContainer extends StatelessWidget {
@@ -33,10 +32,7 @@ class ScanContainer extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                MobileScanner(
-                  controller: controller,
-                  onDetect: onDetect,
-                ),
+                MobileScanner(controller: controller, onDetect: onDetect),
               ],
             ),
           ),
@@ -44,5 +40,4 @@ class ScanContainer extends StatelessWidget {
       ),
     );
   }
-
 }

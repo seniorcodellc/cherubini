@@ -36,7 +36,7 @@ class _ScanScreenState extends State<ScanScreen> {
 
     _controller.stop();
     _stopScanning();
-     Routes.successScanRoute.moveTo();
+    Routes.successScanRoute.moveTo();
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -76,12 +76,16 @@ class _ScanScreenState extends State<ScanScreen> {
             Expanded(
               child: Stack(
                 children: [
-                ScanContainer(controller: _controller, onDetect: _onDetect),
+                  ScanContainer(controller: _controller, onDetect: _onDetect),
                   Positioned(
                     top: 8.h,
                     right: 35.w,
                     child: IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white, size: 32),
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 32,
+                      ),
                       onPressed: _stopScanning,
                     ),
                   ),
@@ -92,7 +96,4 @@ class _ScanScreenState extends State<ScanScreen> {
       ),
     );
   }
-
-
 }
-

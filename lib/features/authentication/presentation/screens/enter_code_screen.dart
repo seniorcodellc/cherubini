@@ -1,15 +1,14 @@
-import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/features/authentication/presentation/widgets/forget_password_screen_header.dart';
-import 'package:cherubini/features/authentication/presentation/widgets/shared_forget_password_title.dart';
+import 'package:cherubini/features/authentication/presentation/widgets/enter_code_screen_conclusion.dart';
+import 'package:cherubini/features/authentication/presentation/widgets/enter_code_screen_otp.dart';
 
 import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/custom_background.dart';
 import '../../../../exports.dart';
-import '../widgets/custom_login_signup_textfield_text.dart';
-import '../widgets/shared_email_text_field.dart';
+import '../widgets/shared_forget_password_title.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
-  ForgetPasswordScreen({super.key});
-  TextEditingController emailController = TextEditingController();
+class EnterCodeScreen extends StatelessWidget {
+  EnterCodeScreen({super.key});
+  TextEditingController otpController = TextEditingController();
   GlobalKey formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -27,27 +26,32 @@ class ForgetPasswordScreen extends StatelessWidget {
               24.vs,
               SharedForgetPasswordTitle(),
               20.vs,
-              ForgetPasswordScreenHeader(),
-              32.vs,
-              CustomTitleAndField(
-                text: AppStrings.yourEmail,
-                child: SharedEmailTextField(emailController: emailController),
+              Text(
+                AppStrings.enterCodeScreenHeader,
+                style: getRegularTextStyle(
+                  color: AppColors.darkGray,
+                  height: 2,
+                ),
               ),
+              24.vs,
+              EnterCodeScreenOtp(otpController: otpController),
               40.vs,
               CustomButton(
-                text: AppStrings.resetPassword,
+                text: AppStrings.checkCode,
                 style: getRegularTextStyle(color: AppColors.white),
                 onPressed: () {
                   checkStringError(
                     context,
-                    emailController.text,
-                    Errors.EMAIL_ERROR,
+                    otpController.text,
+                    Errors.VERIFICATION_ERROR,
                   );
                   if (dontHaveErrors(context)) {
-                    Routes.enterCodeRoute.moveTo();
+                    Routes.forgetPasswordRoute2.moveTo();
                   }
                 },
               ),
+              32.vs,
+              EnterCodeScreenConclusion(),
             ],
           ),
         ),

@@ -10,7 +10,7 @@ import '../../../authentication/presentation/managers/auth_cubit.dart';
 import '../manager/get_configration_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
         UserModel? user = await getBlocData<AuthCubit>().getUser();
         print("tokkkkkkkkk  ${user?.token}");
         if (user.isNotNull) {
-          route = Routes.merchantDashboardRoute;
+          route = Routes.loginRoute;
         } else {
           route = Routes.loginRoute;
         }
