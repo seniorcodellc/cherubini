@@ -6,6 +6,7 @@ class Routes {
   static const String dashboardRoute = "/dashboard";
   static const String merchantDashboardRoute = "/merchantDashboard";
   static const String settings = "/settings";
+  static const String errorRoute = "/error";
   static const String merchantSettings = "/merchantSettings";
   static const String merchantPointsSummary = "/merchantPointsSummary";
   static const String operationsLog = "/operationsLog";

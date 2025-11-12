@@ -253,6 +253,14 @@ class AppStrings {
   static const String resetPassword = "إعادة تعيين كلمة المرور";
   static const String yourEmail = "بريدك الإلكترونى";
 
+  /// **************************** Error Screen************************************
+  ///
+  static const String anErrorOccurred = "حدث خطأ ما ! ";
+  static const String errorScreenHeader =
+      "برجاء أعد المحاولة أو الرجوع للصفحة  الرئيسية";
+  static const String homeScreen = "الصفحة الرئيسية";
+  static const String tryAgain = "اعاده المحاولة مرة أخرى";
+
   /// **************************** Splash ************************************
   ///
   static const String splashHeader = 'أهلا بك فى تطبيق نقاط الولاء';
