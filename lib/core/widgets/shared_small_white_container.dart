@@ -1,4 +1,4 @@
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class SharedSmallWhiteContainer extends StatelessWidget {
   const SharedSmallWhiteContainer({super.key, required this.child});

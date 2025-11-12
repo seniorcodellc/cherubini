@@ -1,7 +1,7 @@
 import 'package:cherubini/features/tech_dashborad/data/statics/tech_points_register_static.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/tech_points_register_item.dart';
+import 'package:cherubini/core/widgets/tech_points_register_item.dart';
 
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class PointsRegister extends StatelessWidget {
   const PointsRegister({super.key});

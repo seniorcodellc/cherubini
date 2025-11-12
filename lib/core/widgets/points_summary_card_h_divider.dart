@@ -1,5 +1,5 @@
-import '../../../../core/widgets/custom_divider.dart';
-import '../../../../exports.dart';
+import 'custom_divider.dart';
+import '../../exports.dart';
 
 class PointsSummaryCardHDivider extends StatelessWidget {
   const PointsSummaryCardHDivider({super.key});

@@ -1,7 +1,7 @@
 import 'package:cherubini/features/tech_dashborad/data/models/points_register_model.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/shared_small_white_container.dart';
+import 'package:cherubini/core/widgets/shared_small_white_container.dart';
 
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class TechPointsRegisterItem extends StatelessWidget {
   const TechPointsRegisterItem({super.key, required this.model});

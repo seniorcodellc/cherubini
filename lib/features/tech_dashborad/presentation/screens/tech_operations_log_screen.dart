@@ -1,6 +1,6 @@
 import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/operations_log_header.dart';
+import 'package:cherubini/core/widgets/operations_log_header.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/operations_logs_list.dart';
 
 import '../../../../exports.dart';

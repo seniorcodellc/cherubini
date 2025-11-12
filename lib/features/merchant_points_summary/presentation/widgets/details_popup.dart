@@ -2,8 +2,8 @@ import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/widgets/popup_buttons.dart';
 import '../../../../core/widgets/custom_divider.dart';
 import '../../../tech_dashborad/data/models/entitlements_model.dart';
-import '../../../tech_dashborad/presentation/widgets/shared_custom_divider_vertical.dart';
-import '../../../tech_dashborad/presentation/widgets/shared_points_details_column.dart';
+import '../../../../core/widgets/shared_custom_divider_vertical.dart';
+import '../../../../core/widgets/shared_points_details_column.dart';
 import 'check_popup.dart';
 import 'details_popup_profile.dart';
 

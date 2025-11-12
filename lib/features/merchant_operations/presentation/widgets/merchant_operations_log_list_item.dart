@@ -2,9 +2,9 @@ import 'package:cherubini/core/widgets/custom_divider.dart';
 import 'package:cherubini/core/widgets/second_shared_custom_button.dart';
 import 'package:cherubini/features/merchant_operations/presentation/widgets/tech_name.dart';
 import 'package:cherubini/features/tech_dashborad/data/models/operations_log_model.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/operations_log_card_header.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/operations_log_card_prods_header.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/widgets/operations_log_card_prods_list.dart';
+import 'package:cherubini/core/widgets/operations_log_card_header.dart';
+import 'package:cherubini/core/widgets/operations_log_card_prods_header.dart';
+import 'package:cherubini/core/widgets/operations_log_card_prods_list.dart';
 
 import '../../../../exports.dart';
 

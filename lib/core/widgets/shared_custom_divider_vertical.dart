@@ -1,6 +1,6 @@
 import 'package:cherubini/core/widgets/custom_divider.dart';
 
-import '../../../../exports.dart';
+import '../../exports.dart';
 
 class SharedCustomDividerVertical extends StatelessWidget {
   const SharedCustomDividerVertical({super.key});
