@@ -3,9 +3,11 @@ import 'package:cherubini/features/tech_dashborad/data/models/tech_scan_model.da
 import 'package:cherubini/core/widgets/scan_blue_circle.dart';
 import 'package:cherubini/core/widgets/shared_small_white_container.dart';
 
+import '../../../../core/history/data/models/history_response_model.dart';
+
 class TechLastScanItem extends StatelessWidget {
-  const TechLastScanItem({super.key, required this.model});
-  final TechScanModel model;
+  const TechLastScanItem({super.key, required this.history});
+  final HistoryModel history;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +21,16 @@ class TechLastScanItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                model.title,
+                history.detail![0].productName.toString(),
                 style: getRegularTextStyle(
                   fontSize: 16.sp,
                   color: AppColors.primaryColor,
                 ),
               ),
               Text(
-                model.date,
+                DateFormat(
+                  'dd/MM/yyyy',
+                ).format(DateTime.parse(history.date!)).toString(),
                 style: getRegularTextStyle(
                   fontSize: 16.sp,
                   color: AppColors.grayHint,
@@ -38,14 +42,14 @@ class TechLastScanItem extends StatelessWidget {
           Column(
             children: [
               Text(
-                '${model.points} نقطه',
+                '${history.points} نقطه',
                 style: getRegularTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.accentColor,
                 ),
               ),
               Text(
-                '${model.points} 5 منتجات',
+                '5 منتجات',
                 style: getRegularTextStyle(
                   fontSize: 14.sp,
                   color: AppColors.subTitleColor,

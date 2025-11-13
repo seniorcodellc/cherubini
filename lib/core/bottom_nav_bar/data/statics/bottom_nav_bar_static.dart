@@ -14,26 +14,26 @@ class BottomNavBarStatic {
     BottomNavBarModel(
       asset: AppAssets.home,
       tabName: AppStrings.homeAr,
-      screen: MerchantDashboardScreen(),
+      screen: TechDashboard(),
       systemBarColor: AppColors.gradientColorStart,
     ),
     BottomNavBarModel(
       asset: AppAssets.loyalty,
       tabName: AppStrings.pointsAr,
       appBatTitle: AppStrings.pointsSummary,
-      screen: MerchantPointsSummary(),
+      screen: TechPointsSummaryScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.logs,
       tabName: AppStrings.logsAr,
       appBatTitle: AppStrings.operationsLogsAr,
-      screen: MerchantOperationsLogScreen(),
+      screen: TechOperationsLogScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.tabSettings,
       tabName: AppStrings.settings,
       appBatTitle: AppStrings.settings,
-      screen: MerchantSettings(),
+      screen: TechSettingsScreen(),
     ),
   ];
 }

@@ -27,7 +27,7 @@ class AuthCubit extends Cubit<CubitStates> {
         user = data;
         //     getBlocData<BottomNavOperationCubit>().changIndex(0);
 
-        Routes.techDashboard.moveTo();
+        Routes.bottomNavRoute.moveTo();
         // Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       },
     );

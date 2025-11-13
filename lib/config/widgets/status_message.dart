@@ -23,22 +23,24 @@ class StatusMessage extends StatelessWidget {
     print("Error************* $text");
     return Padding(
       padding: padding ?? EdgeInsets.all(0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            iconData,
-            color: iconColor,
-            size: 200,
-            //   fit: BoxFit.fill,
-          ),
-          30.vs,
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: getBoldTextStyle(fontSize: fontSize!, color: fontColor),
-          )
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              iconData,
+              color: iconColor,
+              size: 200,
+              //   fit: BoxFit.fill,
+            ),
+            30.vs,
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: getBoldTextStyle(fontSize: fontSize!, color: fontColor),
+            ),
+          ],
+        ),
       ),
     );
   }
