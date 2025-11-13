@@ -15,6 +15,5 @@ class TechPointsList extends StatelessWidget {
         return PointsItem(model: model);
       }),
     );
-    ;
   }
 }

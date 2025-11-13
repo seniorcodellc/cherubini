@@ -76,6 +76,18 @@ class RouteGenerator {
 
       case Routes.techDashboard:
         return buildPageRoute<T>(
+          providers: [
+            BlocProvider(
+              create: (context) => ProfileCubit(
+                profileUseCases: ServiceLocator().getIt<ProfileUseCases>(),
+              )..getData(),
+            ),
+            BlocProvider(
+              create: (context) => HistoryCubit(
+                historyUseCases: ServiceLocator().getIt<HistoryUseCases>(),
+              )..getList(),
+            ),
+          ],
           child: TechDashboard(),
           routeSettings: routeSettings,
         );

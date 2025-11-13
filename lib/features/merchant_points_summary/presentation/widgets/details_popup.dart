@@ -33,7 +33,7 @@ class DetailsPopup extends StatelessWidget {
               child: Row(
                 children: [
                   SharedPointsDetailsColumn(
-                    pointsType: AppStrings.totalPoints,
+                    pointsType: AppStrings.sumPoints,
                     pointsNum: model.totalPoints,
                   ),
                   3.hs,

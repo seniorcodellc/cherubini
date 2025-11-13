@@ -6,7 +6,7 @@ class TechDashboardStatic {
   static List<PointsModel> techPointsList = [
     PointsModel(
       iconPath: AppAssets.loyaltyFilled,
-      title: AppStrings.totalPoints,
+      title: AppStrings.sumPoints,
       number: '12,450',
     ),
     PointsModel(

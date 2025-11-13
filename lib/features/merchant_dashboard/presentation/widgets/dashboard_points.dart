@@ -1,17 +1,12 @@
 import 'package:cherubini/config/extensions/extensions.dart';
 import 'package:cherubini/config/utils/size_utils.dart';
 import 'package:cherubini/core/profile/data/models/profile_response_model.dart';
-import 'package:cherubini/core/utils/app_colors.dart';
-import 'package:cherubini/core/utils/app_style.dart';
+import 'package:cherubini/core/utils/app_strings.dart';
 import 'package:cherubini/core/widgets/points_item.dart';
 import 'package:cherubini/features/merchant_dashboard/data/models/points_model.dart';
-import 'package:cherubini/features/merchant_dashboard/presentation/widgets/points_list.dart';
-import 'package:cherubini/features/merchant_dashboard/presentation/widgets/quick_action_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/utils/app_assets.dart';
-import '../../../../core/utils/app_strings.dart';
 
 class DashboardPoints extends StatelessWidget {
   final ProfileModel? profile;
@@ -24,7 +19,7 @@ class DashboardPoints extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          PointsItem(model: PointsModel(iconPath: AppAssets.loyaltyFilled, title: 'إجمالى النقاط ', number:profile?.totalPoints.validate.toString()),),
+          PointsItem(model: PointsModel(iconPath: AppAssets.loyaltyFilled, title: AppStrings.pointsValue, number:profile?.totalPoints.validate.toString()),),
           PointsItem(model: PointsModel(iconPath: AppAssets.gift,
               title: ' النقاط المستبدلة ', number:profile?.pointDelevery.validate.toString()),),
        PointsItem(model: PointsModel(iconPath: AppAssets.availablePoints,

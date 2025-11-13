@@ -1,5 +1,4 @@
 import 'package:cherubini/exports.dart';
-import 'package:hive/hive.dart';
 import '../../features/merchant_dashboard/data/models/points_model.dart';
 
 class PointsItem extends StatelessWidget {
@@ -8,7 +7,7 @@ class PointsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(horizontal: 16.0.w, vertical: 10.0.h),
+      padding: getPadding(horizontal: 16.0.w, vertical: 6.0.h),
       child: Container(
         width: 343.w,
         height: 80.h,
@@ -25,7 +24,7 @@ class PointsItem extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: getPadding(vertical: 7.0.h, horizontal: 16.0.w),
+          padding: getPadding(vertical: 6.0.h, horizontal: 16.0.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -47,7 +46,7 @@ class PointsItem extends StatelessWidget {
                   ),
                 ),
               ),
-              54.hs,
+              45.hs,
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

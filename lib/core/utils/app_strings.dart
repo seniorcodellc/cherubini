@@ -320,7 +320,8 @@ class AppStrings {
   static const String replaced = "المستبدلة";
   static const String nextAward = "التقدم للمكافأة التالية";
   static const String benefits = "الاستحقاقات";
-  static const String totalPoints = "مجموع النقاط";
+  static const String sumPoints = "مجموع النقاط";
+  static const String totalPoints = "إجمالى النقاط";
   static const String replacedPoints = "نقاط المستبدلة";
   static const String pointsValue = "قيمة النقاط";
   static const String pointsHistory = "سجل النقاط";

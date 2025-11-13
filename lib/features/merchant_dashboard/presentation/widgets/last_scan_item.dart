@@ -74,7 +74,7 @@ class LastScanItem extends StatelessWidget {
                     style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),
                   Text(
-                    '5 منجات',
+                    '5 منتجات',
                     textDirection: TextDirection.rtl,
                     style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
                   ),
