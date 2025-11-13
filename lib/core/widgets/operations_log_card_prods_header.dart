@@ -1,5 +1,5 @@
 import '../../exports.dart';
-import '../../features/tech_dashborad/data/models/operations_log_model.dart';
+import '../../features/tech_operations_log/data/models/operations_log_model.dart';
 
 class OperationsLogCardProdsHeader extends StatelessWidget {
   const OperationsLogCardProdsHeader({super.key, required this.model});

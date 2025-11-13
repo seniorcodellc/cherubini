@@ -13,34 +13,35 @@ class TechWarrantyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-        appBar:CustomAppbar(title: AppStrings.warrantyCertificate),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: getPadding(horizontal: 16.0.w),
-                child: Column(
-                  children: [
-                    35.vs,
-                    const CreateWarrantyContainer(),
-                    24.vs,
-                    ClientDetails(),
-                    24.vs,
-                     ProductListSection(isMerchant: false,),
-                    30.vs,
-                     WarrantyProduce(),
-                    40.vs,
-                    CustomScanButton(
-                      text: AppStrings.printWarranty,
-                      icon: AppAssets.print, onPressed: () {  },
-                    ),
-                    20.vs,
-                  ],
-                ),
+      appBar: CustomAppbar(title: AppStrings.warrantyCertificate),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: getPadding(horizontal: 16.0.w),
+              child: Column(
+                children: [
+                  35.vs,
+                  const CreateWarrantyContainer(),
+                  24.vs,
+                  ClientDetails(),
+                  24.vs,
+                  ProductListSection(isMerchant: false),
+                  30.vs,
+                  WarrantyProduce(),
+                  40.vs,
+                  CustomScanButton(
+                    text: AppStrings.printWarranty,
+                    icon: AppAssets.print,
+                    onPressed: () {},
+                  ),
+                  20.vs,
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 }

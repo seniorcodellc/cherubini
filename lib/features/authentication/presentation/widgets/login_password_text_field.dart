@@ -2,21 +2,36 @@ import 'package:cherubini/exports.dart';
 import 'package:cherubini/config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 
-class LoginPasswordTextField extends StatelessWidget {
-  const LoginPasswordTextField({super.key, required this.passwordController});
+class LoginPasswordTextField extends StatefulWidget {
+  LoginPasswordTextField({super.key, required this.passwordController});
 
   final TextEditingController passwordController;
+
+  @override
+  State<LoginPasswordTextField> createState() => _LoginPasswordTextFieldState();
+}
+
+class _LoginPasswordTextFieldState extends State<LoginPasswordTextField> {
+  bool secure = true;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
-          controller: passwordController,
+          controller: widget.passwordController,
           hintText: AppStrings.passwordHint,
           style: getRegularTextStyle(color: AppColors.darkGray, fontSize: 14),
+          obscureText: secure,
           prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
-          suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
+          suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                secure = !secure;
+              });
+            },
+            child: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
+          ),
         ),
         8.vs,
         Row(

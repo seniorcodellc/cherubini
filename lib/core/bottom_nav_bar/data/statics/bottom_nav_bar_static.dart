@@ -3,10 +3,10 @@ import 'package:cherubini/features/merchant_operations/presentation/screens/merc
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
+import 'package:cherubini/features/tech_operations_log/presentation/screens/tech_operations_log_screen.dart';
+import 'package:cherubini/features/tech_points_summary/presentation/screens/tech_points_summary_screen.dart';
 import '../../../../exports.dart';
-import '../../presentation/screens/tech_settings_screen.dart';
+import '../../../../features/tech_settings/presentation/screens/tech_settings_screen.dart';
 import '../models/bottom_nav_bar_model.dart';
 
 class BottomNavBarStatic {

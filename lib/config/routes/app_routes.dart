@@ -3,7 +3,6 @@ import 'package:cherubini/core/history/domain/use_cases/history_use_cases.dart';
 import 'package:cherubini/core/history/presentation/manager/history_cubit.dart';
 import 'package:cherubini/core/profile/domain/use_cases/profile_use_cases.dart';
 import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
-import 'package:cherubini/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
@@ -20,8 +19,8 @@ import 'package:cherubini/features/scan/presentation/screens/error_scan_screen.d
 import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/success_scan_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
+import 'package:cherubini/features/tech_operations_log/presentation/screens/tech_operations_log_screen.dart';
+import 'package:cherubini/features/tech_points_summary/presentation/screens/tech_points_summary_screen.dart';
 import 'package:cherubini/features/technician_management/domain/use_cases/technician_use_case.dart';
 import 'package:cherubini/features/technician_management/presentation/manager/technician_cubit.dart';
 import 'package:cherubini/features/technician_management/presentation/screens/technician_management_screen.dart';
@@ -30,6 +29,7 @@ import 'package:cherubini/features/warranty/presentation/screens/tech_warranty_s
 
 import 'package:nested/nested.dart';
 
+import '../../core/bottom_nav_bar/presentation/screens/custom_bottom_nav_bar.dart';
 import '../../exports.dart';
 
 import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
@@ -38,7 +38,7 @@ import '../../features/merchant_dashboard/presentation/screens/merchant_dashboar
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
-import '../../features/tech_dashborad/presentation/screens/tech_settings_screen.dart';
+import '../../features/tech_settings/presentation/screens/tech_settings_screen.dart';
 
 class RouteGenerator {
   AnimationType? pageRouteAnimationGlobal;
@@ -134,11 +134,11 @@ class RouteGenerator {
           child: ErrorScanScreen(),
           routeSettings: routeSettings,
         );
-      case Routes.merchantWarrantyRoute:
-        return buildPageRoute<T>(
-          child: MerchantWarrantyScreen(),
-          routeSettings: routeSettings,
-        );
+      // case Routes.merchantWarrantyRoute:
+      //   return buildPageRoute<T>(
+      //     child: MerchantWarrantyScreen(),
+      //     routeSettings: routeSettings,
+      //   );
       case Routes.techWarrantyRoute:
         return buildPageRoute<T>(
           child: TechWarrantyScreen(),

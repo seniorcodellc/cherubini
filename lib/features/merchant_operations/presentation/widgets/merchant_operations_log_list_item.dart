@@ -1,10 +1,13 @@
 import 'package:cherubini/core/widgets/custom_divider.dart';
 import 'package:cherubini/core/widgets/second_shared_custom_button.dart';
 import 'package:cherubini/features/merchant_operations/presentation/widgets/tech_name.dart';
-import 'package:cherubini/features/tech_dashborad/data/models/operations_log_model.dart';
+import 'package:cherubini/features/tech_operations_log/data/models/operations_log_model.dart';
 import 'package:cherubini/core/widgets/operations_log_card_header.dart';
 import 'package:cherubini/core/widgets/operations_log_card_prods_header.dart';
 import 'package:cherubini/core/widgets/operations_log_card_prods_list.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 import '../../../../exports.dart';
 
@@ -60,13 +63,51 @@ class MerchantOperationsLogListItem extends StatelessWidget {
               SecondSharedCustomButton(
                 text: AppStrings.publishWarranty,
                 onPressed: () {
-                  Routes.techWarrantyRoute.moveTo();
+                  printWarrantyCertificate();
                 },
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> printWarrantyCertificate() async {
+    final pdf = pw.Document();
+
+    pdf.addPage(
+      pw.Page(
+        build: (context) => pw.Center(
+          child: pw.Column(
+            mainAxisAlignment: pw.MainAxisAlignment.center,
+            children: [
+              pw.Text(
+                'Warranty Certificate',
+                style: pw.TextStyle(
+                  fontSize: 28,
+                  fontWeight: pw.FontWeight.bold,
+                ),
+              ),
+              pw.SizedBox(height: 20),
+              pw.Text('Customer Name: "laila"'),
+              pw.Text('Product: "fridge"'),
+              pw.Text('Warranty Period: 9 months'),
+              pw.SizedBox(height: 20),
+              pw.Text(
+                'This certificate confirms that the above product is covered under warranty as per company policy.',
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.SizedBox(height: 40),
+              pw.Text('Issued on: ${DateTime.now().toLocal()}'),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    await Printing.layoutPdf(
+      onLayout: (PdfPageFormat format) async => pdf.save(),
     );
   }
 }
