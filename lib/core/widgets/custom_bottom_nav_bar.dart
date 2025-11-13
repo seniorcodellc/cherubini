@@ -37,7 +37,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           BottomNavBarStatic.screens[selectedIndex].systemBarColor ??
           AppColors.white,
       bottomNavRoute: Container(
-        height: 64.h,
+        height: 66.h,
         width: 375.w,
         decoration: BoxDecoration(
           color: AppColors.white,
