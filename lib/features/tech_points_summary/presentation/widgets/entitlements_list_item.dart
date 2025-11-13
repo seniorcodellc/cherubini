@@ -1,5 +1,5 @@
 import 'package:cherubini/core/widgets/custom_divider.dart';
-import 'package:cherubini/features/tech_dashborad/data/models/entitlements_model.dart';
+import 'package:cherubini/features/tech_points_summary/data/models/entitlements_model.dart';
 import 'package:cherubini/core/widgets/scan_blue_circle.dart';
 import 'package:cherubini/core/widgets/shared_custom_divider_vertical.dart';
 import 'package:cherubini/core/widgets/shared_done_or_not_container.dart';
@@ -69,7 +69,7 @@ class EntitlementsListItem extends StatelessWidget {
                     Spacer(),
                     model.isDone == true
                         ? SharedDoneOrNotContainer(
-                            text:AppStrings.paid,
+                            text: AppStrings.paid,
                             textColor: AppColors.green,
                             bgColor: AppColors.mutedGreen,
                             borderColor: AppColors.green,

@@ -1,6 +1,6 @@
 import 'package:cherubini/exports.dart';
 
-import '../../../tech_dashborad/data/statics/entitlements_static.dart';
+import '../../../tech_points_summary/data/statics/entitlements_static.dart';
 import 'merchant_entitlements_list_item.dart';
 
 class MerchantEntitlementsList extends StatelessWidget {
@@ -12,8 +12,8 @@ class MerchantEntitlementsList extends StatelessWidget {
       padding: getPadding(horizontal: 16.w),
       child: Column(
         children: List.generate(EntitlementsStatic.entitlementsList.length, (
-            index,
-            ) {
+          index,
+        ) {
           final model = EntitlementsStatic.entitlementsList[index];
           return MerchantEntitlementsListItem(model: model);
         }),

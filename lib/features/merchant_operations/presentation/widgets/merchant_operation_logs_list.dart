@@ -1,6 +1,6 @@
 import 'package:cherubini/exports.dart';
 
-import '../../../tech_dashborad/data/statics/operations_log_static.dart';
+import '../../../tech_operations_log/data/statics/operations_log_static.dart';
 import 'merchant_operations_log_list_item.dart';
 
 class MerchantOperationLogsList extends StatelessWidget {
@@ -10,8 +10,8 @@ class MerchantOperationLogsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: List.generate(OperationsLogStatic.operationsLogList.length, (
-          index,
-          ) {
+        index,
+      ) {
         final model = OperationsLogStatic.operationsLogList[index];
         return MerchantOperationsLogListItem(model: model);
       }),

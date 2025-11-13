@@ -1,4 +1,4 @@
-import 'package:cherubini/core/widgets/shared_operations_log_card_column.dart';
+import 'package:cherubini/features/core/widgets/shared_text_column.dart';
 
 import 'custom_divider.dart';
 import '../../exports.dart';
@@ -22,14 +22,20 @@ class OperationsLogHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SharedOperationsLogCardColumn(
-            title: AppStrings.totalOperations,
-            subTitle: '3',
+          Padding(
+            padding: getPadding(horizontal: 24.w),
+            child: SharedTextColumn(
+              title: AppStrings.totalOperations,
+              subTitle: '3',
+            ),
           ),
           CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
-          SharedOperationsLogCardColumn(
-            title: AppStrings.totalPoints,
-            subTitle: '500',
+          Padding(
+            padding: getPadding(horizontal: 24.w),
+            child: SharedTextColumn(
+              title: AppStrings.totalPoints,
+              subTitle: '500',
+            ),
           ),
         ],
       ),
