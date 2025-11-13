@@ -1,6 +1,6 @@
 import 'package:cherubini/core/widgets/custom_switch.dart';
 
-import '../../../../exports.dart';
+import '../../../exports.dart';
 
 class NotificationsListItem extends StatefulWidget {
   const NotificationsListItem({super.key, required this.text});

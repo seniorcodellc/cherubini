@@ -2,8 +2,8 @@ import 'package:cherubini/core/widgets/custom_appbar.dart';
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/core/widgets/custom_floating_action_button.dart';
 
-import '../../exports.dart';
-import '../../features/tech_dashborad/data/statics/bottom_nav_bar_static.dart';
+import '../../../../exports.dart';
+import '../../data/statics/bottom_nav_bar_static.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   // static final GlobalKey<_CustomBottomNavBarState> navBarKey =

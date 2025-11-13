@@ -1,4 +1,4 @@
-import 'package:cherubini/features/tech_dashborad/data/models/entitlements_model.dart';
+import 'package:cherubini/features/tech_points_summary/data/models/entitlements_model.dart';
 
 class EntitlementsStatic {
   static List<EntitlementsModel> entitlementsList = [

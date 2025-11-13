@@ -1,5 +1,5 @@
 import 'package:cherubini/core/widgets/custom_divider.dart';
-import 'package:cherubini/features/tech_dashborad/data/models/entitlements_model.dart';
+import 'package:cherubini/features/tech_points_summary/data/models/entitlements_model.dart';
 import 'package:cherubini/core/widgets/scan_blue_circle.dart';
 import 'package:cherubini/core/widgets/shared_custom_divider_vertical.dart';
 import 'package:cherubini/core/widgets/shared_done_or_not_container.dart';
@@ -74,8 +74,12 @@ class MerchantEntitlementsListItem extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (_) => Dialog(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0.r)),
-                            insetPadding: EdgeInsets.symmetric(horizontal: 12.w),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0.r),
+                            ),
+                            insetPadding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                            ),
                             child: DetailsPopup(model: model),
                           ),
                         );

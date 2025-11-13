@@ -3,10 +3,10 @@ import 'package:cherubini/features/merchant_operations/presentation/screens/merc
 import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
+import 'package:cherubini/features/tech_operations_log/presentation/screens/tech_operations_log_screen.dart';
+import 'package:cherubini/features/tech_points_summary/presentation/screens/tech_points_summary_screen.dart';
 import '../../../../exports.dart';
-import '../../presentation/screens/tech_settings_screen.dart';
+import '../../../../features/tech_settings/presentation/screens/tech_settings_screen.dart';
 import '../models/bottom_nav_bar_model.dart';
 
 class BottomNavBarStatic {
@@ -14,26 +14,26 @@ class BottomNavBarStatic {
     BottomNavBarModel(
       asset: AppAssets.home,
       tabName: AppStrings.homeAr,
-      screen: MerchantDashboardScreen(),
+      screen: TechDashboard(),
       systemBarColor: AppColors.gradientColorStart,
     ),
     BottomNavBarModel(
       asset: AppAssets.loyalty,
       tabName: AppStrings.pointsAr,
       appBatTitle: AppStrings.pointsSummary,
-      screen: MerchantPointsSummary(),
+      screen: TechPointsSummaryScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.logs,
       tabName: AppStrings.logsAr,
       appBatTitle: AppStrings.operationsLogsAr,
-      screen: MerchantOperationsLogScreen(),
+      screen: TechOperationsLogScreen(),
     ),
     BottomNavBarModel(
       asset: AppAssets.tabSettings,
       tabName: AppStrings.settings,
       appBatTitle: AppStrings.settings,
-      screen: MerchantSettings(),
+      screen: TechSettingsScreen(),
     ),
   ];
 }

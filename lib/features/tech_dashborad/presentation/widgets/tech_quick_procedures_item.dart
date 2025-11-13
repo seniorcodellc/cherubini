@@ -1,7 +1,7 @@
 import '../../../../exports.dart';
 
-class SharedQuickProceduresItem extends StatelessWidget {
-  const SharedQuickProceduresItem({
+class TechQuickProceduresItem extends StatelessWidget {
+  const TechQuickProceduresItem({
     super.key,
     required this.asset,
     required this.text,

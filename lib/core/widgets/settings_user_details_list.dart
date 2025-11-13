@@ -1,4 +1,4 @@
-import 'package:cherubini/features/tech_dashborad/data/statics/tech_settings_details_static.dart';
+import 'package:cherubini/features/tech_settings/data/statics/tech_settings_details_static.dart';
 import 'package:cherubini/core/widgets/settings_user_details_list_item.dart';
 
 import '../../exports.dart';
