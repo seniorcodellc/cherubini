@@ -15,12 +15,12 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController pageController = PageController();
   int currentPage = 0;
+
   void nextPage() async {
     if (currentPage < OnboardingStatics.onBoardingItems.length - 1) {
       pageController.nextPage(duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
     } else {
       await context.read<OnboardingManagerCubit>().cachedNewInstall();
-      Routes.loginRoute.moveTo();
     }
   }
 

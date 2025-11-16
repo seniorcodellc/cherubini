@@ -35,7 +35,7 @@ class ProfileModel {
     name: json['name'],
     email: json['email'],
     phone: json['phone'],
-    totalPoints: json['totalPoints'],
+    totalPoints: json['totalPoint'],
     pointDelevery: json['pointDelevery'],
     points: json['points'],
     balance: json['balance'],

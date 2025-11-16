@@ -18,8 +18,7 @@ class AuthCubit extends Cubit<CubitStates> {
   //RequestIdModel? requestId;
   UserModel? user;
 
-  login(LoginModel loginModel) async {
-    await executeWithDialog<UserModel?>(
+  login(LoginModel loginModel) =>executeWithDialog<UserModel?>(
       either: authUseCase.login(login: loginModel),
       startingMessage: AppStrings.signIn.trans,
       responseMessage: AppStrings.loggedInSuccessfully.trans,
@@ -31,16 +30,14 @@ class AuthCubit extends Cubit<CubitStates> {
         // Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
       },
     );
-  }
 
-  logout() async => await executeWithDialog(
+
+  logout() async => await executeWithDialog<dynamic>(
     either: authUseCase.logout(),
     startingMessage: AppStrings.waitingForLogout.trans,
     onSuccess: (data) async {
       user = null;
-
-      // getBlocData<BottomNavOperationCubit>().changIndex(0);
-      Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
       emit(LoadedState(data: null));
     },
   );
@@ -230,7 +227,7 @@ class AuthCubit extends Cubit<CubitStates> {
     authUseCase.clearUser(),
     onSuccess: (data) {
       user = null;
-      Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
 
       emit(LoadedState(data: null));
     },

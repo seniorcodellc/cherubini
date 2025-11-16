@@ -83,9 +83,14 @@ Future<ResponseModel> remoteExecute({
     /// Attempt to decode the response data as a JSON map and pass it to the `onSuccess` function
     /// to create the `ResponseModel` object for successful cases.
     dynamic map = jsonDecode(data);
+    String? message;
     if(map is Map && map.containsKey('data').isFalse){
+      message=map["message"];
+      (map).remove('message');
       map={
         'data':map,
+
+        "message":message,
         'success':true
       };
     }else if(map is List){
@@ -95,7 +100,6 @@ Future<ResponseModel> remoteExecute({
       } as Map;
     }
     try {
-      print("enteed");
       responseModel = fromJsonFunction(map);
       responseModel.code=response.statusCode.toString();
     } catch (error) {

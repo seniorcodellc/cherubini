@@ -17,6 +17,7 @@ class AppStrings {
   static const String deleteAccount = "deleteAccount";
   static const String deletingAccount = "deletingAccount";
   static const String deleteAccountConfirmation = "deleteAccountConfirmation";
+  static const String operationDetails = "تفاصيل العمليه";
   static const String empty = "noEstateHere";
   static const String waitingForEditProfile = "waitingForEditProfile";
   static const String waitingForCancel = "waitingForCancel";
@@ -274,9 +275,9 @@ class AppStrings {
   static const String helloText = "مرحباً , أحمد";
 
   /// **************************** Merchant management ************************************
-  static const String merchantManagement = "إدارة الفنيين";
+  static const String techniciansManagement = "إدارة الفنيين";
   static const String activeTech = "الفنيون النشطون";
-  static const String waitingTech = "قيد الانتظار";
+  static const String waitingTech = "قيد المراجعه";
   static const String active = "نشط";
   static const String underReview = "قيد المراجعه";
   static const String orderDate = "تاريخ الطلب";
@@ -991,4 +992,7 @@ class AppStrings {
   static const String pleaseWaitUntilApproved = "pleaseWaitUntilApproved";
 
   static const String loggedInSuccessfully="loggedInSuccessfully";
+  static const String suspended="غير النشطين";
+  static const String suspendTechnician="ايقاف تنشيط الفنى";
+  static const String reactiveTechnician="اعادة تنشيط الفنى";
 }

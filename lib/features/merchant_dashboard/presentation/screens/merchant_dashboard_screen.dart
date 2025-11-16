@@ -14,7 +14,7 @@ class MerchantDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      statusBarColor: AppColors.gradientColorStart,
+      statusBarColor: AppColors.gradientColorStart,showNavBar: true,
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

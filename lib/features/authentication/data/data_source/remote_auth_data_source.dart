@@ -51,7 +51,7 @@ class AuthRemoteDataSourceImpl extends RequestsImpl
   @override
   Future<ResponseModel> logout() => postRequest(
     endPoint: EndPoints.logout,
-    getFromJsonFunction: LogoutResponseModel.fromJson,
+    getFromJsonFunction: ResponseModel.fromJson,
   );
   @override
   Future<ResponseModel> registerMerchant({
@@ -126,7 +126,7 @@ class AuthRemoteDataSourceImpl extends RequestsImpl
         request: dioConsumer.deleteRequest(
           path: "${EndPoints.deleteAccount}/$accountId",
         ),
-        fromJsonFunction: LogoutResponseModel.fromJson,
+        fromJsonFunction: ResponseModel.fromJson,
       );
 
   // @override

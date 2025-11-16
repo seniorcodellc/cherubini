@@ -14,6 +14,7 @@ class MerchantSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return  CustomBackground(
       backgroundColor: AppColors.bgColor,
+      showNavBar: true,
       //appBar: CustomAppbar(title: AppStrings.settings),
       child: CustomScrollView(
         slivers: [

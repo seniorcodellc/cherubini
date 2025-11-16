@@ -1,3 +1,8 @@
+import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
+import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
+import 'package:cherubini/features/technican_management/data/data_sources/technician_remote_data_sources.dart';
+import 'package:cherubini/features/technican_management/domain/repositories/technician_repo.dart';
+import 'package:cherubini/features/technican_management/domain/use_cases/technician_use_case.dart';
 import 'package:get_it/get_it.dart';
 import 'core/history/data/data_sources/history_remote_datasource.dart';
 import 'core/history/data/repositories/history_repo_impl.dart';
@@ -31,6 +36,8 @@ import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
 import 'features/on_boarding/domain/usecase/onborading_usecases.dart';
 import 'features/on_boarding/presentation/managers/onboarding_manager_cubit.dart';
+import 'features/technican_management/data/repositories/technician_repo_impl.dart';
+import 'features/technican_management/presentation/manager/technician_cubit.dart';
 
 class ServiceLocator {
   GetIt getIt = GetIt.instance;
@@ -54,6 +61,8 @@ class ServiceLocator {
     registerProfile;
     registerHistory;
     registerMerchantList;
+    registerTechniciansManagement;
+    registerBottomNavigation;
   }
   get registerAuthDependencies {
     getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
@@ -61,6 +70,9 @@ class ServiceLocator {
     getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(authLocalDataSource: getIt(), authRemoteDataSource: getIt()));
     getIt.registerLazySingleton<AuthUseCase>(() => AuthUseCase(authRepo: getIt()));
     getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(authUseCase: getIt()));
+  }  get registerBottomNavigation {
+     getIt.registerLazySingleton<BottomNavOperationCubit>(() =>
+        BottomNavOperationCubit());
   }
   get registerGovernorates {
     getIt.registerLazySingleton<GovernoratesRemoteDataSource>(() => GovernoratesRemoteDatasourceImpl(dioConsumer: getIt()));
@@ -73,6 +85,11 @@ class ServiceLocator {
     getIt.registerLazySingleton<MerchantListRepo>(() => MerchantListRepoImpl(merchantListRemoteDataSource: getIt()));
     getIt.registerLazySingleton<MerchantListUseCases>(() => MerchantListUseCases(merchantListRepo: getIt()));
     getIt.registerLazySingleton<MerchantListCubit>(() => MerchantListCubit(merchantListUseCases: getIt()));
+  }  get registerTechniciansManagement{
+    getIt.registerLazySingleton<TechnicianRemoteDataSource>(() => TechnicianRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<TechnicianRepo>(() => TechnicianRepoImpl(technicianRemoteDataSources: getIt()));
+    getIt.registerLazySingleton<TechnicianUseCase>(() => TechnicianUseCase(technicianRepo: getIt()));
+    getIt.registerLazySingleton<TechnicianCubit>(() => TechnicianCubit(technicianUseCase: getIt()));
   }
 
   get registerHistory {
@@ -85,6 +102,7 @@ class ServiceLocator {
     getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepoImpl(profileRemoteDataSource: getIt()));
     getIt.registerLazySingleton<ProfileUseCases>(() => ProfileUseCases(profileRepo: getIt()));
+    getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(profileUseCases: getIt()));
   }
 
   get registerNetwork {

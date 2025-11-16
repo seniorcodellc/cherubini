@@ -15,6 +15,7 @@ dependencies:
   flutter_native_splash:
   flutter_bloc:
   pretty_bloc_observer:
+  mobile_scanner:
   flutter_local_notifications:
   dartz:
   dio:

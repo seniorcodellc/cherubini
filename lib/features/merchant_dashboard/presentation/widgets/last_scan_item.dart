@@ -8,7 +8,6 @@ class LastScanItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: getMargin(horizontal: 16.0.w),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
@@ -22,65 +21,61 @@ class LastScanItem extends StatelessWidget {
       ),
       child: Padding(
         padding:getPadding(horizontal: 16.w, vertical: 12.h),
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            Container(
+              width: 60.w,
+              height: 60.h,
+              decoration: BoxDecoration(
+                color: const Color(0xffE3F2FD),
+                borderRadius: BorderRadius.circular(16.0.r),
+              ),
+              padding: const EdgeInsets.all(12.0),
+              child: CustomSVGImage(asset: AppAssets.scanFilled),
+            ),
+            12.hs,
+            Expanded(child:            Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  width: 60.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffE3F2FD),
-                    borderRadius: BorderRadius.circular(16.0.r),
-                  ),
-                  padding: const EdgeInsets.all(12.0),
-                  child: CustomSVGImage(asset: AppAssets.scanFilled),
-                ),
-                12.hs,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      history.detail![0].productName.toString(),
+                      history.id.toString(),
                       style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
                       // textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 4.h),
+                    4.vs,  Text(
+                      '${history.points} نقطه',
+                      //textDirection: TextDirection.rtl,
+                      style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
+                    ),
+                  ],
+                ),
+                10.vs,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: [
                     Text(
                       DateFormat('dd/MM/yyyy').format(DateTime.parse(history.date!)).toString(),
                       style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
                       //textDirection: TextDirection.rtl,
                     ),
+                    Text(
+                      '${history.detail!.length} منتجات',
+                      textDirection: TextDirection.rtl,
+                      style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
+                    ),
                   ],
-                ),
-                const Spacer(),
-                Text(
-                  '${history.points} نقطه',
-                  //textDirection: TextDirection.rtl,
-                  style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
-                ),
+                )
+
               ],
             ),
-            Padding(
-              padding:getPadding(top: 40.0.h,bottom: 14.0.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'الفنى خالد سعيد',
-                    style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
-                  ),
-                  Text(
-                    '5 منجات',
-                    textDirection: TextDirection.rtl,
-                    style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
-                  ),
-                ],
-              ),
-            ),
+            )
           ],
         ),
       ),

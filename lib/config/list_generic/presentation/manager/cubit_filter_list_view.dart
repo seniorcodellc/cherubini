@@ -16,7 +16,7 @@ abstract class CubitFilterListView<Model, Filter extends FilterAbstract> extends
   int? pop(Filter query) => queries.contains(query) ? queries.firstWhere((element) => element == query).key : null;
   num? id;
   @override
-  Future<List<Model>?>? getList({num? id, FilterAbstract? query}) {
+  Future<List<Model>?>? getList({num? id, FilterAbstract? query,Function(List<Model>list)? onSuccess}) {
     this.id = id;
     if (query.isNotNull) {
       parentFilter = query! as Filter;

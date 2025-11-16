@@ -17,7 +17,6 @@ class OnboardingButtons extends StatelessWidget {
             TextButton(
               onPressed: () async {
                 await context.read<OnboardingManagerCubit>().cachedNewInstall();
-                Routes.loginRoute.moveToAndRemoveCurrent();
               },
               child: Text(
                 'تخطي',

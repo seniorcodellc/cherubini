@@ -8,9 +8,9 @@ abstract class EndPoints {
   static const String logout = '${api}logout';
   static const String profile = '${api}profile';
   static const String technicianList = '${api}technicianList';
-  static const String approved = '${api}approved?technicianId=16';
-  static const String suspend = '${api}suspend?technicianId=16';
-  static const String unSuspend = '${api}unSuspend?technicianId=16';
+  static const String approved = '${api}approved';
+  static const String suspend = '${api}suspend';
+  static const String unSuspend = '${api}unSuspend';
 
   static const String registerMerchant = '${api}registerMerchant';
   static const String history = '${api}readingHistory';

@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
         UserModel? user = await getBlocData<AuthCubit>().getUser();
         print("tokkkkkkkkk  ${user?.token}");
         if (user.isNotNull) {
-          route = Routes.loginRoute;
+          route = Routes.merchantDashboardRoute;
         } else {
           route = Routes.loginRoute;
         }
@@ -68,7 +68,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return CustomBackground(
       statusBarColor: AppColors.gradientColorStart,
-
       child: Stack(
         alignment: Alignment.center,
         children: [

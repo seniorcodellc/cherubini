@@ -12,6 +12,7 @@ class MerchantPointsSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
+      showNavBar: true,
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
