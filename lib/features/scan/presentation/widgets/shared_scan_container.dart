@@ -2,8 +2,10 @@ import 'package:cherubini/exports.dart';
 import 'package:dotted_border/dotted_border.dart';
 
 class SharedScanContainer extends StatelessWidget {
-  const SharedScanContainer({super.key, required this.asset});
+  const SharedScanContainer({super.key, required this.asset, required this.title});
   final String asset;
+
+  final String title ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,9 +27,24 @@ class SharedScanContainer extends StatelessWidget {
               top: 50.0.h,
               bottom: 40.0.h,
             ),
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: CustomSVGImage(asset: asset),
+            child: Stack(
+              children: [
+                CustomSVGImage(asset: AppAssets.cameraFrame),
+                Padding(
+                  padding: getPadding(start:70.0.w,top: 28.0.h),
+                  child: Column(
+                    children: [
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: CustomSVGImage(asset: asset),
+                      ),
+                      8.vs,
+                      Text(title,style: getRegularTextStyle(fontSize: 16,color: AppColors.subTitleColor),)
+                    ],
+                  ),
+                ),
+
+              ],
             ),
           ),
         ),

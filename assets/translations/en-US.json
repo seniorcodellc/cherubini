@@ -164,12 +164,6 @@
   "bothPasswordMustMatch": "Both Passwords Must Match",
   "waitingForRegistration": "Waiting for registration...",
   "aboutApp": "\"Start your journey in the world of auctions! View the latest auctions, and start bidding on your favorite property now.\"",
-  "onBoarding1Title": "\"Start your journey into the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.\"",
-  "onBoarding2Title": "\"Start your journey into the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.\"",
-  "onBoarding3Title": "\"Start your journey into the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.\"",
-  "onBoarding1SubTitle": "Start your journey in the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.",
-  "onBoarding2SubTitle": "Start your journey in the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.",
-  "onBoarding3SubTitle": "Start your journey in the world of auctions! Browse the latest auctions, and start bidding on your favorite property now.",
   "search": "search",
   "features": "Features",
   "rooms": "Rooms",
@@ -526,5 +520,12 @@
   "notCollected": "not Collected",
   "dueDetails": "due Details",
   "payDues": "pay Dues",
-  "displayDetails": "Display Details"
+  "displayDetails": "Display Details",
+  "startNow": "start Now",
+  "onBoarding1Title": "Earn Loyalty Points",
+  "onBoarding2Title": "Easy & Fast Scanning",
+  "onBoarding3Title": "Redeem Points for Rewards",
+  "onBoarding1SubTitle": "Scan the barcode and earn points with every purchase",
+  "onBoarding2SubTitle": "Smart scanning system for products and automatic point registration",
+  "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts"
 }

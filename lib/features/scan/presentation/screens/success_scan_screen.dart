@@ -16,7 +16,7 @@ class SuccessScanScreen extends StatelessWidget {
         children: [
           Padding(
             padding: getPadding(vertical: 35.0.h),
-            child: SharedScanContainer(asset: AppAssets.successScan),
+            child: SharedScanContainer(asset: AppAssets.cameraSuccess, title: AppStrings.scanSuccess.trans,),
           ),
           //BarCodeDetails(isSuccess: true,),
           60.vs,

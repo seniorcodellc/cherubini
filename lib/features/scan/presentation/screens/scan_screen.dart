@@ -90,9 +90,24 @@ class _ScanScreenState extends State<ScanScreen> {
                   top: 50.0.h,
                   bottom: 40.0.h,
                 ),
-                child: Directionality(
-                  textDirection: TextDirection.ltr,
-                  child: CustomSVGImage(asset: AppAssets.cameraScan),
+                child: Stack(
+                  children: [
+                    CustomSVGImage(asset: AppAssets.cameraFrame),
+                    Padding(
+                      padding: getPadding(horizontal: 24.0.w,vertical: 15.0.h),
+                      child: Column(
+                        children: [
+                          Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: CustomSVGImage(asset: AppAssets.scanCamera),
+                          ),
+                          8.vs,
+                          Text(AppStrings.cameraBarcode,style: getRegularTextStyle(fontSize: 16,color: AppColors.subTitleColor),)
+                        ],
+                      ),
+                    ),
+
+                  ],
                 ),
               ),
             ),

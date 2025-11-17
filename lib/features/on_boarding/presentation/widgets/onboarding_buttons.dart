@@ -19,7 +19,7 @@ class OnboardingButtons extends StatelessWidget {
                 await context.read<OnboardingManagerCubit>().cachedNewInstall();
               },
               child: Text(
-                'تخطي',
+               AppStrings.skip.trans,
                 style: getRegularTextStyle(fontSize: 16.sp, color: AppColors.subTitleColor),
               ),
             ),

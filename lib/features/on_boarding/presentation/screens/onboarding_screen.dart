@@ -48,14 +48,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 CustomPngImage(image: OnboardingStatics.onBoardingItems[index].imagePath),
                 35.vs,
                 Text(
-                  OnboardingStatics.onBoardingItems[index].title,
+                  OnboardingStatics.onBoardingItems[index].title.trans,
                   style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.primaryColor),
                 ),
                 10.vs,
                 Padding(
                   padding: getPadding(horizontal: 30.0),
                   child: Text(
-                    OnboardingStatics.onBoardingItems[index].subTitle,
+                    OnboardingStatics.onBoardingItems[index].subTitle.trans,
                     textAlign: TextAlign.center,
                     style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.subTitleColor),
                   ),
@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onTap: () {
                     nextPage();
                   },
-                  text: currentPage == OnboardingStatics.onBoardingItems.length - 1 ? 'ابدأ الآن ' : 'التالي',
+                  text: currentPage == OnboardingStatics.onBoardingItems.length - 1 ? AppStrings.startNow.trans : AppStrings.next.trans,
                 ),
               ],
             ),

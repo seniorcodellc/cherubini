@@ -63,7 +63,7 @@ class TechAnswerVerficationQuestion extends StatelessWidget {
                     ? Padding(
                         padding: getPadding(start: 16.h),
                         child: CustomTextFormField(
-                          hintText: AppStrings.merchantCheckHint,
+                          hintText: AppStrings.merchantCheckHint.trans,
                           controller: answerController,
                           style: getRegularTextStyle(fontSize: 14.sp),
                         ),

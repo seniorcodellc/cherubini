@@ -309,6 +309,10 @@ class AppStrings {
   static const String earnedPoints = "earned Points";
   static const String unavailableMessage =
       "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
+  static const String scanSuccess = "scanSuccess";
+  static const String scanError = "scanError";
+  static const String cameraBarcode = "وجّه الكاميرا نحو الباركود";
+
 
   /// **************************** bottom nav bar tabs ************************************
   static const String home = "home";
@@ -325,6 +329,7 @@ class AppStrings {
   static const String dueDetails = "dueDetails";
   static const String payDues = "pay Dues";
   static const String displayDetails = "displayDetails";
+  static const String startNow = "startNow";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
@@ -418,15 +423,12 @@ class AppStrings {
   static const String verificationAccount = 'verificationAccount';
   static const String sendOTP = 'sendOTP';
   static const String chooseService = 'chooseService';
-  static const String onBoarding1Title = 'اكسب نقاط الولاء';
-  static const String onBoarding2Title = 'مسح سهل وسريع';
-  static const String onBoarding3Title = 'استبدل النقاط بجوائز';
-  static const String onBoarding1SubTitle =
-      'امسح الباركود واحصل على نقاط مع كل عملية شراء';
-  static const String onBoarding2SubTitle =
-      'نظام مسح ذكي للمنتجات وتسجيل النقاط تلقائياً';
-  static const String onBoarding3SubTitle =
-      'استخدم نقاطك للحصول على مكافآت وخصومات حصرية';
+  static const String onBoarding1Title = 'onBoarding1Title';
+  static const String onBoarding2Title = 'onBoarding2Title';
+  static const String onBoarding3Title = 'onBoarding3Title';
+  static const String onBoarding1SubTitle = 'onBoarding1SubTitle';
+  static const String onBoarding2SubTitle = 'onBoarding2SubTitle';
+  static const String onBoarding3SubTitle = 'onBoarding3SubTitle';
   static const String welcomeBack = 'welcomeBack';
   static const String currentBalance = 'currentBalance';
   static const String welcomeOnBoard = 'welcomeOnBoard';

@@ -67,8 +67,11 @@ class AppAssets {
   static String print = "${SvgImages.svgPath}print.svg";
   static String delete = "${SvgImages.svgPath}delete.svg";
   static String pending = "${SvgImages.svgPath}pending.svg";
-  static String english = "${PngImages.imagesPath}english.png";
-  static String arabic = "${PngImages.imagesPath}arabic.png";
+  static String scanCamera = "${SvgImages.svgPath}scan_camera.svg";
+  static String cameraSuccess = "${SvgImages.svgPath}camera_success.svg";
+  static String cameraError = "${SvgImages.svgPath}camera_error.svg";
+  static String cameraFrame = "${SvgImages.svgPath}camera_frame.svg";
+
   //! PNG
 
   static String logo = "${PngImages.imagesPath}logo.png";
@@ -77,4 +80,6 @@ class AppAssets {
   static String onboarding1 = "${PngImages.imagesPath}onboarding1.png";
   static String onboarding2 = "${PngImages.imagesPath}onboarding2.png";
   static String onboarding3 = "${PngImages.imagesPath}onboarding3.png";
+  static String english = "${PngImages.imagesPath}english.png";
+  static String arabic = "${PngImages.imagesPath}arabic.png";
 }
