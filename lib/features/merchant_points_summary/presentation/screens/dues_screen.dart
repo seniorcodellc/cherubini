@@ -1,11 +1,15 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/exports.dart';
 
+import '../../../../config/data_generic/presentation/widgets/generic_data_view.dart';
+import '../../../../core/profile/data/models/profile_response_model.dart';
+import '../../../../core/profile/presentation/manager/profile_cubit.dart';
 import '../../../tech_dashborad/presentation/widgets/summary_points_card.dart';
 import '../../../tech_dashborad/presentation/widgets/tech_points_register.dart';
 import '../../data/models/cash_reward_response_model.dart';
 import '../managers/dues_cubit.dart';
 import '../widgets/due_item.dart';
+import '../widgets/due_shimmer.dart';
 
 class DuesScreen extends StatelessWidget {
   const DuesScreen({super.key});
@@ -22,7 +26,15 @@ class DuesScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SummaryPointsCard(),
+                GenericDataView<ProfileCubit, ProfileModel>.fromState(
+                  buildLoadedWidgetWithState: (state) {
+                    if(state is LoadedState<ProfileModel>) {
+                      return SummaryPointsCard(profile: state.data,);
+                    }else{
+                      return SummaryPointsCard();
+                    }
+                  },
+                ),
                 16.vs,
                 Padding(
                   padding: getPadding(horizontal: 16.w),
@@ -57,7 +69,7 @@ class DuesScreen extends StatelessWidget {
                 }
               },
               separatorWidget: 16.vs,
-              shimmerWidget: (index) => Container(),
+              shimmerWidget: (index) => DueShimmer(),
             ),
           ),
         ],

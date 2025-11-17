@@ -9,8 +9,13 @@ android {
     namespace = "com.cherubini.seniorcode.cherubini"
     compileSdk = flutter.compileSdkVersion
 //    ndkVersion = flutter.ndkVersion
+<<<<<<< HEAD
+    // ndkVersion = flutter.ndkVersion
+     ndkVersion = "28.0.13004108"
+=======
 
     ndkVersion = "28.0.13004108"
+>>>>>>> 21669bbb36ea28afa5d9f4f0ed59a500bed178b4
 
 
     compileOptions {

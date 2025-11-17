@@ -36,8 +36,9 @@ class SettingsUserDetailsList extends StatelessWidget {
                     },
                   ),
                 );
-
-
+              }
+              else if (settingList[index].name == AppStrings.editProfile) {
+                Routes.editProfile.moveTo();
               }
             },
             child: Padding(
