@@ -69,7 +69,7 @@ class EntitlementsListItem extends StatelessWidget {
                     Spacer(),
                     model.isDone == true
                         ? SharedDoneOrNotContainer(
-                            text:AppStrings.paid,
+                            text: AppStrings.paid,
                             textColor: AppColors.green,
                             bgColor: AppColors.mutedGreen,
                             borderColor: AppColors.green,

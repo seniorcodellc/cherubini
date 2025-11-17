@@ -13,13 +13,21 @@ class SharedEnterNameTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
-          hintText: AppStrings.fullNameHintAr,
-          prefixIcon: CustomSVGImage(asset: AppAssets.profile, fit: BoxFit.none),
+          hintText: AppStrings.fullNameHint.trans,
+          prefixIcon: CustomSVGImage(
+            asset: AppAssets.profile,
+            fit: BoxFit.none,
+          ),
           controller: nameController,
         ),
-        BlocBuilder<ErrorCubit, CubitStates>(builder: (context, state) => ErrorText(
-            showError: context.read<ErrorCubit>().errors.contains(Errors.NAME_ERROR),
-            text: getError[Errors.NAME_ERROR])),
+        BlocBuilder<ErrorCubit, CubitStates>(
+          builder: (context, state) => ErrorText(
+            showError: context.read<ErrorCubit>().errors.contains(
+              Errors.NAME_ERROR,
+            ),
+            text: getError[Errors.NAME_ERROR],
+          ),
+        ),
       ],
     );
   }

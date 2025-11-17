@@ -19,16 +19,23 @@ class LastScanList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                AppStrings.lastScanOperationsAr,
-                style: getBoldTextStyle(fontSize: 14.sp, color: AppColors.primaryColor),
+                AppStrings.recentScanOperations.trans,
+                style: getBoldTextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.primaryColor,
+                ),
               ),
               Text(
-                AppStrings.displayAllAr,
-                style: getRegularTextStyle(fontSize: 12.sp, color: AppColors.primaryColor),
+                AppStrings.viewAll,
+                style: getRegularTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
               ),
             ],
           ),
-        ),16.vs,
+        ),
+        16.vs,
         Expanded(
           child: GenericListView<HistoryCubit, HistoryModel>(
             padding: getPadding(horizontal: 16.w),

@@ -10,16 +10,16 @@ class RegisterAcceptWaiting extends StatelessWidget {
     return Column(
       children: [
         Text(
-          AppStrings.waitingStatement1Ar,
+          AppStrings.waitingStatement1.trans,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
         Text(
-          AppStrings.waitingStatement2Ar,
+          AppStrings.waitingStatement2.trans,
 
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),
         Text(
-          AppStrings.waitingStatement3Ar,
+          AppStrings.waitingStatement3.trans,
 
           style: getRegularTextStyle(fontSize: 16, color: AppColors.grayHint),
         ),

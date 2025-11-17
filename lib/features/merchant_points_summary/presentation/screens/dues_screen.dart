@@ -38,7 +38,13 @@ class DuesScreen extends StatelessWidget {
                 16.vs,
                 Padding(
                   padding: getPadding(horizontal: 16.w),
-                  child: Text(AppStrings.entitlementsAr, style: getBoldTextStyle(fontSize: 16, color: AppColors.primaryColor)),
+                  child: Text(
+                    AppStrings.rewards.trans,
+                    style: getBoldTextStyle(
+                      fontSize: 16,
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
                 ),
                 16.vs,
 
@@ -51,12 +57,15 @@ class DuesScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
 
-              padding: getPadding(horizontal: 16.w,bottom: 50.h),
+              padding: getPadding(horizontal: 16.w, bottom: 50.h),
               itemWidget: (index, items, item) => DueItem(model: item),
               onItemTapped: (index, item) {
                 if (item.detail.isNotNullOrEmpty) {
                   print("lengthhhh ${item.detail?.length}");
-                  Routes.dueDetails.moveToWithArgs({"dueDetails": item.detail,"dueId":item.id});
+                  Routes.dueDetails.moveToWithArgs({
+                    "dueDetails": item.detail,
+                    "dueId": item.id,
+                  });
                 }
               },
               separatorWidget: 16.vs,

@@ -9,14 +9,14 @@ class SharedDashboardLastScanTextWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          AppStrings.lastScanOperationsAr,
+          AppStrings.recentScanOperations,
           style: getBoldTextStyle(
             fontSize: 16.sp,
             color: AppColors.primaryColor,
           ),
         ),
         Text(
-          AppStrings.displayAllAr,
+          AppStrings.viewAll,
           style: getRegularTextStyle(
             fontSize: 14.sp,
             color: AppColors.primaryColor,

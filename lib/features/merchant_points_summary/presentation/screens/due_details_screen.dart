@@ -17,18 +17,22 @@ class DuesDetailsScreen extends StatelessWidget {
     dueId = data['dueId'];
 
     return CustomBackground(
-      title: AppStrings.dueDetails,
+      title: AppStrings.dueDetails.trans,
       floatingActionButton: Container(
         width: width,
         padding: getPadding(bottom: 30, horizontal: 16.w),
-        child: BlocBuilder<DuePayCubit,CubitStates>
-          (builder:(context, state) =>  FloatingActionButton(
-          backgroundColor: AppColors.primaryColor,
-          onPressed: () {
-            context.read<DuePayCubit>().pay(dueId!);
-          },
-          child: Text("${AppStrings.pay} ${context.read<DuePayCubit>().count}",style: getBoldTextStyle(color: AppColors.white),),
-        ),),
+        child: BlocBuilder<DuePayCubit, CubitStates>(
+          builder: (context, state) => FloatingActionButton(
+            backgroundColor: AppColors.primaryColor,
+            onPressed: () {
+              context.read<DuePayCubit>().pay(dueId!);
+            },
+            child: Text(
+              "${AppStrings.pay.trans} ${context.read<DuePayCubit>().count}",
+              style: getBoldTextStyle(color: AppColors.white),
+            ),
+          ),
+        ),
       ),
       /*        CustomButton(
           height: 50.h,
@@ -37,7 +41,8 @@ class DuesDetailsScreen extends StatelessWidget {
 
         },),*/
       child: ListView.separated(
-        itemBuilder: (context, index) => DueDetailsItem(model: dueDetailsList![index]),
+        itemBuilder: (context, index) =>
+            DueDetailsItem(model: dueDetailsList![index]),
         physics: BouncingScrollPhysics(),
         padding: getPadding(horizontal: 16.w, top: 30.h, bottom: 40.h),
 

@@ -24,12 +24,12 @@ class OperationsLogHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SharedOperationsLogCardColumn(
-            title: AppStrings.totalOperationsAr,
+            title: AppStrings.totalOperations,
             subTitle: '3',
           ),
           CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
           SharedOperationsLogCardColumn(
-            title: AppStrings.totalPointsAr,
+            title: AppStrings.overallPoints,
             subTitle: '500',
           ),
         ],

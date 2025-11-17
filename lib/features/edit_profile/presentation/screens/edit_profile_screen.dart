@@ -32,7 +32,7 @@ class EditProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
+                      text: AppStrings.email.trans,
                       child: CustomTextFormField(
                         controller: emailController,
                         hintText: context.read<ProfileCubit>().model?.email.validate,
@@ -41,7 +41,7 @@ class EditProfileScreen extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumAr,
+                      text: AppStrings.phoneNum.trans,
                       child:CustomTextFormField(
                         hintText: context.read<ProfileCubit>().model?.phone.validate,
                         controller: phoneController,
@@ -51,7 +51,7 @@ class EditProfileScreen extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.fullNameAr,
+                      text: AppStrings.fullName.trans,
                       child:CustomTextFormField(
                         hintText: context.read<ProfileCubit>().model?.name.validate,
                         prefixIcon: CustomSVGImage(asset: AppAssets.profile, fit: BoxFit.none),
@@ -60,7 +60,7 @@ class EditProfileScreen extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.companyNameAr,
+                      text: AppStrings.companyName.trans,
                       child:CustomTextFormField(
                         controller: companyNameController,
                         hintText: context.read<ProfileCubit>().model?.name.validate,

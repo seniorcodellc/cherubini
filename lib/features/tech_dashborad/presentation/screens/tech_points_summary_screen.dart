@@ -22,7 +22,7 @@ class TechPointsSummaryScreen extends StatelessWidget {
               Padding(
                 padding: getPadding(horizontal: 16.w),
                 child: Text(
-                  AppStrings.entitlementsAr,
+                  AppStrings.rewards,
                   style: getBoldTextStyle(
                     fontSize: 16,
                     color: AppColors.primaryColor,
@@ -36,7 +36,7 @@ class TechPointsSummaryScreen extends StatelessWidget {
               Padding(
                 padding: getPadding(horizontal: 16.w),
                 child: Text(
-                  AppStrings.pointsLogAr,
+                  AppStrings.pointsLog,
                   style: getBoldTextStyle(
                     fontSize: 16,
                     color: AppColors.primaryColor,

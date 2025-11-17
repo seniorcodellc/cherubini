@@ -25,7 +25,7 @@ class SignUpAsTech extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewTechAr),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewTech.trans),
       child: Padding(
         padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
@@ -39,14 +39,14 @@ class SignUpAsTech extends StatelessWidget {
                   children: [
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.fullNameAr,
+                      text: AppStrings.fullName.trans,
                       child: SharedEnterNameTextField(
                         nameController: nameController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNumAr,
+                      text: AppStrings.phoneNum.trans.trans,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -55,7 +55,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.emailAr,
+                      text: AppStrings.email.trans,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -63,10 +63,9 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.chooseMerchantAr,
+                      text: AppStrings.chooseMerchant.trans,
                       child: ChooseTraderDropDown(
-                        onMerchantSelected: (merchantList)
-                        {
+                        onMerchantSelected: (merchantList) {
                           merchantId = merchantList.id;
                         },
                       ),
@@ -74,14 +73,14 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.merchantCheckAr,
+                      text: AppStrings.merchantCheck.trans,
                       child: TechAnswerVerficationQuestion(
                         checkController: checkController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.passwordAr,
+                      text: AppStrings.password.trans,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -89,7 +88,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButtonAr,
+                      text: AppStrings.createAccountButton.trans,
                       onPressed: () {
                         checkStringError(
                           context,
@@ -116,7 +115,11 @@ class SignUpAsTech extends StatelessWidget {
                           checkController.text,
                           Errors.VERIFICATION_ERROR,
                         );
-                        checkNullError(context, merchantId, Errors.CHOOSE_MERCHANT_ERROR);
+                        checkNullError(
+                          context,
+                          merchantId,
+                          Errors.CHOOSE_MERCHANT_ERROR,
+                        );
 
                         if (dontHaveErrors(context)) {
                           print("start api request");
@@ -139,7 +142,7 @@ class SignUpAsTech extends StatelessWidget {
                     Align(
                       alignment: AlignmentDirectional.center,
                       child: Text(
-                        AppStrings.techInstructionAr,
+                        AppStrings.techInstruction.trans,
                         style: getRegularTextStyle(color: AppColors.grayHint),
                       ),
                     ),

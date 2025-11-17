@@ -17,14 +17,22 @@ class DueItem extends StatelessWidget {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        // width: 343.w,
-        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
           boxShadow: [
-            BoxShadow(color: Colors.black.withValues(alpha: 0.1), spreadRadius: 2.r, blurRadius: 6.r, offset: Offset(0, 2.h)),
-            BoxShadow(color: Colors.black.withValues(alpha: 0.1), spreadRadius: 0.r, blurRadius: 2.r, offset: Offset(0, 1.h)),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              spreadRadius: 2.r,
+              blurRadius: 6.r,
+              offset: Offset(0, 2.h),
+            ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              spreadRadius: 0.r,
+              blurRadius: 2.r,
+              offset: Offset(0, 1.h),
+            ),
           ],
         ),
         child: Padding(
@@ -47,13 +55,22 @@ class DueItem extends StatelessWidget {
                           children: [
                             Text(
                               model.id.toString(),
-                              style: getRegularTextStyle(fontSize: 16.sp, color: AppColors.primaryColor),
+                              style: getRegularTextStyle(
+                                fontSize: 16.sp,
+                                color: AppColors.primaryColor,
+                              ),
                             ),
                             Text(
-                              DateFormat('dd/MM/yyyy').format(DateTime.parse(model.calculatingDate!)).toString(),
-                              style: getRegularTextStyle(fontSize: 16.sp, color: AppColors.grayHint),
+                              DateFormat('dd/MM/yyyy')
+                                  .format(
+                                    DateTime.parse(model.calculatingDate!),
+                                  )
+                                  .toString(),
+                              style: getRegularTextStyle(
+                                fontSize: 16.sp,
+                                color: AppColors.grayHint,
+                              ),
                             ),
-
                           ],
                         ),
                         Spacer(),
@@ -67,7 +84,9 @@ class DueItem extends StatelessWidget {
                     ),
                     16.vs,
                     StatusWidget(
-                      text: model.isCollected.isTrue ? AppStrings.collected : AppStrings.notCollected,
+                      text: model.isCollected.isTrue
+                          ? AppStrings.collected
+                          : AppStrings.notCollected,
                       isActive: model.isCollected.isTrue,
                     ),
                   ],
@@ -91,7 +110,10 @@ class DueItem extends StatelessWidget {
                               pointsNum: model.totalPointsBalance.toString(),
                             ),
                           ),
-                          SizedBox(height: 50, child: VerticalDivider(thickness: 1)),
+                          SizedBox(
+                            height: 50,
+                            child: VerticalDivider(thickness: 1),
+                          ),
                         ],
                       ),
                     ),
@@ -105,7 +127,10 @@ class DueItem extends StatelessWidget {
                               pointsNum: model.totalPointsDue.toString(),
                             ),
                           ),
-                          SizedBox(height: 50, child: VerticalDivider(thickness: 1)),
+                          SizedBox(
+                            height: 50,
+                            child: VerticalDivider(thickness: 1),
+                          ),
                         ],
                       ),
                     ),
@@ -120,7 +145,10 @@ class DueItem extends StatelessWidget {
               ),
               CustomDivider(width: 311, color: AppColors.grayHint, height: 1),
 
-              SharedPointsDetailsColumn(pointsType: AppStrings.pointsValue, pointsNum: model.cashReward.toString()),
+              SharedPointsDetailsColumn(
+                pointsType: AppStrings.pointsValue,
+                pointsNum: model.cashReward.toString(),
+              ),
               16.vs,
             ],
           ),

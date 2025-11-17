@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/models/title_icon_model.dart';
 import '../../../../exports.dart';
+import '../../../languages/presentation/manager/language_cubit.dart';
 import '../../data/static/bottom_nav_bar_static.dart';
 import '../managers/bottom_nav_operation_cubit.dart';
 
@@ -24,13 +25,16 @@ class BottomNavigationWidget extends StatelessWidget {
         width: 375.w,
         decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r)),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.r),
+            topRight: Radius.circular(20.r),
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             BottomNavBarStatic.screens.length,
-            (index) =>Row(
+            (index) => Row(
               children: [
                 BottomNavItem(
                   bottomNavBarModel: BottomNavBarStatic.screens[index],
@@ -39,7 +43,7 @@ class BottomNavigationWidget extends StatelessWidget {
                     context.read<BottomNavOperationCubit>().changIndex(index);
                   },
                 ),
-                index==1?50.hs:SizedBox.shrink(),
+                index == 1 ? 50.hs : SizedBox.shrink(),
               ],
             ),
           ),

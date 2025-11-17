@@ -33,7 +33,7 @@ class AppStrings {
   static const String idNotMatch = "idNotMatch";
   static const String terms = "terms";
   static const String underPreview = "underPreview";
-  static const String notifications = "notifications";
+  // static const String notifications = "notifications";
   static const String sms = "sms";
   static const String calls = "calls";
   static const String dateType = "dateType";
@@ -58,7 +58,7 @@ class AppStrings {
   static const String enterYourPhoneNumber = "enterYourPhoneNumber";
   static const String welcomeToQararSat = "welcomeToQararSat";
   static const String choose = "choose";
-  static const String settings = "settings";
+  // static const String settings = "settings";
   static const String headerForgetPassword = "headerForgetPassword";
   static const String purchaseCalculator = "purchaseCalculator";
   static const String waitingForLogout = "waitingForLogout";
@@ -118,7 +118,7 @@ class AppStrings {
   static const String description = "description";
   static const String images = "images";
   static const String auctions = "auctions";
-  static const String address = "address";
+  // static const String address = "address";
   static const String showOnMap = "showOnMap";
   static const String endIn = "endIn";
   static const String endAfter = "endAfter";
@@ -147,7 +147,7 @@ class AppStrings {
   static const String all = "all";
 
   static const String enterNewPassword = "enterNewPassword";
-  static const String save = "save";
+  // static const String save = "save";
   static const String register = "register";
   static const String loginNow = "loginNow";
   static const String enterEmail = "enterEmail";
@@ -185,147 +185,152 @@ class AppStrings {
   static const String minutesSingle = "minutesSingle";
   static const String seconds = "seconds";
   static const String noEstateAds = 'noEstateAds';
-  static const String appName = "appName";
+  // static const String appName = "appName";
 
   /// **************************** Authentication ************************************
-  static const String loginAr = "تسجيل الدخول";
-  static const String logInWelcomeAr = "مرحباً بك في برنامج نقاط الولاء";
-  static const String emailAr = "البريد الإلكترروني";
-  static const String passwordAr = "كلمة المرور";
-  static const String confirmPasswordAr = "تأكيد كلمة المرور";
-  static const String passwordHintAr = "*************";
-  static const String forgetPasswordAr = "نسيت كلمة المرور؟";
-  static const String haveNoAccountAr = "ليس لديك حساب؟";
-  static const String signUpAsMerchantAr = "تسجيل تاجر";
-  static const String signUpAsTechAr = "تسجيل فني";
-  static const String signUpAsNewTechAr = "تسجيل فني جديد";
-  static const String signUpAsNewMerchantAr = "تسجيل تاجر جديد";
-  static const String fullNameHintAr = "أدخل اسمك بالكامل";
-  static const String companyNameHintAr = "اسم الشركة";
-  static const String companyNameAr = "اسم الشركة";
-  static const String addressAr = "العنوان";
-  static const String addressHintAr = "المدينة , الحي , الشارع";
-  static const String fullNameAr = "الاسم الكامل";
-  static const String phoneNumAr = "رقم الجوال";
-  static const String phoneNumHintAr = "568912345";
-  static const String emailHintAr = "example1@gmail.com";
-  static const String chooseMerchantAr = "اختر التاجر";
-  static const String merchantOneAr = "تاجر رقم 1";
-  static const String merchantTwoAr = "تاجر رقم 2";
-  static const String merchantThreeAr = "تاجر رقم 3";
-  static const String merchantCheckAr = "سؤال التحقق من التاجر";
-  static const String merchantCheckHintAr = "أجب على سؤال  التحقق";
-  static const String createAccountButtonAr = "إنشاء حساب";
-  static const String returnToSignUpButtonAr = "العودة لتسجيل الدخول";
-  static const String waitingForAcceptRegisterTextAr =
-      "في انتظار موافقة المسؤول";
-  static const String techInstructionAr =
-      "سيتم مراجعة طلبك من قبل التاجر قبل الموافقة";
-  static const String merchantInstruction1Ar =
-      "بالتسجيل، أنت توافق على الشروط والأحكام";
-  static const String merchantInstruction2Ar = "وسياسة الخصوصية";
-  static const String waitingStatement1Ar =
-      "تم إرسال طلب التسجيل الخاص بك. سيتم";
-  static const String waitingStatement2Ar = " مراجعته من قبل المسؤول وسيتم";
-  static const String waitingStatement3Ar = " إعلامك عند الموافقة.";
-  static const String governmentAr = "المحافظة ";
-  static const String placeAr = "المنطقة";
-  static const String governmentHintAr = 'أختر المحافظة';
-  static const String placeHintAr = 'أختر المنطقة';
-  static const String acceptMessage1Ar =
-      "سيتم إرسال إشعار عبر البريد الإلكتروني\n والرسائل القصيرة عند الموافقة على";
-  static const String acceptMessage2Ar = " حسابك";
+  static const String login = "login";
+  static const String logInWelcome = "welcome to the Loyalty Points App";
+  static const String email = "email";
+  static const String password = "password";
+  static const String confirmPassword = "confirm Password";
+  static const String forgetPassword = "forgot Password?";
+  static const String haveNoAccount = "don't have an account?";
+  static const String signUpAsMerchant = "register as Merchant";
+  static const String signUpAsTech = "register as Technician";
+  static const String signUpAsNewTech = "register New Technician";
+  static const String signUpAsNewMerchant = "register New Merchant";
+  static const String fullNameHint = "enter your full name";
+  static const String companyNameHint = "company Name";
+  static const String companyName = "company Name";
+  static const String addressHint = "city, District, Street";
+  static const String phoneNum = "mobile Number";
+  static const String chooseMerchant = "choose Merchant";
+  static const String merchantCheck = "merchant Verification Question";
+  static const String merchantCheckHint = "answer the verification question";
+  static const String createAccountButton = "create Account";
+  static const String returnToSignUpButton = "back to Login";
+  static const String waitingForAcceptRegisterText =
+      "waiting for Admin Approval";
+  static const String techInstruction =
+      "your request will be reviewed by the merchant before approval";
+  static const String merchantInstruction1 =
+      "by registering, you agree to the Terms and Conditions";
+  static const String merchantInstruction2 = "and Privacy Policy";
+  static const String waitingStatement1 =
+      "your registration request has been sent. It will be";
+  static const String waitingStatement2 =
+      "reviewed by the admin and you will be";
+  static const String waitingStatement3 = "notified upon approval.";
+  static const String government = "governorate";
+  static const String place = "area";
+  static const String governmentHint = "choose Governorate";
+  static const String placeHint = "choose Area";
+  static const String acceptMessage1 =
+      "you will receive a notification via email\n and SMS when your";
+  static const String acceptMessage2 = "account is approved";
+  static const String phoneNumHint = "568912345";
+  static const String emailHint = "example1@gmail.com";
+  static const String fullName = "full Name";
+  static const String passwordHint = "*********";
 
   /// **************************** Splash ************************************
-  ///
-  static const String splashHeaderAr = 'أهلا بك فى تطبيق نقاط الولاء';
-  static const String appNameAr = "برنامج نقاط الولاء";
-  static const String splashBodyAr = "نظام إدارة النقاط الذكي";
-  static const String appDescriptionAr =
-      "تطبيق لإدارة نقاط الولاء بين التاجر والفني، يجمع النقاط عبر مسح الأكواد ويوفر تتبّع للرصيد والسجلات مع إمكانية صرف الاستحقاقات وطباعة شهادات الضمان.";
+  static const String splashHeader = "welcome to the Loyalty Points App";
+  static const String appName = "loyalty Points App";
+  static const String splashBody = "smart Points Management System";
+  static const String appDescription =
+      "an application for managing loyalty points between merchants and technicians. Collect points by scanning codes, track your balance and history, redeem rewards, and print warranty certificates.";
 
   /// **************************** tech dashboard ************************************
-  static const String quickProceduresAr = 'إجراءات سريعة';
-  static const String totalPointsAr = 'إجمالى النقاط ';
-  static const String replacedPointsAr = ' النقاط المستبدلة ';
-  static const String availablePointsAr = ' النقاط المتاحة';
-  static const String lastScanOperationsAr = 'أخر عمليات المسح ';
-  static const String displayAllAr = 'عرض الكل ';
-  static const String totalOperationsAr = 'إجمالي العمليات';
-  static const String entitlementsAr = "الاستحقاقات ";
-  static const String pointsLogAr = "سجل النقاط";
-  static const String techNameAr = "محمد على";
-  static const String techDescriptionAr = "فني معتمد";
-  static const String profileEditAr = 'تعديل الملف الشخصي';
-  static const String profileChangePasswordAr = 'تغيير كلمة المرور';
-  static const String profileWarrantyCertificatesAr = 'شهادات الضمان';
-  static const String notificationsAr = "الإشعارات";
-  static const String logOutAr = "تسجيل الخروج";
-  static const String pointsNotificationsAr = "إشعارات النقاط";
-  static const String deleteNotificationsAr = "إشعارات المسح";
-  static const String systemNotificationsAr = "إشعارات النظام";
-  static const String applyForNextAcheiveAr = "التقدم للمكافأة التالية";
+  static const String quickActions = "quickActions";
+  static const String overallPoints = "overallPoints";
+  static const String replacedPoints = "replacedPoints";
+  static const String availablePoints = "availablePoints";
+  static const String recentScanOperations = "recentScanOperations";
+  static const String viewAll = "viewAll";
+  static const String totalOperations = "total Transactions";
+  static const String rewards = "rewards";
+  static const String pointsLog = "points History";
+  static const String techName = "mohammed Ali";
+  static const String techDescription = "certified Technician";
+  static const String profileEdit = "edit Profile";
+  static const String profileChangePassword = "change Password";
+  static const String notifications = "notifications";
+  static const String logOut = "logOut";
+  static const String pointsNotifications = "pointsNotifications";
+  static const String deleteNotifications = "deleteNotifications";
+  static const String systemNotifications = "systemNotifications";
+  static const String applyForNextAchieve = "apply for Next Reward";
 
   /// **************************** Merchant dashboard ************************************
-  static const String merchantNameAr = "محمد على";
-  static const String merchantCompanyNameAr = "شركة الأجهزة المتقدمة";
-  static const String techManagement = "إدارة الفنيين";
-  static const String pointsSummary = "ملخص النقاط";
-  static const String operationHistory = "سجل العمليات";
-  static const String scanCode = "مسح البار كود";
-  static const String helloText = "مرحباً , أحمد";
+  static const String merchantCompanyName = "merchantCompanyName";
+  static const String techManagement = "techniciansManagement";
+  static const String pointsSummary = "pointsSummary";
+  static const String operationHistory = "operationHistory";
+  static const String scanBarCode = "scanBarCode";
 
   /// **************************** Merchant management ************************************
-  static const String techniciansManagement = "إدارة الفنيين";
-  static const String activeTech = "الفنيون النشطون";
-  static const String waitingTech = "قيد المراجعه";
-  static const String active = "نشط";
-  static const String underReview = "قيد المراجعه";
-  static const String orderDate = "تاريخ الطلب";
-  static const String scanOperation = "عملية مسح";
-  static const String showDetails = "عرض التفاصيل";
-  static const String point = "نقطه";
-  static const String techQuestion = "سؤال التحقق من التاجر";
-  static const String techQuestionAnswer = "إجابة سؤال التحقق من التاجر";
-  static const String accept = "قبول";
-  static const String reject = "رفض";
+  static const String techniciansManagement = "technicians Management";
+  static const String activeTech = "active Technicians";
+  static const String waitingTech = "under Review";
+  static const String active = "active";
+  static const String underReview = "under Review";
+  static const String orderDate = "request Date";
+  static const String scanOperation = "scan Operation";
+  static const String showDetails = "show Details";
+  static const String point = "point";
+  static const String techQuestion = "merchant Verification Question";
+  static const String techQuestionAnswer = "merchant Verification Answer";
+  static const String accept = "accept";
+  static const String reject = "reject";
 
   /// **************************** Points Summary ************************************
-  static const String availablePoints = "النقاط المتاحة";
-  static const String totalAr = "الإجمالي";
-  static const String replaced = "المستبدلة";
-  static const String nextAward = "التقدم للمكافأة التالية";
-  static const String benefits = "الاستحقاقات";
-  static const String totalPoints = "مجموع النقاط";
-  static const String replacedPoints = "نقاط المستبدلة";
-  static const String pointsValue = "قيمة النقاط";
-  static const String pointsHistory = "سجل النقاط";
-  static const String techBenefitsDetails = "تفاصيل استحقاق الفني";
-  static const String paid = "تم الصرف";
-  static const String notPaid = "لم يتم الصرف";
-  static const String saveAr = "حفظ";
-  static const String cancelAr = "إلغاء";
+  static const String total = "total";
+  static const String replaced = "replaced";
+  static const String nextAward = "apply for the Next Reward";
+  static const String pointsValue = "points Value";
+  static const String pointsHistory = "points History";
+  static const String techBenefitsDetails = "technician Reward Details";
+  static const String paid = "paid";
+  static const String totalPoints = "totalPoints";
+  static const String notPaid = "not Paid";
+  static const String save = "save";
+  static const String cancel = "cancel";
 
   /// **************************** Operations History ************************************
-  static const String operationsHistoryAr = 'سجل العمليات';
-  static const String products = 'المنتجات';
-  static const String product = 'منتج';
-  static const String publishWarranty = 'اصدار شهادة ضمان';
+  static const String operationsHistory = "operations History";
+  static const String products = "products";
+  static const String product = "product";
+  static const String publishWarranty = "issue Warranty Certificate";
 
   /// **************************** settings ************************************
-  static const String settingsAr = 'الإعدادت';
-  static const String editProfile = 'تعديل الملف الشخصي';
-  static const String changePasswordAr = 'تغيير كلمة المرور';
-  static const String warrantyCertificates = 'شهادات الضمان';
+  static const String settings = "settings";
+  static const String editProfile = "editProfile";
+  static const String changePassword = "changePassword";
+  static const String warrantyCertificates = "warrantyCertificates";
 
   /// **************************** scan ************************************
-  static const String startScan = 'ابدا المسح';
-  static const String scanOtherCode = 'مسح باركود آخر';
-  static const String serialNumber = 'الرقم التسلسلي';
-  static const String productName = 'اسم المنتج';
-  static const String earnedPoints = 'النقاط المكتسبة';
+  static const String startScan = "start Scanning";
+  static const String scanOtherCode = "scan Another Barcode";
+  static const String serialNumber = "serial Number";
+  static const String productName = "product Name";
+  static const String earnedPoints = "earned Points";
   static const String unavailableMessage =
-      'هذا المنتج غير مسجل في النظام. تم إرسال تنبيه للمسؤول مع بيانات الفني والتاجر.';
+      "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
+
+  /// **************************** bottom nav bar tabs ************************************
+  static const String home = "home";
+  static const String points = "points";
+  static const String logs = "logs";
+  static const String operationsLogs = "operations Log";
+
+  ///************************************************************
+  static const String suspended = "suspended";
+  static const String suspendTechnician = "deactivate Technician";
+  static const String reactiveTechnician = "reactivate Technician";
+  static const String collected = "collected";
+  static const String notCollected = "not Collected";
+  static const String dueDetails = "due Details";
+  static const String payDues = "pay Dues";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
@@ -339,12 +344,6 @@ class AppStrings {
   static const String publishWarrantyMessage =
       'سيتم إصدار شهادة ضمان لجميع المنتجات\n المدرجة بتاريخ اليوم ومدة ضمان سنة واحدة';
   static const String readDate = 'تاريخ القراءه';
-
-  /// **************************** bottom nav bar tabs ************************************
-  static const String homeAr = "الرئيسية";
-  static const String pointsAr = "النقاط";
-  static const String logsAr = "السجلات";
-  static const String operationsLogsAr = 'سجل العمليات';
 
   /// **************************** error handler ************************************
   static const String badRequestError = "badRequestError";
@@ -411,7 +410,7 @@ class AppStrings {
   static const String employmentState = 'employmentState';
   static const String dateOfBirth = 'dateOfBirth';
   static const String liveChat = 'liveChat';
-  static const String home = 'home';
+  // static const String home = 'home';
   static const String myProfile = 'myProfile';
   static const String wallet = 'wallet';
   static const String loans = 'loans';
@@ -442,16 +441,16 @@ class AppStrings {
   static const String enterThePhoneNumber = 'enterThePhoneNumber';
   static const String letsCreateAccount = 'letsCreateAccount';
   static const String lastName = 'lastName';
-  static const String confirmPassword = 'confirmPassword';
+  // static const String confirmPassword = 'confirmPassword';
   static const String useRegex = 'useRegex';
   static const String bothPasswordMustMatch = 'bothPasswordMustMatch';
-  static const String password = 'password';
+  // static const String password = 'password';
   static const String rememberMe = 'rememberMe';
   static const String applyForALoan = 'applyForALoan';
   static const String loanRepayment = 'loanRepayment';
   static const String mazadatFuel = 'mazadatFuel';
   static const String manageCards = 'manageCards';
-  static const String forgetPassword = 'forgetPassword';
+  // static const String forgetPassword = 'forgetPassword';
   static const String orLoginWith = 'orLoginWith';
   static const String doNotHaveAnAccount = 'doNotHaveAnAccount';
   static const String alreadyHaveAnAccount = 'alreadyHaveAnAccount';
@@ -488,14 +487,13 @@ class AppStrings {
   static const String chatSupport = "chatSupport";
   static const String loansPolicy = "loansPolicy";
   static const String faqs = "faqs";
-  static const String logout = "logout";
   static const String logoutFrommazadat = "logoutFrommazadat";
   static const String logoutFrommazadatWarning = "logoutFrommazadatWarning";
-  static const String cancel = "cancel";
+  // static const String cancel = "cancel";
 
   /// **************************** Account Info screens ********************************************
   static const String saveButtonText = "saveButtonText";
-  static const String companyName = "companyName";
+  // static const String companyName = "companyName";
   static const String workplace = "workplace";
   static const String fullNameLabel = "fullNameLabel";
   static const String lastNameLabel = "lastNameLabel";
@@ -543,7 +541,7 @@ class AppStrings {
   static const String language = "language";
   static const String closeYourAccount = "closeYourAccount";
   static const String changePin = "changePin";
-  static const String changePassword = "changePassword";
+  // static const String changePassword = "changePassword";
   static const String fingerprint = "fingerprint";
   static const String faceId = "faceId";
   static const String privacy = "privacy";
@@ -815,7 +813,7 @@ class AppStrings {
   static const String favorites = 'favorites';
   static const String transactions = 'transactions';
   static const String myData = 'myData';
-  static const String fullName = 'fullName';
+  // static const String fullName = 'fullName';
   static const String phone = 'phone';
   static const String idImage = 'idImage';
   static const String ibanNumber = 'ibanNumber';
@@ -951,7 +949,7 @@ class AppStrings {
   static const String insurance = "insurance";
   static const String payOnArrival = "payOnArrival";
   static const String visaCard = "visaCard";
-  static const String total = "total";
+  // static const String total = "total";
 
   static const String completeReservation = "completeReservation";
 
@@ -971,7 +969,7 @@ class AppStrings {
   static const String cvvCode = "cvvCode";
   static const String saveVisaCard = "saveVisaCard";
 
-  static const String delete = "delete";
+  // static const String delete = "delete";
   static const String addCreditCard = "addCreditCard";
 
   static const String enterCardDetails = "enterCardDetails";
@@ -988,17 +986,9 @@ class AppStrings {
   static const String wife = "wife";
   static const String son = "son";
 
-  static const String governmentError="governmentError";
+  static const String governmentError = "governmentError";
 
   static const String pleaseWaitUntilApproved = "pleaseWaitUntilApproved";
 
-  static const String loggedInSuccessfully="loggedInSuccessfully";
-  static const String suspended="غير النشطين";
-  static const String suspendTechnician="ايقاف تنشيط الفنى";
-  static const String reactiveTechnician="اعادة تنشيط الفنى";
-  static const String collected = "تم التحصيل";
-  static const String notCollected = "لم يتم التحصيل";
-  static const String dueDetails = "تفاصيل الأستحقاق";
-  static const String payDues = "دفع الاستحقاقات";
-
+  static const String loggedInSuccessfully = "loggedInSuccessfully";
 }

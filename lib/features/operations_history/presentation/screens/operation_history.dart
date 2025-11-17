@@ -30,16 +30,20 @@ class OperationsHistoryScreen extends StatelessWidget {
       children: [
         BlocBuilder<HistoryCubit, CubitStates>(
           builder: (context, state) => SharedOperationsLogCardColumn(
-            title: AppStrings.totalOperationsAr,
-            subTitle: (state is LoadedState<List<HistoryModel>>) ? state.data.length.toString() : null,
+            title: AppStrings.totalOperations,
+            subTitle: (state is LoadedState<List<HistoryModel>>)
+                ? state.data.length.toString()
+                : null,
           ),
         ),
         CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
 
         GenericDataView<ProfileCubit, ProfileModel>.fromState(
           buildLoadedWidgetWithState: (state) => SharedOperationsLogCardColumn(
-            title: AppStrings.totalPointsAr,
-            subTitle: (state is LoadedState<ProfileModel>) ? state.data.totalPoints.toString() : null,
+            title: AppStrings.overallPoints,
+            subTitle: (state is LoadedState<ProfileModel>)
+                ? state.data.totalPoints.toString()
+                : null,
           ),
         ),
       ],
@@ -51,7 +55,7 @@ class OperationsHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       title: AppStrings.operationHistory,
-showNavBar: true,
+      showNavBar: true,
       child: Padding(
         padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
@@ -69,7 +73,8 @@ showNavBar: true,
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 shimmerWidget: (index) => OperationDetailsItemShimmer(),
-                itemWidget: (index, items, item) => OperationDetailsItem(model: item),
+                itemWidget: (index, items, item) =>
+                    OperationDetailsItem(model: item),
               ),
             ),
           ],

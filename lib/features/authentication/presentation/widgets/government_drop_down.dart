@@ -18,16 +18,18 @@ class GovernmentDropdown extends StatelessWidget {
           builder: (context, state) {
             return ExpansionNetworkDropDown<GovernorateModel>(
               items: context.read<GovernoratesCubit>().list,
-              title: AppStrings.governmentHintAr,
+              title: AppStrings.governmentHint,
               cubitStates: state,
-            onSelected: ( item) =>onGovernmentSelected.call(item),
+              onSelected: (item) => onGovernmentSelected.call(item),
             );
           },
         ),
         BlocBuilder<ErrorCubit, CubitStates>(
           builder: (context, state) {
             return ErrorText(
-              showError: context.read<ErrorCubit>().errors.contains(Errors.GOVERNORATE_ERROR),
+              showError: context.read<ErrorCubit>().errors.contains(
+                Errors.GOVERNORATE_ERROR,
+              ),
               text: getError[Errors.GOVERNORATE_ERROR],
             );
           },

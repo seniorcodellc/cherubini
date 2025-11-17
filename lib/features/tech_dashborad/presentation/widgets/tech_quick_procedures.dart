@@ -11,14 +11,14 @@ class TechQuickProcedures extends StatelessWidget {
       children: [
         SharedQuickProceduresItem(
           asset: AppAssets.scan,
-          text: AppStrings.scanCode,
+          text: AppStrings.scanBarCode,
           onTap: () {
             Routes.scanRoute.moveTo();
           },
         ),
         SharedQuickProceduresItem(
           asset: AppAssets.loyaltyFilled,
-          text: AppStrings.pointsAr,
+          text: AppStrings.points,
           onTap: () {
             // CustomBottomNavBar.navBarKey.currentState?.selectedIndex == 2;
             Routes.techPointsSummary.moveTo();

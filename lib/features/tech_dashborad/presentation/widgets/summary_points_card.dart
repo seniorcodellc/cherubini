@@ -10,8 +10,6 @@ class SummaryPointsCard extends StatelessWidget {
     return Padding(
       padding: getPadding(horizontal: 16.w, top: 32.h),
       child: Container(
-        //width: 343.w,
-        //height: 261.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           gradient: LinearGradient(
@@ -24,7 +22,7 @@ class SummaryPointsCard extends StatelessWidget {
           children: [
             20.vs,
             Text(
-              AppStrings.availablePoints,
+              AppStrings.availablePoints.trans,
               style: getRegularTextStyle(color: AppColors.white, fontSize: 16),
             ),
             10.vs,
@@ -45,7 +43,6 @@ class SummaryPointsCard extends StatelessWidget {
               ),
             ),
             23.vs,
-
           ],
         ),
       ),
