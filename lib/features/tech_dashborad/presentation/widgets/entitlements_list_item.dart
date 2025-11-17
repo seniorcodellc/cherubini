@@ -15,8 +15,8 @@ class EntitlementsListItem extends StatelessWidget {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        width: 343.w,
-        height: 178.h,
+        // width: 343.w,
+        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
@@ -69,13 +69,13 @@ class EntitlementsListItem extends StatelessWidget {
                     Spacer(),
                     model.isDone == true
                         ? SharedDoneOrNotContainer(
-                            text: "تم الصرف",
+                            text:AppStrings.paid,
                             textColor: AppColors.green,
                             bgColor: AppColors.mutedGreen,
                             borderColor: AppColors.green,
                           )
                         : SharedDoneOrNotContainer(
-                            text: "لم يتم الصرف",
+                            text: AppStrings.notPaid,
                             textColor: AppColors.orange2,
                             bgColor: AppColors.mutedOrange,
                             borderColor: AppColors.orange2,
@@ -89,17 +89,17 @@ class EntitlementsListItem extends StatelessWidget {
                 child: Row(
                   children: [
                     SharedPointsDetailsColumn(
-                      pointsType: 'مجموع النقاط',
+                      pointsType: AppStrings.totalPoints,
                       pointsNum: model.totalPoints,
                     ),
                     SharedCustomDividerVertical(),
                     SharedPointsDetailsColumn(
-                      pointsType: 'نقاط  المستبدلة',
+                      pointsType: AppStrings.replacedPoints,
                       pointsNum: model.replacedPoints,
                     ),
                     SharedCustomDividerVertical(),
                     SharedPointsDetailsColumn(
-                      pointsType: 'قيمة النقاط',
+                      pointsType: AppStrings.pointsValue,
                       pointsNum: model.pointsValue,
                     ),
                   ],

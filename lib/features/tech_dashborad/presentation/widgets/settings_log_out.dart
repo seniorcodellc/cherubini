@@ -1,3 +1,5 @@
+import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
+
 import '../../../../exports.dart';
 
 class SettingsLogOut extends StatelessWidget {
@@ -5,7 +7,10 @@ class SettingsLogOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(onTap: () {
+      context.read<AuthCubit>().logout();
+    },
+    child: Container(
       width: 343.w,
       height: 62.h,
       decoration: BoxDecoration(
@@ -30,15 +35,16 @@ class SettingsLogOut extends StatelessWidget {
         padding: getPadding(horizontal: 16.w),
         child: Row(
           children: [
-            CustomSVGImage(asset: AppAssets.logOut),
+            CustomSVGImage(asset: AppAssets.logOut,matchTextDirection: false,),
             8.hs,
             Text(
-              "تسجيل الخروج",
+              AppStrings.logOutAr,
               style: getRegularTextStyle(fontSize: 16, color: AppColors.red),
             ),
           ],
         ),
       ),
+    ),
     );
   }
 }

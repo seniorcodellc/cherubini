@@ -22,19 +22,19 @@ class ResponseModel extends BaseResponse {
     this.data,
   });
 
-  factory ResponseModel.fromJson(Map<String, dynamic> json) => ResponseModel(
-      status: json["Success"], message: json["Message"], data: (json["Data"] is Map) ? json["data"] : true);
+  factory ResponseModel.fromJson(dynamic json) => ResponseModel(
+      status: json["success"], message: json["message"] ?? json["title"],
+      data: (json["data"] is Map) ? json["data"] : true);
 
 }
 abstract class ObjectResponseModel<T> extends ResponseModel {
-  dynamic data;
   Function(Map<String, dynamic> data) get getFromJsonFunction;
 
 
   ObjectResponseModel.fromJson(dynamic json) {
-    status = json['Success'];
-    message =  json['Message'];
-    data = json['Data']!=null? getFromJsonFunction(json['Data']):null;
+    status = json['success'];
+    message =  json['message'];
+    data = json['data']!=null? getFromJsonFunction(json['data']):null;
   }
 
 }

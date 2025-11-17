@@ -11,7 +11,7 @@ class CreateWarrantyContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: Colors.black.withValues(alpha: 0.1),
             spreadRadius: 2.r,
             blurRadius: 6.r,
             offset: Offset(0, 2.h),
@@ -34,16 +34,16 @@ class CreateWarrantyContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'إنشاء شهادة ضمان',
+                    AppStrings.createWarranty,
                     style: getRegularTextStyle(
                       fontSize: 14.sp,
                       color: AppColors.primaryColor,
                     ),
-                    overflow: TextOverflow.ellipsis, // Prevent overflow in title
+                    overflow: TextOverflow.ellipsis,
                   ),
                   4.vs,
                   Text(
-                    'أضف المنتجات التي تريد إصدار شهادة ضمان لها',
+                    AppStrings.addProductWarrantyMessage,
                     style: getRegularTextStyle(
                       fontSize: 13.sp,
                       color: AppColors.subTitleColor,

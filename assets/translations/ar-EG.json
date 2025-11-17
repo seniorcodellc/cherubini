@@ -417,8 +417,10 @@
   "father": "الأب",
   "mother": "الأم",
   "wife": "الزوجة",
-  "son": "الابن"
-
-
+  "son": "الابن",
+  "nameError": "الاسم غير صالح",
+"governmentError": "هذا الحقل ضرورى",
+  "pleaseWaitUntilApproved": "من فضلك انتظر حتى يتم الموافقه",
+  "loggedInSuccessfully": "تم تسجيل الدخول بنجاح"
 
 }

@@ -8,13 +8,13 @@ class TotalAndReplacedPointsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 58.h,
+      height: 65.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SharedTextColumn(text: "الإجمالي", num: "12,450"),
+          SharedTextColumn(text: AppStrings.totalAr, num: "12,450"),
           VerticalDivider(color: AppColors.white, thickness: 1.w, width: 50.w),
-          SharedTextColumn(text: "المستبدلة", num: "3,200"),
+          SharedTextColumn(text: AppStrings.replaced, num: "3,200"),
         ],
       ),
     );

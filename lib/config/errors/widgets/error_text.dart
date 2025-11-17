@@ -15,7 +15,7 @@ class ErrorText extends StatelessWidget {
         transitionBuilder: (child, animation) => FadeTransition(opacity: animation, child: child),
         child: showError.isTrueGetWidgetOrAnotherWidget(
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+            padding:getPadding(start: 10.w,top: 5.h),
             child: Text(
               text!,
               textAlign: TextAlign.start,
