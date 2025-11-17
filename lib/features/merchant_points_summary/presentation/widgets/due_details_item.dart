@@ -30,8 +30,6 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        // width: 343.w,
-        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
@@ -80,8 +78,8 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
                         5.vs,
                         StatusWidget(
                           text: widget.model.isCollected.isTrue
-                              ? AppStrings.collected
-                              : AppStrings.notCollected,
+                              ? AppStrings.collected.trans
+                              : AppStrings.notCollected.trans,
                           isActive: widget.model.isCollected.orFalse,
                         ),
                       ],
@@ -103,7 +101,7 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
                         children: [
                           Expanded(
                             child: SharedPointsDetailsColumn(
-                              pointsType: AppStrings.totalPoints,
+                              pointsType: AppStrings.totalPoints.trans,
                               pointsNum: widget.model.totalPointsBalance
                                   .toString(),
                             ),
@@ -121,7 +119,7 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
                         children: [
                           Expanded(
                             child: SharedPointsDetailsColumn(
-                              pointsType: AppStrings.replacedPoints,
+                              pointsType: AppStrings.replacedPoints.trans,
                               pointsNum: widget.model.totalPointsDue.toString(),
                             ),
                           ),
@@ -134,7 +132,7 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
                     ),
                     Expanded(
                       child: SharedPointsDetailsColumn(
-                        pointsType: AppStrings.pointsDeducted,
+                        pointsType: AppStrings.pointsDeducted.trans,
                         pointsNum: widget.model.totalPointsDeducted.toString(),
                       ),
                     ),
@@ -144,7 +142,7 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
               HLine(),
 
               SharedPointsDetailsColumn(
-                pointsType: AppStrings.pointsValue,
+                pointsType: AppStrings.pointsValue.trans,
                 pointsNum: widget.model.cashReward.toString(),
               ),
               16.vs,

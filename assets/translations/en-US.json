@@ -456,7 +456,7 @@
   "availablePoints": "Available Points",
   "recentScanOperations": "Recent Scan Operations",
   "viewAll": "viewAll",
-  "totalOperations": "total Transactions",
+  "totalOperations": "Total Operations",
   "rewards": "rewards",
   "pointsLog": "points History",
   "techName": "mohammed Ali",
@@ -465,7 +465,7 @@
   "profileChangePassword": "change Password",
   "profileWarrantyCertificates": "warranty Certificates",
   "notifications": "notifications",
-  "overAllPoints": "overAllPoints",
+  "overAllPoints": "overAl lPoints",
   "pointsNotifications": "points Notifications",
   "deleteNotifications": "delete Notifications",
   "systemNotifications": "system Notifications",
@@ -499,9 +499,9 @@
   "cancel": "cancel",
   "sumPoints": "sum Points",
   "operationsHistory": "operations History",
-  "products": "products",
-  "product": "product",
-  "publishWarranty": "issue Warranty Certificate",
+  "products": "Products",
+  "product": "Product",
+  "publishWarranty": "Issue Warranty Certificate",
   "settings": "settings",
   "editProfile": "edit Profile",
   "changePassword": "change Password",
@@ -522,7 +522,6 @@
   "collected": "collected",
   "notCollected": "not Collected",
   "dueDetails": "due Details",
-  "payDues": "pay Dues"
-
-
+  "payDues": "pay Dues",
+  "displayDetails": "Display Details"
 }

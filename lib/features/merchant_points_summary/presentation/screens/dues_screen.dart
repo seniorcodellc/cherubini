@@ -18,7 +18,7 @@ class DuesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       showNavBar: true,
-      title: AppStrings.pointsSummary,
+      title: AppStrings.pointsSummary.trans,
       child: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
@@ -28,9 +28,9 @@ class DuesScreen extends StatelessWidget {
               children: [
                 GenericDataView<ProfileCubit, ProfileModel>.fromState(
                   buildLoadedWidgetWithState: (state) {
-                    if(state is LoadedState<ProfileModel>) {
-                      return SummaryPointsCard(profile: state.data,);
-                    }else{
+                    if (state is LoadedState<ProfileModel>) {
+                      return SummaryPointsCard(profile: state.data);
+                    } else {
                       return SummaryPointsCard();
                     }
                   },

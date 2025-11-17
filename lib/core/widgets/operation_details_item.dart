@@ -19,8 +19,18 @@ class OperationDetailsItem extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), spreadRadius: 2.r, blurRadius: 6.r, offset: Offset(0, 2.h)),
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), spreadRadius: 0.r, blurRadius: 2.r, offset: Offset(0, 1.h)),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            spreadRadius: 2.r,
+            blurRadius: 6.r,
+            offset: Offset(0, 2.h),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            spreadRadius: 0.r,
+            blurRadius: 2.r,
+            offset: Offset(0, 1.h),
+          ),
         ],
       ),
       child: Padding(
@@ -35,9 +45,9 @@ class OperationDetailsItem extends StatelessWidget {
             ..._buildDetailsList,
             16.vs,
             CustomOutLinedButton(
-              text: AppStrings.publishWarranty,
+              text: AppStrings.publishWarranty.trans,
               onPressed: () {
-                Routes.techWarrantyRoute.moveTo();
+                // Routes.techWarrantyRoute.moveTo();
               },
             ),
             /*
@@ -55,8 +65,8 @@ class OperationDetailsItem extends StatelessWidget {
       ),
     );
   }
-  get _buildDetailsList=>List.generate(model.detail!.length,
-          (index) {
+
+  get _buildDetailsList => List.generate(model.detail!.length, (index) {
     return Padding(
       padding: getPadding(vertical: 8.h),
       child: Container(
@@ -99,7 +109,13 @@ class OperationDetailsItem extends StatelessWidget {
     children: [
       CustomSVGImage(asset: AppAssets.prods),
       16.hs,
-      Text("المنتجات (${model.detail!.length})", style: getRegularTextStyle(fontSize: 16, color: AppColors.subTitleColor)),
+      Text(
+        "${AppStrings.products.trans} (${model.detail!.length})",
+        style: getRegularTextStyle(
+          fontSize: 16,
+          color: AppColors.subTitleColor,
+        ),
+      ),
     ],
   );
   get _buildHeaderInfo => Row(
@@ -115,7 +131,11 @@ class OperationDetailsItem extends StatelessWidget {
             children: [
               CustomSVGImage(asset: AppAssets.grayCalendar),
               8.hs,
-              Text(DateFormat('dd/MM/yyyy').format(DateTime.parse(model.date!)).toString()),
+              Text(
+                DateFormat(
+                  'dd/MM/yyyy',
+                ).format(DateTime.parse(model.date!)).toString(),
+              ),
             ],
           ),
         ],
@@ -124,9 +144,15 @@ class OperationDetailsItem extends StatelessWidget {
       Container(
         width: 92.w,
         height: 27.h,
-        decoration: BoxDecoration(color: AppColors.accentColor, borderRadius: BorderRadius.circular(20.r)),
+        decoration: BoxDecoration(
+          color: AppColors.accentColor,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
         child: Center(
-          child: Text("${model.points} + نقطة", style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
+          child: Text(
+            "${model.points} + ${AppStrings.point.trans}",
+            style: getRegularTextStyle(fontSize: 16, color: AppColors.white),
+          ),
         ),
       ),
     ],

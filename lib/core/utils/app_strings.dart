@@ -246,7 +246,7 @@ class AppStrings {
   static const String availablePoints = "availablePoints";
   static const String recentScanOperations = "recentScanOperations";
   static const String viewAll = "viewAll";
-  static const String totalOperations = "total Transactions";
+  static const String totalOperations = "totalOperations";
   static const String rewards = "rewards";
   static const String pointsLog = "points History";
   static const String techName = "mohammed Ali";
@@ -286,7 +286,7 @@ class AppStrings {
   static const String total = "total";
   static const String replaced = "replaced";
   static const String nextAward = "apply for the Next Reward";
-  static const String pointsValue = "points Value";
+  static const String pointsValue = "pointsValue";
   static const String pointsHistory = "points History";
   static const String techBenefitsDetails = "technician Reward Details";
   static const String paid = "paid";
@@ -299,7 +299,7 @@ class AppStrings {
   static const String operationsHistory = "operations History";
   static const String products = "products";
   static const String product = "product";
-  static const String publishWarranty = "issue Warranty Certificate";
+  static const String publishWarranty = "publishWarranty";
 
   /// **************************** settings ************************************
   static const String settings = "settings";
@@ -327,9 +327,10 @@ class AppStrings {
   static const String suspendTechnician = "deactivate Technician";
   static const String reactiveTechnician = "reactivate Technician";
   static const String collected = "collected";
-  static const String notCollected = "not Collected";
-  static const String dueDetails = "due Details";
+  static const String notCollected = "notCollected";
+  static const String dueDetails = "dueDetails";
   static const String payDues = "pay Dues";
+  static const String displayDetails = "displayDetails";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';

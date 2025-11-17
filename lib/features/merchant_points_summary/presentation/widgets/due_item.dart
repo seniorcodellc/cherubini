@@ -75,7 +75,7 @@ class DueItem extends StatelessWidget {
                         ),
                         Spacer(),
                         SharedDoneOrNotContainer(
-                          text: 'عرض التفاصيل',
+                          text: AppStrings.displayDetails.trans,
                           textColor: AppColors.primaryColor,
                           bgColor: AppColors.mutedBlue,
                           borderColor: AppColors.primaryColor,
@@ -85,8 +85,8 @@ class DueItem extends StatelessWidget {
                     16.vs,
                     StatusWidget(
                       text: model.isCollected.isTrue
-                          ? AppStrings.collected
-                          : AppStrings.notCollected,
+                          ? AppStrings.collected.trans
+                          : AppStrings.notCollected.trans,
                       isActive: model.isCollected.isTrue,
                     ),
                   ],
@@ -106,7 +106,7 @@ class DueItem extends StatelessWidget {
                         children: [
                           Expanded(
                             child: SharedPointsDetailsColumn(
-                              pointsType: AppStrings.totalPoints,
+                              pointsType: AppStrings.totalPoints.trans,
                               pointsNum: model.totalPointsBalance.toString(),
                             ),
                           ),
@@ -123,7 +123,7 @@ class DueItem extends StatelessWidget {
                         children: [
                           Expanded(
                             child: SharedPointsDetailsColumn(
-                              pointsType: AppStrings.replacedPoints,
+                              pointsType: AppStrings.replacedPoints.trans,
                               pointsNum: model.totalPointsDue.toString(),
                             ),
                           ),
@@ -136,7 +136,7 @@ class DueItem extends StatelessWidget {
                     ),
                     Expanded(
                       child: SharedPointsDetailsColumn(
-                        pointsType: AppStrings.pointsDeducted,
+                        pointsType: AppStrings.pointsDeducted.trans,
                         pointsNum: model.totalPointsDeducted.toString(),
                       ),
                     ),
@@ -146,7 +146,7 @@ class DueItem extends StatelessWidget {
               CustomDivider(width: 311, color: AppColors.grayHint, height: 1),
 
               SharedPointsDetailsColumn(
-                pointsType: AppStrings.pointsValue,
+                pointsType: AppStrings.pointsValue.trans,
                 pointsNum: model.cashReward.toString(),
               ),
               16.vs,
