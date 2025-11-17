@@ -6,6 +6,7 @@ import "core/profile/domain/use_cases/profile_use_cases.dart";
 import "core/profile/presentation/manager/profile_cubit.dart";
 import "exports.dart";
 import "features/authentication/presentation/managers/auth_cubit.dart";
+import "features/languages/presentation/manager/language_cubit.dart";
 
 class BlocProviders {
   static final List<BlocProvider> providers = [
@@ -21,9 +22,9 @@ class BlocProviders {
         create: (context) => ServiceLocator().getIt<ProfileCubit>()..getData()),
   BlocProvider<BottomNavOperationCubit>(
         create: (context) => ServiceLocator().getIt<BottomNavOperationCubit>()),
-    /*    BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),
+        BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),
 
- */
+
     /*   BlocProvider<BottomNavOperationCubit>(
         create: (context) => BottomNavOperationCubit()),*/
     /*

@@ -34,7 +34,7 @@ class OperationDetailsItem extends StatelessWidget {
             16.vs,
             ..._buildDetailsList,
             16.vs,
-            SecondSharedCustomButton(
+            CustomOutLinedButton(
               text: AppStrings.publishWarranty,
               onPressed: () {
                 Routes.techWarrantyRoute.moveTo();

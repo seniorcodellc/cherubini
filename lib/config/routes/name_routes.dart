@@ -7,11 +7,12 @@ class Routes {
   static const String merchantDashboardRoute = "/merchantDashboard";
   static const String settings = "/settings";
   static const String merchantSettings = "/merchantSettings";
-  static const String merchantPointsSummary = "/merchantPointsSummary";
+  static const String duesRoute = "/merchantPointsSummary";
   static const String operationsLog = "/operationsLog";
   static const String loginRoute = "/login";
   static const String registerTechRoute = "/registerTech";
   static const String registerAccept = "/registerAccept";
+  static const String dueDetails = "/dueDetails";
   static const String registerTraderRoute = "/registerTrader";
   static const String techniciansManagementRoute = "/techniciansManagement";
   static const String operationsDetailsRoute = "/OperationDetailsRoute";

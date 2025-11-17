@@ -39,9 +39,7 @@ class SummaryPointsCard extends StatelessWidget {
             11.vs,
             TotalAndReplacedPointsWidget(),
             23.vs,
-            ApplyForNextGiftRow(),
-            16.vs,
-            PointsSummaryCardHDivider(),
+
           ],
         ),
       ),

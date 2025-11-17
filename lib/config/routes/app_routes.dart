@@ -5,7 +5,11 @@ import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
-import 'package:cherubini/features/merchant_points_summary/presentation/screens/merchant_points_summary.dart';
+import 'package:cherubini/features/merchant_points_summary/domain/use_cases/cash_reward_use_cases.dart';
+import 'package:cherubini/features/merchant_points_summary/domain/use_cases/due_pay_use_cases.dart';
+import 'package:cherubini/features/merchant_points_summary/presentation/managers/dues_cubit.dart';
+import 'package:cherubini/features/merchant_points_summary/presentation/screens/due_details_screen.dart';
+import 'package:cherubini/features/merchant_points_summary/presentation/screens/dues_screen.dart';
 import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_tech.dart';
@@ -30,6 +34,7 @@ import '../../features/authentication/domain/usecase/merchant_list_use_cases.dar
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
+import '../../features/merchant_points_summary/presentation/managers/due_pay_cubit.dart';
 import '../../features/operation_details/presentation/screens/operation_details.dart';
 import '../../features/operations_history/presentation/screens/operation_history.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
@@ -49,25 +54,32 @@ class RouteGenerator {
         return buildPageRoute<T>(child: OperationsHistoryScreen(), routeSettings: routeSettings);
 
       case Routes.merchantDashboardRoute:
-        return buildPageRoute<T>(
+        return buildPageRoute<T>(child: MerchantDashboardScreen(), routeSettings: routeSettings);
 
-          child: MerchantDashboardScreen(),
+      case Routes.techniciansManagementRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider(
+              create: (context) =>
+                  TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..filterTechnicians(),
+            ),
+          ],
+          child: TechniciansManagementScreen(),
           routeSettings: routeSettings,
         );
-
-      case Routes.techniciansManagementRoute:
-        return buildPageRoute<T>(
-            providers: [
-              BlocProvider(create: (context) => TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..filterTechnicians(),)
-            ],
-            child: TechniciansManagementScreen(), routeSettings: routeSettings);
       case Routes.operationsDetailsRoute:
         return buildPageRoute<T>(child: OperationsDetailsScreen(), routeSettings: routeSettings);
-      case Routes.merchantPointsSummary:
-        return buildPageRoute<T>(child: MerchantPointsSummary(), routeSettings: routeSettings);
+      case Routes.duesRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider(
+              create: (context) => DuesCubit(cashRewardUseCases: ServiceLocator().getIt<CashRewardUseCases>())..getList(),
+            ),
+          ],
+          child: DuesScreen(),
+          routeSettings: routeSettings,
+        );
         return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
-      case Routes.techniciansManagementRoute:
-        return buildPageRoute<T>(child: TechniciansManagementScreen(), routeSettings: routeSettings);
       case Routes.scanRoute:
         return buildPageRoute<T>(child: ScanScreen(), routeSettings: routeSettings);
       case Routes.successScanRoute:
@@ -83,15 +95,19 @@ class RouteGenerator {
           providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
           child: LoginScreen(),
         );
+      case Routes.dueDetails:
+        return buildPageRoute<T>(
+            providers: [BlocProvider(create: (context) => DuePayCubit(duePayUseCases: ServiceLocator().getIt<DuePayUseCases>()),)],
+            routeSettings: routeSettings, child: DuesDetailsScreen());
       case Routes.registerTechRoute:
         return buildPageRoute<T>(
           child: SignUpAsTech(),
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
             BlocProvider<MerchantListCubit>(
-                create: (context)=>
-                MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),
-            )
+              create: (context) =>
+                  MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),
+            ),
           ],
         );
       case Routes.registerTraderRoute:

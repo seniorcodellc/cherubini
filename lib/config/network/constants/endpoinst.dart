@@ -11,6 +11,9 @@ abstract class EndPoints {
   static const String approved = '${api}approved';
   static const String suspend = '${api}suspend';
   static const String unSuspend = '${api}unSuspend';
+  static const String cashReward = '${api}cashReward';
+  static const String duePay = '${api}cashRewardsDelivery';
+  static const String deleteAccount = '${api}deleteAccount';
 
   static const String registerMerchant = '${api}registerMerchant';
   static const String history = '${api}readingHistory';
@@ -63,50 +66,23 @@ abstract class EndPoints {
   static const String getBankName = '${api}';
   static const String banks = '${api}banks';
   static const String messages = '${api}messages';
-  static const String districts = '${api}districts';
-  static const String getCancelReason = '${api}getCancelReason';
-  static const String estateRequest = '${api}estate/request';
   static const String completeDeal = '${api}estate/ad/complete-deal';
   static const String completeOrderDeal = '${api}estate/request/complete-deal';
   static const String cities = '${api}select/cities/';
   static const String communicationTool = '${api}select/communication-tool';
   static const String termsAndCondition = '${api}terms-and-condisitons';
-  static const String aboutmazadat = '${api}about-us';
-  static const String mazadatValLicense = '${api}val-license';
   static const String areas = '${api}select/areas';
   static const String rooms = '${api}select/rooms';
-  static const String estateType = '${api}select/estate-types';
-  static const String extraDetails = '${api}select/extra-details';
-  static const String canceledEstateAd = '${api}estate/canceled/ad';
-  static const String myOrder = '${api}estate/request';
-  static const String chat = '${api}chats';
-  static const String getUserChat = '${api}chats/user/';
 
   static const String estateRequests = '${api}estate/request';
   static const String canceledEstateOrder = '${api}estate/canceled/requests';
 
   static const String estateMarket = '${api}estate/market';
 
-  ///////////////////////////// setting ////////////////////////////
-
-  static const String deleteAccount = '${api}user';
-  static const String subscriptions = '${api}package';
-  static const String subscriptionsEnroll = '${api}user/subscription-enroll';
-  static const String subscriptionsPay = '${api}user/subscription-pay';
-  static const String myProfile = '${api}setting';
 
   /// ************************   google apis *********************************
-  static const String googleMapsBaseUrl =
-      'https://maps.googleapis.com/maps/api/';
-  static const String autoCompleteApi = 'place/autocomplete/json';
-  static const String addressInfo = 'place/details/json';
-  static const String direction = 'directions/json';
-  static const String citiesEndPoint = 'geocode/json';
-  static const String geocodeApi = 'geocode/json';
-  static const String googleDirectionApi = 'directions/json';
 
   static var adAnnouncementToFavorite = '${api}favourites/add';
-  static var addEstateRequestToFavorite = '$estateRequest/favorite';
 
   static var myRequests = '${api}estate/user/requests';
   static const String myAds = '${api}estate/user/ad';
@@ -120,13 +96,10 @@ abstract class EndPoints {
 
   static var district = '${api}select/districts';
 
-  static var removeAdMedia = "$estateAd/delete/media";
-  static var removeRequestMedia = "$estateRequest/delete/media";
 
   static var estateMarketAll = '$estateMarket/all/home';
 
   static var brokerCompletedDeals = '$api/user/complete/deals/';
-  static var repostOrderRequest = '$estateRequest/repost';
   static var repostEstate = '$estateAd/repost';
 
   static String userAndToken = "DefToken";
@@ -138,9 +111,7 @@ abstract class EndPoints {
   static var allDoctorsByClinic = "${baseUrl}GetDoctorListByClinic";
   static var allDoctorsByClinicAndDate =
       "${baseUrl}GetDoctorListByClinicAndDate";
-  static var allDoctorsSearch = "${baseUrl}DoctorSearch";
 
   static String companies = "GetCompanyList";
 
-  static String insurancePolicy = "GetPolicyLis";
 }

@@ -2,19 +2,22 @@ import 'package:cherubini/exports.dart';
 
 import '../models/tech_settings_model.dart';
 
-class TechSettingsDetailsStatic {
-  static List<TechSettingsModel> techSettingsDetailsList = [
-    TechSettingsModel(
-      title: AppStrings.profileEditAr,
-      asset: AppAssets.profile,
+  List<ItemImageModel> settingList = [
+    ItemImageModel(
+      name: AppStrings.profileEditAr,
+      image: AppAssets.profile,
     ),
-    TechSettingsModel(
-      title: AppStrings.profileChangePasswordAr,
-      asset: AppAssets.lock,
+    ItemImageModel(
+      name: AppStrings.profileChangePasswordAr,
+      image: AppAssets.lock,
     ),
-    TechSettingsModel(
-      title: AppStrings.profileWarrantyCertificatesAr,
-      asset: AppAssets.profile,
-    ),
+    ItemImageModel(
+      name: AppStrings.profileWarrantyCertificatesAr,
+      image: AppAssets.profile,
+    ), ItemImageModel(
+      name: AppStrings.profileWarrantyCertificatesAr,
+      image: AppAssets.profile,
+    ),  ItemImageModel(name: AppStrings.language, image: AppAssets.languages),
+
   ];
-}
+

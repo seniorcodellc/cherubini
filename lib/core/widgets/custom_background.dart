@@ -9,7 +9,6 @@ import 'custom_floating_action_button.dart';
 
 class CustomBackground extends StatelessWidget {
   final Widget child;
-  final bool showPadding;
   final Color? statusBarColor;
   final bool extendBody;
   final IconData? icon;
@@ -23,14 +22,12 @@ class CustomBackground extends StatelessWidget {
   final Color? backgroundColor;
   final Color? appBarBackgroundColor;
   final bool showAppbar;
-  final EdgeInsetsGeometry? padding;
   final Key? scaffoldKey;
   PreferredSizeWidget? appBar;
   Widget? bottomNavRoute;
   final bool showNavBar;
   CustomBackground({
     required this.child,
-    this.showPadding = true,
     this.iconSize,
     this.title,
     this.style,
@@ -44,7 +41,6 @@ class CustomBackground extends StatelessWidget {
     this.showSafeArea = true,
     this.backgroundColor,
     this.appBarBackgroundColor,
-    this.padding,
     this.showNavBar=false,
     this.floatingActionButton,
     this.scaffoldKey,
@@ -66,7 +62,7 @@ class CustomBackground extends StatelessWidget {
       child: Scaffold(
         key: scaffoldKey,
         drawer: drawer,
-        floatingActionButton: showNavBar? CustomFloatingActionButton():null,
+        floatingActionButton: showNavBar? CustomFloatingActionButton():floatingActionButton,
 
         bottomNavigationBar:showNavBar? BottomNavigationWidget():null,
         backgroundColor: backgroundColor,
@@ -74,13 +70,13 @@ class CustomBackground extends StatelessWidget {
         resizeToAvoidBottomInset: true,
         appBar: title.isNotNull
             ? AppBar(
-                backgroundColor: appBarBackgroundColor,
+                backgroundColor: appBarBackgroundColor??AppColors.primaryColor,toolbarHeight: 80.h,
                 title: Text(
                   title!,
-                  style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.primaryColor),
+                  style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.white),
                 ),
                 centerTitle: true,
-                iconTheme: IconThemeData(color: AppColors.primaryColor),
+                iconTheme: IconThemeData(color: AppColors.white),
               )
             : showAppbar
             ? appBar

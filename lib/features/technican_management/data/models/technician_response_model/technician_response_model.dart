@@ -21,11 +21,15 @@ class TechnicianModel {
     id = json['id'];
     name = json['name'];
     points = json['points'];
+    phone = json['phone'];
+    email = json['email'];
     status = json['status'];
   }
   num? id;
   String? name;
   num? points;
+  String? phone;
+  String? email;
   num? status;
   TechnicianModel copyWith({num? id, String? name, num? points, num? status}) =>
       TechnicianModel(

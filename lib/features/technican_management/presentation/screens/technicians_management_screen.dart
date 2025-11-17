@@ -1,5 +1,6 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/technican_management/presentation/widgets/technician_item_shimmer.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../data/models/technician_response_model/technician_response_model.dart';
 import '../manager/technician_cubit.dart';
@@ -41,10 +42,9 @@ class _TechniciansManagementScreenState extends State<TechniciansManagementScree
                 switchInCurve: Curves.easeInOut,
                 child: GenericListView<TechnicianCubit, TechnicianModel>(
                   padding: getPadding(horizontal: 16.w),
-                  itemWidget: (index, items, item) =>
-                      TechItemWidget(item: item, ),
+                  itemWidget: (index, items, item) =>TechItemWidget(item: item, ),
                   separatorWidget: 16.vs,
-                  shimmerWidget: (index) => SizedBox.shrink(),
+                  shimmerWidget: (index) =>  TechShimmer(),
                 )
               ),
               )

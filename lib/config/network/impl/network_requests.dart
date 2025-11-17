@@ -50,7 +50,7 @@ abstract class RequestsImpl extends RequestsAbstract {
     required ResponseModel Function(dynamic data) getFromJsonFunction,
     bool isFormData = false,
     Map<String, dynamic>? queryParams,
-    Map<String, dynamic>? data,
+    dynamic? data,
   }) => remoteExecute(
     request: dioConsumer.postRequest(path: endPoint, body: data, isFormData: isFormData, queryParams: queryParams),
     fromJsonFunction: getFromJsonFunction,

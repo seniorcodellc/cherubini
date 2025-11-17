@@ -30,12 +30,17 @@ class BottomNavigationWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             BottomNavBarStatic.screens.length,
-            (index) => BottomNavItem(
-              bottomNavBarModel: BottomNavBarStatic.screens[index],
-              isSelected: index == state,
-              onTap: () {
-                context.read<BottomNavOperationCubit>().changIndex(index);
-              },
+            (index) =>Row(
+              children: [
+                BottomNavItem(
+                  bottomNavBarModel: BottomNavBarStatic.screens[index],
+                  isSelected: index == state,
+                  onTap: () {
+                    context.read<BottomNavOperationCubit>().changIndex(index);
+                  },
+                ),
+                index==1?50.hs:SizedBox.shrink(),
+              ],
             ),
           ),
           /*   [

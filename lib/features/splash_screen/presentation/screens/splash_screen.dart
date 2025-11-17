@@ -7,6 +7,7 @@ import '../../../../exports.dart';
 
 import '../../../authentication/data/model/response_model/login_response_model.dart';
 import '../../../authentication/presentation/managers/auth_cubit.dart';
+import '../../../languages/presentation/manager/language_cubit.dart';
 import '../manager/get_configration_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -35,6 +36,8 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       bool isNew = await getBlocData<OnboardingManagerCubit>().isNewInstalled();
+      bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
+      print("saved language is :$isLanguageSaved");
       if (isNew.isTrue) {
         isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
           context,

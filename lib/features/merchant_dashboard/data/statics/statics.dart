@@ -1,4 +1,5 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../models/points_model.dart';
 import '../models/quick_action_model.dart';
@@ -11,8 +12,10 @@ class DashboardStatics{
     PointsModel(iconPath: AppAssets.availablePoints, title: ' النقاط المتاحة', number: '9,250'),
   ];
   static List<QuickActionModel> actionsList= [
-    QuickActionModel(iconPath: AppAssets.tech, title: 'اداره\nالفنيين', onTap: () { Routes.techniciansManagementRoute.moveTo(); }),
-    QuickActionModel(iconPath: AppAssets.loyalty, title: 'ملخص\nالنقاط', onTap: () { Routes.merchantPointsSummary.moveTo();}),
+    QuickActionModel(iconPath: AppAssets.tech, title: 'اداره\nالفنيين', onTap: () {
+     // getBlocData<  BottomNavOperationCubit>().changIndex(1)
+      Routes.techniciansManagementRoute.moveTo(); }),
+    QuickActionModel(iconPath: AppAssets.loyalty, title: 'ملخص\nالنقاط', onTap: () { Routes.duesRoute.moveTo();}),
     QuickActionModel(iconPath: AppAssets.history, title: 'سجل\nالعمليات', onTap: () { Routes.operationsHistoryRoute.moveTo();  }),
     QuickActionModel(iconPath: AppAssets.scan, title: 'مسح\nالبار كود  ', onTap: () { Routes.scanRoute.moveTo();  },),
 

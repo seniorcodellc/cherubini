@@ -4,7 +4,7 @@ import '../../../../exports.dart';
 
 class SettingsUserDetailsListItem extends StatelessWidget {
   const SettingsUserDetailsListItem({super.key, required this.model});
-  final TechSettingsModel model;
+  final ItemImageModel model;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,14 +19,14 @@ class SettingsUserDetailsListItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: CustomSVGImage(
-              asset: model.asset,
+              asset: model.image!,
               fit: BoxFit.none,
               color: AppColors.primaryColor,
             ),
           ),
           8.hs,
           Text(
-            model.title,
+            model.name.validate.trans,
             style: getRegularTextStyle(
               fontSize: 16,
               color: AppColors.primaryColor,

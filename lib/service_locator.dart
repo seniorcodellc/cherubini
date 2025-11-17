@@ -1,5 +1,7 @@
 import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
+import 'package:cherubini/features/merchant_points_summary/data/repositories/cash_reward_repo_impl.dart';
+import 'package:cherubini/features/merchant_points_summary/domain/repositories/cash_reward_repo.dart';
 import 'package:cherubini/features/technican_management/data/data_sources/technician_remote_data_sources.dart';
 import 'package:cherubini/features/technican_management/domain/repositories/technician_repo.dart';
 import 'package:cherubini/features/technican_management/domain/use_cases/technician_use_case.dart';
@@ -31,6 +33,18 @@ import 'features/authentication/domain/usecase/merchant_list_use_cases.dart';
 import 'features/authentication/presentation/managers/auth_cubit.dart';
 import 'features/authentication/presentation/managers/governorates_cubit.dart';
 import 'features/authentication/presentation/managers/merchant_list_cubit.dart';
+import 'features/languages/data/data_sources/language_local_datasource.dart';
+import 'features/languages/data/repositories/language_repo_impl.dart';
+import 'features/languages/domain/repositories/language_repo.dart';
+import 'features/languages/domain/use_cases/language_usecases.dart';
+import 'features/languages/presentation/manager/language_cubit.dart';
+import 'features/merchant_points_summary/data/data_sources/cash_reward_remote_datasource.dart';
+import 'features/merchant_points_summary/data/data_sources/due_pay_remote_data_source.dart';
+import 'features/merchant_points_summary/data/repositories/due_pay_repo_impl.dart';
+import 'features/merchant_points_summary/domain/repositories/due_pay_repo.dart';
+import 'features/merchant_points_summary/domain/use_cases/cash_reward_use_cases.dart';
+import 'features/merchant_points_summary/domain/use_cases/due_pay_use_cases.dart';
+import 'features/merchant_points_summary/presentation/managers/dues_cubit.dart';
 import 'features/on_boarding/data/data_sources/onboarding_local_data_source.dart';
 import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
@@ -44,8 +58,7 @@ class ServiceLocator {
 
   /// Factory method that reuse same instance automatically
 
-  static ServiceLocator instance =
-      ServiceLocator._internal(); // named constructor
+  static ServiceLocator instance = ServiceLocator._internal(); // named constructor
 
   /// Private constructor
   ServiceLocator._internal();
@@ -63,29 +76,51 @@ class ServiceLocator {
     registerMerchantList;
     registerTechniciansManagement;
     registerBottomNavigation;
+    registerCashReward;
+    registerDuePay;
+    registerLanguage;
   }
+
   get registerAuthDependencies {
     getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
     getIt.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(authLocalDataSource: getIt(), authRemoteDataSource: getIt()));
     getIt.registerLazySingleton<AuthUseCase>(() => AuthUseCase(authRepo: getIt()));
     getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(authUseCase: getIt()));
-  }  get registerBottomNavigation {
-     getIt.registerLazySingleton<BottomNavOperationCubit>(() =>
-        BottomNavOperationCubit());
   }
+  get registerDuePay {
+    getIt.registerLazySingleton<DuePayRemoteDataSource>(() => DuePayRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<DuePayRepo>(() => DuePayRepoImpl(duePayRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<DuePayUseCases>(() => DuePayUseCases(duePayRepo: getIt()));
+  }
+
+  get registerCashReward {
+    // getIt.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl(cache: getIt()));
+    getIt.registerLazySingleton<CashRewardRemoteDatasource>(() => CashRewardRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<CashRewardRepo>(() => CashRewardRepoRepoImpl(cashRewardRemoteDatasource: getIt()));
+    getIt.registerLazySingleton<CashRewardUseCases>(() => CashRewardUseCases(cashRewardRepo: getIt()));
+    getIt.registerLazySingleton<DuesCubit>(() => DuesCubit(cashRewardUseCases: getIt()));
+  }
+
+  get registerBottomNavigation {
+    getIt.registerLazySingleton<BottomNavOperationCubit>(() => BottomNavOperationCubit());
+  }
+
   get registerGovernorates {
     getIt.registerLazySingleton<GovernoratesRemoteDataSource>(() => GovernoratesRemoteDatasourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<GovernoratesRepo>(() => GovernoratesRepoImpl(governoratesRemoteDataSource: getIt()));
     getIt.registerLazySingleton<GovernoratesUseCases>(() => GovernoratesUseCases(governoratesRepo: getIt()));
     getIt.registerLazySingleton<GovernoratesCubit>(() => GovernoratesCubit(governoratesUseCases: getIt()));
   }
-  get registerMerchantList{
+
+  get registerMerchantList {
     getIt.registerLazySingleton<MerchantListRemoteDataSource>(() => MerchantListRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<MerchantListRepo>(() => MerchantListRepoImpl(merchantListRemoteDataSource: getIt()));
     getIt.registerLazySingleton<MerchantListUseCases>(() => MerchantListUseCases(merchantListRepo: getIt()));
     getIt.registerLazySingleton<MerchantListCubit>(() => MerchantListCubit(merchantListUseCases: getIt()));
-  }  get registerTechniciansManagement{
+  }
+
+  get registerTechniciansManagement {
     getIt.registerLazySingleton<TechnicianRemoteDataSource>(() => TechnicianRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<TechnicianRepo>(() => TechnicianRepoImpl(technicianRemoteDataSources: getIt()));
     getIt.registerLazySingleton<TechnicianUseCase>(() => TechnicianUseCase(technicianRepo: getIt()));
@@ -98,13 +133,19 @@ class ServiceLocator {
     getIt.registerLazySingleton<HistoryUseCases>(() => HistoryUseCases(historyRepo: getIt()));
     getIt.registerLazySingleton<HistoryCubit>(() => HistoryCubit(historyUseCases: getIt()));
   }
+
   get registerProfile {
     getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepoImpl(profileRemoteDataSource: getIt()));
     getIt.registerLazySingleton<ProfileUseCases>(() => ProfileUseCases(profileRepo: getIt()));
     getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(profileUseCases: getIt()));
   }
-
+  get registerLanguage {
+    getIt.registerLazySingleton<LanguageLocalDataSource>(() => LanguageImplWithPrefs(sharedPreferences: getIt()));
+    getIt.registerLazySingleton<LanguageRepo>(() => LanguageRepoImpl(languageLocalDataSource: getIt()));
+    getIt.registerLazySingleton<LanguageUseCases>(() => LanguageUseCases(languageRepo: getIt()));
+    getIt.registerLazySingleton<LanguageCubit>(() => LanguageCubit(languageUseCases: getIt()));
+  }
   get registerNetwork {
     getIt.registerLazySingleton<Dio>(() => Dio());
     getIt.registerLazySingleton<DioInterceptor>(() => DioInterceptor());
@@ -119,37 +160,23 @@ class ServiceLocator {
       ),
     );
     getIt.registerLazySingleton<DioConsumer>(
-      () => DioConsumer(
-        client: getIt(),
-        dioInterceptor: getIt(),
-        logInterceptor: getIt(),
-      )..dioInit(),
+      () => DioConsumer(client: getIt(), dioInterceptor: getIt(), logInterceptor: getIt())..dioInit(),
     );
     /*********************************** end of network  ****************************************/
   }
 
   get registerOnboarding {
-    getIt.registerLazySingleton<OnBoardingLocalDataSource>(
-      () => OnBoardingLocalDataSourceImplWithPrefs(cache: getIt()),
-    );
-    getIt.registerLazySingleton<OnBoardingRepo>(
-      () => OnBoardingRepoImpl(onBoardingLocalDataSource: getIt()),
-    );
-    getIt.registerLazySingleton<OnBoardingUsesCases>(
-      () => OnBoardingUsesCases(onBoardingRepo: getIt()),
-    );
-    getIt.registerLazySingleton<OnboardingManagerCubit>(
-      () => OnboardingManagerCubit(onBoardingUsesCases: getIt()),
-    );
+    getIt.registerLazySingleton<OnBoardingLocalDataSource>(() => OnBoardingLocalDataSourceImplWithPrefs(cache: getIt()));
+    getIt.registerLazySingleton<OnBoardingRepo>(() => OnBoardingRepoImpl(onBoardingLocalDataSource: getIt()));
+    getIt.registerLazySingleton<OnBoardingUsesCases>(() => OnBoardingUsesCases(onBoardingRepo: getIt()));
+    getIt.registerLazySingleton<OnboardingManagerCubit>(() => OnboardingManagerCubit(onBoardingUsesCases: getIt()));
   }
 
   get registerPrefs async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => preferences);
-    getIt.registerLazySingleton<CacheAbstract>(
-      () => CacheImpl(sharedPreferences: getIt<SharedPreferences>()),
-    );
+    getIt.registerLazySingleton<CacheAbstract>(() => CacheImpl(sharedPreferences: getIt<SharedPreferences>()));
   }
-  get registerPermission => getIt.registerLazySingleton(() => PermissionManager());
 
+  get registerPermission => getIt.registerLazySingleton(() => PermissionManager());
 }

@@ -13,29 +13,27 @@ class BottomNavItem extends StatelessWidget {
       behavior: HitTestBehavior.translucent,
       onTap: onTap,
       child: Padding(
-        padding: getPadding(horizontal: 10.w, bottom: 5.h, top: 5.h),
+        padding: getPadding(horizontal: 10.w,top: 2.h),
         child: Column(
           children: [
-            CustomSVGImage(
-              asset: bottomNavBarModel.asset,
-              color: isSelected
-                  ? AppColors.primaryColor
-                  : AppColors.unselectedTab,
-            ),
-            5.vs,
-            Text(
-              bottomNavBarModel.tabName,
+         Expanded(child:    CustomSVGImage(
+           asset: bottomNavBarModel.asset,
+           color: isSelected
+               ? AppColors.primaryColor
+               : AppColors.unselectedTab,
+         )),
+            Expanded(child: Text(
+              bottomNavBarModel.tabName.trans,
               style: isSelected
-                  ? getSemiBoldTextStyle(
-                fontSize: 12,
+                  ? getBoldTextStyle(
+                fontSize: 14,
                 color: AppColors.primaryColor,
-                fontWeight: FontWeight.w600,
               )
                   : getRegularTextStyle(
                 fontSize: 12,
                 color: AppColors.unselectedTab,
               ),
-            ),
+            )),
           ],
         ),
       ),

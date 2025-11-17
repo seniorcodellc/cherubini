@@ -50,7 +50,7 @@ class OperationsLogListItem extends StatelessWidget {
               16.vs,
               OperationsLogCardProdsList(model: model),
               16.vs,
-              SecondSharedCustomButton(
+              CustomOutLinedButton(
                 text: AppStrings.publishWarranty,
                 onPressed: () {
                   Routes.techWarrantyRoute.moveTo();

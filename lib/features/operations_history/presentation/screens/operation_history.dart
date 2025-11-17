@@ -51,8 +51,6 @@ class OperationsHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       title: AppStrings.operationHistory,
-      statusBarColor: AppColors.scaffold,
-      appBarBackgroundColor: AppColors.bgColor,
 showNavBar: true,
       child: Padding(
         padding: getPadding(horizontal: 16.w),

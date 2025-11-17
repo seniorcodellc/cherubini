@@ -21,6 +21,7 @@ class AppStrings {
   static const String empty = "noEstateHere";
   static const String waitingForEditProfile = "waitingForEditProfile";
   static const String waitingForCancel = "waitingForCancel";
+  static const String pointsDeducted = "النقاط المخصومه";
   static const String didNotChangeField = "didNotChangeField";
 
   static const String photos = "photos";
@@ -975,7 +976,7 @@ class AppStrings {
 
   static const String enterCardDetails = "enterCardDetails";
   static const String saveCardForFastPayment = "saveCardForFastPayment";
-  static const String pay = "pay";
+  static const String pay = "صرف";
   static const String edit = "edit";
 
   static const String addInsuranceCompany = "addInsuranceCompany";
@@ -995,4 +996,9 @@ class AppStrings {
   static const String suspended="غير النشطين";
   static const String suspendTechnician="ايقاف تنشيط الفنى";
   static const String reactiveTechnician="اعادة تنشيط الفنى";
+  static const String collected = "تم التحصيل";
+  static const String notCollected = "لم يتم التحصيل";
+  static const String dueDetails = "تفاصيل الأستحقاق";
+  static const String payDues = "دفع الاستحقاقات";
+
 }

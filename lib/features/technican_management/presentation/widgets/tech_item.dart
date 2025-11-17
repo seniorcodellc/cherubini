@@ -25,9 +25,9 @@ class TechItemWidget extends StatelessWidget {
         children: [
           _buildProfileWidget(),
           24.vs,
-          CustomInfoWidget(asset: AppAssets.phone, info: ""),
+          CustomInfoWidget(asset: AppAssets.phone, info: item.phone.validate),
           10.vs,
-          CustomInfoWidget(asset: AppAssets.email, info: ""),
+          CustomInfoWidget(asset: AppAssets.email, info: item.email.validate),
           20.vs,
           HLine(),
           _buildDetails(),

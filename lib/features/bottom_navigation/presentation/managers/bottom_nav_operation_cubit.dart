@@ -23,12 +23,13 @@ class BottomNavOperationCubit extends Cubit<int> {
       if(index==0){
         Routes.merchantDashboardRoute.moveTo();
       }else if(index==1){
-        Routes.merchantPointsSummary.moveTo();
+        Routes.duesRoute.moveTo();
       }else if(index==2){
         Routes.operationsHistoryRoute.moveTo();
       }else if(index==3){
         Routes.merchantSettings.moveTo();
       }
+      this.index=index;
       emit(index);
 
     }

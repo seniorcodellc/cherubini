@@ -18,10 +18,10 @@ Future<T?> managerExecute<T>(
       //   getBlocData<AuthCubit>().clearUser();
       // }
       print("fffffffffff" + failure.code.toString());
-      if (failure.code == ResponseCode.UNAUTHORISED && getBlocData<AuthCubit>().user.isNotNull) {
+      if (failure.code == ResponseCode.UNAUTHORISED) {
         getBlocData<AuthCubit>().clearUser();
       }
-      if (failure.code == ResponseCode.NO_INTERNET_CONNECTION) {
+     else if (failure.code == ResponseCode.NO_INTERNET_CONNECTION) {
         data = failure.data;
 
         onNetworkFail?.call(failure.message, data);
@@ -69,7 +69,7 @@ Future<R?> executeWithDialog<R>({
       /// Extract the error message from the `Failure` object.
       print("fffffffffff" + failure.code.toString());
       var message = failure.message;
-      if (failure.code == ResponseCode.UNAUTHORISED && getBlocData<AuthCubit>().user.isNotNull) {
+      if (failure.code == ResponseCode.UNAUTHORISED ) {
         getBlocData<AuthCubit>().clearUser();
       }
 

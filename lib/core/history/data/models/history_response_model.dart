@@ -19,7 +19,7 @@ class HistoryModel {
     if (json['detail'] != null) {
       detail = [];
       json['detail'].forEach((v) {
-        detail?.add(Detail.fromJson(v));
+        detail?.add(HistoryDetail.fromJson(v));
       });
     }
   }
@@ -27,12 +27,12 @@ class HistoryModel {
   num? id;
   String? date;
   num? points;
-  List<Detail>? detail;
+  List<HistoryDetail>? detail;
   HistoryModel copyWith({
     num? id,
     String? date,
     num? points,
-    List<Detail>? detail,
+    List<HistoryDetail>? detail,
   }) => HistoryModel(
     id: id ?? this.id,
     date: date ?? this.date,
@@ -55,16 +55,16 @@ class HistoryModel {
 /// productName : "CMM45101700E"
 /// serialNumber : "148253000522G"
 
-class Detail {
-  Detail({this.productName, this.serialNumber});
+class HistoryDetail {
+  HistoryDetail({this.productName, this.serialNumber});
 
-  Detail.fromJson(dynamic json) {
+  HistoryDetail.fromJson(dynamic json) {
     productName = json['productName'];
     serialNumber = json['serialNumber'];
   }
   String? productName;
   String? serialNumber;
-  Detail copyWith({String? productName, String? serialNumber}) => Detail(
+  HistoryDetail copyWith({String? productName, String? serialNumber}) => HistoryDetail(
     productName: productName ?? this.productName,
     serialNumber: serialNumber ?? this.serialNumber,
   );
