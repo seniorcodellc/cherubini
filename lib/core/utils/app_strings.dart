@@ -324,7 +324,7 @@ class AppStrings {
   static const String productName = 'اسم المنتج';
   static const String earnedPoints = 'النقاط المكتسبة';
   static const String unavailableMessage =
-      'هذا المنتج غير مسجل في النظام. تم إرسال تنبيه للمسؤول مع بيانات الفني والتاجر.';
+      'هذا المنتج غير مسجل في النظام. تم إرسال\n تنبيه للمسؤول مع بيانات الفني والتاجر.';
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
