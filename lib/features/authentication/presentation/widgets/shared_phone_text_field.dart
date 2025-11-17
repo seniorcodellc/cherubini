@@ -13,7 +13,7 @@ class SharedPhoneTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
-          hintText: AppStrings.phoneNumHint,
+          hintText: AppStrings.phoneNumHint.trans,
           controller: phoneController,
           keyboardType: TextInputType.phone,
           prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),

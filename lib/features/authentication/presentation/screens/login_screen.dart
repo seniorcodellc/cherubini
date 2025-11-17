@@ -31,14 +31,14 @@ class LoginScreen extends StatelessWidget {
                     LogInWelcomeBody(),
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.email,
+                      text: AppStrings.email.trans,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.password,
+                      text: AppStrings.password.trans,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: AlignmentDirectional.bottomEnd,
                       child: Text(
-                        AppStrings.forgetPassword,
+                        AppStrings.forgetPassword.trans,
                         style: getRegularTextStyle(
                           color: AppColors.accentColor,
                         ),
@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     32.vs,
                     CustomButton(
-                      text: AppStrings.login,
+                      text: AppStrings.login.trans,
                       onPressed: () {
                         checkStringError(
                           context,
@@ -89,13 +89,13 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Routes.registerTraderRoute.moveTo();
                           },
-                          text: AppStrings.signUpAsMerchant,
+                          text: AppStrings.signUpAsMerchant.trans,
                         ),
                         CustomElevatedButton(
                           onPressed: () {
                             Routes.registerTechRoute.moveTo();
                           },
-                          text: AppStrings.signUpAsTech,
+                          text: AppStrings.signUpAsTech.trans,
                         ),
                       ],
                     ),

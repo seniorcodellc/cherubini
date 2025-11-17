@@ -17,7 +17,7 @@ class TechDashboardBody extends StatelessWidget {
         Padding(
           padding: getPadding(horizontal: 16.0.w, bottom: 8.0.h, top: 24.h),
           child: Text(
-            AppStrings.quickProcedures,
+            AppStrings.quickActions,
             style: getBoldTextStyle(
               fontSize: 16.sp,
               color: AppColors.primaryColor,

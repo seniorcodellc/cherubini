@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
           onSuccess: () {
             NotificationsService().showSimpleNotification(
               title: AppStrings.splashHeader,
-              description: AppStrings.appDescriptionAr,
+              description: AppStrings.appDescription,
             );
           },
         );

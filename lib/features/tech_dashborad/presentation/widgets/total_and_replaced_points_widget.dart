@@ -12,9 +12,9 @@ class TotalAndReplacedPointsWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SharedTextColumn(text: AppStrings.total, num: "12,450"),
+          SharedTextColumn(text: AppStrings.total.trans, num: "12,450"),
           VerticalDivider(color: AppColors.white, thickness: 1.w, width: 50.w),
-          SharedTextColumn(text: AppStrings.replaced, num: "3,200"),
+          SharedTextColumn(text: AppStrings.replaced.trans, num: "3,200"),
         ],
       ),
     );

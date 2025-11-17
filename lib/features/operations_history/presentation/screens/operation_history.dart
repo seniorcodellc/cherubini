@@ -40,7 +40,7 @@ class OperationsHistoryScreen extends StatelessWidget {
 
         GenericDataView<ProfileCubit, ProfileModel>.fromState(
           buildLoadedWidgetWithState: (state) => SharedOperationsLogCardColumn(
-            title: AppStrings.totalPoints,
+            title: AppStrings.overallPoints,
             subTitle: (state is LoadedState<ProfileModel>)
                 ? state.data.totalPoints.toString()
                 : null,

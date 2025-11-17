@@ -13,7 +13,7 @@ class SharedEnterNameTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
-          hintText: AppStrings.fullNameHint,
+          hintText: AppStrings.fullNameHint.trans,
           prefixIcon: CustomSVGImage(
             asset: AppAssets.profile,
             fit: BoxFit.none,

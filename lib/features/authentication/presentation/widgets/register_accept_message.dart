@@ -24,14 +24,14 @@ class RegisterAcceptMessage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  AppStrings.acceptMessage1,
+                  AppStrings.acceptMessage1.trans,
                   style: getRegularTextStyle(
                     fontSize: 16,
                     color: AppColors.grayHint,
                   ),
                 ),
                 Text(
-                  AppStrings.acceptMessage2,
+                  AppStrings.acceptMessage2.trans,
                   style: getRegularTextStyle(
                     fontSize: 16,
                     color: AppColors.grayHint,

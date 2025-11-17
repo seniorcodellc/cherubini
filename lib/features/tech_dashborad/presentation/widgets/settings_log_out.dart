@@ -42,7 +42,7 @@ class SettingsLogOut extends StatelessWidget {
               ),
               8.hs,
               Text(
-                AppStrings.logOut,
+                AppStrings.logOut.trans,
                 style: getRegularTextStyle(fontSize: 16, color: AppColors.red),
               ),
             ],

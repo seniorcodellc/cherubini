@@ -11,7 +11,7 @@ class TechQuickProcedures extends StatelessWidget {
       children: [
         SharedQuickProceduresItem(
           asset: AppAssets.scan,
-          text: AppStrings.scanCode,
+          text: AppStrings.scanBarCode,
           onTap: () {
             Routes.scanRoute.moveTo();
           },

@@ -43,21 +43,21 @@ class SignUpAsTrader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomTitleAndField(
-                      text: AppStrings.fullName,
+                      text: AppStrings.fullName.trans,
                       child: SharedEnterNameTextField(
                         nameController: nameController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNum,
+                      text: AppStrings.phoneNum.trans,
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.companyName,
+                      text: AppStrings.companyName.trans,
                       child: CompanyNameField(
                         companyNameController: companyNameController,
                       ),
@@ -74,7 +74,7 @@ class SignUpAsTrader extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.email,
+                      text: AppStrings.email.trans,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -97,7 +97,7 @@ class SignUpAsTrader extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButton,
+                      text: AppStrings.createAccountButton.trans,
                       onPressed: () {
                         checkStringError(
                           context,

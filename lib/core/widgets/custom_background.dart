@@ -2,6 +2,7 @@
 
 import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
 import 'package:cherubini/features/bottom_navigation/presentation/widget/bottom_navigation_widget.dart';
+import 'package:cherubini/features/languages/presentation/manager/language_cubit.dart';
 
 import '../../exports.dart';
 import '../../features/bottom_navigation/data/static/bottom_nav_bar_static.dart';
@@ -41,7 +42,7 @@ class CustomBackground extends StatelessWidget {
     this.showSafeArea = true,
     this.backgroundColor,
     this.appBarBackgroundColor,
-    this.showNavBar=false,
+    this.showNavBar = false,
     this.floatingActionButton,
     this.scaffoldKey,
     this.statusBarColor = AppColors.transparent,
@@ -54,26 +55,37 @@ class CustomBackground extends StatelessWidget {
       value: SystemUiOverlayStyle(
         statusBarColor: statusBarColor,
 
-        statusBarBrightness: statusBarColor.isEqualTo(AppColors.white) ? Brightness.dark : null,
-        statusBarIconBrightness: statusBarColor.isEqualTo(AppColors.white) || statusBarColor.isEqualTo(AppColors.transparent)
+        statusBarBrightness: statusBarColor.isEqualTo(AppColors.white)
+            ? Brightness.dark
+            : null,
+        statusBarIconBrightness:
+            statusBarColor.isEqualTo(AppColors.white) ||
+                statusBarColor.isEqualTo(AppColors.transparent)
             ? Brightness.dark
             : Brightness.light,
       ),
       child: Scaffold(
         key: scaffoldKey,
         drawer: drawer,
-        floatingActionButton: showNavBar? CustomFloatingActionButton():floatingActionButton,
+        floatingActionButton: showNavBar
+            ? CustomFloatingActionButton()
+            : floatingActionButton,
 
-        bottomNavigationBar:showNavBar? BottomNavigationWidget():null,
+        bottomNavigationBar: showNavBar ? BottomNavigationWidget() : null,
         backgroundColor: backgroundColor,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         resizeToAvoidBottomInset: true,
         appBar: title.isNotNull
             ? AppBar(
-                backgroundColor: appBarBackgroundColor??AppColors.primaryColor,toolbarHeight: 80.h,
+                backgroundColor:
+                    appBarBackgroundColor ?? AppColors.primaryColor,
+                toolbarHeight: 80.h,
                 title: Text(
                   title!,
-                  style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.white),
+                  style: getSemiBoldTextStyle(
+                    fontSize: 24.sp,
+                    color: AppColors.white,
+                  ),
                 ),
                 centerTitle: true,
                 iconTheme: IconThemeData(color: AppColors.white),
@@ -88,7 +100,8 @@ class CustomBackground extends StatelessWidget {
     );
   }
 
-  Widget? get buildChild => showSafeArea.isTrueGetWidgetOrAnotherWidget(SafeArea(child: child), child);
-
-
+  Widget? get buildChild => showSafeArea.isTrueGetWidgetOrAnotherWidget(
+    SafeArea(child: child),
+    child,
+  );
 }

@@ -89,7 +89,7 @@ class EntitlementsListItem extends StatelessWidget {
                 child: Row(
                   children: [
                     SharedPointsDetailsColumn(
-                      pointsType: AppStrings.sumPoints,
+                      pointsType: AppStrings.totalPoints,
                       pointsNum: model.totalPoints,
                     ),
                     SharedCustomDividerVertical(),

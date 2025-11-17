@@ -33,13 +33,13 @@ class SharedDashboardHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${AppStrings.welcome.trans} ${context.read<AuthCubit>().user?.name.validate}',
+                  '${AppStrings.welcome.trans} ${context.read<AuthCubit>().user?.name.trans.validate}',
 
                   style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
                 ),
                 10.vs,
                 Text(
-                  AppStrings.merchantCompanyName,
+                  AppStrings.merchantCompanyName.trans,
                   style: getRegularTextStyle(
                     fontSize: 16.sp,
                     color: Colors.white,

@@ -11,7 +11,7 @@ class QuickActionWidget extends StatelessWidget {
         Padding(
           padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
           child: Text(
-            AppStrings.quickProcedures,
+            AppStrings.quickActions.trans,
             style: getBoldTextStyle(
               fontSize: 14.sp,
               color: AppColors.primaryColor,
@@ -57,7 +57,7 @@ class QuickActionWidget extends StatelessWidget {
                         ),
                         10.vs,
                         Text(
-                          model.title,
+                          model.title.trans,
                           style: getRegularTextStyle(
                             fontSize: 12.sp,
                             color: AppColors.primaryColor,

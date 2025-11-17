@@ -29,7 +29,7 @@ class OperationsLogHeader extends StatelessWidget {
           ),
           CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
           SharedOperationsLogCardColumn(
-            title: AppStrings.totalPoints,
+            title: AppStrings.overallPoints,
             subTitle: '500',
           ),
         ],

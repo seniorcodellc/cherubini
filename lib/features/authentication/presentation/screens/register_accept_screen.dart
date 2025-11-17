@@ -37,7 +37,7 @@ class RegisterAcceptScreen extends StatelessWidget {
             ),
             71.vs,
             CustomOutLinedButton(
-              text: AppStrings.returnToSignUpButton,
+              text: AppStrings.returnToSignUpButton.trans,
               onPressed: () {
                 Routes.loginRoute.moveTo();
               },

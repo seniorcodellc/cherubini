@@ -25,7 +25,7 @@ class SignUpAsTech extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewTech),
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewTech.trans),
       child: Padding(
         padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
@@ -39,14 +39,14 @@ class SignUpAsTech extends StatelessWidget {
                   children: [
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.fullName,
+                      text: AppStrings.fullName.trans,
                       child: SharedEnterNameTextField(
                         nameController: nameController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNum,
+                      text: AppStrings.phoneNum.trans.trans,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -55,7 +55,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.email,
+                      text: AppStrings.email.trans,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
@@ -63,7 +63,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.chooseMerchant,
+                      text: AppStrings.chooseMerchant.trans,
                       child: ChooseTraderDropDown(
                         onMerchantSelected: (merchantList) {
                           merchantId = merchantList.id;
@@ -73,14 +73,14 @@ class SignUpAsTech extends StatelessWidget {
 
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.merchantCheck,
+                      text: AppStrings.merchantCheck.trans,
                       child: TechAnswerVerficationQuestion(
                         checkController: checkController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.password,
+                      text: AppStrings.password.trans,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
@@ -88,7 +88,7 @@ class SignUpAsTech extends StatelessWidget {
 
                     40.vs,
                     CustomButton(
-                      text: AppStrings.createAccountButton,
+                      text: AppStrings.createAccountButton.trans,
                       onPressed: () {
                         checkStringError(
                           context,
@@ -142,7 +142,7 @@ class SignUpAsTech extends StatelessWidget {
                     Align(
                       alignment: AlignmentDirectional.center,
                       child: Text(
-                        AppStrings.techInstruction,
+                        AppStrings.techInstruction.trans,
                         style: getRegularTextStyle(color: AppColors.grayHint),
                       ),
                     ),

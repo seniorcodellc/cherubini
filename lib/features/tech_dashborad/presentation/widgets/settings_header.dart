@@ -57,14 +57,14 @@ class SettingsHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.techName,
+                    AppStrings.techName.trans,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,
                     ),
                   ),
                   Text(
-                    title,
+                    title.trans,
                     style: getRegularTextStyle(
                       fontSize: 16,
                       color: AppColors.subTitleColor,

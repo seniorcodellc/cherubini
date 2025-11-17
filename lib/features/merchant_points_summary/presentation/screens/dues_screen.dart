@@ -27,7 +27,7 @@ class DuesScreen extends StatelessWidget {
                 Padding(
                   padding: getPadding(horizontal: 16.w),
                   child: Text(
-                    AppStrings.entitlements,
+                    AppStrings.rewards.trans,
                     style: getBoldTextStyle(
                       fontSize: 16,
                       color: AppColors.primaryColor,

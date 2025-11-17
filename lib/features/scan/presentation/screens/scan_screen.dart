@@ -20,7 +20,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanCode,
+      title: AppStrings.scanBarCode,
       appBarBackgroundColor: AppColors.bgColor,
 
       child: Padding(
@@ -34,14 +34,14 @@ class _ScanScreenState extends State<ScanScreen> {
             CustomButton(
               text: AppStrings.startScan,
               onPressed: () {
-                checkCameraPermissionAndDoOperation(context,onSuccess: () {
-                  isScanning = true;
+                checkCameraPermissionAndDoOperation(
+                  context,
+                  onSuccess: () {
+                    isScanning = true;
 
-                  setState(() {
-
-                  });
-                },);
-
+                    setState(() {});
+                  },
+                );
               },
               svgIconPath: AppAssets.scan,
               height: 58.h,
@@ -53,20 +53,24 @@ class _ScanScreenState extends State<ScanScreen> {
   }
 
   get _buildBeforeScanWidget => isScanning.isTrue
-      ? SizedBox(height: 311.h,width: width,child: MobileScanner(onDetect: (barcodes) {
-
-    final String? code = barcodes.barcodes.first.rawValue;
-    if (code != null) {
-      setState(() {
-        scannedData = code;
-        isScanning = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('QR Code: $code')),
-      );
-    }
-
-      }),)
+      ? SizedBox(
+          height: 311.h,
+          width: width,
+          child: MobileScanner(
+            onDetect: (barcodes) {
+              final String? code = barcodes.barcodes.first.rawValue;
+              if (code != null) {
+                setState(() {
+                  scannedData = code;
+                  isScanning = false;
+                });
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('QR Code: $code')));
+              }
+            },
+          ),
+        )
       : Padding(
           padding: getPadding(horizontal: 16.0.w),
           child: DottedBorder(
@@ -76,9 +80,16 @@ class _ScanScreenState extends State<ScanScreen> {
             radius: Radius.circular(20.0.r),
             dashPattern: const [8, 4],
             child: Container(
-              decoration: BoxDecoration(color: AppColors.mutedBlue, borderRadius: BorderRadius.circular(20.0.r)),
+              decoration: BoxDecoration(
+                color: AppColors.mutedBlue,
+                borderRadius: BorderRadius.circular(20.0.r),
+              ),
               child: Padding(
-                padding: getPadding(horizontal: 28.0.w, top: 50.0.h, bottom: 40.0.h),
+                padding: getPadding(
+                  horizontal: 28.0.w,
+                  top: 50.0.h,
+                  bottom: 40.0.h,
+                ),
                 child: Directionality(
                   textDirection: TextDirection.ltr,
                   child: CustomSVGImage(asset: AppAssets.cameraScan),
@@ -88,4 +99,3 @@ class _ScanScreenState extends State<ScanScreen> {
           ),
         );
 }
-

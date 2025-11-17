@@ -17,8 +17,6 @@ class DueItem extends StatelessWidget {
     return Padding(
       padding: getPadding(bottom: 16.h),
       child: Container(
-        // width: 343.w,
-        // height: 178.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
@@ -108,7 +106,7 @@ class DueItem extends StatelessWidget {
                         children: [
                           Expanded(
                             child: SharedPointsDetailsColumn(
-                              pointsType: AppStrings.sumPoints,
+                              pointsType: AppStrings.totalPoints,
                               pointsNum: model.totalPointsBalance.toString(),
                             ),
                           ),
