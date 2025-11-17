@@ -36,7 +36,7 @@ class SummaryPointsCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SharedTextColumn(text: AppStrings.totalAr,num:profile?.totalPoints.validate.toString()),
+                  SharedTextColumn(text: AppStrings.total.trans,num:profile?.totalPoints.validate.toString()),
                   VerticalDivider(color: AppColors.white, thickness: 1.w, width: 50.w),
                   SharedTextColumn(text: AppStrings.replaced, num:profile?.pointDelevery.validate.toString()),
                 ],
