@@ -18,7 +18,7 @@ class ChooseTraderDropDown extends StatelessWidget {
           builder: (context, state) {
             return ExpansionNetworkDropDown<MerchantListModel>(
               items: context.read<MerchantListCubit>().list,
-              title: AppStrings.chooseMerchant,
+              title: AppStrings.chooseMerchant.trans,
               cubitStates: state,
               onSelected: (item) => onMerchantSelected.call(item),
             );

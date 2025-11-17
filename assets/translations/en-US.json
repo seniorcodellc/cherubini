@@ -128,6 +128,7 @@
   "yourAreBidder": "You are the highest bidder\n",
   "yourAreOutbid": "You've been outbid\n",
   "phoneNumber": "Phone Number",
+  "phoneNumHint": "01234567",
   "unitProposed": "Unit Proposed",
   "youAreWinner": "You are the winner of the auction\n",
   "youAreLoser": "The award has been awarded to another bidder\n",
@@ -233,7 +234,6 @@
   "favorites": "Favorites ",
   "transactions": "Transactions",
   "myData" : "My Data",
-  "fullName": "Full Name",
   "id": "ID",
   "phone": "Phone",
   "joinAuction": "Join Auction",
@@ -411,7 +411,7 @@
 
 
   "login": "login",
-  "logInWelcome": "welcome to the Loyalty Points App",
+  "logInWelcome": "Welcome to the Loyalty Points App",
   "email": "email",
   "password": "password",
   "confirmPassword": "confirm Password",
@@ -419,8 +419,9 @@
   "haveNoAccount": "don't have an account?",
   "signUpAsMerchant": "register as Merchant",
   "signUpAsTech": "register as Technician",
-  "signUpAsNewTech": "register New Technician",
-  "signUpAsNewMerchant": "register New Merchant",
+  "signUpAsNewTech": "Register New Technician",
+  "signUpAsNewMerchant": "Register New Merchant",
+  "fullName": "full Name",
   "fullNameHint": "enter your full name",
   "companyNameHint": "company Name",
   "companyName": "company Name",
@@ -428,10 +429,11 @@
   "phoneNum": "mobile Number",
   "phoneNumHint": "568912345",
   "emailHint": "example1@gmail.com",
+  "passwordHint": "********",
   "chooseMerchant": "choose Merchant",
   "merchantCheck": "merchant Verification Question",
-  "merchantCheckHint": "answer the verification question",
-  "createAccountButton": "create Account",
+  "merchantCheckHint": "answer the question",
+  "createAccountButton": "Create Account",
   "returnToSignUpButton": "back to Login",
   "waitingForAcceptRegisterText": "waiting for Admin Approval",
   "techInstruction": "your request will be reviewed by the merchant before approval",
@@ -442,7 +444,8 @@
   "waitingStatement3": " notified upon approval.",
   "government": "governorate",
   "place": "area",
-  "governmentHint": "choose Governorate",
+  "region": "City",
+  "governmentHint": "Governorate",
   "placeHint": "choose Area",
   "acceptMessage1": "you will receive a notification via email\n and SMS when your",
   "acceptMessage2": " account is approved",
@@ -522,7 +525,6 @@
   "collected": "collected",
   "notCollected": "not Collected",
   "dueDetails": "due Details",
-  "payDues": "pay Dues"
-
-
+  "payDues": "pay Dues",
+  "displayDetails": "Display Details"
 }

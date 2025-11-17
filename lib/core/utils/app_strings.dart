@@ -189,49 +189,43 @@ class AppStrings {
 
   /// **************************** Authentication ************************************
   static const String login = "login";
-  static const String logInWelcome = "welcome to the Loyalty Points App";
+  static const String logInWelcome = "logInWelcome";
   static const String email = "email";
   static const String password = "password";
   static const String confirmPassword = "confirm Password";
-  static const String forgetPassword = "forgot Password?";
-  static const String haveNoAccount = "don't have an account?";
-  static const String signUpAsMerchant = "register as Merchant";
-  static const String signUpAsTech = "register as Technician";
-  static const String signUpAsNewTech = "register New Technician";
-  static const String signUpAsNewMerchant = "register New Merchant";
-  static const String fullNameHint = "enter your full name";
-  static const String companyNameHint = "company Name";
-  static const String companyName = "company Name";
-  static const String addressHint = "city, District, Street";
-  static const String phoneNum = "mobile Number";
-  static const String chooseMerchant = "choose Merchant";
-  static const String merchantCheck = "merchant Verification Question";
-  static const String merchantCheckHint = "answer the verification question";
-  static const String createAccountButton = "create Account";
-  static const String returnToSignUpButton = "back to Login";
-  static const String waitingForAcceptRegisterText =
-      "waiting for Admin Approval";
-  static const String techInstruction =
-      "your request will be reviewed by the merchant before approval";
-  static const String merchantInstruction1 =
-      "by registering, you agree to the Terms and Conditions";
-  static const String merchantInstruction2 = "and Privacy Policy";
-  static const String waitingStatement1 =
-      "your registration request has been sent. It will be";
-  static const String waitingStatement2 =
-      "reviewed by the admin and you will be";
-  static const String waitingStatement3 = "notified upon approval.";
-  static const String government = "governorate";
-  static const String place = "area";
-  static const String governmentHint = "choose Governorate";
-  static const String placeHint = "choose Area";
-  static const String acceptMessage1 =
-      "you will receive a notification via email\n and SMS when your";
-  static const String acceptMessage2 = "account is approved";
-  static const String phoneNumHint = "568912345";
-  static const String emailHint = "example1@gmail.com";
-  static const String fullName = "full Name";
-  static const String passwordHint = "*********";
+  static const String forgetPassword = "forgetPassword";
+  static const String haveNoAccount = "haveNoAccount";
+  static const String signUpAsMerchant = "signUpAsMerchant";
+  static const String signUpAsTech = "signUpAsTech";
+  static const String signUpAsNewTech = "signUpAsNewTech";
+  static const String signUpAsNewMerchant = "signUpAsNewMerchant";
+  static const String fullNameHint = "fullNameHint";
+  static const String companyNameHint = "companyNameHint";
+  static const String companyName = "companyName";
+  static const String addressHint = "addressHint";
+  static const String phoneNum = "phoneNum";
+  static const String chooseMerchant = "chooseMerchant";
+  static const String merchantCheck = "merchantCheck";
+  static const String merchantCheckHint = "merchantCheckHint";
+  static const String createAccountButton = "createAccountButton";
+  static const String returnToSignUpButton = "returnToSignUpButton";
+  static const String waitingForAcceptRegisterText = "waitingForAcceptRegisterText";
+  static const String techInstruction = "techInstruction";
+  static const String merchantInstruction1 = "merchantInstruction1";
+  static const String merchantInstruction2 = "merchantInstruction2";
+  static const String waitingStatement1 = "waitingStatement1";
+  static const String waitingStatement2 = "waitingStatement2";
+  static const String waitingStatement3 = "waitingStatement3";
+  static const String government = "government";
+  static const String place = "place";
+  static const String governmentHint = "governmentHint";
+  static const String placeHint = "placeHint";
+  static const String acceptMessage1 = "acceptMessage1";
+  static const String acceptMessage2 = "acceptMessage2";
+  static const String phoneNumHint = "phoneNumHint";
+  static const String emailHint = "emailHint";
+  static const String fullName = "fullName";
+  static const String passwordHint = "passwordHint";
 
   /// **************************** Splash ************************************
   static const String splashHeader = "welcome to the Loyalty Points App";
@@ -331,6 +325,8 @@ class AppStrings {
   static const String notCollected = "not Collected";
   static const String dueDetails = "due Details";
   static const String payDues = "pay Dues";
+  static const String displayDetails = "displayDetails";
+
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
@@ -404,7 +400,7 @@ class AppStrings {
   static const String faqQuesstion6 = "faqQuesstion6";
   static const String addressLine1 = 'addressLine1';
   static const String addressLine2 = 'addressLine2';
-  static const String region = 'city';
+  static const String region = 'region';
   static const String zip = 'zip';
   static const String nationalID = 'nationalID';
   static const String employmentState = 'employmentState';

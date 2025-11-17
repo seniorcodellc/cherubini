@@ -3,10 +3,8 @@ import 'package:cherubini/features/authentication/data/model/request_model/regis
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/company_name_field.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_confirm_password_text_field.dart';
-import '../../../../config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../widgets/custom_login_signup_textfield_text.dart';
 import '../widgets/government_and_regions_drop_down.dart';
 import '../widgets/shared_email_text_field.dart';
@@ -31,7 +29,8 @@ class SignUpAsTrader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchant),
+      showAppbar: true,
+      appBar: CustomAppbar(title: AppStrings.signUpAsNewMerchant.trans),
       child: Form(
         key: _formKey,
         child: Padding(

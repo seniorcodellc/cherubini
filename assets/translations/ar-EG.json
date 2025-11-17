@@ -1,5 +1,6 @@
 {
-  "logIn": "تسجيل الدخول",
+  "displayDetails": "عرض التفاصيل",
+  "login": "تسجيل الدخول",
   "logInWelcome": "مرحباً بك في برنامج نقاط الولاء",
    "email": "البريد الإلكترروني",
   "password":"كلمة المرور",
@@ -11,6 +12,7 @@
   "signUpAsNewTech": "تسجيل فني جديد",
   "signUpAsNewMerchant":"تسجيل تاجر جديد",
   "fullNameHint": "أدخل اسمك بالكامل",
+  "phoneNumHint": "012345678",
   "companyNameHint":"اسم الشركة",
   "companyName":"اسم الشركة",
   "address": "العنوان",
@@ -38,7 +40,7 @@
   "waitingStatement2": " مراجعته من قبل المسؤول وسيتم",
   "waitingStatement3": " إعلامك عند الموافقة.",
   "government":"المحافظة ",
-  "place": "المنطقة",
+  "region": "المنطقة",
   "governmentHint": "أختر المحافظة",
   "placeHint": "أختر المنطقة",
   "acceptMessage1":
@@ -212,6 +214,8 @@
   "welcomeBack": "مرحبا!",
   "letLogIn": "قم بالتسجيل أو تسجيل الدخول إلى حسابك",
   "enterEmail": "ادخل البريد الالكتروني",
+  "emailHint": "example1@gmail.com",
+  "passwordHint": "********",
   "enterPassword": "ادخل كلمه المرور",
   "orLogIn": "أو تسجيل الدخول باستخدام",
   "emailRequired": "البريد الالكتروني مطلوب",

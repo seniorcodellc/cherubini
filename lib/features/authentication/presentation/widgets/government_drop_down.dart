@@ -18,7 +18,7 @@ class GovernmentDropdown extends StatelessWidget {
           builder: (context, state) {
             return ExpansionNetworkDropDown<GovernorateModel>(
               items: context.read<GovernoratesCubit>().list,
-              title: AppStrings.governmentHint,
+              title: AppStrings.governmentHint.trans,
               cubitStates: state,
               onSelected: (item) => onGovernmentSelected.call(item),
             );

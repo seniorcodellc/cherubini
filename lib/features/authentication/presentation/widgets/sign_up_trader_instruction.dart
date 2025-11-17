@@ -6,7 +6,7 @@ class SignUpTraderInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56,
+      height: 75,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -14,6 +14,7 @@ class SignUpTraderInstruction extends StatelessWidget {
             child: Text(
               AppStrings.merchantInstruction1.trans,
               style: getRegularTextStyle(color: AppColors.subTitleColor),
+              textAlign: TextAlign.center,
             ),
           ),
           Text(

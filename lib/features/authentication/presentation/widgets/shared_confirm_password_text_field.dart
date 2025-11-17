@@ -16,7 +16,7 @@ class SharedConfirmPasswordTextField extends StatelessWidget {
       children: [
         CustomTextFormField(
           controller: confirmPasswordController,
-          hintText: AppStrings.passwordHint,
+          hintText: AppStrings.passwordHint.trans,
           prefixIcon: CustomSVGImage(asset: AppAssets.lock, fit: BoxFit.none),
           suffixIcon: CustomSVGImage(asset: AppAssets.eyeOn, fit: BoxFit.none),
         ),

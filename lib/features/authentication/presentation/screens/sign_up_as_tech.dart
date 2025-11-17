@@ -25,6 +25,7 @@ class SignUpAsTech extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
+      showAppbar: true,
       appBar: CustomAppbar(title: AppStrings.signUpAsNewTech.trans),
       child: Padding(
         padding: getPadding(horizontal: 16.w),
@@ -46,8 +47,7 @@ class SignUpAsTech extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNum.trans.trans,
-
+                      text: AppStrings.phoneNum.trans,
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
                       ),
