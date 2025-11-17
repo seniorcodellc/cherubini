@@ -26,9 +26,15 @@ class OperationsDetailsScreen extends StatelessWidget {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SharedOperationsLogCardColumn(title: AppStrings.totalOperationsAr, subTitle: historyModel!.detail!.length.toString()),
+        SharedOperationsLogCardColumn(
+          title: AppStrings.totalOperations,
+          subTitle: historyModel!.detail!.length.toString(),
+        ),
         CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
-        SharedOperationsLogCardColumn(title: AppStrings.totalPointsAr, subTitle: historyModel!.points.toString()),
+        SharedOperationsLogCardColumn(
+          title: AppStrings.totalPoints,
+          subTitle: historyModel!.points.toString(),
+        ),
       ],
     ),
   );
@@ -47,7 +53,13 @@ class OperationsDetailsScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: getPadding(vertical: 30.h),
-              child: Column(children: [_buildTotalPointsAndNumberOfOperations, 24.vs, _buildScannedItemsDetails]),
+              child: Column(
+                children: [
+                  _buildTotalPointsAndNumberOfOperations,
+                  24.vs,
+                  _buildScannedItemsDetails,
+                ],
+              ),
             ),
           ),
         ],

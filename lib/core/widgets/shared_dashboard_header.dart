@@ -6,7 +6,7 @@ import '../../features/authentication/presentation/managers/auth_cubit.dart';
 class SharedDashboardHeader extends StatelessWidget {
   const SharedDashboardHeader({super.key, required this.onTap});
 
-  final GestureTapCallback onTap ;
+  final GestureTapCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,10 @@ class SharedDashboardHeader extends StatelessWidget {
       width: double.infinity,
       height: 187.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50.0.r), bottomRight: Radius.circular(50.0.r)),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(50.0.r),
+          bottomRight: Radius.circular(50.0.r),
+        ),
         gradient: LinearGradient(
           colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
           begin: AlignmentGeometry.topCenter,
@@ -36,8 +39,11 @@ class SharedDashboardHeader extends StatelessWidget {
                 ),
                 10.vs,
                 Text(
-                  AppStrings.merchantCompanyNameAr,
-                  style: getRegularTextStyle(fontSize: 16.sp, color: Colors.white),
+                  AppStrings.merchantCompanyName,
+                  style: getRegularTextStyle(
+                    fontSize: 16.sp,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

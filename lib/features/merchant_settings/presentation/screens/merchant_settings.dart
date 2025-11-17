@@ -12,7 +12,7 @@ class MerchantSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomBackground(
+    return CustomBackground(
       backgroundColor: AppColors.bgColor,
       showNavBar: true,
       //appBar: CustomAppbar(title: AppStrings.settings),
@@ -23,7 +23,7 @@ class MerchantSettings extends StatelessWidget {
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 30.vs,
-                SettingsHeader(title: AppStrings.merchantCompanyNameAr,),
+                SettingsHeader(title: AppStrings.merchantCompanyName),
                 24.vs,
                 SettingsUserDetailsList(),
                 24.vs,
@@ -32,7 +32,7 @@ class MerchantSettings extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
-                      AppStrings.notificationsAr,
+                      AppStrings.notifications,
                       style: getBoldTextStyle(
                         fontSize: 16,
                         color: AppColors.primaryColor,

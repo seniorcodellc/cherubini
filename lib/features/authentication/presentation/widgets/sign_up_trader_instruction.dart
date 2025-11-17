@@ -12,12 +12,12 @@ class SignUpTraderInstruction extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              AppStrings.merchantInstruction1Ar,
+              AppStrings.merchantInstruction1,
               style: getRegularTextStyle(color: AppColors.subTitleColor),
             ),
           ),
           Text(
-            AppStrings.merchantInstruction2Ar,
+            AppStrings.merchantInstruction2,
             style: getRegularTextStyle(color: AppColors.subTitleColor),
           ),
         ],

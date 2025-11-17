@@ -13,7 +13,7 @@ class RegisterAcceptBody extends StatelessWidget {
         CustomSVGImage(asset: AppAssets.clockCircle),
         32.vs,
         Text(
-          AppStrings.waitingForAcceptRegisterTextAr,
+          AppStrings.waitingForAcceptRegisterText,
           style: getRegularTextStyle(
             fontSize: 20,
             color: AppColors.primaryColor,

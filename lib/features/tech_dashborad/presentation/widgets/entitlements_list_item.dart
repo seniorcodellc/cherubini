@@ -69,7 +69,7 @@ class EntitlementsListItem extends StatelessWidget {
                     Spacer(),
                     model.isDone == true
                         ? SharedDoneOrNotContainer(
-                            text:AppStrings.paid,
+                            text: AppStrings.paid,
                             textColor: AppColors.green,
                             bgColor: AppColors.mutedGreen,
                             borderColor: AppColors.green,
@@ -89,7 +89,7 @@ class EntitlementsListItem extends StatelessWidget {
                 child: Row(
                   children: [
                     SharedPointsDetailsColumn(
-                      pointsType: AppStrings.totalPoints,
+                      pointsType: AppStrings.sumPoints,
                       pointsNum: model.totalPoints,
                     ),
                     SharedCustomDividerVertical(),

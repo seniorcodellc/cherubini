@@ -5,7 +5,7 @@ import '../../../../exports.dart';
 class CompanyNameField extends StatelessWidget {
   final TextEditingController companyNameController;
 
-  const CompanyNameField({required this.companyNameController,super.key});
+  const CompanyNameField({required this.companyNameController, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CompanyNameField extends StatelessWidget {
       children: [
         CustomTextFormField(
           controller: companyNameController,
-          hintText: AppStrings.companyNameHintAr,
+          hintText: AppStrings.companyNameHint,
           prefixIcon: CustomSVGImage(
             asset: AppAssets.company,
             fit: BoxFit.none,
@@ -22,10 +22,9 @@ class CompanyNameField extends StatelessWidget {
         ),
         BlocBuilder<ErrorCubit, CubitStates>(
           builder: (context, state) => ErrorText(
-            showError: context
-                .read<ErrorCubit>()
-                .errors
-                .contains(Errors.NAME_ERROR),
+            showError: context.read<ErrorCubit>().errors.contains(
+              Errors.NAME_ERROR,
+            ),
             text: getError[Errors.NAME_ERROR],
           ),
         ),
