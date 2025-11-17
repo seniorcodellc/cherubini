@@ -1,6 +1,6 @@
 import '../../../../exports.dart';
 
-abstract class DataRemoteDataSource {
+abstract class GenericRemoteDataSource {
   Future<ResponseModel> getData({num? id, dynamic query});
 }
 

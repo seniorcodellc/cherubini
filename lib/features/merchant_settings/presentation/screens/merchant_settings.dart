@@ -32,7 +32,7 @@ class MerchantSettings extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
-                      AppStrings.notifications,
+                      AppStrings.notifications.trans,
                       style: getBoldTextStyle(
                         fontSize: 16,
                         color: AppColors.primaryColor,

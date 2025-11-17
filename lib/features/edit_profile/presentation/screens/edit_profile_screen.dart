@@ -5,7 +5,6 @@ import 'package:cherubini/features/authentication/presentation/widgets/custom_lo
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../exports.dart';
 
-
 class EditProfileScreen extends StatelessWidget {
   EditProfileScreen({super.key});
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -19,7 +18,7 @@ class EditProfileScreen extends StatelessWidget {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
       showAppbar: true,
-      appBar: CustomAppbar(title: AppStrings.editProfile),
+      appBar: CustomAppbar(title: AppStrings.editProfile.trans),
       child: Padding(
         padding: getPadding(horizontal: 16.w, top: 20.h),
         child: CustomScrollView(
@@ -35,36 +34,64 @@ class EditProfileScreen extends StatelessWidget {
                       text: AppStrings.email.trans,
                       child: CustomTextFormField(
                         controller: emailController,
-                        hintText: context.read<ProfileCubit>().model?.email.validate,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.email, fit: BoxFit.none),
+                        hintText: context
+                            .read<ProfileCubit>()
+                            .model
+                            ?.email
+                            .validate,
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.email,
+                          fit: BoxFit.none,
+                        ),
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.phoneNum.trans,
-                      child:CustomTextFormField(
-                        hintText: context.read<ProfileCubit>().model?.phone.validate,
+                      child: CustomTextFormField(
+                        hintText: context
+                            .read<ProfileCubit>()
+                            .model
+                            ?.phone
+                            .validate,
                         controller: phoneController,
                         keyboardType: TextInputType.phone,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.phone, fit: BoxFit.none),
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.phone,
+                          fit: BoxFit.none,
+                        ),
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.fullName.trans,
-                      child:CustomTextFormField(
-                        hintText: context.read<ProfileCubit>().model?.name.validate,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.profile, fit: BoxFit.none),
+                      child: CustomTextFormField(
+                        hintText: context
+                            .read<ProfileCubit>()
+                            .model
+                            ?.name
+                            .validate,
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.profile,
+                          fit: BoxFit.none,
+                        ),
                         controller: nameController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
                       text: AppStrings.companyName.trans,
-                      child:CustomTextFormField(
+                      child: CustomTextFormField(
                         controller: companyNameController,
-                        hintText: context.read<ProfileCubit>().model?.name.validate,
-                        prefixIcon: CustomSVGImage(asset: AppAssets.company, fit: BoxFit.none,),
+                        hintText: context
+                            .read<ProfileCubit>()
+                            .model
+                            ?.name
+                            .validate,
+                        prefixIcon: CustomSVGImage(
+                          asset: AppAssets.company,
+                          fit: BoxFit.none,
+                        ),
                       ),
                     ),
                     32.vs,
@@ -75,17 +102,14 @@ class EditProfileScreen extends StatelessWidget {
                         // checkStringError(context, phoneController.text, Errors.PHONE_ERROR);
                         // checkStringError(context, nameController.text, Errors.NAME_ERROR);
                         // checkStringError(context, companyNameController.text, Errors.NAME_ERROR);
-                        if (dontHaveErrors(context)) {
-
-                        }
+                        if (dontHaveErrors(context)) {}
                         if (_formKey.currentState!.validate().isTrue) {}
                       },
                     ),
-                      ],
-                    ),
-
+                  ],
                 ),
               ),
+            ),
           ],
         ),
       ),

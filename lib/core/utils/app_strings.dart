@@ -228,11 +228,10 @@ class AppStrings {
   static const String passwordHint = "passwordHint";
 
   /// **************************** Splash ************************************
-  static const String splashHeader = "welcome to the Loyalty Points App";
-  static const String appName = "loyalty Points App";
-  static const String splashBody = "smart Points Management System";
-  static const String appDescription =
-      "an application for managing loyalty points between merchants and technicians. Collect points by scanning codes, track your balance and history, redeem rewards, and print warranty certificates.";
+  static const String splashHeader = "splashHeader";
+  static const String appName = "appName";
+  static const String splashBody = "splashBody";
+  static const String appDescription = "appDescription";
 
   /// **************************** tech dashboard ************************************
   static const String quickActions = "quickActions";
@@ -241,7 +240,7 @@ class AppStrings {
   static const String availablePoints = "availablePoints";
   static const String recentScanOperations = "recentScanOperations";
   static const String viewAll = "viewAll";
-  static const String totalOperations = "total Transactions";
+  static const String totalOperations = "totalOperations";
   static const String rewards = "rewards";
   static const String pointsLog = "points History";
   static const String techName = "mohammed Ali";
@@ -281,7 +280,7 @@ class AppStrings {
   static const String total = "total";
   static const String replaced = "replaced";
   static const String nextAward = "apply for the Next Reward";
-  static const String pointsValue = "points Value";
+  static const String pointsValue = "pointsValue";
   static const String pointsHistory = "points History";
   static const String techBenefitsDetails = "technician Reward Details";
   static const String paid = "paid";
@@ -294,7 +293,7 @@ class AppStrings {
   static const String operationsHistory = "operations History";
   static const String products = "products";
   static const String product = "product";
-  static const String publishWarranty = "issue Warranty Certificate";
+  static const String publishWarranty = "publishWarranty";
 
   /// **************************** settings ************************************
   static const String settings = "settings";
@@ -303,7 +302,7 @@ class AppStrings {
   static const String warrantyCertificates = "warrantyCertificates";
 
   /// **************************** scan ************************************
-  static const String startScan = "start Scanning";
+  static const String startScan = "startScan";
   static const String scanOtherCode = "scan Another Barcode";
   static const String serialNumber = "serial Number";
   static const String productName = "product Name";
@@ -322,11 +321,10 @@ class AppStrings {
   static const String suspendTechnician = "deactivate Technician";
   static const String reactiveTechnician = "reactivate Technician";
   static const String collected = "collected";
-  static const String notCollected = "not Collected";
-  static const String dueDetails = "due Details";
+  static const String notCollected = "notCollected";
+  static const String dueDetails = "dueDetails";
   static const String payDues = "pay Dues";
   static const String displayDetails = "displayDetails";
-
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
@@ -400,7 +398,7 @@ class AppStrings {
   static const String faqQuesstion6 = "faqQuesstion6";
   static const String addressLine1 = 'addressLine1';
   static const String addressLine2 = 'addressLine2';
-  static const String region = 'region';
+  static const String region = 'city';
   static const String zip = 'zip';
   static const String nationalID = 'nationalID';
   static const String employmentState = 'employmentState';

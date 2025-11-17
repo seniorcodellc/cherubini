@@ -20,7 +20,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanBarCode,
+      title: AppStrings.scanBarCode.trans,
       appBarBackgroundColor: AppColors.bgColor,
 
       child: Padding(
@@ -32,7 +32,7 @@ class _ScanScreenState extends State<ScanScreen> {
             _buildBeforeScanWidget,
             150.vs,
             CustomButton(
-              text: AppStrings.startScan,
+              text: AppStrings.startScan.trans,
               onPressed: () {
                 checkCameraPermissionAndDoOperation(
                   context,

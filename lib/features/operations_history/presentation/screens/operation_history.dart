@@ -30,7 +30,7 @@ class OperationsHistoryScreen extends StatelessWidget {
       children: [
         BlocBuilder<HistoryCubit, CubitStates>(
           builder: (context, state) => SharedOperationsLogCardColumn(
-            title: AppStrings.totalOperations,
+            title: AppStrings.totalOperations.trans,
             subTitle: (state is LoadedState<List<HistoryModel>>)
                 ? state.data.length.toString()
                 : null,
@@ -40,7 +40,7 @@ class OperationsHistoryScreen extends StatelessWidget {
 
         GenericDataView<ProfileCubit, ProfileModel>.fromState(
           buildLoadedWidgetWithState: (state) => SharedOperationsLogCardColumn(
-            title: AppStrings.overallPoints,
+            title: AppStrings.overallPoints.trans,
             subTitle: (state is LoadedState<ProfileModel>)
                 ? state.data.totalPoints.toString()
                 : null,
@@ -54,7 +54,7 @@ class OperationsHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.operationHistory,
+      title: AppStrings.operationHistory.trans,
       showNavBar: true,
       child: Padding(
         padding: getPadding(horizontal: 16.w),

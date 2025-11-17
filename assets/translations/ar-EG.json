@@ -214,8 +214,6 @@
   "welcomeBack": "مرحبا!",
   "letLogIn": "قم بالتسجيل أو تسجيل الدخول إلى حسابك",
   "enterEmail": "ادخل البريد الالكتروني",
-  "emailHint": "example1@gmail.com",
-  "passwordHint": "********",
   "enterPassword": "ادخل كلمه المرور",
   "orLogIn": "أو تسجيل الدخول باستخدام",
   "emailRequired": "البريد الالكتروني مطلوب",

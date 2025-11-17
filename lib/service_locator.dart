@@ -20,16 +20,20 @@ import 'exports.dart';
 import 'features/authentication/data/data_source/governorates_remote_datasource.dart';
 import 'features/authentication/data/data_source/local_auth_data_source.dart';
 import 'features/authentication/data/data_source/merchant_list_remote_data_source.dart';
+import 'features/authentication/data/data_source/question_remote_data_source.dart';
 import 'features/authentication/data/data_source/remote_auth_data_source.dart';
 import 'features/authentication/data/repositories/auth_repo_impl.dart';
 import 'features/authentication/data/repositories/governorates_repo_impl.dart';
 import 'features/authentication/data/repositories/merchant_list_repo_impl.dart';
+import 'features/authentication/data/repositories/question_repo_impl.dart';
 import 'features/authentication/domain/repositories/auth_repo.dart';
 import 'features/authentication/domain/repositories/governorates_repo.dart';
 import 'features/authentication/domain/repositories/merchant_list_repo.dart';
+import 'features/authentication/domain/repositories/question_repo.dart';
 import 'features/authentication/domain/usecase/auth_use_case.dart' show AuthUseCase;
 import 'features/authentication/domain/usecase/governorates_use_cases.dart';
 import 'features/authentication/domain/usecase/merchant_list_use_cases.dart';
+import 'features/authentication/domain/usecase/question_use_cases.dart';
 import 'features/authentication/presentation/managers/auth_cubit.dart';
 import 'features/authentication/presentation/managers/governorates_cubit.dart';
 import 'features/authentication/presentation/managers/merchant_list_cubit.dart';
@@ -79,6 +83,7 @@ class ServiceLocator {
     registerCashReward;
     registerDuePay;
     registerLanguage;
+    registerQuestion;
   }
 
   get registerAuthDependencies {
@@ -88,10 +93,17 @@ class ServiceLocator {
     getIt.registerLazySingleton<AuthUseCase>(() => AuthUseCase(authRepo: getIt()));
     getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(authUseCase: getIt()));
   }
+
   get registerDuePay {
     getIt.registerLazySingleton<DuePayRemoteDataSource>(() => DuePayRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<DuePayRepo>(() => DuePayRepoImpl(duePayRemoteDataSource: getIt()));
     getIt.registerLazySingleton<DuePayUseCases>(() => DuePayUseCases(duePayRepo: getIt()));
+  }
+
+  get registerQuestion {
+    getIt.registerLazySingleton<QuestionRemoteDataSource>(() => QuestionRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<QuestionRepo>(() => QuestionRepoImpl(questionRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<QuestionUseCases>(() => QuestionUseCases(questionRepo: getIt()));
   }
 
   get registerCashReward {
@@ -140,12 +152,14 @@ class ServiceLocator {
     getIt.registerLazySingleton<ProfileUseCases>(() => ProfileUseCases(profileRepo: getIt()));
     getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(profileUseCases: getIt()));
   }
+
   get registerLanguage {
     getIt.registerLazySingleton<LanguageLocalDataSource>(() => LanguageImplWithPrefs(sharedPreferences: getIt()));
     getIt.registerLazySingleton<LanguageRepo>(() => LanguageRepoImpl(languageLocalDataSource: getIt()));
     getIt.registerLazySingleton<LanguageUseCases>(() => LanguageUseCases(languageRepo: getIt()));
     getIt.registerLazySingleton<LanguageCubit>(() => LanguageCubit(languageUseCases: getIt()));
   }
+
   get registerNetwork {
     getIt.registerLazySingleton<Dio>(() => Dio());
     getIt.registerLazySingleton<DioInterceptor>(() => DioInterceptor());

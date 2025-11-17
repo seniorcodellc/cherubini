@@ -44,8 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
           context,
           onSuccess: () {
             NotificationsService().showSimpleNotification(
-              title: AppStrings.splashHeader,
-              description: AppStrings.appDescription,
+              title: AppStrings.splashHeader.trans,
+              description: AppStrings.appDescription.trans,
             );
           },
         );
@@ -54,6 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
         UserModel? user = await getBlocData<AuthCubit>().getUser();
         print("tokkkkkkkkk  ${user?.token}");
         if (user.isNotNull) {
+         //
           route = Routes.merchantDashboardRoute;
         } else {
           route = Routes.loginRoute;
@@ -95,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen> {
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
               Text(
-                AppStrings.appName,
+                AppStrings.appName.trans,
                 style: getSemiBoldTextStyle(
                   color: AppColors.white,
                   fontSize: 32,
@@ -103,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               8.vs,
               Text(
-                AppStrings.splashBody,
+                AppStrings.splashBody.trans,
                 style: getRegularTextStyle(
                   fontSize: 16,
                   color: AppColors.white,

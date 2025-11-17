@@ -6,6 +6,7 @@ T getBlocData<T extends StateStreamableSource<Object?>>() => BlocProvider.of<T>(
 Future<T?> managerExecute<T>(
   Future<Either<Failure, ResponseModel>> either, {
   Function(T? data)? onSuccess,
+  Function(T? data,String? message)? onSuccessWithMessage,
   Function()? onStart,
   Function(String message)? onFail,
   Function(String message, T? data)? onNetworkFail,
@@ -31,7 +32,9 @@ Future<T?> managerExecute<T>(
     },
     (ResponseModel value) {
       data = value.data;
+
       onSuccess?.call(data);
+      onSuccessWithMessage?.call(data,value?.message);
     },
   );
   return data;
