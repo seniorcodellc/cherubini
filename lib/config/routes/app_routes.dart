@@ -5,6 +5,7 @@ import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
+import 'package:cherubini/features/edit_profile/presentation/screens/edit_profile_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/domain/use_cases/cash_reward_use_cases.dart';
 import 'package:cherubini/features/merchant_points_summary/domain/use_cases/due_pay_use_cases.dart';
 import 'package:cherubini/features/merchant_points_summary/presentation/managers/dues_cubit.dart';
@@ -134,6 +135,13 @@ class RouteGenerator {
         return buildPageRoute<T>(child: MerchantSettings());
       case Routes.operationsLog:
         return buildPageRoute<T>(child: TechOperationsLogScreen());
+      case Routes.editProfile:
+        return buildPageRoute<T>(
+            providers: [
+              BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            ],
+
+            child: EditProfileScreen());
 
       /*
         case Routes.followUps:
