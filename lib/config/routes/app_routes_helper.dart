@@ -5,7 +5,7 @@ Map<String, dynamic>? getArguments(BuildContext context) => (ModalRoute.of(conte
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-get getContext => navigatorKey.currentContext;
+get getContext => navigatorKey.currentState?.context;
 NavigatorState? get getCurrentState => navigatorKey.currentState;
 
 // static AppLocalizations get lan => Localizations.of<AppLocalizations>(getContext, AppLocalizations)!;

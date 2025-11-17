@@ -2,7 +2,7 @@
 
 
 import '../../exports.dart';
-import '../../features/auth/data/model/user_response_model.dart';
+import '../../features/authentication/data/model/response_model/login_response_model.dart';
 //import '../../features/auth/data/model/user_response_model.dart';
 
 class AppPrefs {

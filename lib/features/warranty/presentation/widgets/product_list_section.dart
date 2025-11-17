@@ -49,14 +49,14 @@ class _ProductListSectionState extends State<ProductListSection> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'المنتجات',
+                    AppStrings.products,
                     style: getBoldTextStyle(
                       fontSize: 14.sp,
                       color: AppColors.primaryColor,
                     ),
                   ),
                   CustomButton(
-                    text: 'إضافة منتج',
+                    text: AppStrings.addProduct,
                     textColor: AppColors.primaryColor,
                     onPressed: _addProduct,
                     borderColor: AppColors.borderColor3,

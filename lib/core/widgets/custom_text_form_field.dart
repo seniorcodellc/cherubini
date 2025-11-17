@@ -61,7 +61,7 @@ class CustomTextFormField extends StatefulWidget {
   TextDirection? textDirection;
   BoxConstraints? prefixIconConstraints;
   final Color? backgroundColor;
-  final double? shadow ;
+  final double? shadow;
   List<TextInputFormatter>? inputFormatters;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -86,7 +86,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         borderRadius: BorderRadius.circular(widget.radiusOfContainer ?? 15.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.shadowColor.withValues(alpha:widget.shadow ?? 0.1),
+            color: AppColors.shadowColor.withValues(
+              alpha: widget.shadow ?? 0.1,
+            ),
             blurRadius: 4.r,
           ),
         ],
@@ -104,6 +106,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         onTap: widget.onTap,
         inputFormatters: widget.inputFormatters,
         maxLines: widget.maxLines ?? 1,
+        mouseCursor: MouseCursor.uncontrolled,
         cursorColor: AppColors.primaryColor,
         autocorrect: true,
         textDirection: widget.textDirection,
@@ -122,8 +125,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           fillColor: Colors.transparent,
           filled: true,
           errorStyle: getSemiBoldTextStyle(
-            color: AppColors.brown,
+            color: AppColors.red,
             fontSize: 12.sp,
+            height: 0.1.h,
           ),
           prefixIconConstraints: widget.prefixIconConstraints,
           prefixIcon: widget.prefixIcon,

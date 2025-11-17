@@ -138,9 +138,7 @@ class GenericListView<CubitType extends CubitListView<T>, T>
   }
 
   int getCount(CubitStates state) {
-    print("staaaaaaaaaaaaaaa ${state.runtimeType}");
     if (state is LoadedState) {
-      print(state.data.length);
       return state.data.length;
     }
     if (state is LoadingMoreState) {

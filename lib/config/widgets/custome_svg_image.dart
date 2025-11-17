@@ -5,7 +5,7 @@ class CustomSVGImage extends StatelessWidget {
   const CustomSVGImage(
       {super.key,
       required this.asset,
-      this.matchTextDirection = true,
+      this.matchTextDirection =false,
       this.color,
       this.fit = BoxFit.contain,
 

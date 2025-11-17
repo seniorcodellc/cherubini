@@ -1,10 +1,11 @@
 import 'package:cherubini/core/widgets/h_line.dart';
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/scan/data/models/qr_code_model.dart';
 import 'package:cherubini/features/scan/presentation/widgets/bar_code_row.dart';
 
-class BarCodeDetails extends StatelessWidget {
-  const BarCodeDetails({super.key, required this.isSuccess});
- final bool isSuccess ;
+class QrCodeDetailsModel extends StatelessWidget {
+  final QrCodeModel qrCodeModel;
+  const QrCodeDetailsModel({super.key, required this.qrCodeModel});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,12 +23,12 @@ class BarCodeDetails extends StatelessWidget {
       ),
       child: Column(
         children: [
-          BarCodeRow(title: 'الرقم التسلسلي', value: 'SN123456789'),
+          BarCodeRow(title: AppStrings.serialNumber, value: 'SN123456789'),
           HLine(width: 311.w,),
-          BarCodeRow(title: 'اسم المنتج', value: 'ثلاجة سامسونج 20 قدم'),
+          BarCodeRow(title: AppStrings.productName, value: 'ثلاجة سامسونج 20 قدم'),
           HLine(width: 311.w,),
-          isSuccess?
-          BarCodeRow(title: 'النقاط المكتسبة', value: '+150') :
+ /*         isSuccess?
+          BarCodeRow(title:AppStrings.earnedPoints, value: '+150') :
           Container(
             height: 82.h,
             margin: getPadding(horizontal: 16.0.w,vertical: 12.0.h),
@@ -39,11 +40,11 @@ class BarCodeDetails extends StatelessWidget {
             child: Padding(
               padding: getPadding(all: 14.0.h),
               child: Text(
-                'هذا المنتج غير مسجل في النظام. تم إرسال \n تنبيه للمسؤول مع بيانات الفني والتاجر.',
+                AppStrings.unavailableMessage,
               textAlign: TextAlign.right,
               style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.orange2),),
             ),
-          ),
+          ),*/
         ],
       ) ,
     );

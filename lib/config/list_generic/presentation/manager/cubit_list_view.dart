@@ -19,7 +19,7 @@ abstract class CubitListView<Model> extends Cubit<CubitStates> {
   FilterAbstract? filterAbstract;
   num? id;
 
-  Future<List<Model>?>? getList({num? id, FilterAbstract? query}) async {
+  Future<List<Model>?>? getList({num? id, FilterAbstract? query,Function(List<Model> list)? onSuccess}) async {
     this.id = id;
     if (query == null) {
       filterAbstract = DefaultFilter();
@@ -29,15 +29,20 @@ abstract class CubitListView<Model> extends Cubit<CubitStates> {
     List<Model> returnedData = (await managerExecute<ListModel<Model>>(
           listUseCases.getList(id: id, query: filterAbstract),
           onSuccess: (ListModel<Model>? data) {
-            print("entered sta");
             list = data!.list!;
-            numberOfPages = data.numberOfPages ?? 1;
-            if (numberOfPages! > 1) {
-              isAllLoaded = false;
+            if(onSuccess.isNotNull){
+              onSuccess?.call(list);
+            }else{
+              numberOfPages = data.numberOfPages ?? 1;
+              if (numberOfPages! > 1) {
+                isAllLoaded = false;
+              }
+              isFirstLoaded = true;
+              emit(LoadedState<List<Model>>(data: list));
+
             }
-            isFirstLoaded = true;
-            print("length from cubit" + list.length.toString());
-            emit(LoadedState<List<Model>>(data: list));
+
+
           },
           onFail: (message) {
             emit(FailedState(message: message));

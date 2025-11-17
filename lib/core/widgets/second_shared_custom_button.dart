@@ -1,7 +1,7 @@
 import '../../exports.dart';
 
-class SecondSharedCustomButton extends StatelessWidget {
-  const SecondSharedCustomButton({
+class CustomOutLinedButton extends StatelessWidget {
+  const CustomOutLinedButton({
     super.key,
     required this.text,
     required this.onPressed,
