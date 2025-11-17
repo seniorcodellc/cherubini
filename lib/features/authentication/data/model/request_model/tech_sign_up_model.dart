@@ -5,11 +5,13 @@ class TechSignUpModel {
   String? name;
   String? confirmPassword;
   int? merchantId;
+  String? answer;
   TechSignUpModel({
     this.email,
     this.password,
     this.phone,
     this.name,
+    this.answer,
     this.confirmPassword,
     this.merchantId,
   });
@@ -19,6 +21,7 @@ class TechSignUpModel {
     map["password"] = password;
     map["phone"] = phone;
     map["name"] = name;
+    map["answer"] = answer;
     map["confirmPassword"] = confirmPassword;
     map["merchantid"] = merchantId;
     return map;

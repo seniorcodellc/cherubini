@@ -18,7 +18,7 @@ class ErrorScanScreen extends StatelessWidget {
             padding: getPadding(vertical: 35.0.h),
             child: SharedScanContainer(asset: AppAssets.errorScan,),
           ),
-          BarCodeDetails(isSuccess: false,),
+      //    BarCodeDetails(isSuccess: false,),
           24.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),

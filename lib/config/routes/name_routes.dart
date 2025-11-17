@@ -58,13 +58,11 @@ class Routes {
   static const String propertyDetailsRoute = "/descriptionRoute";
   static const String paymentRoute = "/paymentRoute";
   static const String paymentDoneRoute = "/paymentDoneRoute";
-  static const String scanCardRoute = "/scanCardRoute";
   static const String myPaidRoute = "/myPaidRoute";
   static const String historyAuctionRoute = "/historyAuctionRoute";
   static const String auctionDetailsRoute = "/auctionDetailsRoute";
   static const String paymentScreen = "/paymentScreen";
   static const String paymentDetailsScreen = "/paymentDetailsScreen";
-  static const String scanCardScreen = "/scanCardScreen";
   static const String myPaidScreen = "/myPaidScreen";
   static const String profileScreen = "/";
   static const String paymentMethodsScreen = "/paymentMethodsScreen";
