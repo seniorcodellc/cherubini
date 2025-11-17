@@ -2,9 +2,11 @@ import 'package:cherubini/core/history/domain/use_cases/history_use_cases.dart';
 import 'package:cherubini/core/history/presentation/manager/history_cubit.dart';
 import 'package:cherubini/core/profile/domain/use_cases/profile_use_cases.dart';
 import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
+import 'package:cherubini/features/authentication/domain/usecase/question_use_cases.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
+import 'package:cherubini/features/authentication/presentation/managers/question_cubit.dart';
 import 'package:cherubini/features/edit_profile/presentation/screens/edit_profile_screen.dart';
 import 'package:cherubini/features/merchant_points_summary/domain/use_cases/cash_reward_use_cases.dart';
 import 'package:cherubini/features/merchant_points_summary/domain/use_cases/due_pay_use_cases.dart';
@@ -105,6 +107,10 @@ class RouteGenerator {
           child: SignUpAsTech(),
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider(
+              create: (context) => QuestionCubit(questionUseCases: ServiceLocator().getIt<QuestionUseCases>())..getData(),
+            ),
+
             BlocProvider<MerchantListCubit>(
               create: (context) =>
                   MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),

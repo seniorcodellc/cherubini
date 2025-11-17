@@ -4,7 +4,7 @@ import 'package:cherubini/exports.dart';
 import '../models/profile_response_model.dart';
 
 
-abstract class ProfileRemoteDataSource extends DataRemoteDataSource{
+abstract class ProfileRemoteDataSource extends GenericRemoteDataSource{
 }
 
 class ProfileRemoteDataSourceImpl extends RequestsImpl

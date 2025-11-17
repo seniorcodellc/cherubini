@@ -17,7 +17,7 @@ class SignUpAsTech extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-  TextEditingController checkController = TextEditingController();
+  TextEditingController answerController = TextEditingController();
   int? merchantId;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -75,7 +75,7 @@ class SignUpAsTech extends StatelessWidget {
                     CustomTitleAndField(
                       text: AppStrings.merchantCheck.trans,
                       child: TechAnswerVerficationQuestion(
-                        checkController: checkController,
+                        answerController: answerController,
                       ),
                     ),
                     16.vs,
@@ -109,10 +109,14 @@ class SignUpAsTech extends StatelessWidget {
                           context,
                           phoneController.text,
                           Errors.PHONE_ERROR,
+                        );  checkStringError(
+                          context,
+                          answerController.text,
+                          Errors.VERIFICATION_ERROR,
                         );
                         checkStringError(
                           context,
-                          checkController.text,
+                          answerController.text,
                           Errors.VERIFICATION_ERROR,
                         );
                         checkNullError(
@@ -129,6 +133,7 @@ class SignUpAsTech extends StatelessWidget {
                               phone: phoneController.text,
                               email: emailController.text,
                               merchantId: merchantId,
+
                               password: passwordController.text,
                               confirmPassword: passwordController.text,
                               // check: checkController.text,

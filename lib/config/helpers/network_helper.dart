@@ -98,6 +98,11 @@ Future<ResponseModel> remoteExecute({
         'data':map,
         'success':true
       } as Map;
+    }else{
+      map={
+        'data':map,
+        'success':true
+      };
     }
     try {
       responseModel = fromJsonFunction(map);

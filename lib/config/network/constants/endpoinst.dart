@@ -20,7 +20,8 @@ abstract class EndPoints {
   static const String registerTech = '${api}registerTechnician';
   static const String governorate = '${api}governorate';
   static const String merchantList = '${api}merchantsList';
-  static const String paymentGateways = '${api}payments/payment-gateways';
+  static const String qrCode = '${api}eadQrCode';
+
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';
   static const String changePhone = '${api}change-phone';
@@ -31,13 +32,8 @@ abstract class EndPoints {
   static const String forgetPassword = '${api}forgot-password';
   static const String resetPassword = '${api}reset-password';
   static const String userLogout = '${api}logout';
-  static const String bookProperty = '${api}property/book';
-  static const String bookBidding = '${api}property/book_bidding';
-  static const String notification = '${api}user/notification';
-  static const String transactions = '${api}payments/transactions';
-  static const String cancelBook = '${api}user/bookings/cancel';
-  static const String addToWallet = '${api}payments/add_to_wallet';
-  static const String withdrawRequest = '${api}payments/withdraw_request';
+  static const String question = '${api}verificationQuestion';
+
   static const String unReadNotification =
       '${api}user/notification/unread-count';
   static const String readNotifications = '${api}user/notification/read';
