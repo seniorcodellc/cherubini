@@ -234,11 +234,10 @@ class AppStrings {
   static const String passwordHint = "*********";
 
   /// **************************** Splash ************************************
-  static const String splashHeader = "welcome to the Loyalty Points App";
-  static const String appName = "loyalty Points App";
-  static const String splashBody = "smart Points Management System";
-  static const String appDescription =
-      "an application for managing loyalty points between merchants and technicians. Collect points by scanning codes, track your balance and history, redeem rewards, and print warranty certificates.";
+  static const String splashHeader = "splashHeader";
+  static const String appName = "appName";
+  static const String splashBody = "splashBody";
+  static const String appDescription = "appDescription";
 
   /// **************************** tech dashboard ************************************
   static const String quickActions = "quickActions";
