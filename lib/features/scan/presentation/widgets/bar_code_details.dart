@@ -24,10 +24,13 @@ class QrCodeDetailsModel extends StatelessWidget {
       child: Column(
         children: [
           BarCodeRow(title: AppStrings.serialNumber, value: 'SN123456789'),
-          HLine(width: 311.w,),
-          BarCodeRow(title: AppStrings.productName, value: 'ثلاجة سامسونج 20 قدم'),
-          HLine(width: 311.w,),
- /*         isSuccess?
+          HLine(width: 311.w),
+          BarCodeRow(
+            title: AppStrings.productName,
+            value: 'ثلاجة سامسونج 20 قدم',
+          ),
+          HLine(width: 311.w),
+          /*         isSuccess?
           BarCodeRow(title:AppStrings.earnedPoints, value: '+150') :
           Container(
             height: 82.h,
@@ -46,7 +49,7 @@ class QrCodeDetailsModel extends StatelessWidget {
             ),
           ),*/
         ],
-      ) ,
+      ),
     );
   }
 }

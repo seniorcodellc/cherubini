@@ -11,14 +11,14 @@ class SuccessScanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.scanBarCode),
+      appBar: CustomAppbar(title: "AppStrings.scanCode"),
       child: Column(
         children: [
           Padding(
             padding: getPadding(vertical: 35.0.h),
             child: SharedScanContainer(asset: AppAssets.successScan),
           ),
-          BarCodeDetails(isSuccess: true),
+          //BarCodeDetails(isSuccess: true,),
           60.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),

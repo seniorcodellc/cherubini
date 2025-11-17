@@ -25,7 +25,7 @@ class SignUpAsTech extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.signUpAsNewTech.trans),
+      appBar: CustomAppbar(title: "AppStrings.signUpAsNewTechAr"),
       child: Padding(
         padding: getPadding(horizontal: 16.w),
         child: CustomScrollView(
@@ -46,7 +46,7 @@ class SignUpAsTech extends StatelessWidget {
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.phoneNum.trans.trans,
+                      text: AppStrings.phoneNum.trans,
 
                       child: SharedPhoneTextField(
                         phoneController: phoneController,
@@ -109,7 +109,8 @@ class SignUpAsTech extends StatelessWidget {
                           context,
                           phoneController.text,
                           Errors.PHONE_ERROR,
-                        );  checkStringError(
+                        );
+                        checkStringError(
                           context,
                           answerController.text,
                           Errors.VERIFICATION_ERROR,

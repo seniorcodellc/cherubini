@@ -308,7 +308,7 @@ class AppStrings {
   static const String warrantyCertificates = "warrantyCertificates";
 
   /// **************************** scan ************************************
-  static const String startScan = "start Scanning";
+  static const String startScan = "startScan";
   static const String scanOtherCode = "scan Another Barcode";
   static const String serialNumber = "serial Number";
   static const String productName = "product Name";
