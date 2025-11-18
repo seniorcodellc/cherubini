@@ -78,7 +78,7 @@ class CustomBackground extends StatelessWidget {
         appBar: title.isNotNull
             ? AppBar(
                 backgroundColor:
-                    appBarBackgroundColor ?? AppColors.primaryColor,
+                    appBarBackgroundColor ?? AppColors.gradientColorStart,
                 toolbarHeight: 80.h,
                 title: Text(
                   title!,

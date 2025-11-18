@@ -7,17 +7,20 @@ class LogInHaveNoAccountRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        HorizontalCustomDivider(),
-        16.hs,
-        Text(
-          AppStrings.haveNoAccount.trans,
-          style: getRegularTextStyle(color: AppColors.subTitleColor),
-        ),
-        16.hs,
-        HorizontalCustomDivider(),
-      ],
+    return Padding(
+      padding: getPadding(horizontal: 16.w),
+      child: Row(
+        children: [
+          HorizontalCustomDivider(),
+          16.hs,
+          Text(
+            AppStrings.haveNoAccount.trans,
+            style: getRegularTextStyle(color: AppColors.subTitleColor),
+          ),
+          16.hs,
+          HorizontalCustomDivider(),
+        ],
+      ),
     );
   }
 }
