@@ -25,8 +25,8 @@ class LoginScreen extends StatelessWidget {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     LogInWelcomeBody(),
                     32.vs,
@@ -83,19 +83,26 @@ class LoginScreen extends StatelessWidget {
                     LogInHaveNoAccountRow(),
                     32.vs,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTraderRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsMerchant.trans,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTraderRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsMerchant.trans,
+                            style: getRegularTextStyle(fontSize: 13,color: AppColors.primaryColor),
+                          ),
                         ),
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTechRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsTech.trans,
+                        16.hs,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTechRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsTech.trans,
+                            style: getRegularTextStyle(fontSize: 13,color: AppColors.primaryColor),
+
+                          ),
                         ),
                       ],
                     ),
