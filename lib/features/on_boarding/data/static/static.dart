@@ -5,18 +5,18 @@ class OnboardingStatics {
   static List<OnboardingModel> onBoardingItems = [
     OnboardingModel(
       imagePath: AppAssets.onboarding1,
-      title: AppStrings.onBoarding1Title.trans,
-      subTitle: AppStrings.onBoarding1SubTitle.trans,
+      title: AppStrings.onBoarding1Title,
+      subTitle: AppStrings.onBoarding1SubTitle,
     ),
     OnboardingModel(
       imagePath: AppAssets.onboarding2,
-      title: AppStrings.onBoarding2Title.trans,
-      subTitle: AppStrings.onBoarding2SubTitle.trans,
+      title: AppStrings.onBoarding2Title,
+      subTitle: AppStrings.onBoarding2SubTitle,
     ),
     OnboardingModel(
       imagePath: AppAssets.onboarding3,
-      title: AppStrings.onBoarding3Title.trans,
-      subTitle: AppStrings.onBoarding3SubTitle.trans,
+      title: AppStrings.onBoarding3Title,
+      subTitle: AppStrings.onBoarding3SubTitle,
     ),
   ];
 }

@@ -61,6 +61,7 @@ class CustomElevatedButton extends StatelessWidget {
             Text(
               text,
               textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
               style:
                   style ?? getRegularTextStyle(color: AppColors.primaryColor),
             ),

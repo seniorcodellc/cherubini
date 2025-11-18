@@ -50,6 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Text(
                   OnboardingStatics.onBoardingItems[index].title.trans,
                   style: getSemiBoldTextStyle(fontSize: 24.sp, color: AppColors.primaryColor),
+                  textAlign: TextAlign.center,
                 ),
                 10.vs,
                 Padding(
@@ -62,7 +63,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 10.vs,
                 OnboardingDots(currentPage: currentPage),
-                100.vs,
+                90.vs,
                 OnboardingButtons(
                   onTap: () {
                     nextPage();

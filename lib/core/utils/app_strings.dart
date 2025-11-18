@@ -263,17 +263,17 @@ class AppStrings {
   static const String viewAll = "viewAll";
   static const String totalOperations = "totalOperations";
   static const String rewards = "rewards";
-  static const String pointsLog = "points History";
-  static const String techName = "mohammed Ali";
-  static const String techDescription = "certified Technician";
-  static const String profileEdit = "edit Profile";
-  static const String profileChangePassword = "change Password";
+  static const String pointsLog = "pointsLog";
+  static const String techName = "techName";
+  static const String techDescription = "profileEdit";
+  static const String profileEdit = "profileEdit";
+  static const String profileChangePassword = "profileChangePassword";
   static const String notifications = "notifications";
   static const String logOut = "logOut";
   static const String pointsNotifications = "pointsNotifications";
   static const String deleteNotifications = "deleteNotifications";
   static const String systemNotifications = "systemNotifications";
-  static const String applyForNextAchieve = "apply for Next Reward";
+  static const String applyForNextAchieve = "applyForNextAchieve";
 
   /// **************************** Merchant dashboard ************************************
   static const String merchantCompanyName = "merchantCompanyName";
@@ -285,6 +285,7 @@ class AppStrings {
   static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
+  static const String techniciansManagement = "techniciansManagement";
   static const String activeTech = "activeTech";
   static const String waitingTech = "waitingTech";
   static const String active = "active";
@@ -293,8 +294,8 @@ class AppStrings {
   static const String scanOperation = "scanOperation";
   static const String showDetails = "show Details";
   static const String point = "point";
-  static const String techQuestion = "merchant Verification Question";
-  static const String techQuestionAnswer = "merchant Verification Answer";
+  static const String techQuestion = "techQuestion";
+  static const String techQuestionAnswer = "techQuestionAnswer";
   static const String accept = "accept";
   static const String reject = "reject";
 
@@ -312,7 +313,7 @@ class AppStrings {
   static const String cancel = "cancel";
 
   /// **************************** Operations History ************************************
-  static const String operationsHistory = "operations History";
+  static const String operationsHistory = "operationsHistory";
   static const String products = "products";
   static const String product = "product";
   static const String publishWarranty = "publishWarranty";
@@ -339,7 +340,7 @@ class AppStrings {
   static const String home = "home";
   static const String points = "points";
   static const String logs = "logs";
-  static const String operationsLogs = "operations Log";
+  static const String operationsLogs = "operationsLogs";
 
   ///************************************************************
   static const String suspended = "suspended";
@@ -348,7 +349,7 @@ class AppStrings {
   static const String collected = "collected";
   static const String notCollected = "notCollected";
   static const String dueDetails = "dueDetails";
-  static const String payDues = "pay Dues";
+  static const String payDues = "payDues";
   static const String displayDetails = "displayDetails";
   static const String startNow = "startNow";
   static const String techManagementTitle = "techManagementTitle";

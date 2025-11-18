@@ -402,8 +402,8 @@
   "pleaseWaitUntilApproved": "please wait until get Approved",
   "loggedInSuccessfully": "logged in successfully",
 
-"cameraBarcode": "Point the camera at the barcode",
-"techManagement": "Technician\nManagement",
+
+
   "login": "login",
   "logInWelcome": "Welcome to the Loyalty Points App",
   "email": "email",
@@ -468,6 +468,7 @@
   "systemNotifications": "system Notifications",
   "applyForNextAchieve": "apply for Next Reward",
   "merchantCompanyName": "Advanced devices company",
+  "techManagement": "Technicians\n Management",
   "pointsSummary": "Points\nSummary",
   "operationHistory": "Operation\nHistory",
   "scanBarcode": "Scan\nBarcode",
