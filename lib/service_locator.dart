@@ -54,6 +54,10 @@ import 'features/on_boarding/data/repositories/onboarding_repo_impl.dart';
 import 'features/on_boarding/domain/repositories/onboarding_repo.dart';
 import 'features/on_boarding/domain/usecase/onborading_usecases.dart';
 import 'features/on_boarding/presentation/managers/onboarding_manager_cubit.dart';
+import 'features/scan/data/data_sources/qr_code_remote_data_source.dart';
+import 'features/scan/data/repositories/qr_code_repo_impl.dart';
+import 'features/scan/domain/repositories/qr_code_repo.dart';
+import 'features/scan/domain/use_cases/qrcode_usecase.dart';
 import 'features/technican_management/data/repositories/technician_repo_impl.dart';
 import 'features/technican_management/presentation/manager/technician_cubit.dart';
 
@@ -84,6 +88,7 @@ class ServiceLocator {
     registerDuePay;
     registerLanguage;
     registerQuestion;
+    registerQrCode;
   }
 
   get registerAuthDependencies {
@@ -98,6 +103,11 @@ class ServiceLocator {
     getIt.registerLazySingleton<DuePayRemoteDataSource>(() => DuePayRemoteDataSourceImpl(dioConsumer: getIt()));
     getIt.registerLazySingleton<DuePayRepo>(() => DuePayRepoImpl(duePayRemoteDataSource: getIt()));
     getIt.registerLazySingleton<DuePayUseCases>(() => DuePayUseCases(duePayRepo: getIt()));
+  }
+  get registerQrCode {
+    getIt.registerLazySingleton<QrCodeRemoteDataSource>(() => QrCodeRemoteDataSourceImpl(dioConsumer: getIt()));
+    getIt.registerLazySingleton<QrCodeRepo>(() => QrCodeRepoImpl(qrCodeRemoteDataSource: getIt()));
+    getIt.registerLazySingleton<QrCodeUseCases>(() => QrCodeUseCases(qrCodeRepo: getIt()));
   }
 
   get registerQuestion {

@@ -11,9 +11,9 @@ class PointsList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(), 
-      itemCount: DashboardStatics.pointsList.length,
+      itemCount: pointsList.length,
       itemBuilder: (context, index) {
-        final model = DashboardStatics.pointsList[index];
+        final model = pointsList[index];
         return PointsItem(model: model);
       }
     );

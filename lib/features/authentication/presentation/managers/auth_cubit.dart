@@ -233,8 +233,5 @@ class AuthCubit extends Cubit<CubitStates> {
     },
   );
 
-  void logOutDemo() {
-    user = null;
-    emit(ChangeState());
-  }
+
 }

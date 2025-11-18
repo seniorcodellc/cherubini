@@ -1,3 +1,4 @@
+import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/exports.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_gray_circle.dart';
 
@@ -29,23 +30,33 @@ class SharedDashboardHeader extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${AppStrings.welcome.trans} ${context.read<AuthCubit>().user?.name.trans.validate}',
+            BlocBuilder<ProfileCubit, CubitStates>(
+              builder: (context, state) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                state is LoadedState?  Text(
+                    '${AppStrings.welcome.trans} ${context.read<ProfileCubit>().model?.name.trans.validate}',
 
-                  style: getBoldTextStyle(fontSize: 24.sp, color: Colors.white),
-                ),
-                10.vs,
-                Text(
-                  AppStrings.merchantCompanyName.trans,
-                  style: getRegularTextStyle(
-                    fontSize: 16.sp,
-                    color: Colors.white,
+                    style: getBoldTextStyle(
+                      fontSize: 24.sp,
+                      color: Colors.white,
+                    ),
+                  ):SizedBox(height: 20,width: 20,child: CircularProgressIndicator(color: AppColors.white,),),
+                  AnimatedSwitcher(
+                    duration: 1000.microseconds,
+                    child:
+                        context.read<ProfileCubit>().model?.companyName != null
+                        ? Padding(padding: getPadding(top: 10.h),child: Text(
+                          AppStrings.merchantCompanyName.trans,
+                          style: getRegularTextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.white,
+                          ),
+                        ),)
+                        : SizedBox.shrink(),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SettingsGrayCircle(onTap: onTap),
           ],

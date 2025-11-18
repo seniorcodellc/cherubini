@@ -1,8 +1,12 @@
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
+import '../../data/models/quick_action_model.dart';
 import '../../data/statics/statics.dart';
 
 class QuickActionWidget extends StatelessWidget {
-  const QuickActionWidget({super.key});
+  final List<QuickActionModel> quickActionList ;
+
+  const QuickActionWidget({required this.quickActionList,super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,10 +27,11 @@ class QuickActionWidget extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: getPadding(horizontal: 8.w),
-            itemCount: DashboardStatics.actionsList.length,
+            itemCount: quickActionList.length,
             separatorBuilder: (context, index) => 10.hs,
             itemBuilder: (context, index) {
-              final model = DashboardStatics.actionsList[index];
+
+              final model = quickActionList[index];
               return GestureDetector(
                 onTap: model.onTap,
                 child: Container(
