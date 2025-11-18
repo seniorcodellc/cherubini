@@ -1,4 +1,5 @@
 {
+
   "phoneError": "Phone Error",
   "nameError": "Name Error",
   "gallery": "Gallery",
@@ -521,7 +522,7 @@
   "reactiveTechnician": "Reactivate Technician",
   "collected": "collected",
   "notCollected": "not Collected",
-  "dueDetails": "due Details",
+  "dueDetails": "Due Details",
   "payDues": "pay Dues",
   "displayDetails": "Display Details",
   "startNow": "start Now",
@@ -530,5 +531,8 @@
   "onBoarding3Title": "Redeem Points for Rewards",
   "onBoarding1SubTitle": "Scan the barcode and earn points with every purchase",
   "onBoarding2SubTitle": "Smart scanning system for products and automatic point registration",
-  "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts"
+  "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts",
+  "pointsSummaryTitle": "points Summary",
+  "techManagementTitle": "Tech Management",
+  "operationHistoryTitle": "Operation History"
 }

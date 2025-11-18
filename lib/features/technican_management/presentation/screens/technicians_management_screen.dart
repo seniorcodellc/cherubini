@@ -25,7 +25,7 @@ class _TechniciansManagementScreenState
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: AppStrings.techManagement.trans),
+      appBar: CustomAppbar(title: AppStrings.techManagementTitle.trans),
       showAppbar: true,
       child: CustomScrollView(
         slivers: [

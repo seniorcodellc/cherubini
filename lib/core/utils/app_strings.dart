@@ -259,6 +259,7 @@ class AppStrings {
   static const String merchantCompanyName = "merchantCompanyName";
   static const String techManagement = "techManagement";
   static const String pointsSummary = "pointsSummary";
+  static const String pointsSummaryTitle = "pointsSummaryTitle";
   static const String operationHistory = "operationHistory";
   static const String scanBarcode = "scanBarcode";
   static const String scanBarcodeTitle = "scanBarcodeTitle";
@@ -330,6 +331,8 @@ class AppStrings {
   static const String payDues = "pay Dues";
   static const String displayDetails = "displayDetails";
   static const String startNow = "startNow";
+  static const String techManagementTitle = "techManagementTitle";
+  static const String operationHistoryTitle = "operationHistoryTitle";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
