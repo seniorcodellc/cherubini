@@ -192,7 +192,7 @@ class AppStrings {
   static const String logInWelcome = "logInWelcome";
   static const String email = "email";
   static const String password = "password";
-  static const String confirmPassword = "confirm Password";
+  static const String confirmPassword = "confirmPassword";
   static const String forgetPassword = "forgetPassword";
   static const String haveNoAccount = "haveNoAccount";
   static const String signUpAsMerchant = "signUpAsMerchant";
@@ -226,7 +226,7 @@ class AppStrings {
   static const String phoneNumHint = "phoneNumHint";
   static const String emailHint = "emailHint";
   static const String fullName = "fullName";
-  static const String passwordHint = "passwordHint";
+  static const String passwordHint = "********";
 
   /// **************************** Splash ************************************
   static const String splashHeader = "splashHeader";
@@ -236,23 +236,23 @@ class AppStrings {
 
   /// **************************** Forget password screen ************************************
   ///
-  static const String pleaseEnterYourEmail1 =
-      "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين";
-  static const String pleaseEnterYourEmail2 = "كلمة المرور";
-  // static const String resetPassword = "إعادة تعيين كلمة المرور";
-  static const String yourEmail = "بريدك الإلكترونى";
-  static const String forgetPasswordQuestionMark = "نسيت كلمة المرور؟";
+  static const String pleaseEnterYourEmail1 = "pleaseEnterYourEmail1";
+
+  static const String pleaseEnterYourEmail2 = "pleaseEnterYourEmail2";
+  static const String resetPassword = "resetPassword";
+  static const String yourEmail = "yourEmail";
+  static const String forgetPasswordQuestionMark = "forgetPasswordQuestionMark";
 
   /// **************************** Forget password screen2 ************************************
   ///
-  static const String assignNewPassword = "تعيين كلمة مرور جديدة";
-  // static const String createNewPassword = "أنشئ كلمة مرور جديدة.";
+  static const String assignNewPassword = "assignNewPassword";
+  static const String createNewPassword = "createNewPassword";
+
   /// **************************** Enter Code screen ************************************
-  static const String checkCode = "التحقق من الرمز";
-  static const String enterCodeScreenHeader =
-      "أرسلنا رابط إعادة الضبط إلى exampl1@gmail.com أدخل الرمز المكون من 5 أرقام المذكور في البريد الإلكتروني. ";
-  static const String checkCodeConclusion1 = "لم يصلك البريد الإلكتروني بعد؟ ";
-  static const String checkCodeConclusion2 = "أعد الإرسال";
+  static const String checkCode = "checkCode";
+  static const String enterCodeScreenHeader = "enterCodeScreenHeader";
+  static const String checkCodeConclusion1 = "checkCodeConclusion1";
+  static const String checkCodeConclusion2 = "checkCodeConclusion2";
 
   /// **************************** tech dashboard ************************************
   static const String quickActions = "quickActions";
@@ -485,7 +485,7 @@ class AppStrings {
   static const String changeNumber = 'changeNumber';
   static const String continueText = 'continueText';
   static const String submit = 'submit';
-  static const String resetPassword = 'resetPassword';
+  // static const String resetPassword = 'resetPassword';
   static const String passwordMustBeDifferent = 'passwordMustBeDifferent';
   static const String awesome = 'awesome';
   static const String congratulations = 'congratulations';
@@ -501,7 +501,6 @@ class AppStrings {
   static const String money = 'money';
   static const String provider = 'provider';
   static const String oil = 'oil';
-  static const String createNewPassword = 'createNewPassword';
   static const String nameError = 'nameError';
   static const String settingAndPrivacy = "settingAndPrivacy";
   static const String chatSupport = "chatSupport";

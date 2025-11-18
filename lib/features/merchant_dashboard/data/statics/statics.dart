@@ -29,7 +29,7 @@ import '../models/scan_model.dart';
   ),
   QuickActionModel(
     iconPath: AppAssets.scan,
-    title: AppStrings.scanBarCode,
+    title: AppStrings.scanBarcode,
     onTap: () {
       Routes.scanRoute.moveTo();
     },
@@ -46,7 +46,7 @@ import '../models/scan_model.dart';
 
   QuickActionModel(
     iconPath: AppAssets.scan,
-    title: AppStrings.scanBarCode,
+    title: AppStrings.scanBarcode,
     onTap: () {
       Routes.scanRoute.moveTo();
     },

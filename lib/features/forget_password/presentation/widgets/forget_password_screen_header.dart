@@ -9,12 +9,12 @@ class ForgetPasswordScreenHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppStrings.pleaseEnterYourEmail1,
+          AppStrings.pleaseEnterYourEmail1.trans,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.darkGray),
         ),
         8.vs,
         Text(
-          AppStrings.pleaseEnterYourEmail2,
+          AppStrings.pleaseEnterYourEmail2.trans,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.darkGray),
         ),
       ],

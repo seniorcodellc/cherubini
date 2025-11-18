@@ -30,7 +30,7 @@ class ForgetPasswordScreen2 extends StatelessWidget {
                   children: [
                     24.vs,
                     Text(
-                      AppStrings.assignNewPassword,
+                      AppStrings.assignNewPassword.trans,
                       style: getSemiBoldTextStyle(
                         fontSize: 24,
                         color: AppColors.primaryColor,
@@ -38,26 +38,26 @@ class ForgetPasswordScreen2 extends StatelessWidget {
                     ),
                     20.vs,
                     Text(
-                      AppStrings.createNewPassword,
+                      AppStrings.createNewPassword.trans,
                       style: getRegularTextStyle(color: AppColors.darkGray),
                     ),
                     32.vs,
                     CustomTitleAndField(
-                      text: AppStrings.password,
+                      text: AppStrings.password.trans,
                       child: SharedPasswordTextField(
                         passwordController: passwordController,
                       ),
                     ),
                     16.vs,
                     CustomTitleAndField(
-                      text: AppStrings.confirmPassword,
+                      text: AppStrings.confirmPassword.trans,
                       child: SharedConfirmPasswordTextField(
                         confirmPasswordController: confirmPasswordController,
                       ),
                     ),
                     48.vs,
                     CustomButton(
-                      text: AppStrings.save,
+                      text: AppStrings.save.trans,
                       style: getRegularTextStyle(color: AppColors.white),
                       onPressed: () {
                         checkStringError(

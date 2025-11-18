@@ -1,4 +1,5 @@
 {
+  "forgetPasswordQuestionMark": "نسيت كلمه المرور ؟",
   "techManagementTitle": "إدارة الفنيين",
   "operationHistoryTitle": "سجل العمليات",
   "pointsSummaryTitle": "ملخص النقاط",
@@ -19,7 +20,7 @@
   "password":"كلمة المرور",
   "passwordHint":"********",
   "confirmPassword":"تأكيد كلمة المرور",
-  "forgetPassword": "نسيت كلمه المرور؟",
+  "forgetPassword": "نسيت كلمه المرور",
   "haveNoAccount": "ليس لديك حساب ؟",
   "signUpAsMerchant": "تسجيل تاجر",
   "signUpAsTech": "تسجيل فني",
@@ -269,7 +270,7 @@
   "enterTheFourDigits": "ادخل الرمز المرسل الي هاتفك المحمول",
   "nameRequired": "الاسم مطلوب",
   "createNewPassword": "إنشاء كلمة مرور جديدة",
-  "resetPassword": "\"أنشئ كلمة المرور الجديدة الخاصة بك\"",
+
   "filter": "تصفية",
   "category": "الفئة",
   "choose": "اختر",
@@ -561,6 +562,14 @@
   "loggedInSuccessfully": "تم تسجيل الدخول بنجاح",
   "scanError": "باركود غير مسجل",
   "serialNumber": "الرقم التسلسلى",
-  "scanAnotherBarcode": "مسح باركود آخر"
-
+  "scanAnotherBarcode": "مسح باركود آخر",
+  "pleaseEnterYourEmail1": "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين",
+  "pleaseEnterYourEmail2": "كلمه المرور",
+  "yourEmail": "بريدك الإلكترونى",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "enterCodeScreenHeader": "أرسلنا رابط إعادة الضبط إلى exampl1@gmail.comأدخل الرمز المكون من 5 أرقام المذكور في البريد الإلكتروني.",
+  "checkCode": "التحقق من الرمز",
+  "checkCodeConclusion1": "لم يصلك البريد الإلكتروني بعد؟ ",
+  "checkCodeConclusion2": "أعد الإرسال",
+  "assignNewPassword": "تعيين كلمة مرور جديدة"
 }
