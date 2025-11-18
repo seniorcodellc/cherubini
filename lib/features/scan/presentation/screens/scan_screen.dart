@@ -1,5 +1,6 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/exports.dart';
+import 'package:cherubini/features/scan/presentation/managers/qrcode_cubit.dart';
 import 'package:dotted_border/dotted_border.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_scan_button.dart';
@@ -21,7 +22,6 @@ class _ScanScreenState extends State<ScanScreen> {
   Widget build(BuildContext context) {
     return CustomBackground(
       title: AppStrings.scanBarCode.trans,
-      appBarBackgroundColor: AppColors.bgColor,
 
       child: Padding(
         padding: getPadding(horizontal: 16.w),
@@ -29,8 +29,7 @@ class _ScanScreenState extends State<ScanScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             150.vs,
-            _buildBeforeScanWidget,
-            150.vs,
+            _buildBeforeScanWidget,150.vs,
             CustomButton(
               text: AppStrings.startScan.trans,
               onPressed: () {
@@ -38,7 +37,6 @@ class _ScanScreenState extends State<ScanScreen> {
                   context,
                   onSuccess: () {
                     isScanning = true;
-
                     setState(() {});
                   },
                 );
@@ -64,9 +62,8 @@ class _ScanScreenState extends State<ScanScreen> {
                   scannedData = code;
                   isScanning = false;
                 });
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text('QR Code: $code')));
+                context.read<QrCubit>().readQrCode(scannedData!);
+
               }
             },
           ),

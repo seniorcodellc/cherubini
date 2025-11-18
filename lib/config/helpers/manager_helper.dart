@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
+
 import '../../exports.dart';
 import '../../features/authentication/presentation/managers/auth_cubit.dart';
 
@@ -6,7 +8,7 @@ T getBlocData<T extends StateStreamableSource<Object?>>() => BlocProvider.of<T>(
 Future<T?> managerExecute<T>(
   Future<Either<Failure, ResponseModel>> either, {
   Function(T? data)? onSuccess,
-  Function(T? data,String? message)? onSuccessWithMessage,
+  Function(ResponseModel data)? onSuccessWithMessage,
   Function()? onStart,
   Function(String message)? onFail,
   Function(String message, T? data)? onNetworkFail,
@@ -34,7 +36,7 @@ Future<T?> managerExecute<T>(
       data = value.data;
 
       onSuccess?.call(data);
-      onSuccessWithMessage?.call(data,value?.message);
+      onSuccessWithMessage?.call(value);
     },
   );
   return data;
@@ -53,6 +55,7 @@ Future<R?> executeWithDialog<R>({
 
   /// A function to be called with the response data if the operation succeeds.
   required Function(R? data) onSuccess,
+  Function(ResponseModel data)? onSuccessWithMessage,
 
   /// An optional function to be called before starting the operation (e.g., for showing a loading indicator).
   Function()? onStart,
@@ -100,6 +103,7 @@ Future<R?> executeWithDialog<R>({
         dialogType: AlertTypes.success,
         onTimeOut: () {
           onSuccess.call(data);
+          onSuccessWithMessage?.call(response);
         },
       );
     },
