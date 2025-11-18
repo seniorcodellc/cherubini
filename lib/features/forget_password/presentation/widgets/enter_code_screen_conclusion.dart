@@ -9,14 +9,14 @@ class EnterCodeScreenConclusion extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          AppStrings.checkCodeConclusion1,
+          AppStrings.checkCodeConclusion1.trans,
           style: getRegularTextStyle(
             color: AppColors.subTitleColor,
             fontSize: 14,
           ),
         ),
         Text(
-          AppStrings.checkCodeConclusion2,
+          AppStrings.checkCodeConclusion2.trans,
           style: getRegularTextStyle(
             color: AppColors.primaryColor,
             fontSize: 14,

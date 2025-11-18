@@ -52,7 +52,7 @@ class _LoginPasswordTextFieldState extends State<LoginPasswordTextField> {
                   Routes.forgetPasswordRoute.moveTo();
                 },
                 child: Text(
-                  AppStrings.forgetPasswordQuestionMark,
+                  AppStrings.forgetPasswordQuestionMark.trans,
                   style: getRegularTextStyle(color: AppColors.accentColor),
                 ),
               ),

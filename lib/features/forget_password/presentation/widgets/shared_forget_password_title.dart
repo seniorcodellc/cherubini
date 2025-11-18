@@ -6,7 +6,7 @@ class SharedForgetPasswordTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppStrings.forgetPassword,
+      AppStrings.forgetPassword.trans,
       style: getSemiBoldTextStyle(fontSize: 24, color: AppColors.primaryColor),
     );
   }

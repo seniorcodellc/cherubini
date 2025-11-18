@@ -26,7 +26,7 @@ class EnterCodeScreen extends StatelessWidget {
               SharedForgetPasswordTitle(),
               20.vs,
               Text(
-                AppStrings.enterCodeScreenHeader,
+                AppStrings.enterCodeScreenHeader.trans,
                 style: getRegularTextStyle(
                   color: AppColors.darkGray,
                   height: 2,
@@ -36,7 +36,7 @@ class EnterCodeScreen extends StatelessWidget {
               EnterCodeScreenOtp(otpController: otpController),
               40.vs,
               CustomButton(
-                text: AppStrings.checkCode,
+                text: AppStrings.checkCode.trans,
                 style: getRegularTextStyle(color: AppColors.white),
                 onPressed: () {
                   checkStringError(

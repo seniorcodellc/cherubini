@@ -30,12 +30,12 @@ class ForgetPasswordScreen extends StatelessWidget {
               ForgetPasswordScreenHeader(),
               32.vs,
               CustomTitleAndField(
-                text: AppStrings.yourEmail,
+                text: AppStrings.yourEmail.trans,
                 child: SharedEmailTextField(emailController: emailController),
               ),
               40.vs,
               CustomButton(
-                text: AppStrings.resetPassword,
+                text: AppStrings.resetPassword.trans,
                 style: getRegularTextStyle(color: AppColors.white),
                 onPressed: () {
                   checkStringError(

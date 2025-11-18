@@ -23,7 +23,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanBarCode.trans,
+      title: AppStrings.scanBarcodeTitle.trans,
       child: LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           child: ConstrainedBox(
@@ -58,7 +58,7 @@ class _ScanScreenState extends State<ScanScreen> {
                   GenericDataView<QrCodeCubit, dynamic>.fromState(
                     buildLoadedWidgetWithState: (state) => CustomButton(
                       text: state is LoadedState<QrCodeModel>
-                          ? AppStrings.scanOtherCode.trans
+                          ? AppStrings.scanAnotherBarcode
                           : AppStrings.startScan.trans,
                       onPressed: () {
                         if (state is LoadedState<QrCodeModel>) {
