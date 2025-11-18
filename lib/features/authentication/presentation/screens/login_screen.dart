@@ -2,6 +2,7 @@ import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/features/authentication/data/model/request_model/login_model.dart';
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/custom_login_signup_textfield_text.dart';
+import 'package:cherubini/features/authentication/presentation/widgets/login_password_text_field.dart';
 import '../../../../exports.dart';
 import '../widgets/log_in_have_no_account_row.dart';
 import '../widgets/log_in_welcome_body.dart';
@@ -43,25 +44,12 @@ class LoginScreen extends StatelessWidget {
                     padding: getPadding(horizontal: 16.w),
                     child: CustomTitleAndField(
                       text: AppStrings.password.trans,
-                      child: SharedPasswordTextField(
+                      child: LoginPasswordTextField(
                         passwordController: passwordController,
                       ),
                     ),
                   ),
-                  8.vs,
-                  Padding(
-                    padding: getPadding(horizontal: 16.w),
-                    child: Align(
-                      alignment: AlignmentDirectional.bottomEnd,
-                      child: Text(
-                        AppStrings.forgetPassword.trans,
-                        style: getRegularTextStyle(
-                          color: AppColors.accentColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  32.vs,
+                  20.vs,
                   Padding(
                     padding: getPadding(horizontal: 16.w),
                     child: CustomButton(

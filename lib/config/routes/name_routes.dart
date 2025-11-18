@@ -1,5 +1,8 @@
 class Routes {
   static const String splashScreen = "/";
+  static const String forgetPasswordRoute = "/forgetPassword";
+  static const String forgetPasswordRoute2 = "/forgetPassword2";
+  static const String enterCodeRoute = "/enterCode";
   static const String secondSplashScreen = "/secondSplashScreen";
   static const String selectLanguageRoute = "/selectLanguageRoute";
   static const String onBoardingRoute = "/onBoarding";

@@ -10,6 +10,7 @@ class LogInHaveNoAccountRow extends StatelessWidget {
     return Padding(
       padding: getPadding(horizontal: 16.w),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           HorizontalCustomDivider(),
           16.hs,
