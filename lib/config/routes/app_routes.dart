@@ -19,9 +19,7 @@ import 'package:cherubini/features/authentication/presentation/screens/sign_up_a
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_trader.dart';
 import 'package:cherubini/features/authentication/presentation/screens/register_accept_screen.dart';
 import 'package:cherubini/features/scan/domain/use_cases/qrcode_usecase.dart';
-import 'package:cherubini/features/scan/presentation/screens/error_scan_screen.dart';
 import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
-import 'package:cherubini/features/scan/presentation/screens/success_scan_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_operations_log_screen.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_points_summary_screen.dart';
@@ -88,14 +86,10 @@ class RouteGenerator {
       case Routes.scanRoute:
         return buildPageRoute<T>(
           child: ScanScreen(),
-          providers: [BlocProvider(create: (context) => QrCubit(qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>()))],
+          providers: [BlocProvider(create: (context) => QrCodeCubit(qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>()))],
           routeSettings: routeSettings,
         );
-      case Routes.successScanRoute:
-        return buildPageRoute<T>(child: SuccessScanScreen(), routeSettings: routeSettings);
-      case Routes.errorScanRoute:
-        return buildPageRoute<T>(child: ErrorScanScreen(), routeSettings: routeSettings);
-      case Routes.merchantWarrantyRoute:
+       case Routes.merchantWarrantyRoute:
         return buildPageRoute<T>(child: MerchantWarrantyScreen(), routeSettings: routeSettings);
       case Routes.techWarrantyRoute:
         return buildPageRoute<T>(child: TechWarrantyScreen(), routeSettings: routeSettings);

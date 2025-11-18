@@ -5,20 +5,28 @@ class UserResponseModel extends ObjectResponseModel {
 
   @override
   // TODO: implement getFromJsonFunction
-  Function(Map<String, dynamic> data) get getFromJsonFunction => UserModel.fromJson;
+  Function(Map<String, dynamic> data) get getFromJsonFunction =>
+      UserModel.fromJson;
 }
 
 class UserModel {
   String? name;
   String? email;
   String? token;
+  bool? isMerchant;
 
-  UserModel({this.name, this.email, this.token});
+  UserModel({this.name, this.email, this.token, this.isMerchant});
 
-  factory UserModel.fromJson(dynamic json) => UserModel(name: json['name'], email: json['email'], token: json['token']);
-  Map<String,dynamic> toJson()=>{
-   'name':name,
-    'email':email,
-    'token':token
+  factory UserModel.fromJson(dynamic json) => UserModel(
+    name: json['name'],
+    email: json['email'],
+    token: json['token'],
+    isMerchant: json['isMerchant'],
+  );
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'email': email,
+    'token': token,
+    'isMerchant': isMerchant,
   };
 }

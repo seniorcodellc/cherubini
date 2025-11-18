@@ -28,7 +28,7 @@ class AuthRepoImpl extends AuthRepo {
         localWrite: (data) => authLocalDataSource.cacheUser(user: data),
       );
   @override
-  Future<Either<Failure, ResponseModel>> logout() => executeImpl<Null>(
+  Future<Either<Failure, ResponseModel>> logout() => executeImpl(
     () => authRemoteDataSource.logout(),
     localWrite: (data) => authLocalDataSource.clearUser(),
   );

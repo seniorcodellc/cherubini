@@ -1,4 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 
 import '../../exports.dart';
 import '../../features/authentication/presentation/managers/auth_cubit.dart';
@@ -111,15 +110,7 @@ Future<R?> executeWithDialog<R>({
   return data;
 }
 
-Future<void> pushScreenWithMultipleBlocs<T>({
-  required BuildContext context,
-  required Widget screen,
-  required List<BlocProvider> blocProviders,
-}) async {
-  Widget wrappedScreen = screen;
 
-  // Wrap the screen with each BlocProvider in the correct order
-}
 
 Future<R?> executeWithSnackBar<R>({
   /// A required `Future<Either<Failure, R>>` future representing the asynchronous operation.

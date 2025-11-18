@@ -12,5 +12,8 @@ class QrCodeRemoteDataSourceImpl extends RequestsImpl implements QrCodeRemoteDat
 
   @override
   Future<ResponseModel> getData({num? id, query}) =>
-      postRequest(endPoint: EndPoints.qrCode, getFromJsonFunction: ResponseModel.fromJson, data: jsonEncode(query));
+      postRequest(endPoint: EndPoints.qrCode, getFromJsonFunction: ResponseModel.fromJson, data: jsonEncode([{
+        'id':1,
+        "code":query
+      }]));
 }

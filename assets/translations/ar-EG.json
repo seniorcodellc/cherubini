@@ -546,6 +546,9 @@
   "nameError": "الاسم غير صالح",
 "governmentError": "هذا الحقل ضرورى",
   "pleaseWaitUntilApproved": "من فضلك انتظر حتى يتم الموافقه",
-  "loggedInSuccessfully": "تم تسجيل الدخول بنجاح"
+  "loggedInSuccessfully": "تم تسجيل الدخول بنجاح",
+  "scanError": "باركود غير مسجل",
+  "serialNumber": "الرقم التسلسلى",
+  "scanAnotherBarcode": "مسح باركود آخر"
 
 }

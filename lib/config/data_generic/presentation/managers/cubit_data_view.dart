@@ -1,4 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 
 import '../../../../exports.dart';
 
@@ -35,7 +34,7 @@ class CubitDataView<Model> extends Cubit<CubitStates> {
       }
     },
   );
-  getDataWithDialog({
+  postDataWithDialog({
     num? id,
     dynamic query,
     dynamic Function(Model?)? onSuccess,

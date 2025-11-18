@@ -303,8 +303,8 @@ class AppStrings {
 
   /// **************************** scan ************************************
   static const String startScan = "startScan";
-  static const String scanOtherCode = "scan Another Barcode";
-  static const String serialNumber = "serial Number";
+  static const String scanOtherCode = "scanAnotherBarcode";
+  static const String serialNumber = "serialNumber";
   static const String productName = "product Name";
   static const String earnedPoints = "earned Points";
   static const String unavailableMessage =
