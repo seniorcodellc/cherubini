@@ -264,13 +264,12 @@ class AppStrings {
   static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
-  static const String techniciansManagement = "technicians Management";
   static const String activeTech = "active Technicians";
   static const String waitingTech = "under Review";
   static const String active = "active";
   static const String underReview = "under Review";
   static const String orderDate = "request Date";
-  static const String scanOperation = "scan Operation";
+  static const String scanOperation = "scanOperation";
   static const String showDetails = "show Details";
   static const String point = "point";
   static const String techQuestion = "merchant Verification Question";
@@ -323,8 +322,8 @@ class AppStrings {
 
   ///************************************************************
   static const String suspended = "suspended";
-  static const String suspendTechnician = "deactivate Technician";
-  static const String reactiveTechnician = "reactivate Technician";
+  static const String suspendTechnician = "suspendTechnician";
+  static const String reactiveTechnician = "reactiveTechnician";
   static const String collected = "collected";
   static const String notCollected = "notCollected";
   static const String dueDetails = "dueDetails";
