@@ -234,6 +234,26 @@ class AppStrings {
   static const String splashBody = "splashBody";
   static const String appDescription = "appDescription";
 
+  /// **************************** Forget password screen ************************************
+  ///
+  static const String pleaseEnterYourEmail1 =
+      "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين";
+  static const String pleaseEnterYourEmail2 = "كلمة المرور";
+  // static const String resetPassword = "إعادة تعيين كلمة المرور";
+  static const String yourEmail = "بريدك الإلكترونى";
+  static const String forgetPasswordQuestionMark = "نسيت كلمة المرور؟";
+
+  /// **************************** Forget password screen2 ************************************
+  ///
+  static const String assignNewPassword = "تعيين كلمة مرور جديدة";
+  // static const String createNewPassword = "أنشئ كلمة مرور جديدة.";
+  /// **************************** Enter Code screen ************************************
+  static const String checkCode = "التحقق من الرمز";
+  static const String enterCodeScreenHeader =
+      "أرسلنا رابط إعادة الضبط إلى exampl1@gmail.com أدخل الرمز المكون من 5 أرقام المذكور في البريد الإلكتروني. ";
+  static const String checkCodeConclusion1 = "لم يصلك البريد الإلكتروني بعد؟ ";
+  static const String checkCodeConclusion2 = "أعد الإرسال";
+
   /// **************************** tech dashboard ************************************
   static const String quickActions = "quickActions";
   static const String overallPoints = "overallPoints";

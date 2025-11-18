@@ -1,7 +1,3 @@
-import 'package:cherubini/core/history/domain/use_cases/history_use_cases.dart';
-import 'package:cherubini/core/history/presentation/manager/history_cubit.dart';
-import 'package:cherubini/core/profile/domain/use_cases/profile_use_cases.dart';
-import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/features/authentication/domain/usecase/question_use_cases.dart';
 import 'package:cherubini/features/authentication/presentation/managers/cities_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
@@ -34,6 +30,9 @@ import 'package:nested/nested.dart';
 import '../../exports.dart';
 
 import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
+import '../../features/forget_password/presentation/screens/enter_code_screen.dart';
+import '../../features/forget_password/presentation/screens/forget_password_screen.dart';
+import '../../features/forget_password/presentation/screens/forget_password_screen2.dart';
 import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
@@ -201,6 +200,27 @@ class RouteGenerator {
           ],
 
           child: EditProfileScreen(),
+        );
+      case Routes.forgetPasswordRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: ForgetPasswordScreen(),
+        );
+      case Routes.forgetPasswordRoute2:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: ForgetPasswordScreen2(),
+        );
+      case Routes.enterCodeRoute:
+        return buildPageRoute<T>(
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
+          child: EnterCodeScreen(),
         );
 
       /*
