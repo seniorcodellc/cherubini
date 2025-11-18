@@ -265,8 +265,8 @@ class AppStrings {
   static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
-  static const String activeTech = "active Technicians";
-  static const String waitingTech = "under Review";
+  static const String activeTech = "activeTech";
+  static const String waitingTech = "waitingTech";
   static const String active = "active";
   static const String underReview = "under Review";
   static const String orderDate = "request Date";
