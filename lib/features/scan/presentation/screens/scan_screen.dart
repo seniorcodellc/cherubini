@@ -20,7 +20,8 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanBarCode.trans,
+      appBar: CustomAppbar(title: AppStrings.scanBarcodeTitle.trans),
+      showAppbar: true,
       appBarBackgroundColor: AppColors.bgColor,
 
       child: Padding(
@@ -94,7 +95,7 @@ class _ScanScreenState extends State<ScanScreen> {
                   children: [
                     CustomSVGImage(asset: AppAssets.cameraFrame),
                     Padding(
-                      padding: getPadding(horizontal: 24.0.w,vertical: 15.0.h),
+                      padding: getPadding(horizontal: 24.0.w, vertical: 15.0.h),
                       child: Column(
                         children: [
                           Directionality(
@@ -102,11 +103,16 @@ class _ScanScreenState extends State<ScanScreen> {
                             child: CustomSVGImage(asset: AppAssets.scanCamera),
                           ),
                           8.vs,
-                          Text(AppStrings.cameraBarcode,style: getRegularTextStyle(fontSize: 16,color: AppColors.subTitleColor),)
+                          Text(
+                            AppStrings.cameraBarcode.trans,
+                            style: getRegularTextStyle(
+                              fontSize: 16,
+                              color: AppColors.subTitleColor,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-
                   ],
                 ),
               ),

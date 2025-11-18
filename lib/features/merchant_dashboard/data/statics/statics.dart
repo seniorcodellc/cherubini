@@ -48,7 +48,7 @@ class DashboardStatics {
     ),
     QuickActionModel(
       iconPath: AppAssets.scan,
-      title: AppStrings.scanBarCode,
+      title: AppStrings.scanBarcode,
       onTap: () {
         Routes.scanRoute.moveTo();
       },

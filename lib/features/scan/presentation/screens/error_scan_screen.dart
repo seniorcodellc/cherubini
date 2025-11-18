@@ -10,19 +10,23 @@ class ErrorScanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "AppStrings.scanCode"),
+      showAppbar: true,
+      appBar: CustomAppbar(title: AppStrings.scanBarcodeTitle.trans),
       child: Column(
         children: [
           Padding(
             padding: getPadding(vertical: 35.0.h),
-            child: SharedScanContainer(asset: AppAssets.cameraError, title: AppStrings.scanError.trans,),
+            child: SharedScanContainer(
+              asset: AppAssets.cameraError,
+              title: AppStrings.scanError.trans,
+            ),
           ),
           //    BarCodeDetails(isSuccess: false,),
           24.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),
             child: CustomButton(
-              text: AppStrings.scanOtherCode,
+              text: AppStrings.scanAnotherBarcode.trans,
               textColor: AppColors.primaryColor,
               onPressed: () {
                 Routes.errorScanRoute.moveTo();

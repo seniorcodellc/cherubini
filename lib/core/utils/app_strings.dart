@@ -209,7 +209,8 @@ class AppStrings {
   static const String merchantCheckHint = "merchantCheckHint";
   static const String createAccountButton = "createAccountButton";
   static const String returnToSignUpButton = "returnToSignUpButton";
-  static const String waitingForAcceptRegisterText = "waitingForAcceptRegisterText";
+  static const String waitingForAcceptRegisterText =
+      "waitingForAcceptRegisterText";
   static const String techInstruction = "techInstruction";
   static const String merchantInstruction1 = "merchantInstruction1";
   static const String merchantInstruction2 = "merchantInstruction2";
@@ -256,10 +257,11 @@ class AppStrings {
 
   /// **************************** Merchant dashboard ************************************
   static const String merchantCompanyName = "merchantCompanyName";
-  static const String techManagement = "techniciansManagement";
+  static const String techManagement = "techManagement";
   static const String pointsSummary = "pointsSummary";
   static const String operationHistory = "operationHistory";
-  static const String scanBarCode = "scanBarCode";
+  static const String scanBarcode = "scanBarcode";
+  static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
   static const String techniciansManagement = "technicians Management";
@@ -303,7 +305,7 @@ class AppStrings {
 
   /// **************************** scan ************************************
   static const String startScan = "startScan";
-  static const String scanOtherCode = "scan Another Barcode";
+  static const String scanAnotherBarcode = "scanAnotherBarcode";
   static const String serialNumber = "serial Number";
   static const String productName = "product Name";
   static const String earnedPoints = "earned Points";
@@ -311,8 +313,7 @@ class AppStrings {
       "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
   static const String scanSuccess = "scanSuccess";
   static const String scanError = "scanError";
-  static const String cameraBarcode = "وجّه الكاميرا نحو الباركود";
-
+  static const String cameraBarcode = "cameraBarcode";
 
   /// **************************** bottom nav bar tabs ************************************
   static const String home = "home";

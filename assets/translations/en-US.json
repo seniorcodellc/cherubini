@@ -128,7 +128,6 @@
   "yourAreBidder": "You are the highest bidder\n",
   "yourAreOutbid": "You've been outbid\n",
   "phoneNumber": "Phone Number",
-  "phoneNumHint": "01234567",
   "unitProposed": "Unit Proposed",
   "youAreWinner": "You are the winner of the auction\n",
   "youAreLoser": "The award has been awarded to another bidder\n",
@@ -402,8 +401,8 @@
   "pleaseWaitUntilApproved": "please wait until get Approved",
   "loggedInSuccessfully": "logged in successfully",
 
-
-
+"cameraBarcode": "Point the camera at the barcode",
+"techManagement": "Technician\nManagement",
   "login": "login",
   "logInWelcome": "Welcome to the Loyalty Points App",
   "email": "email",
@@ -470,7 +469,11 @@
   "merchantCompanyName": "Advanced devices company",
   "pointsSummary": "Points\nSummary",
   "operationHistory": "Operation\nHistory",
-  "scanBarCode": "Scan\nBarCode",
+  "scanBarcode": "Scan\nBarcode",
+  "scanBarcodeTitle": "Scan Barcode",
+  "scanError": "Unregistered barcode",
+  "scanAnotherBarcode": "Scan Another Barcode",
+  "scanSuccess": "Scan Success",
   "techniciansManagement": "Technicians\nManagement",
   "activeTech": "active Technicians",
   "waitingTech": "under Review",
