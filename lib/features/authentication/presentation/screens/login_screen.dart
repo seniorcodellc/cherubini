@@ -94,21 +94,26 @@ class LoginScreen extends StatelessWidget {
                   LogInHaveNoAccountRow(),
                   32.vs,
                   Padding(
-                    padding: getPadding(horizontal: 16.w),
+                    padding: getPadding(horizontal: 10.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTraderRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsMerchant.trans,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTraderRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsMerchant.trans,
+                          ),
                         ),
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTechRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsTech.trans,
+                        12.hs,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTechRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsTech.trans,
+                          ),
                         ),
                       ],
                     ),
