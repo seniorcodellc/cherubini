@@ -2,6 +2,7 @@ import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/features/authentication/data/model/request_model/login_model.dart';
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/custom_login_signup_textfield_text.dart';
+import 'package:cherubini/features/authentication/presentation/widgets/login_password_text_field.dart';
 import '../../../../exports.dart';
 import '../widgets/log_in_have_no_account_row.dart';
 import '../widgets/log_in_welcome_body.dart';
@@ -17,44 +18,41 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      child: Padding(
-        padding: getPadding(horizontal: 16.w, top: 79.h),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    LogInWelcomeBody(),
-                    32.vs,
-                    CustomTitleAndField(
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  79.vs,
+                  LogInWelcomeBody(),
+                  32.vs,
+                  Padding(
+                    padding: getPadding(horizontal: 16.w),
+                    child: CustomTitleAndField(
                       text: AppStrings.email.trans,
                       child: SharedEmailTextField(
                         emailController: emailController,
                       ),
                     ),
-                    16.vs,
-                    CustomTitleAndField(
+                  ),
+                  16.vs,
+                  Padding(
+                    padding: getPadding(horizontal: 16.w),
+                    child: CustomTitleAndField(
                       text: AppStrings.password.trans,
-                      child: SharedPasswordTextField(
+                      child: LoginPasswordTextField(
                         passwordController: passwordController,
                       ),
                     ),
-                    8.vs,
-                    Align(
-                      alignment: AlignmentDirectional.bottomEnd,
-                      child: Text(
-                        AppStrings.forgetPassword.trans,
-                        style: getRegularTextStyle(
-                          color: AppColors.accentColor,
-                        ),
-                      ),
-                    ),
-                    32.vs,
-                    CustomButton(
+                  ),
+                  20.vs,
+                  Padding(
+                    padding: getPadding(horizontal: 16.w),
+                    child: CustomButton(
                       text: AppStrings.login.trans,
                       onPressed: () {
                         checkStringError(
@@ -79,32 +77,41 @@ class LoginScreen extends StatelessWidget {
                         if (_formKey.currentState!.validate().isTrue) {}
                       },
                     ),
-                    42.vs,
-                    LogInHaveNoAccountRow(),
-                    32.vs,
-                    Row(
+                  ),
+                  42.vs,
+                  LogInHaveNoAccountRow(),
+                  32.vs,
+                  Padding(
+                    padding: getPadding(horizontal: 10.w),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTraderRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsMerchant.trans,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTraderRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsMerchant.trans,
+                          ),
                         ),
-                        CustomElevatedButton(
-                          onPressed: () {
-                            Routes.registerTechRoute.moveTo();
-                          },
-                          text: AppStrings.signUpAsTech.trans,
+                        12.hs,
+                        Expanded(
+                          child: CustomElevatedButton(
+                            onPressed: () {
+                              Routes.registerTechRoute.moveTo();
+                            },
+                            text: AppStrings.signUpAsTech.trans,
+                          ),
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  55.vs,
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

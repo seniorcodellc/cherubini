@@ -54,7 +54,7 @@ class OperationsHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.operationHistory.trans,
+      title: AppStrings.operationHistoryTitle.trans,
       showNavBar: true,
       child: Padding(
         padding: getPadding(horizontal: 16.w),

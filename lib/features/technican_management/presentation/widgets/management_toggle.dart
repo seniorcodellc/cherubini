@@ -18,7 +18,7 @@ class ManagementToggle extends StatefulWidget {
 }
 
 class _ManagementToggleState extends State<ManagementToggle> {
-  Status status =Status.ACTIVE;
+  Status status = Status.ACTIVE;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,64 +32,65 @@ class _ManagementToggleState extends State<ManagementToggle> {
         padding: getPadding(horizontal: 5.0.w),
         child: Row(
           children: [
-            Expanded(child: SharedToggleItem(
-              text: AppStrings.activeTech,
-              color: status==Status.ACTIVE ? AppColors.white : AppColors.mutedBlue,
-              style: getBoldTextStyle(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
+            Expanded(
+              child: SharedToggleItem(
+                text: AppStrings.activeTech.trans,
+                color: status == Status.ACTIVE
+                    ? AppColors.white
+                    : AppColors.mutedBlue,
+                style: getBoldTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
+                onTap: () {
+                  if (status.isNotEqualTo(Status.ACTIVE)) {
+                    status = Status.ACTIVE;
+                    widget.onTabSelected(status);
+                    setState(() {});
+                  }
+                },
               ),
-              onTap: () {
-                if(status.isNotEqualTo(Status.ACTIVE)){
-                  status=Status.ACTIVE;
-                  widget.onTabSelected(status);
-                  setState(() {
-
-                  });
-                }
-
-
-              },
-            )),
+            ),
             4.hs,
-            Expanded(child: SharedToggleItem(
-              text: AppStrings.waitingTech,
-              color: status==Status.PENDING ? AppColors.white : AppColors.mutedBlue,
-              style: getBoldTextStyle(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
+            Expanded(
+              child: SharedToggleItem(
+                text: AppStrings.waitingTech.trans,
+                color: status == Status.PENDING
+                    ? AppColors.white
+                    : AppColors.mutedBlue,
+                style: getBoldTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
+                onTap: () {
+                  if (status.isNotEqualTo(Status.PENDING)) {
+                    status = Status.PENDING;
+                    widget.onTabSelected(status);
+                    setState(() {});
+                  }
+                },
               ),
-              onTap: () {
-
-                if(status.isNotEqualTo(Status.PENDING)){
-                  status=Status.PENDING;
-                  widget.onTabSelected(status);
-                  setState(() {
-
-                  });
-                }
-
-              },
-            )),   4.hs,
-            Expanded(child: SharedToggleItem(
-              text: AppStrings.suspended,
-              color: status==Status.SUSPENDED ? AppColors.white : AppColors.mutedBlue,
-              style: getBoldTextStyle(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
+            ),
+            4.hs,
+            Expanded(
+              child: SharedToggleItem(
+                text: AppStrings.suspended.trans,
+                color: status == Status.SUSPENDED
+                    ? AppColors.white
+                    : AppColors.mutedBlue,
+                style: getBoldTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
+                onTap: () {
+                  if (status.isNotEqualTo(Status.SUSPENDED)) {
+                    status = Status.SUSPENDED;
+                    widget.onTabSelected(status);
+                    setState(() {});
+                  }
+                },
               ),
-              onTap: () {
-
-                if(status.isNotEqualTo(Status.SUSPENDED)){
-                  status=Status.SUSPENDED;
-                  widget.onTabSelected(status);
-                  setState(() {
-
-                  });
-                }
-
-              },
-            )),
+            ),
           ],
         ),
       ),

@@ -18,7 +18,7 @@ class DuesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       showNavBar: true,
-      title: AppStrings.pointsSummary.trans,
+      title: AppStrings.pointsSummaryTitle.trans,
       child: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [

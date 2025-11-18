@@ -209,7 +209,8 @@ class AppStrings {
   static const String merchantCheckHint = "merchantCheckHint";
   static const String createAccountButton = "createAccountButton";
   static const String returnToSignUpButton = "returnToSignUpButton";
-  static const String waitingForAcceptRegisterText = "waitingForAcceptRegisterText";
+  static const String waitingForAcceptRegisterText =
+      "waitingForAcceptRegisterText";
   static const String techInstruction = "techInstruction";
   static const String merchantInstruction1 = "merchantInstruction1";
   static const String merchantInstruction2 = "merchantInstruction2";
@@ -233,6 +234,26 @@ class AppStrings {
   static const String splashBody = "splashBody";
   static const String appDescription = "appDescription";
 
+  /// **************************** Forget password screen ************************************
+  ///
+  static const String pleaseEnterYourEmail1 =
+      "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين";
+  static const String pleaseEnterYourEmail2 = "كلمة المرور";
+  // static const String resetPassword = "إعادة تعيين كلمة المرور";
+  static const String yourEmail = "بريدك الإلكترونى";
+  static const String forgetPasswordQuestionMark = "نسيت كلمة المرور؟";
+
+  /// **************************** Forget password screen2 ************************************
+  ///
+  static const String assignNewPassword = "تعيين كلمة مرور جديدة";
+  // static const String createNewPassword = "أنشئ كلمة مرور جديدة.";
+  /// **************************** Enter Code screen ************************************
+  static const String checkCode = "التحقق من الرمز";
+  static const String enterCodeScreenHeader =
+      "أرسلنا رابط إعادة الضبط إلى exampl1@gmail.com أدخل الرمز المكون من 5 أرقام المذكور في البريد الإلكتروني. ";
+  static const String checkCodeConclusion1 = "لم يصلك البريد الإلكتروني بعد؟ ";
+  static const String checkCodeConclusion2 = "أعد الإرسال";
+
   /// **************************** tech dashboard ************************************
   static const String quickActions = "quickActions";
   static const String overallPoints = "overallPoints";
@@ -242,37 +263,39 @@ class AppStrings {
   static const String viewAll = "viewAll";
   static const String totalOperations = "totalOperations";
   static const String rewards = "rewards";
-  static const String pointsLog = "points History";
-  static const String techName = "mohammed Ali";
-  static const String techDescription = "certified Technician";
-  static const String profileEdit = "edit Profile";
-  static const String profileChangePassword = "change Password";
+  static const String pointsLog = "pointsLog";
+  static const String techName = "techName";
+  static const String techDescription = "profileEdit";
+  static const String profileEdit = "profileEdit";
+  static const String profileChangePassword = "profileChangePassword";
   static const String notifications = "notifications";
   static const String logOut = "logOut";
   static const String pointsNotifications = "pointsNotifications";
   static const String deleteNotifications = "deleteNotifications";
   static const String systemNotifications = "systemNotifications";
-  static const String applyForNextAchieve = "apply for Next Reward";
+  static const String applyForNextAchieve = "applyForNextAchieve";
 
   /// **************************** Merchant dashboard ************************************
   static const String merchantCompanyName = "merchantCompanyName";
-  static const String techManagement = "techniciansManagement";
+  static const String techManagement = "techManagement";
   static const String pointsSummary = "pointsSummary";
+  static const String pointsSummaryTitle = "pointsSummaryTitle";
   static const String operationHistory = "operationHistory";
-  static const String scanBarCode = "scanBarCode";
+  static const String scanBarcode = "scanBarcode";
+  static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
-  static const String techniciansManagement = "technicians Management";
-  static const String activeTech = "active Technicians";
-  static const String waitingTech = "under Review";
+  static const String techniciansManagement = "techniciansManagement";
+  static const String activeTech = "activeTech";
+  static const String waitingTech = "waitingTech";
   static const String active = "active";
   static const String underReview = "under Review";
   static const String orderDate = "request Date";
-  static const String scanOperation = "scan Operation";
+  static const String scanOperation = "scanOperation";
   static const String showDetails = "show Details";
   static const String point = "point";
-  static const String techQuestion = "merchant Verification Question";
-  static const String techQuestionAnswer = "merchant Verification Answer";
+  static const String techQuestion = "techQuestion";
+  static const String techQuestionAnswer = "techQuestionAnswer";
   static const String accept = "accept";
   static const String reject = "reject";
 
@@ -290,7 +313,7 @@ class AppStrings {
   static const String cancel = "cancel";
 
   /// **************************** Operations History ************************************
-  static const String operationsHistory = "operations History";
+  static const String operationsHistory = "operationsHistory";
   static const String products = "products";
   static const String product = "product";
   static const String publishWarranty = "publishWarranty";
@@ -303,33 +326,34 @@ class AppStrings {
 
   /// **************************** scan ************************************
   static const String startScan = "startScan";
-  static const String scanOtherCode = "scanAnotherBarcode";
-  static const String serialNumber = "serialNumber";
+  static const String scanAnotherBarcode = "scanAnotherBarcode";
+  static const String serialNumber = "serial Number";
   static const String productName = "product Name";
   static const String earnedPoints = "earned Points";
   static const String unavailableMessage =
       "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
   static const String scanSuccess = "scanSuccess";
   static const String scanError = "scanError";
-  static const String cameraBarcode = "وجّه الكاميرا نحو الباركود";
-
+  static const String cameraBarcode = "cameraBarcode";
 
   /// **************************** bottom nav bar tabs ************************************
   static const String home = "home";
   static const String points = "points";
   static const String logs = "logs";
-  static const String operationsLogs = "operations Log";
+  static const String operationsLogs = "operationsLogs";
 
   ///************************************************************
   static const String suspended = "suspended";
-  static const String suspendTechnician = "deactivate Technician";
-  static const String reactiveTechnician = "reactivate Technician";
+  static const String suspendTechnician = "suspendTechnician";
+  static const String reactiveTechnician = "reactiveTechnician";
   static const String collected = "collected";
   static const String notCollected = "notCollected";
   static const String dueDetails = "dueDetails";
-  static const String payDues = "pay Dues";
+  static const String payDues = "payDues";
   static const String displayDetails = "displayDetails";
   static const String startNow = "startNow";
+  static const String techManagementTitle = "techManagementTitle";
+  static const String operationHistoryTitle = "operationHistoryTitle";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';
