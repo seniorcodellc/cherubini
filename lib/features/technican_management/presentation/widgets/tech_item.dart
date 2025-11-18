@@ -19,7 +19,13 @@ class TechItemWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), spreadRadius: 1, blurRadius: 4)],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            spreadRadius: 1,
+            blurRadius: 4,
+          ),
+        ],
       ),
       child: Column(
         children: [
@@ -46,7 +52,7 @@ class TechItemWidget extends StatelessWidget {
           children: [
             Expanded(
               child: CustomButton(
-                text: AppStrings.accept,
+                text: AppStrings.accept.trans,
                 onPressed: () {
                   context.read<TechnicianCubit>().approve(item);
                 },
@@ -60,7 +66,7 @@ class TechItemWidget extends StatelessWidget {
             14.hs,
             Expanded(
               child: CustomButton(
-                text: AppStrings.reject,
+                text: AppStrings.reject.trans,
                 onPressed: () {
                   context.read<TechnicianCubit>().suspend(item);
                 },
@@ -75,7 +81,7 @@ class TechItemWidget extends StatelessWidget {
         );
       case Status.SUSPENDED:
         return CustomButton(
-          text: AppStrings.reactiveTechnician,
+          text: AppStrings.reactiveTechnician.trans,
           onPressed: () {
             context.read<TechnicianCubit>().reactivate(item);
           },
@@ -87,7 +93,7 @@ class TechItemWidget extends StatelessWidget {
         );
       default:
         return CustomButton(
-          text: AppStrings.suspendTechnician,
+          text: AppStrings.suspendTechnician.trans,
           onPressed: () {
             context.read<TechnicianCubit>().suspend(item);
           },
@@ -109,12 +115,18 @@ class TechItemWidget extends StatelessWidget {
           children: [
             Text(
               item.points.toString(),
-              style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.accentColor),
+              style: getRegularTextStyle(
+                fontSize: 14.sp,
+                color: AppColors.accentColor,
+              ),
             ),
             8.vs,
             Text(
-              AppStrings.point,
-              style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.subTitleColor),
+              AppStrings.point.trans,
+              style: getRegularTextStyle(
+                fontSize: 14.sp,
+                color: AppColors.subTitleColor,
+              ),
             ),
           ],
         ),
@@ -124,12 +136,18 @@ class TechItemWidget extends StatelessWidget {
           children: [
             Text(
               "",
-              style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.accentColor),
+              style: getRegularTextStyle(
+                fontSize: 14.sp,
+                color: AppColors.accentColor,
+              ),
             ),
             8.vs,
             Text(
-              AppStrings.scanOperation,
-              style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.subTitleColor),
+              AppStrings.scanOperation.trans,
+              style: getRegularTextStyle(
+                fontSize: 14.sp,
+                color: AppColors.subTitleColor,
+              ),
             ),
           ],
         ),
@@ -141,7 +159,9 @@ class TechItemWidget extends StatelessWidget {
   _buildProfileWidget() => Row(
     children: [
       CustomSVGImage(
-        asset: status == Status.ACTIVE ? AppAssets.activeProfile : AppAssets.waitingProfile,
+        asset: status == Status.ACTIVE
+            ? AppAssets.activeProfile
+            : AppAssets.waitingProfile,
         height: 60.h,
         width: 60.w,
       ),
@@ -151,14 +171,22 @@ class TechItemWidget extends StatelessWidget {
         children: [
           Text(
             item.name.validate,
-            style: getRegularTextStyle(fontSize: 14.sp, color: AppColors.primaryColor),
+            style: getRegularTextStyle(
+              fontSize: 14.sp,
+              color: AppColors.primaryColor,
+            ),
           ),
           8.vs,
           Container(
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(20.0.r),
-              border: Border.all(color: status == Status.ACTIVE ? AppColors.green : AppColors.red, width: 1.5),
+              border: Border.all(
+                color: status == Status.ACTIVE
+                    ? AppColors.green
+                    : AppColors.red,
+                width: 1.5,
+              ),
             ),
             child: Padding(
               padding: getPadding(vertical: 2.0.h, horizontal: 16.0.w),
@@ -166,15 +194,24 @@ class TechItemWidget extends StatelessWidget {
                 children: [
                   CustomSVGImage(
                     asset: AppAssets.check,
-                    color: status == Status.ACTIVE ? AppColors.green : AppColors.red,
+                    color: status == Status.ACTIVE
+                        ? AppColors.green
+                        : AppColors.red,
                     height: 18.0.h,
                     width: 18.0.w,
                     matchTextDirection: false,
                   ),
                   8.hs,
                   Text(
-                    status == Status.ACTIVE ? AppStrings.active : AppStrings.waitingTech,
-                    style: getRegularTextStyle(fontSize: 15.sp, color: status == Status.ACTIVE ? AppColors.green : AppColors.red),
+                    status == Status.ACTIVE
+                        ? AppStrings.active
+                        : AppStrings.waitingTech,
+                    style: getRegularTextStyle(
+                      fontSize: 15.sp,
+                      color: status == Status.ACTIVE
+                          ? AppColors.green
+                          : AppColors.red,
+                    ),
                   ),
                 ],
               ),

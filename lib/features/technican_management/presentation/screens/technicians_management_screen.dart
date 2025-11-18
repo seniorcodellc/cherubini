@@ -13,44 +13,51 @@ class TechniciansManagementScreen extends StatefulWidget {
   const TechniciansManagementScreen({super.key});
 
   @override
-  State<TechniciansManagementScreen> createState() => _TechniciansManagementScreenState();
+  State<TechniciansManagementScreen> createState() =>
+      _TechniciansManagementScreenState();
 }
 
-class _TechniciansManagementScreenState extends State<TechniciansManagementScreen> {
+class _TechniciansManagementScreenState
+    extends State<TechniciansManagementScreen> {
   bool selectedTab = true;
 
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-        backgroundColor: AppColors.bgColor,
-        appBar: CustomAppbar(title: AppStrings.techniciansManagement.trans),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: ManagementToggle(
-                onTabSelected: (value) {
-                context.read<TechnicianCubit>().filterTechnicians(status: value);
-                },
-                selectedTab: selectedTab,
-              ),
+      backgroundColor: AppColors.bgColor,
+      appBar: CustomAppbar(title: AppStrings.techManagementTitle.trans),
+      showAppbar: true,
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: ManagementToggle(
+              onTabSelected: (value) {
+                context.read<TechnicianCubit>().filterTechnicians(
+                  status: value,
+                );
+              },
+              selectedTab: selectedTab,
             ),
+          ),
           //  SliverToBoxAdapter(child: 16.hs),
-            SliverFillRemaining(
-              child: Padding(padding: getPadding( vertical: 16.h),
+          SliverFillRemaining(
+            child: Padding(
+              padding: getPadding(vertical: 16.h),
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 switchInCurve: Curves.easeInOut,
                 child: GenericListView<TechnicianCubit, TechnicianModel>(
                   padding: getPadding(horizontal: 16.w),
-                  itemWidget: (index, items, item) =>TechItemWidget(item: item, ),
+                  itemWidget: (index, items, item) =>
+                      TechItemWidget(item: item),
                   separatorWidget: 16.vs,
-                  shimmerWidget: (index) =>  TechShimmer(),
-                )
+                  shimmerWidget: (index) => TechShimmer(),
+                ),
               ),
-              )
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 }

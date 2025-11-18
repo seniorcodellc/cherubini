@@ -1,5 +1,9 @@
 {
-
+  "techManagementTitle": "إدارة الفنيين",
+  "operationHistoryTitle": "سجل العمليات",
+  "pointsSummaryTitle": "ملخص النقاط",
+  "cameraBarcode":
+ " وجّه الكاميرا نحو الباركود",
   "displayDetails": "عرض التفاصيل",
   "onBoarding1Title": "اكسب نقاط الولاء",
   "onBoarding2Title": "مسح سهل وسريع",
@@ -82,11 +86,19 @@
   "applyForNextAcheive": "التقدم للمكافأة التالية",
   "merchantName": "محمد على",
   "merchantCompanyName":"شركة الأجهزة المتقدمة",
-  "techManagement" : "إدارة \nالفنيين",
-  "pointsSummary" : "ملخص \nالنقاط",
-  "operationHistory" : "سجل \nالعمليات",
-  "scanBarCode":
-  "مسح \nالبار كود",
+  "techManagement" : "إدارة\nالفنيين",
+  "pointsSummary" : "ملخص\nالنقاط",
+  "operationHistory" : "سجل\nالعمليات",
+  "scanBarcode":
+  "مسح\nالبار كود",
+  "scanBarcodeTitle":
+  "مسح البار كود",
+  "scanError":
+  "باركود غير مسجل",
+  "scanAnotherBarcode":
+  "مسح باركود آخر",
+  "scanSuccess":
+  "تم المسح بنجاح",
   "helloText" : "مرحباً , أحمد",
   "techniciansManagement" : "إدارة الفنيين",
   "activeTech" : "الفنيون النشطون",

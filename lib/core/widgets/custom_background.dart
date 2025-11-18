@@ -84,7 +84,7 @@ class CustomBackground extends StatelessWidget {
                   title!,
                   style: getSemiBoldTextStyle(
                     fontSize: 24.sp,
-                    color: AppColors.primaryColor,
+                    color: AppColors.white,
                   ),
                 ),
                 centerTitle: true,

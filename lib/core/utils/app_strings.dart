@@ -209,7 +209,8 @@ class AppStrings {
   static const String merchantCheckHint = "merchantCheckHint";
   static const String createAccountButton = "createAccountButton";
   static const String returnToSignUpButton = "returnToSignUpButton";
-  static const String waitingForAcceptRegisterText = "waitingForAcceptRegisterText";
+  static const String waitingForAcceptRegisterText =
+      "waitingForAcceptRegisterText";
   static const String techInstruction = "techInstruction";
   static const String merchantInstruction1 = "merchantInstruction1";
   static const String merchantInstruction2 = "merchantInstruction2";
@@ -258,18 +259,20 @@ class AppStrings {
   static const String merchantCompanyName = "merchantCompanyName";
   static const String techManagement = "techManagement";
   static const String pointsSummary = "pointsSummary";
+  static const String pointsSummaryTitle = "pointsSummaryTitle";
   static const String operationHistory = "operationHistory";
-  static const String scanBarCode = "scanBarCode";
+  static const String scanBarcode = "scanBarcode";
+  static const String scanBarcodeTitle = "scanBarcodeTitle";
 
   /// **************************** Merchant management ************************************
   static const String techniciansManagement = "techniciansManagement";
   static const String activeTech = "activeTech";
   static const String waitingTech = "waitingTech";
   static const String active = "active";
-  static const String underReview = "underReview";
-  static const String orderDate = "orderDate";
+  static const String underReview = "under Review";
+  static const String orderDate = "request Date";
   static const String scanOperation = "scanOperation";
-  static const String showDetails = "showDetails";
+  static const String showDetails = "show Details";
   static const String point = "point";
   static const String techQuestion = "techQuestion";
   static const String techQuestionAnswer = "techQuestionAnswer";
@@ -303,11 +306,12 @@ class AppStrings {
 
   /// **************************** scan ************************************
   static const String startScan = "startScan";
-  static const String scanOtherCode = "scanOtherCode";
-  static const String serialNumber = "serialNumber";
-  static const String productName = "productName";
-  static const String earnedPoints = "earnedPoints";
-  static const String unavailableMessage ="unavailableMessage";
+  static const String scanAnotherBarcode = "scanAnotherBarcode";
+  static const String serialNumber = "serial Number";
+  static const String productName = "product Name";
+  static const String earnedPoints = "earned Points";
+  static const String unavailableMessage =
+      "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
   static const String scanSuccess = "scanSuccess";
   static const String scanError = "scanError";
   static const String cameraBarcode = "cameraBarcode";
@@ -328,6 +332,8 @@ class AppStrings {
   static const String payDues = "payDues";
   static const String displayDetails = "displayDetails";
   static const String startNow = "startNow";
+  static const String techManagementTitle = "techManagementTitle";
+  static const String operationHistoryTitle = "operationHistoryTitle";
 
   /// **************************** warranty ************************************
   static const String warrantyCertificate = 'شهادة الضمان';

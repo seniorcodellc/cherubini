@@ -1,7 +1,6 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
 import 'package:cherubini/exports.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../widgets/bar_code_details.dart';
 import '../widgets/shared_scan_container.dart';
 
 class SuccessScanScreen extends StatelessWidget {
@@ -11,19 +10,23 @@ class SuccessScanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackground(
       backgroundColor: AppColors.bgColor,
-      appBar: CustomAppbar(title: "AppStrings.scanCode"),
+      appBar: CustomAppbar(title: AppStrings.scanBarcodeTitle.trans),
+      showAppbar: true,
       child: Column(
         children: [
           Padding(
             padding: getPadding(vertical: 35.0.h),
-            child: SharedScanContainer(asset: AppAssets.cameraSuccess, title: AppStrings.scanSuccess.trans,),
+            child: SharedScanContainer(
+              asset: AppAssets.cameraSuccess.trans,
+              title: AppStrings.scanSuccess.trans,
+            ),
           ),
           //BarCodeDetails(isSuccess: true,),
           60.vs,
           Padding(
             padding: getPadding(horizontal: 16.0.w),
             child: CustomButton(
-              text: AppStrings.scanOtherCode,
+              text: AppStrings.scanAnotherBarcode.trans,
               textColor: AppColors.primaryColor,
               onPressed: () {
                 Routes.errorScanRoute.moveTo();

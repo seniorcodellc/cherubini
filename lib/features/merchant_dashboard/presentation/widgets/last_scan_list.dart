@@ -26,7 +26,7 @@ class LastScanList extends StatelessWidget {
                 ),
               ),
               Text(
-                AppStrings.viewAll,
+                AppStrings.viewAll.trans,
                 style: getRegularTextStyle(
                   fontSize: 12.sp,
                   color: AppColors.primaryColor,
