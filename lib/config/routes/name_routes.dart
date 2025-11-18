@@ -22,8 +22,6 @@ class Routes {
   static const String operationsHistoryRoute = "/OperationRoute";
   static const String scanRoute = "/scan";
   static const String editProfile = "/editProfile";
-  static const String successScanRoute = "/successScan";
-  static const String errorScanRoute = "/errorScan";
   static const String merchantWarrantyRoute = "/merchantWarranty";
   static const String techWarrantyRoute = "/techWarranty";
   static const String techDashboard = "/techDashboard";

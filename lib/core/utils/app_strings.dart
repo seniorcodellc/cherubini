@@ -334,7 +334,8 @@ class AppStrings {
       "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.";
   static const String scanSuccess = "scanSuccess";
   static const String scanError = "scanError";
-  static const String cameraBarcode = "cameraBarcode";
+  static const String cameraBarcode = "وجّه الكاميرا نحو الباركود";
+
 
   /// **************************** bottom nav bar tabs ************************************
   static const String home = "home";
@@ -1011,4 +1012,7 @@ class AppStrings {
   static const String pleaseWaitUntilApproved = "pleaseWaitUntilApproved";
 
   static const String loggedInSuccessfully = "loggedInSuccessfully";
+
+
+  static const String startReadingQrCode = "جاري قراءة الكود";
 }

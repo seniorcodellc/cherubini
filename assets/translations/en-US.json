@@ -129,6 +129,7 @@
   "yourAreBidder": "You are the highest bidder\n",
   "yourAreOutbid": "You've been outbid\n",
   "phoneNumber": "Phone Number",
+  "phoneNumHint": "01234567",
   "unitProposed": "Unit Proposed",
   "youAreWinner": "You are the winner of the auction\n",
   "youAreLoser": "The award has been awarded to another bidder\n",
@@ -532,6 +533,9 @@
   "onBoarding3Title": "Redeem Points for Rewards",
   "onBoarding1SubTitle": "Scan the barcode and earn points with every purchase",
   "onBoarding2SubTitle": "Smart scanning system for products and automatic point registration",
+  "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts",
+  "scanError": "unregistered barcode",
+  "serialNumber": "serialNumber"
   "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts",
   "pointsSummaryTitle": "points Summary",
   "techManagementTitle": "Tech Management",

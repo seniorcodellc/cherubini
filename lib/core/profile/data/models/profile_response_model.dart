@@ -19,7 +19,7 @@ class ProfileModel {
   double? pointDelevery;
   double? points;
   double? balance;
-
+  String? companyName;
   ProfileModel({
     this.code,
     this.name,
@@ -28,12 +28,14 @@ class ProfileModel {
     this.totalPoints,
     this.pointDelevery,
     this.points,
+    this.companyName,
     this.balance,
   });
 
   factory ProfileModel.fromJson(dynamic json) => ProfileModel(
     name: json['name'],
     email: json['email'],
+    companyName: json['companyName'],
     phone: json['phone'],
     totalPoints: json['totalPoint'],
     pointDelevery: json['pointDelevery'],

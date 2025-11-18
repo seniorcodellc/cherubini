@@ -1,3 +1,4 @@
+
 import '../../../../exports.dart';
 
 class CubitDataView<Model> extends Cubit<CubitStates> {
@@ -9,7 +10,7 @@ class CubitDataView<Model> extends Cubit<CubitStates> {
     dynamic query,
     dynamic Function(Model?)? onSuccess,
 
-    Function(Model? data, String? message)? onSuccessWithMessage,
+    Function(ResponseModel data)? onSuccessWithMessage,
 
     dynamic Function(String)? onFail,
   }) => managerExecute<Model>(
@@ -21,8 +22,8 @@ class CubitDataView<Model> extends Cubit<CubitStates> {
         emit(FailedState(message: message));
       }
     },
-    onSuccessWithMessage: (data, message) {
-      onSuccessWithMessage?.call(data, message);
+    onSuccessWithMessage: (data) {
+      onSuccessWithMessage?.call(data);
     },
     onSuccess: (Model? data) {
       if (onSuccess.isNotNull) {
@@ -32,5 +33,35 @@ class CubitDataView<Model> extends Cubit<CubitStates> {
         emit(LoadedState<Model>(data: model!));
       }
     },
+  );
+  postDataWithDialog({
+    num? id,
+    dynamic query,
+    dynamic Function(Model?)? onSuccess,
+    required String startingMessage,
+    Function(ResponseModel data)? onSuccessWithMessage,
+
+    dynamic Function(String)? onFail,
+  }) => executeWithDialog<Model>(
+    either:genericUseCases.getData(query: query, id: id),
+    onError: (message) {
+      if (onFail.isNotNull) {
+        onFail?.call(message);
+      } else {
+        emit(FailedState(message: message));
+      }
+    },
+    onSuccessWithMessage: (response) {
+      onSuccessWithMessage?.call(response);
+    },
+    onSuccess: (Model? data) {
+      if (onSuccess.isNotNull) {
+        onSuccess?.call(data);
+      } else {
+        model = data;
+        emit(LoadedState<Model>(data: model!));
+      }
+    },
+    startingMessage: startingMessage
   );
 }

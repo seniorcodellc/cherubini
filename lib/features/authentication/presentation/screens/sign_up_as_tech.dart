@@ -134,7 +134,7 @@ class SignUpAsTech extends StatelessWidget {
                               phone: phoneController.text,
                               email: emailController.text,
                               merchantId: merchantId,
-
+                              answer:answerController.text,
                               password: passwordController.text,
                               confirmPassword: passwordController.text,
                               // check: checkController.text,
