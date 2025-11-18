@@ -9,7 +9,7 @@ class ApplyForNextGiftRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
-          "التقدم للمكافأة التالية",
+          AppStrings.applyForNextAchieve,
           style: getRegularTextStyle(fontSize: 16, color: AppColors.white),
         ),
         Text(

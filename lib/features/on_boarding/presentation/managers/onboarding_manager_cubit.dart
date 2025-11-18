@@ -8,7 +8,7 @@ class OnboardingManagerCubit extends Cubit {
   Future<bool> isNewInstalled() async => (await managerExecute<bool?>(onBoardingUsesCases.getNew())).orTrue;
 
   Future<bool> cachedNewInstall() async => (await managerExecute<bool?>(onBoardingUsesCases.cacheNew(), onSuccess: (data) {
-        Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+        Routes.loginRoute.moveTo();
       }))
           .orFalse;
 }

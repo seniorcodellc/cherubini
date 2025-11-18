@@ -1,23 +1,22 @@
 import 'package:cherubini/features/tech_dashborad/data/models/tech_scan_model.dart';
-
-import '../../../../core/utils/app_assets.dart';
+import '../../../../exports.dart';
 import '../../../merchant_dashboard/data/models/points_model.dart';
 
 class TechDashboardStatic {
   static List<PointsModel> techPointsList = [
     PointsModel(
       iconPath: AppAssets.loyaltyFilled,
-      title: 'إجمالى النقاط ',
+      title: AppStrings.overallPoints,
       number: '12,450',
     ),
     PointsModel(
       iconPath: AppAssets.gift,
-      title: ' النقاط المستبدلة ',
+      title: AppStrings.replacedPoints,
       number: '3,200',
     ),
     PointsModel(
       iconPath: AppAssets.availablePoints,
-      title: ' النقاط المتاحة',
+      title: AppStrings.availablePoints,
       number: '9,250',
     ),
   ];

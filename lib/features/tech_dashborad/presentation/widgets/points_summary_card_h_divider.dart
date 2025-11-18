@@ -6,12 +6,15 @@ class PointsSummaryCardHDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.centerRight,
-      children: [
-        CustomDivider(color: AppColors.white, width: 311, height: 11),
-        CustomDivider(color: AppColors.primaryColor, width: 276, height: 11),
-      ],
+    return Padding(
+      padding: getPadding(bottom: 18.0.h),
+      child: Stack(
+        alignment: Alignment.centerRight,
+        children: [
+          CustomDivider(color: AppColors.white, width: 311, height: 11),
+          CustomDivider(color: AppColors.primaryColor, width: 276, height: 11),
+        ],
+      ),
     );
   }
 }

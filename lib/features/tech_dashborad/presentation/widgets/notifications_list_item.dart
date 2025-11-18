@@ -20,7 +20,7 @@ class _NotificationsListItemState extends State<NotificationsListItem> {
           CustomSVGImage(asset: AppAssets.bill),
           8.hs,
           Text(
-            widget.text,
+            widget.text.trans,
             style: getRegularTextStyle(
               fontSize: 16,
               color: AppColors.primaryColor,

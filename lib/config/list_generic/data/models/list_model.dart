@@ -1,4 +1,3 @@
-
 import '../../../../exports.dart';
 
 class ListModel<T> {
@@ -9,11 +8,19 @@ class ListModel<T> {
 
 abstract class ListResponseModel<T> extends ResponseModel {
   ListResponseModel.fromJson(dynamic json) {
-    status = json['Success'];
+/*    data = ListModel(list: <T>[]);
+    if (json is List) {
+      (json as List).forEach((v) {
+        data.list.add(getFromJsonFunction(v));
+      });
+    }
+    status = true;*/
+    print("eeeeeeeeeeeeeeeeee");
+        status = json['success'];
     message = json['Message'];
     data = ListModel(list: <T>[]);
-    if (json['Data'] != null) {
-      json['Data'].forEach((v) {
+    if (json['data'] != null) {
+      json['data'].forEach((v) {
         data.list?.add(getFromJsonFunction(v));
       });
 
