@@ -322,6 +322,7 @@ class AppStrings {
   static const String settings = "settings";
   static const String editProfile = "editProfile";
   static const String changePassword = "changePassword";
+  static const String oldPassword = "oldPassword";
   static const String warrantyCertificates = "warrantyCertificates";
 
   /// **************************** scan ************************************

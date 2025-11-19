@@ -3,10 +3,9 @@ import 'package:cherubini/config/errors/widgets/error_text.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 
 class SharedPasswordTextField extends StatefulWidget {
-  const SharedPasswordTextField({super.key, required this.passwordController});
+  SharedPasswordTextField({super.key, required this.passwordController});
 
   final TextEditingController passwordController;
-
   @override
   State<SharedPasswordTextField> createState() =>
       _SharedPasswordTextFieldState();

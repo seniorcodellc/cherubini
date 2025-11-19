@@ -16,7 +16,6 @@ class TechSettingsScreen extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 30.vs,
                 SettingsHeader(title: AppStrings.techDescription),

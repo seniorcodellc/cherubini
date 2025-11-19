@@ -1,4 +1,6 @@
 {
+  "oldPassword": "كلمه المرور القديمة",
+  "newPassword": "كلمه المرور الجديدة",
   "forgetPasswordQuestionMark": "نسيت كلمه المرور ؟",
   "techManagementTitle": "إدارة الفنيين",
   "operationHistoryTitle": "سجل العمليات",

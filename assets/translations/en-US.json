@@ -516,7 +516,7 @@
   "publishWarranty": "Issue Warranty Certificate",
   "settings": "settings",
   "editProfile": "edit Profile",
-  "changePassword": "change Password",
+  "changePassword": "Change Password",
   "warrantyCertificates": "warranty Certificates",
   "startScan": "start Scanning",
   "scanOtherCode": "scan Another Barcode",
@@ -546,5 +546,7 @@
   "pointsSummaryTitle": "Points Summary",
   "techManagementTitle": "Tech Management",
   "operationHistoryTitle": "Operation History",
-  "startReadingQrCode": "Start Reading Qr Code"
+  "startReadingQrCode": "Start Reading Qr Code",
+  "oldPassword": "Old Password",
+  "newPassword": "New Password"
 }
