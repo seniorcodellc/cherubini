@@ -15,8 +15,8 @@ class SharedQuickProceduresItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 164,
-        height: 119,
+        width: 164.w,
+        height: 119.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20.0.r),
