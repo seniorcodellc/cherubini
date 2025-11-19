@@ -4,7 +4,8 @@ import '../../../../core/utils/app_assets.dart';
 import '../models/points_model.dart';
 import '../models/quick_action_model.dart';
 import '../models/scan_model.dart';
- List<QuickActionModel> merchantActionsList = [
+
+List<QuickActionModel> merchantActionsList = [
   QuickActionModel(
     iconPath: AppAssets.tech,
     title: AppStrings.techManagement,
@@ -35,10 +36,10 @@ import '../models/scan_model.dart';
     },
   ),
 ];
- List<QuickActionModel> technicianActionsList = [
+List<QuickActionModel> technicianActionsList = [
   QuickActionModel(
     iconPath: AppAssets.loyalty,
-    title: AppStrings.pointsSummary,
+    title: AppStrings.pointsSummaryTitle.trans,
     onTap: () {
       Routes.duesRoute.moveTo();
     },
@@ -46,7 +47,7 @@ import '../models/scan_model.dart';
 
   QuickActionModel(
     iconPath: AppAssets.scan,
-    title: AppStrings.scanBarcode,
+    title: AppStrings.scanBarcodeTitle.trans,
     onTap: () {
       Routes.scanRoute.moveTo();
     },
@@ -69,4 +70,3 @@ List<PointsModel> pointsList = [
     number: '9,250',
   ),
 ];
-

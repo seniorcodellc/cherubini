@@ -9,7 +9,7 @@ class QrCodeDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: getPadding(horizontal: 16.0.w,bottom:24.h ),
+      margin: getPadding(horizontal: 16.0.w, bottom: 24.h),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20.0.r),
@@ -23,27 +23,39 @@ class QrCodeDetailsWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          BarCodeRow(title: AppStrings.serialNumber.trans, value: qrCodeModel.serialCode),
+          BarCodeRow(
+            title: AppStrings.serialNumber.trans,
+            value: qrCodeModel.serialCode,
+          ),
           HLine(width: 311.w),
 
           Container(
-            margin: getPadding(horizontal: 16.0.w,vertical: 12.0.h),
+            margin: getPadding(horizontal: 16.0.w, vertical: 12.0.h),
             width: width,
-            decoration:BoxDecoration(
-              color:qrCodeModel.status.isTrue?AppColors.mutedBlue:  AppColors.lightOrange,
+            decoration: BoxDecoration(
+              color: qrCodeModel.status.isTrue
+                  ? AppColors.mutedBlue
+                  : AppColors.lightOrange,
               borderRadius: BorderRadius.circular(20.0.r),
-              border: Border.all(width: 1,color:
-
-              qrCodeModel.status.isTrue?AppColors.mutedBlue: AppColors.borderColor4),
+              border: Border.all(
+                width: 1,
+                color: qrCodeModel.status.isTrue
+                    ? AppColors.mutedBlue
+                    : AppColors.borderColor4,
+              ),
             ),
             child: Padding(
               padding: getPadding(all: 14.0.h),
               child: Text(
-                qrCodeModel.message.validate,
-              textAlign: TextAlign.right,
-              style: getRegularTextStyle(fontSize: 14.sp,color:
-              qrCodeModel.status.isTrue?AppColors.black:
-              AppColors.orange2),),
+                qrCodeModel.message.validate.trans,
+                textAlign: TextAlign.right,
+                style: getRegularTextStyle(
+                  fontSize: 14.sp,
+                  color: qrCodeModel.status.isTrue
+                      ? AppColors.black
+                      : AppColors.orange2,
+                ),
+              ),
             ),
           ),
         ],

@@ -9,9 +9,5 @@ List<ItemImageModel> settingList = [
     name: AppStrings.warrantyCertificates,
     image: AppAssets.profile,
   ),
-  ItemImageModel(
-    name: AppStrings.warrantyCertificates,
-    image: AppAssets.profile,
-  ),
   ItemImageModel(name: AppStrings.language, image: AppAssets.languages),
 ];
