@@ -420,7 +420,7 @@
   "email": "email",
   "password": "password",
   "confirmPassword": "Confirm password",
-  "forgetPassword": "forgot Password",
+  "forgetPassword": "Forgot Password",
   "haveNoAccount": "don't have an account?",
   "signUpAsMerchant": "Register Merchant",
   "signUpAsTech": "Register Technician",
@@ -520,7 +520,7 @@
   "warrantyCertificates": "warranty Certificates",
   "startScan": "start Scanning",
   "scanOtherCode": "scan Another Barcode",
-  "serialNumber": "serial Number",
+  "serialNumber": "Serial Number",
   "productName": "product Name",
   "earnedPoints": "earned Points",
   "unavailableMessage": "this product is not registered in the system. An alert has been sent\n to the admin with the technician and merchant details.",
@@ -545,5 +545,6 @@
   "onBoarding3SubTitle": "Use your points to get exclusive rewards and discounts",
   "pointsSummaryTitle": "points Summary",
   "techManagementTitle": "Tech Management",
-  "operationHistoryTitle": "Operation History"
+  "operationHistoryTitle": "Operation History",
+  "startReadingQrCode": "Start Reading Qr Code"
 }

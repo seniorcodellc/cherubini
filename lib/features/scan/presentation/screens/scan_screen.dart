@@ -22,7 +22,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanBarcode.trans,
+      title: AppStrings.scanBarcodeTitle.trans,
       child: LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           child: ConstrainedBox(
@@ -41,7 +41,6 @@ class _ScanScreenState extends State<ScanScreen> {
                     children: [
                       40.vs,
                       _buildBeforeScanWidget,
-
                       41.vs,
                       GenericDataView<QrCodeCubit, dynamic>.fromState(
                         buildLoadedWidgetWithState: (state) {
@@ -122,7 +121,7 @@ class _ScanScreenState extends State<ScanScreen> {
             }
             return SharedScanContainer(
               asset: AppAssets.scanCamera,
-              title: AppStrings.cameraBarcode,
+              title: AppStrings.cameraBarcode.trans,
             );
           },
         );
