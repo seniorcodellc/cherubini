@@ -5,6 +5,9 @@ import 'package:cherubini/features/on_boarding/presentation/managers/onboarding_
 import '../../../../config/local_notification/local_notification.dart';
 import '../../../../exports.dart';
 
+import '../../../authentication/data/model/response_model/login_response_model.dart';
+import '../../../authentication/presentation/managers/auth_cubit.dart';
+import '../../../languages/presentation/manager/language_cubit.dart';
 import '../manager/get_configration_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,51 +36,30 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       bool isNew = await getBlocData<OnboardingManagerCubit>().isNewInstalled();
+      bool isLanguageSaved = await getBlocData<LanguageCubit>()
+          .getSavedLanguage();
+      print("saved language is :$isLanguageSaved");
       if (isNew.isTrue) {
         isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
           context,
           onSuccess: () {
             NotificationsService().showSimpleNotification(
-              title: 'أهلا بك فى تطبيق نقاط الولاء',
-              description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
+              title: AppStrings.splashHeader.trans,
+              description: AppStrings.appDescription.trans,
             );
           },
         );
         route = Routes.onBoardingRoute;
       } else {
-        route = Routes.loginRoute;
+        UserModel? user = await getBlocData<AuthCubit>().getUser();
+        print("tokkkkkkkkk  ${user?.token}");
+        if (user.isNotNull) {
+         //
+          route = Routes.merchantDashboardRoute;
+        } else {
+          route = Routes.loginRoute;
+        }
       }
-      //    UserDataModel? user = await getBlocData<AuthCubit>().getUser();
-      // bool isNew = await getBlocData<ConfigurationCubit>().isNewInstalled();
-      //  isNotificationEnabled = await checkNotificationPermission(context);
-      // bool isLanguageSaved = await getBlocData<LanguageCubit>().getSavedLanguage();
-      //   print("saved language is :$isLanguageSaved");
-      // print("token is :${user?.token}");
-      // if (isNew.isTrue) {
-      //   bool cachedNewInstall = await getBlocData<ConfigurationCubit>()
-      //       .cachedNewInstall();
-      //   print("cachedNewInstall: $cachedNewInstall");
-      //   /*      isNotificationEnabled = await checkNotificationPermissionAndDoOperation(
-      //     context,
-      //     onSuccess: () {
-      //       NotificationsService().showSimpleNotification(
-      //         title: 'أهلا بك فى عيادتى',
-      //         description: "نرحب بك في منصة عيادتى للحجوزات الطبيه و الكشوفات",
-      //       );
-      //     },
-      //   );*/
-      //   route = Routes.onBoardingRoute;
-      // } else {
-      //   route = Routes.bottomNavRoute;
-      // }
-      /*   print("is User NULL: ${user.isNull}");
-      if(isNew.isTrue) {
-        route = Routes.secondSplashScreen;
-      } else if(user != null) {
-        route = Routes.bottomNavRoute;
-      }else{
-        route = Routes.bottomNavRoute;
-      }*/
     });
   }
 
@@ -91,7 +73,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return CustomBackground(
       statusBarColor: AppColors.gradientColorStart,
-
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -100,7 +81,10 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.gradientColorStart, AppColors.gradientColorEnd],
+                colors: [
+                  AppColors.gradientColorStart,
+                  AppColors.gradientColorEnd,
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -111,9 +95,21 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CustomPngImage(image: AppAssets.splashImage),
               32.vs,
-              Text("برنامج نقاط الولاء", style: getSemiBoldTextStyle(color: AppColors.white, fontSize: 32)),
+              Text(
+                AppStrings.appName.trans,
+                style: getSemiBoldTextStyle(
+                  color: AppColors.white,
+                  fontSize: 32,
+                ),
+              ),
               8.vs,
-              Text("نظام إدارة النقاط الذكي", style: getRegularTextStyle(fontSize: 16, color: AppColors.white)),
+              Text(
+                AppStrings.splashBody.trans,
+                style: getRegularTextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                ),
+              ),
             ],
           ),
         ],

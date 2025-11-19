@@ -23,6 +23,8 @@ class AppAssets {
   static String home = "${SvgImages.svgPath}home.svg";
   static String logOut = "${SvgImages.svgPath}log_out.svg";
   static String bill = "${SvgImages.svgPath}bill.svg";
+  static String languages = "${SvgImages.svgPath}language.svg";
+
   static String prods = "${SvgImages.svgPath}prods.svg";
   static String company = "${SvgImages.svgPath}company.svg";
   static String download = "${SvgImages.svgPath}download.svg";
@@ -64,6 +66,11 @@ class AppAssets {
   static String info = "${SvgImages.svgPath}info.svg";
   static String print = "${SvgImages.svgPath}print.svg";
   static String delete = "${SvgImages.svgPath}delete.svg";
+  static String pending = "${SvgImages.svgPath}pending.svg";
+  static String scanCamera = "${SvgImages.svgPath}scan_camera.svg";
+  static String cameraSuccess = "${SvgImages.svgPath}camera_success.svg";
+  static String cameraError = "${SvgImages.svgPath}camera_error.svg";
+  static String cameraFrame = "${SvgImages.svgPath}camera_frame.svg";
 
   //! PNG
 
@@ -73,4 +80,6 @@ class AppAssets {
   static String onboarding1 = "${PngImages.imagesPath}onboarding1.png";
   static String onboarding2 = "${PngImages.imagesPath}onboarding2.png";
   static String onboarding3 = "${PngImages.imagesPath}onboarding3.png";
+  static String english = "${PngImages.imagesPath}english.png";
+  static String arabic = "${PngImages.imagesPath}arabic.png";
 }

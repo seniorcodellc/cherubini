@@ -1,14 +1,14 @@
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:cherubini/exports.dart';
 
-
 Future<bool> checkConnection() async {
-  final List<ConnectivityResult> connectivityResult = await (Connectivity().checkConnectivity());
-// This condition is for demo purposes only to explain every connection type.
-// Use conditions which work for your requirements.
+  final List<ConnectivityResult> connectivityResult = await (Connectivity()
+      .checkConnectivity());
+  // This condition is for demo purposes only to explain every connection type.
+  // Use conditions which work for your requirements.
   if (connectivityResult.contains(ConnectivityResult.mobile) ||
-      (connectivityResult.contains(ConnectivityResult.wifi) || !(connectivityResult.contains(ConnectivityResult.none)))) {
+      (connectivityResult.contains(ConnectivityResult.wifi) ||
+          !(connectivityResult.contains(ConnectivityResult.none)))) {
     return true;
     // Mobile network available.
   }
@@ -32,7 +32,13 @@ Future<Either<Failure, ResponseModel>> executeImpl<T>(
         if (localWrite.isNotNull) {
           ResponseModel localResponse = await localWrite!.call(value.data);
           if (localResponse.status.isFalse) {
-            return Left(Failure(ResponseCode.CACHE_WRITE_ERROR, ResponseMessage().CACHE_WRITE_ERROR, data: localResponse.data));
+            return Left(
+              Failure(
+                ResponseCode.CACHE_WRITE_ERROR,
+                ResponseMessage().CACHE_WRITE_ERROR,
+                data: localResponse.data,
+              ),
+            );
           }
         }
         return Right(value);
@@ -53,11 +59,18 @@ Future<Either<Failure, ResponseModel>> executeImpl<T>(
       localResponse = await localRead!.call();
       if (localResponse.status.isFalse) {
         return Left(
-          Failure(ResponseCode.CACHE_READ_ERROR, ResponseMessage().CACHE_READ_ERROR, data: localResponse.data),
+          Failure(
+            ResponseCode.CACHE_READ_ERROR,
+            ResponseMessage().CACHE_READ_ERROR,
+            data: localResponse.data,
+          ),
         );
       }
     }
-    return Left(DataSource.NO_INTERNET_CONNECTION.getFailure()..data = localResponse?.data);
+    return Left(
+      DataSource.NO_INTERNET_CONNECTION.getFailure()
+        ..data = localResponse?.data,
+    );
   }
 }
 
@@ -67,7 +80,7 @@ Future<ResponseModel> remoteExecute({
 
   /// A required function that takes a `Map<String, dynamic>` as input and returns a `ResponseModel` object.
   /// This function is used to process successful response data.
-  required ResponseModel Function(Map<String, dynamic> data) fromJsonFunction,
+  required ResponseModel Function(dynamic data) fromJsonFunction,
 }) async {
   /// Declare a variable to hold the final `ResponseModel` object.
   ResponseModel responseModel;
@@ -82,10 +95,28 @@ Future<ResponseModel> remoteExecute({
   if (response.statusCode == ResponseCode.SUCCESS) {
     /// Attempt to decode the response data as a JSON map and pass it to the `onSuccess` function
     /// to create the `ResponseModel` object for successful cases.
-    Map<String, dynamic> map = jsonDecode(data);
+    dynamic map = jsonDecode(data);
+    String? message;
+    bool? success;
+    if (map is Map && map.containsKey('data').isFalse) {
+      if (map.containsKey("message")) {
+        message = map["message"];
+        map.remove('message');
+      }
+      if (map.containsKey("success")) {
+        success = map["success"];
+        map.remove('success');
+      }
+      message = map["message"];
+      map = {'data': map, "message": message, 'success': success ?? true};
+    } else if (map is List) {
+      map = {'data': map, 'success': true} as Map;
+    } else {
+      map = {'data': map, 'success': true};
+    }
     try {
       responseModel = fromJsonFunction(map);
-      responseModel.code=response.statusCode.toString();
+      responseModel.code = response.statusCode.toString();
     } catch (error) {
       //the error is from conversion which is done by fromJson method
       responseModel = ResponseModel(
@@ -102,7 +133,11 @@ Future<ResponseModel> remoteExecute({
       responseModel = ResponseModel.fromJson(jsonDecode(data));
     } on FormatException {
       /// If JSON decoding fails (e.g., invalid format), create a generic error `ResponseModel`.
-      responseModel = ResponseModel(code: response.statusCode.toString(), message: data, status: false);
+      responseModel = ResponseModel(
+        code: response.statusCode.toString(),
+        message: data,
+        status: false,
+      );
     }
   }
 

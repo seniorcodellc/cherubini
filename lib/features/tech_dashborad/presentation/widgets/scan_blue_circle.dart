@@ -6,8 +6,8 @@ class ScanBlueCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40.w,
-      height: 40.h,
+      // width: 40.w,
+      // height: 40.h,
       decoration: BoxDecoration(
         color: AppColors.mutedBlue,
         borderRadius: BorderRadius.circular(10.0.r),

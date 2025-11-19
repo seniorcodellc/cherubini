@@ -251,7 +251,7 @@ extension BullBoolExtension on bool? {
   bool get orTrue => this == null ? true : this!;
   int get fromBoolToInt => this == true ? 1 : 0;
   bool get isTrue => this == true;
-  bool get isFalse => this == false;
+  bool get isFalse => this == false||this==null;
 }
 
 extension BoolExtension on bool {

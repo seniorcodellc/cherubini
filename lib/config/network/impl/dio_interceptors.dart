@@ -14,10 +14,12 @@ class DioInterceptor extends Interceptor {
     options.headers[HttpHeaders.acceptLanguageHeader] = AppPrefs.language;
 
     if (AppPrefs.token.isNotNull) {
-      options.headers['token'] = "${AppPrefs.token}";
+      options.headers[HttpHeaders.authorizationHeader] = "Bearer ${AppPrefs.token}";
     } else {
-      options.headers['token'] =
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjAxMjM0NTY3ODkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxOCIsIm5hbWVpZCI6IjM2IiwibmJmIjoxNjE4MzYxNzE2LCJleHAiOjE2MTgzNjUzMTYsImlhdCI6MTYxODM2MTcxNn0.6CoT_TtppQ0agFJsO7qeJYcyOdlyeXl6-u42cdLhDT0";
+      options.headers[HttpHeaders.authorizationHeader] =
+
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjAxMjM0NTY3ODkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxOCIsIm5hbWVpZCI6IjM2IiwibmJmIjoxNjE4MzYxNzE2LCJleHAiOjE2MTgzNjUzMTYsImlhdCI6MTYxODM2MTcxNn0.6CoT_TtppQ0agFJsO7qeJYcyOdlyeXl6-u42cdLhDT0";
+       //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjAxMjM0NTY3ODkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxOCIsIm5hbWVpZCI6IjM2IiwibmJmIjoxNjE4MzYxNzE2LCJleHAiOjE2MTgzNjUzMTYsImlhdCI6MTYxODM2MTcxNn0.6CoT_TtppQ0agFJsO7qeJYcyOdlyeXl6-u42cdLhDT0";
     }
     super.onRequest(options, handler);
   }

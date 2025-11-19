@@ -1,7 +1,10 @@
 import 'package:cherubini/features/tech_dashborad/data/statics/tech_settings_details_static.dart';
 import 'package:cherubini/features/tech_dashborad/presentation/widgets/settings_user_details_list_item.dart';
 
+import '../../../../config/constants/localization_constants.dart';
 import '../../../../exports.dart';
+import '../../../languages/presentation/manager/language_cubit.dart';
+import '../../../languages/presentation/widgets/custom_language_dialog.dart';
 
 class SettingsUserDetailsList extends StatelessWidget {
   const SettingsUserDetailsList({super.key});
@@ -9,12 +12,33 @@ class SettingsUserDetailsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(
-        TechSettingsDetailsStatic.techSettingsDetailsList.length,
-        (index) {
-          final model =
-              TechSettingsDetailsStatic.techSettingsDetailsList[index];
-          return Padding(
+      children: List.generate(settingList.length, (index) {
+        final model = settingList[index];
+        return GestureDetector(
+          onTap: () {
+            if (settingList[index].name == AppStrings.language) {
+              showCustomDialog(
+                contentPadding: getPadding(horizontal: 0, vertical: 20.h),
+                child: CustomLanguageDialog(
+                  onChange: (isEnglish) {
+                    if (isEnglish.isTrue) {
+                      context.setLocale(AppLocalizationsConstants().enLocale);
+                      context.read<LanguageCubit>().toEnglish();
+                    } else {
+                      context.setLocale(AppLocalizationsConstants().arLocale);
+
+                      context.read<LanguageCubit>().toArabic();
+                    }
+                  },
+                ),
+              );
+            } else if (settingList[index].name == AppStrings.editProfile) {
+              Routes.editProfile.moveTo();
+            } else if (settingList[index].name == AppStrings.changePassword) {
+              Routes.changePasswordRoute.moveTo();
+            }
+          },
+          child: Padding(
             padding: getPadding(bottom: 16.h),
             child: Container(
               width: 343.w,
@@ -39,9 +63,9 @@ class SettingsUserDetailsList extends StatelessWidget {
               ),
               child: SettingsUserDetailsListItem(model: model),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      }),
     );
   }
 }

@@ -1,3 +1,6 @@
+import 'package:cherubini/core/history/data/models/history_response_model.dart';
+import 'package:cherubini/core/history/presentation/manager/history_cubit.dart';
+import 'package:cherubini/features/merchant_dashboard/presentation/widgets/last_scan_shimmer.dart';
 import 'package:flutter/material.dart';
 import '../../data/statics/statics.dart';
 import 'last_scan_item.dart';
@@ -8,16 +11,45 @@ class LastScanList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      // Disable scrolling if nested
-      itemCount: DashboardStatics.scanList.length,
-      itemBuilder: (context, index) {
-        final model = DashboardStatics.scanList[index];
-        return LastScanItem(model: model);
-      },
+    return Column(
+      children: [
+        Padding(
+          padding: getPadding(horizontal: 16.w, top: 16.0.h, bottom: 8.0.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                AppStrings.recentScanOperations.trans,
+                style: getBoldTextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              Text(
+                AppStrings.viewAll.trans,
+                style: getRegularTextStyle(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+        16.vs,
+        Expanded(
+          child: GenericListView<HistoryCubit, HistoryModel>(
+            padding: getPadding(horizontal: 16.w),
+            physics: const NeverScrollableScrollPhysics(),
+            onItemTapped: (index, item) {
+              Routes.operationsDetailsRoute.moveToWithArgs({'history': item});
+            },
+            itemWidget: (index, items, item) => LastScanItem(history: item),
+
+            separatorWidget: 8.vs,
+            shimmerWidget: (index) => LastScanShimmer(),
+          ),
+        ),
+      ],
     );
   }
-
 }

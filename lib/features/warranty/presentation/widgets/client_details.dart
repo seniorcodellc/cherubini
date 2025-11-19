@@ -31,14 +31,26 @@ class ClientDetails extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: getPadding(horizontal: 16.0.w,vertical: 8.0.h),
+            padding: getPadding(horizontal: 16.0.w, vertical: 8.0.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('اسم العميل',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-                 WarrantyCustomTextField(hint: 'أدخل اسم العميل'),
-                Text('رقم الجوال',style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),),
-                 WarrantyCustomTextField(hint: '568912345'),
+                Text(
+                  AppStrings.clientName,
+                  style: getRegularTextStyle(
+                    fontSize: 14.sp,
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+                WarrantyCustomTextField(hint: AppStrings.enterClientName),
+                Text(
+                  AppStrings.phoneNum,
+                  style: getRegularTextStyle(
+                    fontSize: 14.sp,
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+                WarrantyCustomTextField(hint: AppStrings.phoneNumHint),
               ],
             ),
           ),
