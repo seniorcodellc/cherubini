@@ -1,4 +1,3 @@
-
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../config/constants/localization_constants.dart';
@@ -35,12 +34,15 @@ class SettingsUserDetailsList extends StatelessWidget {
                   },
                 ),
               );
-            } else if (settingList[index].name == AppStrings.editProfile) {
+            } else if (settingList[index].name ==
+                AppStrings.editProfile) {
               Routes.editProfile.moveTo();
-            } else if (settingList[index].name == AppStrings.changePassword) {
+            } else if (settingList[index].name ==
+                AppStrings.changePassword) {
               Routes.changePasswordRoute.moveTo();
-            }else if (settingList[index].name == AppStrings.productDetailsAndInstallation) {
-             context.read<UserManualCubit>().getUserManual();
+            } else if (settingList[index].name ==
+                AppStrings.productDetailsAndInstallation) {
+              context.read<UserManualCubit>().getUserManual();
             }
           },
           child: Padding(

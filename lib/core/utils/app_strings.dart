@@ -1014,10 +1014,11 @@ class AppStrings {
   static const String startReadingQrCode = "جاري قراءة الكود";
   static const String tryAgain = "tryAgain";
 
-  static const String inActive="inActive";
+  static const String inActive = "inActive";
 
-  static const String verificationQuestion="verificationQuestion";
-  static const String oldPassword="oldPassword";
-  static const String productDetailsAndInstallation="productDetailsAndInformation";
-  static const String downloading="downloading";
+  static const String verificationQuestion = "verificationQuestion";
+  static const String oldPassword = "oldPassword";
+  static const String productDetailsAndInstallation =
+      "productDetailsAndInformation";
+  static const String downloading = "downloading";
 }

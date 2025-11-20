@@ -23,7 +23,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      title: AppStrings.scanBarcode.trans,
+      title: AppStrings.scanBarcodeTitle.trans,
       child: LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           child: ConstrainedBox(

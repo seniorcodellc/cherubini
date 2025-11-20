@@ -1,6 +1,7 @@
 import 'package:cherubini/core/history/data/models/history_response_model.dart';
 import 'package:cherubini/exports.dart';
 import '../../data/models/scan_model.dart';
+
 class LastScanItem extends StatelessWidget {
   const LastScanItem({super.key, required this.history});
   final HistoryModel history;
@@ -20,7 +21,7 @@ class LastScanItem extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding:getPadding(horizontal: 16.w, vertical: 12.h),
+        padding: getPadding(horizontal: 16.w, vertical: 12.h),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,47 +36,61 @@ class LastScanItem extends StatelessWidget {
               child: CustomSVGImage(asset: AppAssets.scanFilled),
             ),
             12.hs,
-            Expanded(child:            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        history.id.toString(),
+                        style: getRegularTextStyle(
+                          fontSize: 14.sp,
+                          color: AppColors.primaryColor,
+                        ),
+                        // textDirection: TextDirection.rtl,
+                        textAlign: TextAlign.center,
+                      ),
+                      4.vs,
+                      Text(
+                        '${history.points} ${AppStrings.point.trans}',
+                        //textDirection: TextDirection.rtl,
+                        style: getRegularTextStyle(
+                          fontSize: 12.sp,
+                          color: AppColors.accentColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  10.vs,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      history.id.toString(),
-                      style: getRegularTextStyle(fontSize: 14.sp,color: AppColors.primaryColor),
-                      // textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.center,
-                    ),
-                    4.vs,  Text(
-                      '${history.points} نقطه',
-                      //textDirection: TextDirection.rtl,
-                      style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.accentColor),
-                    ),
-                  ],
-                ),
-                10.vs,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                  children: [
-                    Text(
-                      DateFormat('dd/MM/yyyy').format(DateTime.parse(history.date!)).toString(),
-                      style: getRegularTextStyle(fontSize: 16.sp,color:AppColors.subTitleColor ),
-                      //textDirection: TextDirection.rtl,
-                    ),
-                    Text(
-                      '${history.detail!.length} منتجات',
-                      textDirection: TextDirection.rtl,
-                      style: getRegularTextStyle(fontSize: 12.sp,color: AppColors.subTitleColor),
-                    ),
-                  ],
-                )
-
-              ],
+                    children: [
+                      Text(
+                        DateFormat(
+                          'dd/MM/yyyy',
+                        ).format(DateTime.parse(history.date!)).toString(),
+                        style: getRegularTextStyle(
+                          fontSize: 16.sp,
+                          color: AppColors.subTitleColor,
+                        ),
+                        //textDirection: TextDirection.rtl,
+                      ),
+                      Text(
+                        '${history.detail!.length} ${AppStrings.products.trans}',
+                        textDirection: TextDirection.rtl,
+                        style: getRegularTextStyle(
+                          fontSize: 12.sp,
+                          color: AppColors.subTitleColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            )
           ],
         ),
       ),
