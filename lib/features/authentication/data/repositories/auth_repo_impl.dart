@@ -1,4 +1,4 @@
-import 'package:cherubini/features/authentication/data/model/request_model/change_password_request_model.dart';
+import 'package:cherubini/features/change_password/data/models/request_model/change_password_request_model.dart';
 import 'package:cherubini/features/authentication/data/model/request_model/tech_sign_up_model.dart';
 import '../../../../config/constants/app_prefs.dart';
 import '../../../../exports.dart';
@@ -57,11 +57,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, ResponseModel>> forgetPassword({
     required String email,
-  }) => executeImpl(
-    () => authRemoteDataSource.forgetPassword(
-      email: email,
-    ),
-  );
+  }) => executeImpl(() => authRemoteDataSource.forgetPassword(email: email));
 
   /*
   @override
@@ -149,12 +145,12 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, ResponseModel>> changePassword(ChangePasswordRequestModel changePassword) => executeImpl(
-    () => authRemoteDataSource.changePassword(changePassword),
-  );
+  Future<Either<Failure, ResponseModel>> changePassword(
+    ChangePasswordRequestModel changePassword,
+  ) => executeImpl(() => authRemoteDataSource.changePassword(changePassword));
 
   @override
-  Future<Either<Failure, ResponseModel>> setPassword({required String password}) => executeImpl(
-        () => authRemoteDataSource.setPassword(password: password),
-      );
+  Future<Either<Failure, ResponseModel>> setPassword({
+    required String password,
+  }) => executeImpl(() => authRemoteDataSource.setPassword(password: password));
 }

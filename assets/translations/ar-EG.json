@@ -26,6 +26,7 @@
   "passwordHint":"********",
   "confirmPassword":"تأكيد كلمة المرور",
   "forgetPasswordQuestionMark": "نسيت كلمه المرور؟",
+  "forgetPassword": "نسيت كلمه المرور",
   "haveNoAccount": "ليس لديك حساب ؟",
   "signUpAsMerchant": "تسجيل تاجر",
   "signUpAsTech": "تسجيل فني",

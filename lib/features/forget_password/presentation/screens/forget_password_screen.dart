@@ -45,7 +45,9 @@ class ForgetPasswordScreen extends StatelessWidget {
                     Errors.EMAIL_ERROR,
                   );
                   if (dontHaveErrors(context)) {
-                    context.read<AuthCubit>().forgetPassword(email:     emailController.text,);
+                    context.read<AuthCubit>().forgetPassword(
+                      email: emailController.text,
+                    );
                   }
                 },
               ),

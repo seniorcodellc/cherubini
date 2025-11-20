@@ -1,4 +1,4 @@
-import 'package:cherubini/features/authentication/data/model/request_model/change_password_request_model.dart';
+import 'package:cherubini/features/change_password/data/models/request_model/change_password_request_model.dart';
 
 import '../../../../exports.dart';
 import '../../data/model/request_model/login_model.dart';
@@ -27,7 +27,9 @@ abstract class AuthRepo {
   Future<Either<Failure, ResponseModel>> resetPassword({
     required ResetPasswordRequestModel resetPasswordRequestModel,
   });
-  Future<Either<Failure, ResponseModel>> setPassword({required String password});
+  Future<Either<Failure, ResponseModel>> setPassword({
+    required String password,
+  });
   Future<Either<Failure, ResponseModel>> reSendCode({
     required ReSendRequestModel resendRequestModel,
   });
@@ -43,5 +45,7 @@ abstract class AuthRepo {
   // Future<Either<Failure, ResponseModel>> changeNumber({required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel});
   Future<Either<Failure, ResponseModel>> getUser();
   Future<Either<Failure, ResponseModel>> clearUser();
-  Future<Either<Failure, ResponseModel>> changePassword(ChangePasswordRequestModel changePassword);
+  Future<Either<Failure, ResponseModel>> changePassword(
+    ChangePasswordRequestModel changePassword,
+  );
 }
