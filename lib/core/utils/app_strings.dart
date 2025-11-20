@@ -21,7 +21,6 @@ class AppStrings {
   static const String empty = "noEstateHere";
   static const String waitingForEditProfile = "waitingForEditProfile";
   static const String waitingForCancel = "waitingForCancel";
-  static const String pointsDeducted = "النقاط المخصومه";
   static const String didNotChangeField = "didNotChangeField";
 
   static const String photos = "photos";
@@ -308,6 +307,7 @@ class AppStrings {
   static const String techBenefitsDetails = "technician Reward Details";
   static const String paid = "paid";
   static const String totalPoints = "totalPoints";
+  static const String deductedPoints = "deductedPoints";
   static const String notPaid = "not Paid";
   static const String save = "save";
   static const String cancel = "cancel";
@@ -993,7 +993,7 @@ class AppStrings {
 
   static const String enterCardDetails = "enterCardDetails";
   static const String saveCardForFastPayment = "saveCardForFastPayment";
-  static const String pay = "صرف";
+  static const String pay = "pay";
   static const String edit = "edit";
 
   static const String addInsuranceCompany = "addInsuranceCompany";
@@ -1014,10 +1014,11 @@ class AppStrings {
   static const String startReadingQrCode = "جاري قراءة الكود";
   static const String tryAgain = "tryAgain";
 
-  static const String inActive="inActive";
+  static const String inActive = "inActive";
 
-  static const String verificationQuestion="verificationQuestion";
-  static const String oldPassword="oldPassword";
-  static const String productDetailsAndInstallation="productDetailsAndInformation";
-  static const String downloading="downloading";
+  static const String verificationQuestion = "verificationQuestion";
+  static const String oldPassword = "oldPassword";
+  static const String productDetailsAndInstallation =
+      "productDetailsAndInformation";
+  static const String downloading = "downloading";
 }

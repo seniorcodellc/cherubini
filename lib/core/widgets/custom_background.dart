@@ -71,7 +71,11 @@ class CustomBackground extends StatelessWidget {
             ? CustomFloatingActionButton()
             : floatingActionButton,
 
-        bottomNavigationBar: showNavBar ? BlocBuilder<LanguageCubit,CubitStates>(builder: (context, state) => BottomNavigationWidget(),) : null,
+        bottomNavigationBar: showNavBar
+            ? BlocBuilder<LanguageCubit, CubitStates>(
+                builder: (context, state) => BottomNavigationWidget(),
+              )
+            : null,
         backgroundColor: backgroundColor,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         resizeToAvoidBottomInset: true,

@@ -4,7 +4,6 @@ import 'package:cherubini/features/points_summary/presentation/widgets/scan_blue
 import 'package:cherubini/features/points_summary/presentation/widgets/shared_done_or_not_container.dart';
 import 'package:cherubini/features/points_summary/presentation/widgets/shared_points_details_column.dart';
 
-
 import '../../../../config/widgets/status_widget.dart';
 import '../../../../exports.dart';
 import '../../data/models/cash_reward_response_model.dart';
@@ -136,7 +135,7 @@ class DueItem extends StatelessWidget {
                     ),
                     Expanded(
                       child: SharedPointsDetailsColumn(
-                        pointsType: AppStrings.pointsDeducted.trans,
+                        pointsType: AppStrings.deductedPoints.trans,
                         pointsNum: model.totalPointsDeducted.toString(),
                       ),
                     ),

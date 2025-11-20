@@ -1,4 +1,3 @@
-
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../config/constants/localization_constants.dart';
@@ -19,7 +18,7 @@ class SettingsUserDetailsList extends StatelessWidget {
         final model = settingList[index];
         return GestureDetector(
           onTap: () {
-            if (settingList[index].name == AppStrings.language) {
+            if (settingList[index].name == AppStrings.language.trans) {
               showCustomDialog(
                 contentPadding: getPadding(horizontal: 0, vertical: 20.h),
                 child: CustomLanguageDialog(
@@ -35,12 +34,15 @@ class SettingsUserDetailsList extends StatelessWidget {
                   },
                 ),
               );
-            } else if (settingList[index].name == AppStrings.editProfile) {
+            } else if (settingList[index].name ==
+                AppStrings.editProfile.trans) {
               Routes.editProfile.moveTo();
-            } else if (settingList[index].name == AppStrings.changePassword) {
+            } else if (settingList[index].name ==
+                AppStrings.changePassword.trans) {
               Routes.changePasswordRoute.moveTo();
-            }else if (settingList[index].name == AppStrings.productDetailsAndInstallation) {
-             context.read<UserManualCubit>().getUserManual();
+            } else if (settingList[index].name ==
+                AppStrings.productDetailsAndInstallation) {
+              context.read<UserManualCubit>().getUserManual();
             }
           },
           child: Padding(

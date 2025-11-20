@@ -19,7 +19,7 @@
   "password":"كلمة المرور",
   "passwordHint":"********",
   "confirmPassword":"تأكيد كلمة المرور",
-  "forgetPassword": "نسيت كلمه المرور؟",
+  "forgetPasswordQuestionMark": "نسيت كلمه المرور؟",
   "haveNoAccount": "ليس لديك حساب ؟",
   "signUpAsMerchant": "تسجيل تاجر",
   "signUpAsTech": "تسجيل فني",
@@ -546,7 +546,7 @@
   "addNewCard": "اعضافة بطاقة جديدة",
   "cardHolderName": "اسم حامل البطاقة",
   "saveCardForFastPayment": "حفظ بيانات البطاقة للدفع السريع والآمن",
-  "pay": "إدفع",
+  "pay": "صرف",
   "edit": "تعديل",
   "addInsuranceCompany": "إضافة شركة تأمين",
   "add": "إضافة",
@@ -576,5 +576,6 @@
   "checkCodeConclusion1": "لم يصلك البريد الإلكتروني بعد؟ ",
   "checkCodeConclusion2": "أعد الإرسال",
   "assignNewPassword": "تعيين كلمة مرور جديدة",
-  "productDetailsAndInformation": "معلومات المنتج و التركيب"
+  "productDetailsAndInformation": "معلومات المنتج و التركيب",
+  "deductedPoints": "النقاط المخصومه"
 }

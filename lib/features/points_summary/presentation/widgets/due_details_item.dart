@@ -129,7 +129,7 @@ class _DueDetailsItemState extends State<DueDetailsItem> {
                     ),
                     Expanded(
                       child: SharedPointsDetailsColumn(
-                        pointsType: AppStrings.pointsDeducted.trans,
+                        pointsType: AppStrings.deductedPoints.trans,
                         pointsNum: widget.model.totalPointsDeducted.toString(),
                       ),
                     ),

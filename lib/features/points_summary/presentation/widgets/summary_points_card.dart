@@ -1,4 +1,3 @@
-
 import 'package:cherubini/features/points_summary/presentation/widgets/shared_text_column.dart';
 
 import '../../../../core/profile/data/models/profile_response_model.dart';
@@ -6,7 +5,7 @@ import '../../../../exports.dart';
 
 class SummaryPointsCard extends StatelessWidget {
   final ProfileModel? profile;
-  const SummaryPointsCard({this.profile,super.key});
+  const SummaryPointsCard({this.profile, super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,9 +37,19 @@ class SummaryPointsCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SharedTextColumn(text: AppStrings.total.trans,num:profile?.totalPoints.validate.toString()),
-                  VerticalDivider(color: AppColors.white, thickness: 1.w, width: 50.w),
-                  SharedTextColumn(text: AppStrings.replaced, num:profile?.pointDelevery.validate.toString()),
+                  SharedTextColumn(
+                    text: AppStrings.total.trans,
+                    num: profile?.totalPoints.validate.toString(),
+                  ),
+                  VerticalDivider(
+                    color: AppColors.white,
+                    thickness: 1.w,
+                    width: 50.w,
+                  ),
+                  SharedTextColumn(
+                    text: AppStrings.replaced.trans,
+                    num: profile?.pointDelevery.validate.toString(),
+                  ),
                 ],
               ),
             ),
