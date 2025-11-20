@@ -1,8 +1,8 @@
-
 import '../../exports.dart';
 import '../../features/authentication/presentation/managers/auth_cubit.dart';
 
-T getBlocData<T extends StateStreamableSource<Object?>>() => BlocProvider.of<T>(getContext);
+T getBlocData<T extends StateStreamableSource<Object?>>() =>
+    BlocProvider.of<T>(getContext);
 
 Future<T?> managerExecute<T>(
   Future<Either<Failure, ResponseModel>> either, {
@@ -22,6 +22,13 @@ Future<T?> managerExecute<T>(
       print("fffffffffff" + failure.code.toString());
       if (failure.code == ResponseCode.UNAUTHORISED) {
         getBlocData<AuthCubit>().clearUser();
+      } else {
+        Routes.errorScreenRoute.moveToCurrrentRouteAndRemoveAll(
+          args: {'message': failure.message},
+        );
+      }
+      /*   else if  {
+        getBlocData<AuthCubit>().clearUser();
       }
      else if (failure.code == ResponseCode.NO_INTERNET_CONNECTION) {
         data = failure.data;
@@ -29,7 +36,7 @@ Future<T?> managerExecute<T>(
         onNetworkFail?.call(failure.message, data);
       } else {
         onFail?.call(failure.message);
-      }
+      }*/
     },
     (ResponseModel value) {
       data = value.data;
@@ -74,7 +81,7 @@ Future<R?> executeWithDialog<R>({
       /// Extract the error message from the `Failure` object.
       print("fffffffffff" + failure.code.toString());
       var message = failure.message;
-      if (failure.code == ResponseCode.UNAUTHORISED ) {
+      if (failure.code == ResponseCode.UNAUTHORISED) {
         getBlocData<AuthCubit>().clearUser();
       }
 
@@ -110,8 +117,6 @@ Future<R?> executeWithDialog<R>({
   return data;
 }
 
-
-
 Future<R?> executeWithSnackBar<R>({
   /// A required `Future<Either<Failure, R>>` future representing the asynchronous operation.
   required Future<Either<Failure, ResponseModel>> either,
@@ -134,7 +139,11 @@ Future<R?> executeWithSnackBar<R>({
   R? data;
 
   /// Show a custom dialog with the `startingMessage` using `AppService.showCustomDialog`.
-  showSnackBar(duration: AppConstants.connectTimeOut, message: startingMessage, alertType: AlertTypes.loading);
+  showSnackBar(
+    duration: AppConstants.connectTimeOut,
+    message: startingMessage,
+    alertType: AlertTypes.loading,
+  );
 
   /// Await the result of the `either` future and handle it using `fold`.
   (await either).fold(
@@ -142,7 +151,11 @@ Future<R?> executeWithSnackBar<R>({
       /// Extract the error message from the `Failure` object.
       dismissSnackBar();
 
-      showSnackBar(duration: 500.milliseconds, message: failure.message, alertType: AlertTypes.error);
+      showSnackBar(
+        duration: 500.milliseconds,
+        message: failure.message,
+        alertType: AlertTypes.error,
+      );
 
       onError?.call(failure.message);
       //pop();
@@ -154,7 +167,11 @@ Future<R?> executeWithSnackBar<R>({
       data = response.data;
       await beforeSuccess?.call(data);
       dismissSnackBar();
-      showSnackBar(duration: 500.milliseconds, message: response.message.validate, alertType: AlertTypes.success);
+      showSnackBar(
+        duration: 500.milliseconds,
+        message: response.message.validate,
+        alertType: AlertTypes.success,
+      );
       onSuccess.call(data);
 
       /// Show a custom success dialog with a timeout using `AppService.showCustomDialogWithTimer`.

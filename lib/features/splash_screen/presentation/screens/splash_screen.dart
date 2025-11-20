@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     timer = Timer.periodic(1.seconds, (timer) {
       counter++;
       if (route.isNotNull && counter >= 5) {
-        route!.moveToAndRemoveCurrent(); // Navigate and remove splash screen
+        route!.moveToCurrrentRouteAndRemoveAll(); // Navigate and remove splash screen
         timer.cancel();
       }
     });

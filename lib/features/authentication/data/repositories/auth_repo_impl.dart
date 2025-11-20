@@ -1,3 +1,4 @@
+import 'package:cherubini/features/authentication/data/model/request_model/change_password_request_model.dart';
 import 'package:cherubini/features/authentication/data/model/request_model/tech_sign_up_model.dart';
 import '../../../../config/constants/app_prefs.dart';
 import '../../../../exports.dart';
@@ -35,7 +36,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, ResponseModel>> registerMerchant({
     required RegisterMerchantModel registerModel,
-  }) => executeImpl<UserModel>(
+  }) => executeImpl(
     () => authRemoteDataSource.registerMerchant(registerModel: registerModel),
   );
 
@@ -55,10 +56,10 @@ class AuthRepoImpl extends AuthRepo {
   );
   @override
   Future<Either<Failure, ResponseModel>> forgetPassword({
-    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
+    required String email,
   }) => executeImpl(
     () => authRemoteDataSource.forgetPassword(
-      enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
+      email: email,
     ),
   );
 
@@ -146,4 +147,14 @@ class AuthRepoImpl extends AuthRepo {
     // TODO: implement verifyForgetPassword
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, ResponseModel>> changePassword(ChangePasswordRequestModel changePassword) => executeImpl(
+    () => authRemoteDataSource.changePassword(changePassword),
+  );
+
+  @override
+  Future<Either<Failure, ResponseModel>> setPassword({required String password}) => executeImpl(
+        () => authRemoteDataSource.setPassword(password: password),
+      );
 }

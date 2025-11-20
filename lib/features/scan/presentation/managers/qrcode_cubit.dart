@@ -8,13 +8,13 @@ import 'package:cherubini/features/scan/domain/use_cases/qrcode_usecase.dart';
 import '../../../../config/routes/name_routes.dart';
 import '../../data/models/qr_code_model.dart';
 
-class QrCodeCubit extends CubitDataView<dynamic> {
+class QrCodeCubit extends GenericCubit<dynamic> {
   final QrCodeUseCases qrCodeUseCases;
   QrCodeModel? qrCode;
   QrCodeCubit({required this.qrCodeUseCases})
     : super(genericUseCases: qrCodeUseCases);
   readQrCode(String seralCode) {
-    postDataWithDialog(
+    requestDataWithDialog(
       query: seralCode,
       startingMessage: AppStrings.startReadingQrCode.trans,
       onFail: (message) {

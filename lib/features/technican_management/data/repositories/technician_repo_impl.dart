@@ -11,7 +11,8 @@ class TechnicianRepoImpl extends TechnicianRepo {
       executeImpl(() => technicianRemoteDataSources.getList());
 
   @override
-  Future<Either<Failure, ResponseModel>> approve(num id)=>executeImpl(() => technicianRemoteDataSources.approve(id),);
+  Future<Either<Failure, ResponseModel>> activateOrReject(num id,num status)=>
+      executeImpl(() => technicianRemoteDataSources.activateOrReject(id,status),);
 
   @override
   Future<Either<Failure, ResponseModel>> reactive(num id) =>executeImpl(() => technicianRemoteDataSources.reactivate(id),);

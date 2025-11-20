@@ -75,7 +75,7 @@ class _ManagementToggleState extends State<ManagementToggle> {
             Expanded(
               child: SharedToggleItem(
                 text: AppStrings.suspended.trans,
-                color: status == Status.SUSPENDED
+                color: status == Status.REJECTED
                     ? AppColors.white
                     : AppColors.mutedBlue,
                 style: getBoldTextStyle(
@@ -83,8 +83,8 @@ class _ManagementToggleState extends State<ManagementToggle> {
                   color: AppColors.primaryColor,
                 ),
                 onTap: () {
-                  if (status.isNotEqualTo(Status.SUSPENDED)) {
-                    status = Status.SUSPENDED;
+                  if (status.isNotEqualTo(Status.REJECTED)) {
+                    status = Status.REJECTED;
                     widget.onTabSelected(status);
                     setState(() {});
                   }

@@ -1,6 +1,6 @@
 import '../../../../exports.dart';
 
-class GenericDataView<CubitType extends CubitDataView<T>, T> extends StatelessWidget {
+class GenericDataView<CubitType extends GenericCubit<T>, T> extends StatelessWidget {
   GenericDataView({this.shimmerWidget, this.errorWidget, this.buildLoadedWidget, super.key});
   GenericDataView.fromState({required this.buildLoadedWidgetWithState,super.key});
 

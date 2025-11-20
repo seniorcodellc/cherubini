@@ -1,7 +1,4 @@
 {
-  "oldPassword": "كلمه المرور القديمة",
-  "newPassword": "كلمه المرور الجديدة",
-  "forgetPasswordQuestionMark": "نسيت كلمه المرور ؟",
   "techManagementTitle": "إدارة الفنيين",
   "operationHistoryTitle": "سجل العمليات",
   "pointsSummaryTitle": "ملخص النقاط",
@@ -22,7 +19,7 @@
   "password":"كلمة المرور",
   "passwordHint":"********",
   "confirmPassword":"تأكيد كلمة المرور",
-  "forgetPassword": "نسيت كلمه المرور",
+  "forgetPassword": "نسيت كلمه المرور؟",
   "haveNoAccount": "ليس لديك حساب ؟",
   "signUpAsMerchant": "تسجيل تاجر",
   "signUpAsTech": "تسجيل فني",
@@ -93,9 +90,9 @@
   "pointsSummary" : "ملخص\nالنقاط",
   "operationHistory" : "سجل\nالعمليات",
   "scanBarcode":
-  "مسح\nالبار كود",
-  "scanBarcodeTitle":
   "مسح البار كود",
+  "scanBarcodeTitle":
+  "مسح الباركود",
   "scanError":
   "باركود غير مسجل",
   "scanAnotherBarcode":
@@ -134,9 +131,9 @@
   "product" : "منتج",
   "publishWarranty" : "اصدار شهادة ضمان",
   "settings": "الاعدادات",
-  "editProfile" : "تعديل الملف الشخصي",
+  "editProfile" : "الملف الشخصي",
   "changePassword": "تغيير كلمة المرور",
-  "warrantyCertificates" : "شهادات الضمان",
+  "warrantyCertificates" : "معلومات المنتج و التركيب",
   "startScan" : "ابدا المسح",
   "scanOtherCode" : "مسح باركود آخر",
   "serialNumber" : "الرقم التسلسلي",
@@ -155,7 +152,6 @@
   "notCollected" : "لم يتم التحصيل",
   "dueDetails" : "تفاصيل الأستحقاق",
   "payDues" : "دفع الاستحقاقات",
-  "startReadingQrCode": "جاري قراءة الكود",
 
 
 
@@ -565,6 +561,11 @@
   "loggedInSuccessfully": "تم تسجيل الدخول بنجاح",
   "scanError": "باركود غير مسجل",
   "serialNumber": "الرقم التسلسلى",
+  "tryAgain": "اعاده المحاولة مرة أخرى",
+  "goToHomepage": "الصفحة الرئيسية",
+  "viewDetailsButton": "عرض التفاصيل",
+"inActive": "غير نشط",
+  "verificationQuestion": " سؤال  التحقق من التاجر",
   "scanAnotherBarcode": "مسح باركود آخر",
   "pleaseEnterYourEmail1": "الرجاء إدخال بريدك الإلكتروني لإعادة تعيين",
   "pleaseEnterYourEmail2": "كلمه المرور",
@@ -574,5 +575,6 @@
   "checkCode": "التحقق من الرمز",
   "checkCodeConclusion1": "لم يصلك البريد الإلكتروني بعد؟ ",
   "checkCodeConclusion2": "أعد الإرسال",
-  "assignNewPassword": "تعيين كلمة مرور جديدة"
+  "assignNewPassword": "تعيين كلمة مرور جديدة",
+  "productDetailsAndInformation": "معلومات المنتج و التركيب"
 }

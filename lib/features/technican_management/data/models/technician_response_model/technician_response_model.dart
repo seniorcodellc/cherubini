@@ -15,7 +15,16 @@ class TechnicianResponseModel extends ListResponseModel<TechnicianModel> {
 /// status : 0
 
 class TechnicianModel {
-  TechnicianModel({this. id, this. name, this. points, this. status}) ;
+  TechnicianModel({
+    this.id,
+    this.name,
+    this.points,
+    this.answer,
+    this.phone,
+    this.email,
+    this.status,
+    this.totalReadings,
+  });
 
   TechnicianModel.fromJson(dynamic json) {
     id = json['id'];
@@ -23,22 +32,25 @@ class TechnicianModel {
     points = json['points'];
     phone = json['phone'];
     email = json['email'];
+    answer = json['answer'];
+    totalReadings = json['totalReadings'];
     status = json['status'];
   }
   num? id;
   String? name;
   num? points;
+  num? totalReadings;
   String? phone;
   String? email;
+  String? answer;
   num? status;
   TechnicianModel copyWith({num? id, String? name, num? points, num? status}) =>
       TechnicianModel(
         id: id ?? id,
-        name: name ??name,
+        name: name ?? name,
         points: points ?? points,
-        status: status ?? status,
+        status: status ?? 0,
       );
-
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

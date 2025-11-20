@@ -1,4 +1,5 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
+import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../exports.dart';
@@ -44,7 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     Errors.EMAIL_ERROR,
                   );
                   if (dontHaveErrors(context)) {
-                    Routes.enterCodeRoute.moveTo();
+                    context.read<AuthCubit>().forgetPassword(email:     emailController.text,);
                   }
                 },
               ),

@@ -11,6 +11,52 @@ class TechItemWidget extends StatelessWidget {
   TechItemWidget({super.key, required this.item});
   final TechnicianModel item;
   Status? status;
+
+  _buildAnswerQuestion(Status status) => status == Status.PENDING
+      ? Container(
+          width: 311,
+          margin: getMargin(top: 16.h),
+          padding: getPadding(horizontal: 16.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x4D000000), // نفس #0000004D
+                offset: Offset(0, 1),
+                blurRadius: 2,
+                spreadRadius: 0,
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  CustomSVGImage(asset: AppAssets.questionMark),
+                  8.hs,
+                  Text(
+                    AppStrings.verificationQuestion.trans,
+                    style: getRegularTextStyle(
+                      fontSize: 14.sp,
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
+              8.vs,
+              Text(
+                item.answer.validate,
+                style: getRegularTextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.grayHint,
+                ),
+              ),
+            ],
+          ),
+        )
+      : SizedBox.shrink();
   @override
   Widget build(BuildContext context) {
     status = getStatus(item.status!);
@@ -38,7 +84,9 @@ class TechItemWidget extends StatelessWidget {
           HLine(),
           _buildDetails(),
           HLine(),
+          _buildAnswerQuestion(status!),
           24.vs,
+
           _buildActionButtons(context),
         ],
       ),
@@ -54,7 +102,7 @@ class TechItemWidget extends StatelessWidget {
               child: CustomButton(
                 text: AppStrings.accept.trans,
                 onPressed: () {
-                  context.read<TechnicianCubit>().approve(item);
+                  context.read<TechnicianCubit>().activateOrReject(item, 1);
                 },
                 backgroundColor: AppColors.primaryColor,
                 svgIconPath: AppAssets.accept,
@@ -68,7 +116,7 @@ class TechItemWidget extends StatelessWidget {
               child: CustomButton(
                 text: AppStrings.reject.trans,
                 onPressed: () {
-                  context.read<TechnicianCubit>().suspend(item);
+                  context.read<TechnicianCubit>().activateOrReject(item, 3);
                 },
                 backgroundColor: AppColors.red,
                 svgIconPath: AppAssets.cancel,
@@ -79,7 +127,7 @@ class TechItemWidget extends StatelessWidget {
             ),
           ],
         );
-      case Status.SUSPENDED:
+      case Status.REJECTED:
         return CustomButton(
           text: AppStrings.reactiveTechnician.trans,
           onPressed: () {
@@ -91,11 +139,23 @@ class TechItemWidget extends StatelessWidget {
           height: 42.h,
           width: 146.w,
         );
-      default:
+      case Status.ACTIVE:
         return CustomButton(
           text: AppStrings.suspendTechnician.trans,
           onPressed: () {
             context.read<TechnicianCubit>().suspend(item);
+          },
+          backgroundColor: AppColors.primaryColor,
+          svgIconPath: AppAssets.accept,
+          borderColor: AppColors.primaryColor,
+          height: 42.h,
+          width: 146.w,
+        );
+      case Status.SUSBENDED:
+        return CustomButton(
+          text: AppStrings.reactiveTechnician.trans,
+          onPressed: () {
+            context.read<TechnicianCubit>().reactivate(item);
           },
           backgroundColor: AppColors.red,
           svgIconPath: AppAssets.cancel,
@@ -103,15 +163,18 @@ class TechItemWidget extends StatelessWidget {
           height: 42.h,
           width: 146.w,
         );
+      default:
+        SizedBox.shrink();
     }
   }
 
   _buildDetails() => Padding(
     padding: getPadding(horizontal: 8.0.w, bottom: 14.h, top: 6.0.h),
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               item.points.toString(),
@@ -135,7 +198,7 @@ class TechItemWidget extends StatelessWidget {
         Column(
           children: [
             Text(
-              "",
+              item.totalReadings.toString(),
               style: getRegularTextStyle(
                 fontSize: 14.sp,
                 color: AppColors.accentColor,
@@ -151,8 +214,7 @@ class TechItemWidget extends StatelessWidget {
             ),
           ],
         ),
-        VLine(height: 50.0.h),
-        ShowDetailsButton(),
+
       ],
     ),
   );
@@ -204,8 +266,10 @@ class TechItemWidget extends StatelessWidget {
                   8.hs,
                   Text(
                     status == Status.ACTIVE
-                        ? AppStrings.active
-                        : AppStrings.waitingTech,
+                        ? AppStrings.active.trans
+                        : status == Status.REJECTED
+                        ? AppStrings.inActive.trans
+                        : AppStrings.waitingTech.trans,
                     style: getRegularTextStyle(
                       fontSize: 15.sp,
                       color: status == Status.ACTIVE

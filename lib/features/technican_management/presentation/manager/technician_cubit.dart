@@ -11,8 +11,8 @@ class TechnicianCubit extends CubitListView<TechnicianModel> {
   List<TechnicianModel> suspendedTechnicians = [];
   TechnicianCubit({required this.technicianUseCase})
     : super(listUseCases: technicianUseCase);
-  approve(TechnicianModel item)=>executeWithDialog<dynamic>(either: technicianUseCase.approve(item.id!),
-      startingMessage: AppStrings.accept, onSuccess: (data) {
+  activateOrReject(TechnicianModel item,num status)=>executeWithDialog<dynamic>(either: technicianUseCase.activateOrReject(item.id!,status),
+      startingMessage:status==1? AppStrings.accept.trans:AppStrings.suspendTechnician.trans, onSuccess: (data) {
       pendingTechnicians.remove(item);
       activeTechnicians.add(item);
       emit(LoadedState(data: pendingTechnicians));
@@ -20,17 +20,17 @@ class TechnicianCubit extends CubitListView<TechnicianModel> {
 
   suspend(TechnicianModel item)=>
       executeWithDialog<dynamic>(either: technicianUseCase.suspend(item.id!),
-      startingMessage: AppStrings.reject, onSuccess: (data) {
+      startingMessage: AppStrings.reject.trans, onSuccess: (data) {
       activeTechnicians.remove(item);
       suspendedTechnicians.add(item..status=2);
-      emit(LoadedState(data: pendingTechnicians));
+      emit(LoadedState(data: activeTechnicians));
     },);
   reactivate(TechnicianModel item)=>
       executeWithDialog<dynamic>(either: technicianUseCase.reactivate(item.id!),
-      startingMessage: AppStrings.reactiveTechnician, onSuccess: (data) {
+      startingMessage: AppStrings.reactiveTechnician.trans, onSuccess: (data) {
       suspendedTechnicians.remove(item);
       activeTechnicians.add(item..status=1);
-      emit(LoadedState(data: pendingTechnicians));
+      emit(LoadedState(data: suspendedTechnicians));
     },);
   filterTechnicians({Status? status}) async {
     if(state is LoadedState){
@@ -48,7 +48,7 @@ class TechnicianCubit extends CubitListView<TechnicianModel> {
       getList(onSuccess: (list) {
         activeTechnicians    = list.where((element) => getStatus(element.status!) == Status.ACTIVE).toList();
         pendingTechnicians = list.where((element) => getStatus(element.status!) == Status.PENDING).toList();
-        suspendedTechnicians = list.where((element) => getStatus(element.status!) == Status.SUSPENDED).toList();
+        suspendedTechnicians = list.where((element) => getStatus(element.status!) == Status.REJECTED||getStatus(element.status!) == Status.SUSBENDED).toList();
         list=activeTechnicians;
         emit(LoadedState(data: list));
       },);

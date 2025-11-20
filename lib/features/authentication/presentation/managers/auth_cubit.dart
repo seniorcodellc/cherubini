@@ -1,5 +1,6 @@
 import 'package:cherubini/exports.dart';
 import '../../../../config/local_notification/local_notification.dart';
+import '../../data/model/request_model/change_password_request_model.dart';
 import '../../data/model/request_model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
 import '../../data/model/request_model/register_merchant_model.dart';
@@ -18,26 +19,25 @@ class AuthCubit extends Cubit<CubitStates> {
   //RequestIdModel? requestId;
   UserModel? user;
 
-  login(LoginModel loginModel) =>executeWithDialog<UserModel?>(
-      either: authUseCase.login(login: loginModel),
-      startingMessage: AppStrings.signIn.trans,
-      responseMessage: AppStrings.loggedInSuccessfully.trans,
-      onSuccess: (UserModel? data) async {
-        user = data;
-        //     getBlocData<BottomNavOperationCubit>().changIndex(0);
+  login(LoginModel loginModel) => executeWithDialog<UserModel?>(
+    either: authUseCase.login(login: loginModel),
+    startingMessage: AppStrings.signIn.trans,
+    responseMessage: AppStrings.loggedInSuccessfully.trans,
+    onSuccess: (UserModel? data) async {
+      user = data;
+      //     getBlocData<BottomNavOperationCubit>().changIndex(0);
 
-        Routes.merchantDashboardRoute.moveTo();
-        // Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
-      },
-    );
-
+      Routes.merchantDashboardRoute.moveTo();
+      // Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+    },
+  );
 
   logout() async => await executeWithDialog<dynamic>(
     either: authUseCase.logout(),
     startingMessage: AppStrings.waitingForLogout.trans,
     onSuccess: (data) async {
       user = null;
-      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
+      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll();
       emit(LoadedState(data: null));
     },
   );
@@ -62,10 +62,11 @@ class AuthCubit extends Cubit<CubitStates> {
   }
 
   registerMerchant(RegisterMerchantModel registerRequestModel) async {
-    await executeWithDialog<UserModel>(
+    await executeWithDialog<dynamic>(
       either: authUseCase.registerMerchant(registerModel: registerRequestModel),
       startingMessage: AppStrings.waitingForRegistration.trans,
-      onSuccess: (UserModel? data) async {
+      responseMessage: AppStrings.pleaseWaitUntilApproved.trans,
+      onSuccess: (data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
@@ -115,35 +116,56 @@ class AuthCubit extends Cubit<CubitStates> {
       },
     );
   }*/
+  changePassword(ChangePasswordRequestModel changePasswordRequestModel) =>
+      executeWithDialog(
+        either: authUseCase.changePassword(changePasswordRequestModel),
+        startingMessage: AppStrings.changePassword,
+        onSuccess: (data) {},
+      );
 
-  forgetPassword({
-    required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
-  }) async {
-    await executeWithDialog<ForgetPasswordDataModel>(
-      either: authUseCase.forgetPassword(
-        enterPhoneNumberRequestModel: enterPhoneNumberRequestModel,
-      ),
+  forgetPassword({required String email}) async {
+    await executeWithDialog<dynamic>(
+      either: authUseCase.forgetPassword(email: email),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (data) async {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
-            NotificationsService().showSimpleNotification(
-              title: AppStrings.verificationAccount.trans,
-              description: data!.confirmationCode.toString(),
-            );
+            Routes.enterCodeRoute.moveToWithArgs({
+              "email": email,
+            });
+            /*          checkNotificationPermissionAndDoOperation(
+              getContext,
+              onSuccess: () {
+                NotificationsService().showSimpleNotification(
+                  title: AppStrings.verificationAccount.trans,
+                  description: "Please check your email",
+                );
+              },
+            );*/
           },
         );
-        Routes.enterOtpRoute.moveToAndRemoveCurrent(
+        /*      Routes.enterOtpRoute.moveToAndRemoveCurrent(
           args: {
             "phone": enterPhoneNumberRequestModel.phoneNumber,
             "countryCode": enterPhoneNumberRequestModel.countryCode,
             "isForgetPassword": true,
           },
-        );
+        );*/
       },
     );
   }
+
+  setPassword({required String password}) async {
+    await executeWithDialog<dynamic>(
+      either: authUseCase.setPassword(password: password),
+      startingMessage: AppStrings.assignNewPassword.trans,
+      onSuccess: (data) async {
+        Routes.loginRoute.moveToCurrrentRouteAndRemoveAll();
+      },
+    );
+  }
+
 
   verifyForgetPassword({required VerifyRequestModel verifyRequestModel}) async {
     await executeWithDialog(
@@ -170,7 +192,7 @@ class AuthCubit extends Cubit<CubitStates> {
       ),
       startingMessage: AppStrings.verificationAccount.trans,
       onSuccess: (data) async {
-        Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
+        Routes.loginRoute.moveToCurrrentRouteAndRemoveAll();
       },
     );
   }
@@ -227,11 +249,9 @@ class AuthCubit extends Cubit<CubitStates> {
     authUseCase.clearUser(),
     onSuccess: (data) {
       user = null;
-      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll;
+      Routes.loginRoute.moveToCurrrentRouteAndRemoveAll();
 
       emit(LoadedState(data: null));
     },
   );
-
-
 }

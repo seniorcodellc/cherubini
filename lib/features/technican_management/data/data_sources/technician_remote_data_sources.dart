@@ -3,7 +3,7 @@ import 'package:cherubini/exports.dart';
 import '../models/technician_response_model/technician_response_model.dart';
 
 abstract class TechnicianRemoteDataSource extends ListRemoteDataSource {
-  Future<ResponseModel> approve(num? id);
+  Future<ResponseModel> activateOrReject(num? id,num status);
   Future<ResponseModel> suspend(num? id);
   Future<ResponseModel> reactivate(num? id);
 }
@@ -19,27 +19,28 @@ class TechnicianRemoteDataSourceImpl extends RequestsImpl
   );
 
   @override
-  Future<ResponseModel> approve(num? id) => getRequest(
+  Future<ResponseModel> activateOrReject(num? id,num status) => postRequest(
     endPoint: EndPoints.approved,
-    query: {
-      "technicianId":id
+    data: {
+      "id":id,
+      "status":1
     },
     getFromJsonFunction: ResponseModel.fromJson,
   );
 
   @override
-  Future<ResponseModel> suspend(num? id) => getRequest(
+  Future<ResponseModel> suspend(num? id) => postRequest(
     endPoint: EndPoints.suspend,
-    query: {
-      "technicianId":id
+    data: {
+      "technicianId":id,
     },
     getFromJsonFunction: ResponseModel.fromJson,
   );
 
   @override
-  Future<ResponseModel> reactivate(num? id) => getRequest(
+  Future<ResponseModel> reactivate(num? id) => postRequest(
     endPoint: EndPoints.unSuspend,
-    query: {
+    data: {
       "technicianId":id
     },
     getFromJsonFunction: ResponseModel.fromJson,

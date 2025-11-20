@@ -4,6 +4,7 @@ import 'package:cherubini/features/authentication/data/model/response_model/tech
 import 'package:cherubini/features/authentication/data/model/request_model/register_merchant_model.dart';
 
 import '../../../../exports.dart';
+import '../model/request_model/change_password_request_model.dart';
 import '../model/request_model/login_model.dart';
 import '../model/response_model/login_response_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
@@ -17,15 +18,22 @@ import '../model/response_model/register_merchant_response_model.dart';
 abstract class AuthRemoteDataSource {
   Future<ResponseModel> login({required LoginModel login});
   Future<ResponseModel> logout();
+  Future<ResponseModel> changePassword(
+    ChangePasswordRequestModel changePasswordRequestModel,
+  );
   Future<ResponseModel> registerMerchant({
     required RegisterMerchantModel registerModel,
   });
   Future<ResponseModel> verify({
     required VerifyRequestModel verifyRequestModel,
   });
-  Future<ResponseModel> forgetPassword({
+  Future<ResponseModel> forgetPasswordByPhone({
     required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
   });
+   Future<ResponseModel> forgetPassword({
+    required String email,
+  });
+  Future<ResponseModel> setPassword({required String password});
   //  Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
   Future<ResponseModel> resetPassword({
     required ResetPasswordRequestModel resetPasswordRequestModel,
@@ -60,7 +68,7 @@ class AuthRemoteDataSourceImpl extends RequestsImpl
     endPoint: EndPoints.registerMerchant,
     data: registerModel.toJson(),
     //  isFormData: true,
-    getFromJsonFunction: RegisterMerchantResponseModel.fromJson,
+    getFromJsonFunction: ResponseModel.fromJson,
   );
   @override
   Future<ResponseModel> registerTech({
@@ -81,7 +89,7 @@ class AuthRemoteDataSourceImpl extends RequestsImpl
     getFromJsonFunction: UserResponseModel.fromJson,
   );
   @override
-  Future<ResponseModel> forgetPassword({
+  Future<ResponseModel> forgetPasswordByPhone({
     required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
   }) => postRequest(
     endPoint: EndPoints.forgetPassword,
@@ -128,6 +136,30 @@ class AuthRemoteDataSourceImpl extends RequestsImpl
         ),
         fromJsonFunction: ResponseModel.fromJson,
       );
+
+  @override
+  Future<ResponseModel> changePassword(
+    ChangePasswordRequestModel changePasswordRequestModel,
+  ) => postRequest(
+    endPoint: EndPoints.changePassword,
+    getFromJsonFunction: ResponseModel.fromJson,
+
+    data: changePasswordRequestModel.toJson(),
+  );
+
+  @override
+  Future<ResponseModel> forgetPassword({required String email}) => postRequest(
+    endPoint: EndPoints.forgetPassword,
+    data: {'email': email},
+    getFromJsonFunction: ResponseModel.fromJson,
+  );
+
+  @override
+  Future<ResponseModel> setPassword({required String password}) => postRequest(
+    endPoint: EndPoints.setPassword,
+    data: {'password': password},
+    getFromJsonFunction: ResponseModel.fromJson,
+  );
 
   // @override
 

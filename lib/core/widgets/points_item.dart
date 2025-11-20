@@ -1,6 +1,6 @@
 import 'package:cherubini/exports.dart';
 import 'package:hive/hive.dart';
-import '../../features/merchant_dashboard/data/models/points_model.dart';
+import '../../features/home/data/models/points_model.dart';
 
 class PointsItem extends StatelessWidget {
   const PointsItem({super.key, required this.model});

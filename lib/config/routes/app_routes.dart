@@ -3,23 +3,13 @@ import 'package:cherubini/features/authentication/presentation/managers/cities_c
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/question_cubit.dart';
-import 'package:cherubini/features/change_password/presentation/screens/change_password_screen.dart';
 import 'package:cherubini/features/edit_profile/presentation/screens/edit_profile_screen.dart';
-import 'package:cherubini/features/merchant_points_summary/domain/use_cases/cash_reward_use_cases.dart';
-import 'package:cherubini/features/merchant_points_summary/domain/use_cases/due_pay_use_cases.dart';
-import 'package:cherubini/features/merchant_points_summary/presentation/managers/dues_cubit.dart';
-import 'package:cherubini/features/merchant_points_summary/presentation/screens/due_details_screen.dart';
-import 'package:cherubini/features/merchant_points_summary/presentation/screens/dues_screen.dart';
-import 'package:cherubini/features/merchant_settings/presentation/screens/merchant_settings.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_tech.dart';
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_trader.dart';
 import 'package:cherubini/features/authentication/presentation/screens/register_accept_screen.dart';
 import 'package:cherubini/features/scan/domain/use_cases/qrcode_usecase.dart';
 import 'package:cherubini/features/scan/presentation/screens/scan_screen.dart';
-import 'package:cherubini/features/tech_dashborad/presentation/screens/tech_dashboard.dart';
-import 'package:cherubini/features/tech_operations_log/presentation/screens/tech_operations_log_screen.dart';
-import 'package:cherubini/features/tech_points_summary/presentation/screens/tech_points_summary_screen.dart';
 import 'package:cherubini/features/technican_management/domain/use_cases/technician_use_case.dart';
 import 'package:cherubini/features/technican_management/presentation/manager/technician_cubit.dart';
 import 'package:cherubini/features/warranty/presentation/screens/merchant_warranty_screen.dart';
@@ -30,19 +20,28 @@ import 'package:nested/nested.dart';
 import '../../exports.dart';
 
 import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
+import '../../features/authentication/presentation/screens/change_password_screen.dart';
 import '../../features/forget_password/presentation/screens/enter_code_screen.dart';
 import '../../features/forget_password/presentation/screens/forget_password_screen.dart';
-import '../../features/forget_password/presentation/screens/forget_password_screen2.dart';
-import '../../features/merchant_dashboard/presentation/screens/merchant_dashboard_screen.dart';
+import '../../features/forget_password/presentation/screens/reset_password.dart';
 import '../../features/authentication/domain/usecase/governorates_use_cases.dart';
 import '../../features/authentication/presentation/screens/login_screen.dart';
-import '../../features/merchant_points_summary/presentation/managers/due_pay_cubit.dart';
+import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/operation_details/presentation/screens/operation_details.dart';
 import '../../features/operations_history/presentation/screens/operation_history.dart';
+import '../../features/points_summary/domain/use_cases/cash_reward_use_cases.dart';
+import '../../features/points_summary/domain/use_cases/due_pay_use_cases.dart';
+import '../../features/points_summary/presentation/managers/due_pay_cubit.dart';
+import '../../features/points_summary/presentation/managers/dues_cubit.dart';
+import '../../features/points_summary/presentation/screens/due_details_screen.dart';
+import '../../features/points_summary/presentation/screens/dues_screen.dart';
 import '../../features/scan/presentation/managers/qrcode_cubit.dart';
+import '../../features/settings/domain/use_cases/user_manual_use_cases.dart';
+import '../../features/settings/presentation/managers/user_manual_cubit.dart';
+import '../../features/settings/presentation/screens/settings.dart';
 import '../../features/splash_screen/presentation/screens/splash_screen.dart';
-import '../../features/tech_settings/presentation/screens/tech_settings_screen.dart';
 import '../../features/technican_management/presentation/screens/technicians_management_screen.dart';
+import '../widgets/error_screen.dart';
 
 class RouteGenerator {
   AnimationType? pageRouteAnimationGlobal;
@@ -60,89 +59,55 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
       case Routes.operationsHistoryRoute:
-        return buildPageRoute<T>(
-          child: OperationsHistoryScreen(),
-          routeSettings: routeSettings,
-        );
+        return buildPageRoute<T>(child: OperationsHistoryScreen(), routeSettings: routeSettings);
+      case Routes.errorScreenRoute:
+        return buildPageRoute<T>(child: ErrorScreen(), routeSettings: routeSettings);
 
       case Routes.merchantDashboardRoute:
-        return buildPageRoute<T>(
-          child: MerchantDashboardScreen(),
-          routeSettings: routeSettings,
-        );
+        return buildPageRoute<T>(child: HomeScreen(), routeSettings: routeSettings);
 
       case Routes.techniciansManagementRoute:
         return buildPageRoute<T>(
           providers: [
             BlocProvider(
-              create: (context) => TechnicianCubit(
-                technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>(),
-              )..filterTechnicians(),
+              create: (context) =>
+                  TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..filterTechnicians(),
             ),
           ],
           child: TechniciansManagementScreen(),
           routeSettings: routeSettings,
         );
       case Routes.operationsDetailsRoute:
-        return buildPageRoute<T>(
-          child: OperationsDetailsScreen(),
-          routeSettings: routeSettings,
-        );
+        return buildPageRoute<T>(child: OperationsDetailsScreen(), routeSettings: routeSettings);
       case Routes.duesRoute:
         return buildPageRoute<T>(
           providers: [
             BlocProvider(
-              create: (context) => DuesCubit(
-                cashRewardUseCases: ServiceLocator()
-                    .getIt<CashRewardUseCases>(),
-              )..getList(),
+              create: (context) => DuesCubit(cashRewardUseCases: ServiceLocator().getIt<CashRewardUseCases>())..getList(),
             ),
           ],
           child: DuesScreen(),
           routeSettings: routeSettings,
         );
-        return buildPageRoute<T>(
-          child: OnboardingScreen(),
-          routeSettings: routeSettings,
-        );
+        return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
       case Routes.scanRoute:
         return buildPageRoute<T>(
           child: ScanScreen(),
-          providers: [
-            BlocProvider(
-              create: (context) => QrCodeCubit(
-                qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>(),
-              ),
-            ),
-          ],
+          providers: [BlocProvider(create: (context) => QrCodeCubit(qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>()))],
           routeSettings: routeSettings,
         );
-      case Routes.merchantWarrantyRoute:
-        return buildPageRoute<T>(
-          child: MerchantWarrantyScreen(),
-          routeSettings: routeSettings,
-        );
+       case Routes.merchantWarrantyRoute:
+        return buildPageRoute<T>(child: MerchantWarrantyScreen(), routeSettings: routeSettings);
       case Routes.techWarrantyRoute:
-        return buildPageRoute<T>(
-          child: TechWarrantyScreen(),
-          routeSettings: routeSettings,
-        );
+        return buildPageRoute<T>(child: TechWarrantyScreen(), routeSettings: routeSettings);
       case Routes.loginRoute:
         return buildPageRoute<T>(
-          providers: [
-            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
-          ],
+          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
           child: LoginScreen(),
         );
       case Routes.dueDetails:
         return buildPageRoute<T>(
-          providers: [
-            BlocProvider(
-              create: (context) => DuePayCubit(
-                duePayUseCases: ServiceLocator().getIt<DuePayUseCases>(),
-              ),
-            ),
-          ],
+          providers: [BlocProvider(create: (context) => DuePayCubit(duePayUseCases: ServiceLocator().getIt<DuePayUseCases>()))],
           routeSettings: routeSettings,
           child: DuesDetailsScreen(),
         );
@@ -152,16 +117,12 @@ class RouteGenerator {
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
             BlocProvider(
-              create: (context) => QuestionCubit(
-                questionUseCases: ServiceLocator().getIt<QuestionUseCases>(),
-              )..getData(),
+              create: (context) => QuestionCubit(questionUseCases: ServiceLocator().getIt<QuestionUseCases>())..requestData(),
             ),
 
             BlocProvider<MerchantListCubit>(
-              create: (context) => MerchantListCubit(
-                merchantListUseCases: ServiceLocator()
-                    .getIt<MerchantListUseCases>(),
-              )..getList(),
+              create: (context) =>
+                  MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),
             ),
           ],
         );
@@ -170,10 +131,8 @@ class RouteGenerator {
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
             BlocProvider<GovernoratesCubit>(
-              create: (context) => GovernoratesCubit(
-                governoratesUseCases: ServiceLocator()
-                    .getIt<GovernoratesUseCases>(),
-              )..getList(),
+              create: (context) =>
+                  GovernoratesCubit(governoratesUseCases: ServiceLocator().getIt<GovernoratesUseCases>())..getList(),
             ),
             BlocProvider<CitiesCubit>(create: (context) => CitiesCubit()),
           ],
@@ -181,21 +140,19 @@ class RouteGenerator {
         );
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
-      case Routes.techDashboard:
-        return buildPageRoute<T>(child: TechDashboard());
-      case Routes.techPointsSummary:
-        return buildPageRoute<T>(child: TechPointsSummaryScreen());
-      case Routes.settings:
-        return buildPageRoute<T>(child: TechSettingsScreen());
+
+      ;
+
       case Routes.merchantSettings:
-        return buildPageRoute<T>(child: MerchantSettings());
-      case Routes.operationsLog:
-        return buildPageRoute<T>(child: TechOperationsLogScreen());
+        return buildPageRoute<T>(
+            providers: [
+              BlocProvider<UserManualCubit>(create: (context) => UserManualCubit(userManualUseCases:ServiceLocator().getIt<UserManualUseCases>() )),
+            ],
+            child: SettingsScreen());
+
       case Routes.editProfile:
         return buildPageRoute<T>(
-          providers: [
-            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
-          ],
+          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
 
           child: EditProfileScreen(),
         );
@@ -211,7 +168,7 @@ class RouteGenerator {
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
           ],
-          child: ForgetPasswordScreen2(),
+          child: ResetPasswordScreen(),
         );
       case Routes.enterCodeRoute:
         return buildPageRoute<T>(
@@ -312,11 +269,7 @@ case Routes.addInsuranceMembers:
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: Center(
-              child: Text("No route defined for ${routeSettings.name}"),
-            ),
-          ),
+          builder: (context) => Scaffold(body: Center(child: Text("No route defined for ${routeSettings.name}"))),
         );
     }
   }
@@ -336,10 +289,7 @@ case Routes.addInsuranceMembers:
         settings: routeSettings,
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
-          return RotationTransition(
-            child: child,
-            turns: ReverseAnimation(anim),
-          );
+          return RotationTransition(child: child, turns: ReverseAnimation(anim));
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
       );
@@ -359,10 +309,7 @@ case Routes.addInsuranceMembers:
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
             child: child,
-            position: Tween(
-              begin: const Offset(1.0, 0.0),
-              end: const Offset(0.0, 0.0),
-            ).animate(anim),
+            position: Tween(begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0)).animate(anim),
           );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
@@ -373,10 +320,7 @@ case Routes.addInsuranceMembers:
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
-            position: Tween(
-              begin: const Offset(0.0, 1.0),
-              end: const Offset(0.0, 0.0),
-            ).animate(anim),
+            position: Tween(begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0)).animate(anim),
             child: child,
           );
         },

@@ -46,7 +46,6 @@ class Routes {
   static const String reservationSteps = "/reservationSteps";
   static const String resetPasswordRoute = "/resetPasswordRoute";
   static const String myReservationsRoute = "/myReservations";
-  static const String bottomNavRoute = "/bottomNavRoute";
   static const String cancellationReasonsScreen = "/cancellationReasonsScreen";
   static const String searchRoute = "/searchRoute";
   static const String aboutQararScreen = "/aboutQararScreen";
@@ -91,4 +90,5 @@ class Routes {
   static const String insurances = "/insurances";
   static const String addInsuranceCompany = "/addInsuranceCompany";
   static const String addInsuranceMembers = "/addInsuranceMembers";
+  static const String errorScreenRoute = "/errorScreen";
 }

@@ -39,6 +39,6 @@ class BottomNavOperationCubit extends Cubit<int> {
   goToHome() {
     index = 0;
     emit(index);
-    Routes.bottomNavRoute.moveToCurrrentRouteAndRemoveAll;
+    Routes.merchantDashboardRoute.moveToCurrrentRouteAndRemoveAll();
   }
 }

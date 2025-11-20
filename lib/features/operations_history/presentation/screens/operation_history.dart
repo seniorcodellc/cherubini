@@ -8,8 +8,8 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_divider.dart';
 import '../../../../core/widgets/operation_details_item.dart';
 import '../../../../core/widgets/operation_details_item_shimmer.dart';
-import '../../../tech_dashborad/presentation/widgets/operations_log_header.dart';
-import '../../../tech_dashborad/presentation/widgets/shared_operations_log_card_column.dart';
+import '../../../technican_management/data/repositories/operations_log_header.dart';
+import '../../../technican_management/presentation/widgets/shared_operations_log_card_column.dart';
 import '../../../../core/widgets/custom_background.dart';
 import '../../../../core/history/data/models/history_response_model.dart';
 

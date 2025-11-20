@@ -9,8 +9,11 @@ class EnterCodeScreen extends StatelessWidget {
   EnterCodeScreen({super.key});
   TextEditingController otpController = TextEditingController();
   GlobalKey formKey = GlobalKey<FormState>();
+  String? email;
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic>? data =  getArguments(context);
+    email=data!['email'];
     return CustomBackground(
       appBar: CustomAppbar(title: ''),
       showAppbar: true,

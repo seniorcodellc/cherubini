@@ -1,11 +1,12 @@
 
 import '../../../../exports.dart';
 
-class CubitDataView<Model> extends Cubit<CubitStates> {
+abstract class GenericCubit<Model> extends Cubit<CubitStates> {
   final GenericUseCases genericUseCases;
   Model? model;
-  CubitDataView({required this.genericUseCases}) : super(InitialState());
-  getData({
+
+  GenericCubit({required this.genericUseCases}) : super(InitialState());
+  requestData({
     num? id,
     dynamic query,
     dynamic Function(Model?)? onSuccess,
@@ -34,7 +35,7 @@ class CubitDataView<Model> extends Cubit<CubitStates> {
       }
     },
   );
-  postDataWithDialog({
+  requestDataWithDialog({
     num? id,
     dynamic query,
     dynamic Function(Model?)? onSuccess,

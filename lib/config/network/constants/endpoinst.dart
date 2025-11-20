@@ -29,7 +29,7 @@ abstract class EndPoints {
   static const String dateConfig = '${api}user/config';
   static const String brokers = '${api}select/roles';
   static const String verifyForgetPassword = '${api}verify/reset-password';
-  static const String forgetPassword = '${api}forgot-password';
+  static const String forgetPassword = '${api}resetPassword';
   static const String resetPassword = '${api}reset-password';
   static const String userLogout = '${api}logout';
   static const String question = '${api}verificationQuestion';
@@ -67,13 +67,6 @@ abstract class EndPoints {
   static const String cities = '${api}select/cities/';
   static const String communicationTool = '${api}select/communication-tool';
   static const String termsAndCondition = '${api}terms-and-condisitons';
-  static const String areas = '${api}select/areas';
-  static const String rooms = '${api}select/rooms';
-
-  static const String estateRequests = '${api}estate/request';
-  static const String canceledEstateOrder = '${api}estate/canceled/requests';
-
-  static const String estateMarket = '${api}estate/market';
 
 
   /// ************************   google apis *********************************
@@ -86,14 +79,7 @@ abstract class EndPoints {
   static const String contractOrder = '${api}estate/rent-contract';
   static const String myContractOrders = '${api}estate/user/rent-contract';
 
-  static var payForAd = '${estateAd}/pay';
-  static var payForContract = '$contractOrder/pay';
-  static var payForMarket = '$estateMarket/pay';
 
-  static var district = '${api}select/districts';
-
-
-  static var estateMarketAll = '$estateMarket/all/home';
 
   static var brokerCompletedDeals = '$api/user/complete/deals/';
   static var repostEstate = '$estateAd/repost';
@@ -109,5 +95,9 @@ abstract class EndPoints {
       "${baseUrl}GetDoctorListByClinicAndDate";
 
   static String companies = "GetCompanyList";
+  static String userManual = "${api}userManual";
 
+  static String changePassword="${api}changePassword";
+
+  static String setPassword="${api}setPassword";
 }

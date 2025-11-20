@@ -17,9 +17,9 @@ class BlocProviders {
     BlocProvider<AuthCubit>(
         create: (context) => ServiceLocator().getIt<AuthCubit>()),
     BlocProvider<HistoryCubit>(
-        create: (context) => ServiceLocator().getIt<HistoryCubit>()..getList()),
+        create: (context) => ServiceLocator().getIt<HistoryCubit>()),
     BlocProvider<ProfileCubit>(
-        create: (context) => ServiceLocator().getIt<ProfileCubit>()..getData()),
+        create: (context) => ServiceLocator().getIt<ProfileCubit>()),
   BlocProvider<BottomNavOperationCubit>(
         create: (context) => ServiceLocator().getIt<BottomNavOperationCubit>()),
         BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),

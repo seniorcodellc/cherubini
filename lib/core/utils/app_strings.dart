@@ -322,13 +322,12 @@ class AppStrings {
   static const String settings = "settings";
   static const String editProfile = "editProfile";
   static const String changePassword = "changePassword";
-  static const String oldPassword = "oldPassword";
   static const String warrantyCertificates = "warrantyCertificates";
 
   /// **************************** scan ************************************
   static const String startScan = "startScan";
   static const String scanAnotherBarcode = "scanAnotherBarcode";
-  static const String serialNumber = "serialNumber";
+  static const String serialNumber = "serial Number";
   static const String productName = "product Name";
   static const String earnedPoints = "earned Points";
   static const String unavailableMessage =
@@ -1012,5 +1011,13 @@ class AppStrings {
 
   static const String loggedInSuccessfully = "loggedInSuccessfully";
 
-  static const String startReadingQrCode = "startReadingQrCode";
+  static const String startReadingQrCode = "جاري قراءة الكود";
+  static const String tryAgain = "tryAgain";
+
+  static const String inActive="inActive";
+
+  static const String verificationQuestion="verificationQuestion";
+  static const String oldPassword="oldPassword";
+  static const String productDetailsAndInstallation="productDetailsAndInformation";
+  static const String downloading="downloading";
 }

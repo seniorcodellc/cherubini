@@ -24,6 +24,7 @@ class AppAssets {
   static String logOut = "${SvgImages.svgPath}log_out.svg";
   static String bill = "${SvgImages.svgPath}bill.svg";
   static String languages = "${SvgImages.svgPath}language.svg";
+  static String errorAlarm="${SvgImages.svgPath}errorAlarm.svg";
 
   static String prods = "${SvgImages.svgPath}prods.svg";
   static String company = "${SvgImages.svgPath}company.svg";
@@ -82,4 +83,5 @@ class AppAssets {
   static String onboarding3 = "${PngImages.imagesPath}onboarding3.png";
   static String english = "${PngImages.imagesPath}english.png";
   static String arabic = "${PngImages.imagesPath}arabic.png";
+
 }

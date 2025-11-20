@@ -40,10 +40,11 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
+      height: height??56.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           fixedSize: Size(170, 40),
-          backgroundColor: color ?? AppColors.white,
+          backgroundColor: color ?? AppColors.primaryColor,
           elevation: elevation,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -63,7 +64,7 @@ class CustomElevatedButton extends StatelessWidget {
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style:
-                  style ?? getRegularTextStyle(color: AppColors.primaryColor),
+                  style ?? getRegularTextStyle(color: AppColors.white),
             ),
             if (rightIcon.isNotNull) rightIcon!,
           ],

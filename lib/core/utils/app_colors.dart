@@ -61,4 +61,6 @@ class AppColors {
   static const Color textTimeColor = Color(0xff1192F2);
   static const Color scaffold = Color(0xFFF7FAFC); // soft off-white background
   static const Color silverGray = Color(0xffACACAC);
+
+  static const Color errorHeader=Color(0xFF31313199);
 }

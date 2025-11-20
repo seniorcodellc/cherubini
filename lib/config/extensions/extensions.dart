@@ -110,7 +110,7 @@ extension StringExtension on String? {
   //get moveToCurrrentRouteAndRemoveAllExceptHome => pushRoute(this, isNewTask: true, exceptRoute: Routes.home);
   moveToCurrrentRouteAndRemoveAllExceptThisRoute(String exceptRoute) =>
       pushRoute(validate, isNewTask: true, exceptRoute: exceptRoute);
-  get moveToCurrrentRouteAndRemoveAll => pushRoute(validate, isNewTask: true);
+   moveToCurrrentRouteAndRemoveAll({Map<String, dynamic>? args}) => pushRoute(validate,arguments: args, isNewTask: true);
   get pushReplacement => pushRoute(validate, isToReplace: true);
   get push => pushRoute(validate);
   bool get isNotNull => this != null;
