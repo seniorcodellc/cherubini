@@ -21,6 +21,7 @@ abstract class EndPoints {
   static const String governorate = '${api}governorate';
   static const String merchantList = '${api}merchantsList';
   static const String qrCode = '${api}readQrCode';
+  static const String editProfile = '${api}updateProfile';
 
   static const String verify = 'User_Activate';
   static const String reSend = '${api}resend-code';

@@ -1,5 +1,6 @@
 import 'package:cherubini/core/profile/presentation/manager/profile_cubit.dart';
 import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
+import 'package:cherubini/features/edit_profile/domain/use_cases/edit_profile_use_case.dart';
 import 'package:cherubini/features/technican_management/data/data_sources/technician_remote_data_sources.dart';
 import 'package:cherubini/features/technican_management/domain/repositories/technician_repo.dart';
 import 'package:cherubini/features/technican_management/domain/use_cases/technician_use_case.dart';
@@ -36,6 +37,10 @@ import 'features/authentication/domain/usecase/question_use_cases.dart';
 import 'features/authentication/presentation/managers/auth_cubit.dart';
 import 'features/authentication/presentation/managers/governorates_cubit.dart';
 import 'features/authentication/presentation/managers/merchant_list_cubit.dart';
+import 'features/edit_profile/data/data_sources/edit_profile_remote_data_source.dart';
+import 'features/edit_profile/data/repositories/edit_profile_repo_impl.dart';
+import 'features/edit_profile/domain/repositories/edit_profile_repo.dart';
+import 'features/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'features/languages/data/data_sources/language_local_datasource.dart';
 import 'features/languages/data/repositories/language_repo_impl.dart';
 import 'features/languages/domain/repositories/language_repo.dart';
@@ -97,6 +102,7 @@ class ServiceLocator {
     registerQuestion;
     registerQrCode;
     registerUserManual;
+    registerEditProfile;
   }
 
   get registerAuthDependencies {
@@ -262,6 +268,20 @@ class ServiceLocator {
     );
     getIt.registerLazySingleton<ProfileCubit>(
       () => ProfileCubit(profileUseCases: getIt()),
+    );
+  }
+  get registerEditProfile {
+    getIt.registerLazySingleton<EditProfileRemoteDataSource>(
+      () => EditProfileRemoteDataSourceImpl(dioConsumer: getIt()),
+    );
+    getIt.registerLazySingleton<EditProfileRepo>(
+      () => EditProfileRepoImpl(editProfileRemoteDataSource: getIt()),
+    );
+    getIt.registerLazySingleton<EditProfileUseCase>(
+      () => EditProfileUseCase(editProfileRepo: getIt()),
+    );
+    getIt.registerLazySingleton<EditProfileCubit>(
+      () => EditProfileCubit(editProfileUseCase: getIt()),
     );
   }
 

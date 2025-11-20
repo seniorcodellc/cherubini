@@ -3,6 +3,8 @@ import 'package:cherubini/features/authentication/presentation/managers/cities_c
 import 'package:cherubini/features/authentication/presentation/managers/governorates_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/question_cubit.dart';
+import 'package:cherubini/features/edit_profile/domain/use_cases/edit_profile_use_case.dart';
+import 'package:cherubini/features/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'package:cherubini/features/edit_profile/presentation/screens/edit_profile_screen.dart';
 import 'package:cherubini/features/languages/presentation/screens/language_screen.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
@@ -153,7 +155,11 @@ class RouteGenerator {
 
       case Routes.editProfile:
         return buildPageRoute<T>(
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            BlocProvider<EditProfileCubit>(
+                create: (context) => EditProfileCubit(editProfileUseCase: ServiceLocator().getIt<EditProfileUseCase>() )),
+          ],
 
           child: EditProfileScreen(),
         );
