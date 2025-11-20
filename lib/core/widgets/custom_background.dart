@@ -1,10 +1,15 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart';
+import 'package:cherubini/features/bottom_navigation/presentation/widget/bottom_navigation_widget.dart';
+import 'package:cherubini/features/languages/presentation/manager/language_cubit.dart';
+
 import '../../exports.dart';
+import '../../features/bottom_navigation/data/static/bottom_nav_bar_static.dart';
+import 'custom_floating_action_button.dart';
 
 class CustomBackground extends StatelessWidget {
   final Widget child;
-  final bool showPadding;
   final Color? statusBarColor;
   final bool extendBody;
   final IconData? icon;
@@ -18,14 +23,12 @@ class CustomBackground extends StatelessWidget {
   final Color? backgroundColor;
   final Color? appBarBackgroundColor;
   final bool showAppbar;
-  final EdgeInsetsGeometry? padding;
   final Key? scaffoldKey;
   PreferredSizeWidget? appBar;
   Widget? bottomNavRoute;
-
+  final bool showNavBar;
   CustomBackground({
     required this.child,
-    this.showPadding = true,
     this.iconSize,
     this.title,
     this.style,
@@ -39,7 +42,7 @@ class CustomBackground extends StatelessWidget {
     this.showSafeArea = true,
     this.backgroundColor,
     this.appBarBackgroundColor,
-    this.padding,
+    this.showNavBar = false,
     this.floatingActionButton,
     this.scaffoldKey,
     this.statusBarColor = AppColors.transparent,
@@ -51,6 +54,7 @@ class CustomBackground extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: statusBarColor,
+
         statusBarBrightness: statusBarColor.isEqualTo(AppColors.white)
             ? Brightness.dark
             : null,
@@ -63,12 +67,36 @@ class CustomBackground extends StatelessWidget {
       child: Scaffold(
         key: scaffoldKey,
         drawer: drawer,
-        bottomNavigationBar: bottomNavRoute,
+        floatingActionButton: showNavBar
+            ? CustomFloatingActionButton()
+            : floatingActionButton,
+
+        bottomNavigationBar: showNavBar
+            ? BlocBuilder<LanguageCubit, CubitStates>(
+                builder: (context, state) => BottomNavigationWidget(),
+              )
+            : null,
         backgroundColor: backgroundColor,
-        floatingActionButton: floatingActionButton ?? const SizedBox(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         resizeToAvoidBottomInset: true,
-        appBar: showAppbar ? appBar : null,
+        appBar: title.isNotNull
+            ? AppBar(
+                backgroundColor:
+                    appBarBackgroundColor ?? AppColors.gradientColorStart,
+                toolbarHeight: 80.h,
+                title: Text(
+                  title!,
+                  style: getSemiBoldTextStyle(
+                    fontSize: 24.sp,
+                    color: AppColors.white,
+                  ),
+                ),
+                centerTitle: true,
+                iconTheme: IconThemeData(color: AppColors.white),
+              )
+            : showAppbar
+            ? appBar
+            : null,
 
         extendBody: extendBody,
         body: buildChild,

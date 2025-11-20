@@ -55,7 +55,7 @@ class DioConsumer extends ApiConsumer {
   Future<Response> postRequest({
     String baseUrl = EndPoints.baseUrl,
     required String path,
-    Map<String, dynamic>? body,
+    dynamic? body,
     Map<String, dynamic>? queryParams,
     bool isFormData = false,
   }) async {

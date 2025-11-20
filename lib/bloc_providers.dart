@@ -1,6 +1,12 @@
+import "package:cherubini/core/history/presentation/manager/history_cubit.dart";
+import "package:cherubini/features/bottom_navigation/presentation/managers/bottom_nav_operation_cubit.dart";
 import "package:cherubini/features/on_boarding/presentation/managers/onboarding_manager_cubit.dart";
 
+import "core/profile/domain/use_cases/profile_use_cases.dart";
+import "core/profile/presentation/manager/profile_cubit.dart";
 import "exports.dart";
+import "features/authentication/presentation/managers/auth_cubit.dart";
+import "features/languages/presentation/manager/language_cubit.dart";
 
 class BlocProviders {
   static final List<BlocProvider> providers = [
@@ -8,9 +14,17 @@ class BlocProviders {
       create: (context) => ServiceLocator().getIt<OnboardingManagerCubit>(),
     ),
 
-    /*    BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),
+    BlocProvider<AuthCubit>(
+        create: (context) => ServiceLocator().getIt<AuthCubit>()),
+    BlocProvider<HistoryCubit>(
+        create: (context) => ServiceLocator().getIt<HistoryCubit>()),
+    BlocProvider<ProfileCubit>(
+        create: (context) => ServiceLocator().getIt<ProfileCubit>()),
+  BlocProvider<BottomNavOperationCubit>(
+        create: (context) => ServiceLocator().getIt<BottomNavOperationCubit>()),
+        BlocProvider<LanguageCubit>(create: (context) => ServiceLocator().getIt<LanguageCubit>()),
 
- */
+
     /*   BlocProvider<BottomNavOperationCubit>(
         create: (context) => BottomNavOperationCubit()),*/
     /*

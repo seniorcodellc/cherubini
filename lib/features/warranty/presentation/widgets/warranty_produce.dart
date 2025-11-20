@@ -29,7 +29,7 @@ class WarrantyProduce extends StatelessWidget {
             ),
             6.hs,
             Text(
-              'سيتم إصدار شهادة ضمان لجميع المنتجات \nالمدرجة بتاريخ اليوم ومدة ضمان سنة واحدة',
+              AppStrings.publishWarrantyMessage,
               style: getRegularTextStyle(
                 fontSize: 12.sp,
                 color: AppColors.subTitleColor,
