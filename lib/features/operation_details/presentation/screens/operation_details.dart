@@ -27,12 +27,12 @@ class OperationsDetailsScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SharedOperationsLogCardColumn(
-          title: AppStrings.totalOperations,
+          title: AppStrings.totalOperations.trans,
           subTitle: historyModel!.detail!.length.toString(),
         ),
         CustomDivider(width: 0.6.w, height: 40.h, color: AppColors.white),
         SharedOperationsLogCardColumn(
-          title: AppStrings.overallPoints,
+          title: AppStrings.overallPoints.trans,
           subTitle: historyModel!.points.toString(),
         ),
       ],
@@ -47,7 +47,7 @@ class OperationsDetailsScreen extends StatelessWidget {
       historyModel = data!['history'];
     }
     return CustomBackground(
-      title: AppStrings.operationDetails,
+      title: AppStrings.operationDetails.trans,
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

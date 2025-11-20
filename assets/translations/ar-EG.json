@@ -1,4 +1,6 @@
 {
+  "operationDetails": "نفاصيل العمليه",
+  "pointsDeducted": "النقاط المخصومه",
   "techManagementTitle": "إدارة الفنيين",
   "operationHistoryTitle": "سجل العمليات",
   "pointsSummaryTitle": "ملخص النقاط",
@@ -19,7 +21,7 @@
   "password":"كلمة المرور",
   "passwordHint":"********",
   "confirmPassword":"تأكيد كلمة المرور",
-  "forgetPassword": "نسيت كلمه المرور؟",
+  "forgetPasswordQuestionMark": "نسيت كلمه المرور؟",
   "haveNoAccount": "ليس لديك حساب ؟",
   "signUpAsMerchant": "تسجيل تاجر",
   "signUpAsTech": "تسجيل فني",

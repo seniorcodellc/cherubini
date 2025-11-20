@@ -17,11 +17,11 @@ class AppStrings {
   static const String deleteAccount = "deleteAccount";
   static const String deletingAccount = "deletingAccount";
   static const String deleteAccountConfirmation = "deleteAccountConfirmation";
-  static const String operationDetails = "تفاصيل العمليه";
+  static const String operationDetails = "operationDetails";
   static const String empty = "noEstateHere";
   static const String waitingForEditProfile = "waitingForEditProfile";
   static const String waitingForCancel = "waitingForCancel";
-  static const String pointsDeducted = "النقاط المخصومه";
+  static const String pointsDeducted = "pointsDeducted";
   static const String didNotChangeField = "didNotChangeField";
 
   static const String photos = "photos";
