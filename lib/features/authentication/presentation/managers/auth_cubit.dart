@@ -1,6 +1,6 @@
 import 'package:cherubini/exports.dart';
 import '../../../../config/local_notification/local_notification.dart';
-import '../../data/model/request_model/change_password_request_model.dart';
+import '../../../change_password/data/models/request_model/change_password_request_model.dart';
 import '../../data/model/request_model/login_model.dart';
 import '../../data/model/request_model/enter_phone_number_request_model.dart';
 import '../../data/model/request_model/register_merchant_model.dart';
@@ -131,9 +131,7 @@ class AuthCubit extends Cubit<CubitStates> {
         checkNotificationPermissionAndDoOperation(
           getContext,
           onSuccess: () {
-            Routes.enterCodeRoute.moveToWithArgs({
-              "email": email,
-            });
+            Routes.enterCodeRoute.moveToWithArgs({"email": email});
             /*          checkNotificationPermissionAndDoOperation(
               getContext,
               onSuccess: () {
@@ -165,7 +163,6 @@ class AuthCubit extends Cubit<CubitStates> {
       },
     );
   }
-
 
   verifyForgetPassword({required VerifyRequestModel verifyRequestModel}) async {
     await executeWithDialog(

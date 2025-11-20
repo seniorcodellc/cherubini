@@ -36,11 +36,9 @@ class SettingsUserDetailsList extends StatelessWidget {
               //     },
               //   ),
               // );
-            } else if (settingList[index].name ==
-                AppStrings.editProfile) {
+            } else if (settingList[index].name == AppStrings.editProfile) {
               Routes.editProfile.moveTo();
-            } else if (settingList[index].name ==
-                AppStrings.changePassword) {
+            } else if (settingList[index].name == AppStrings.changePassword) {
               Routes.changePasswordRoute.moveTo();
             } else if (settingList[index].name ==
                 AppStrings.productDetailsAndInstallation) {

@@ -20,8 +20,10 @@ import 'package:nested/nested.dart';
 
 import '../../exports.dart';
 
+import '../../features/authentication/domain/usecase/auth_use_case.dart';
 import '../../features/authentication/domain/usecase/merchant_list_use_cases.dart';
-import '../../features/authentication/presentation/screens/change_password_screen.dart';
+import '../../features/authentication/presentation/managers/auth_cubit.dart';
+import '../../features/change_password/presentation/screens/change_password_screen.dart';
 import '../../features/forget_password/presentation/screens/enter_code_screen.dart';
 import '../../features/forget_password/presentation/screens/forget_password_screen.dart';
 import '../../features/forget_password/presentation/screens/reset_password.dart';
@@ -60,55 +62,94 @@ class RouteGenerator {
           routeSettings: routeSettings,
         );
       case Routes.operationsHistoryRoute:
-        return buildPageRoute<T>(child: OperationsHistoryScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: OperationsHistoryScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.errorScreenRoute:
-        return buildPageRoute<T>(child: ErrorScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: ErrorScreen(),
+          routeSettings: routeSettings,
+        );
 
       case Routes.merchantDashboardRoute:
-        return buildPageRoute<T>(child: HomeScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: HomeScreen(),
+          routeSettings: routeSettings,
+        );
 
       case Routes.techniciansManagementRoute:
         return buildPageRoute<T>(
           providers: [
             BlocProvider(
-              create: (context) =>
-                  TechnicianCubit(technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>())..filterTechnicians(),
+              create: (context) => TechnicianCubit(
+                technicianUseCase: ServiceLocator().getIt<TechnicianUseCase>(),
+              )..filterTechnicians(),
             ),
           ],
           child: TechniciansManagementScreen(),
           routeSettings: routeSettings,
         );
       case Routes.operationsDetailsRoute:
-        return buildPageRoute<T>(child: OperationsDetailsScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: OperationsDetailsScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.duesRoute:
         return buildPageRoute<T>(
           providers: [
             BlocProvider(
-              create: (context) => DuesCubit(cashRewardUseCases: ServiceLocator().getIt<CashRewardUseCases>())..getList(),
+              create: (context) => DuesCubit(
+                cashRewardUseCases: ServiceLocator()
+                    .getIt<CashRewardUseCases>(),
+              )..getList(),
             ),
           ],
           child: DuesScreen(),
           routeSettings: routeSettings,
         );
-        return buildPageRoute<T>(child: OnboardingScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: OnboardingScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.scanRoute:
         return buildPageRoute<T>(
           child: ScanScreen(),
-          providers: [BlocProvider(create: (context) => QrCodeCubit(qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>()))],
+          providers: [
+            BlocProvider(
+              create: (context) => QrCodeCubit(
+                qrCodeUseCases: ServiceLocator().getIt<QrCodeUseCases>(),
+              ),
+            ),
+          ],
           routeSettings: routeSettings,
         );
-       case Routes.merchantWarrantyRoute:
-        return buildPageRoute<T>(child: MerchantWarrantyScreen(), routeSettings: routeSettings);
+      case Routes.merchantWarrantyRoute:
+        return buildPageRoute<T>(
+          child: MerchantWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.techWarrantyRoute:
-        return buildPageRoute<T>(child: TechWarrantyScreen(), routeSettings: routeSettings);
+        return buildPageRoute<T>(
+          child: TechWarrantyScreen(),
+          routeSettings: routeSettings,
+        );
       case Routes.loginRoute:
         return buildPageRoute<T>(
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
           child: LoginScreen(),
         );
       case Routes.dueDetails:
         return buildPageRoute<T>(
-          providers: [BlocProvider(create: (context) => DuePayCubit(duePayUseCases: ServiceLocator().getIt<DuePayUseCases>()))],
+          providers: [
+            BlocProvider(
+              create: (context) => DuePayCubit(
+                duePayUseCases: ServiceLocator().getIt<DuePayUseCases>(),
+              ),
+            ),
+          ],
           routeSettings: routeSettings,
           child: DuesDetailsScreen(),
         );
@@ -118,12 +159,16 @@ class RouteGenerator {
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
             BlocProvider(
-              create: (context) => QuestionCubit(questionUseCases: ServiceLocator().getIt<QuestionUseCases>())..requestData(),
+              create: (context) => QuestionCubit(
+                questionUseCases: ServiceLocator().getIt<QuestionUseCases>(),
+              )..requestData(),
             ),
 
             BlocProvider<MerchantListCubit>(
-              create: (context) =>
-                  MerchantListCubit(merchantListUseCases: ServiceLocator().getIt<MerchantListUseCases>())..getList(),
+              create: (context) => MerchantListCubit(
+                merchantListUseCases: ServiceLocator()
+                    .getIt<MerchantListUseCases>(),
+              )..getList(),
             ),
           ],
         );
@@ -132,8 +177,10 @@ class RouteGenerator {
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
             BlocProvider<GovernoratesCubit>(
-              create: (context) =>
-                  GovernoratesCubit(governoratesUseCases: ServiceLocator().getIt<GovernoratesUseCases>())..getList(),
+              create: (context) => GovernoratesCubit(
+                governoratesUseCases: ServiceLocator()
+                    .getIt<GovernoratesUseCases>(),
+              )..getList(),
             ),
             BlocProvider<CitiesCubit>(create: (context) => CitiesCubit()),
           ],
@@ -142,18 +189,26 @@ class RouteGenerator {
       case Routes.registerAccept:
         return buildPageRoute<T>(child: RegisterAcceptScreen());
 
-      ;
+        ;
 
       case Routes.merchantSettings:
         return buildPageRoute<T>(
-            providers: [
-              BlocProvider<UserManualCubit>(create: (context) => UserManualCubit(userManualUseCases:ServiceLocator().getIt<UserManualUseCases>() )),
-            ],
-            child: SettingsScreen());
+          providers: [
+            BlocProvider<UserManualCubit>(
+              create: (context) => UserManualCubit(
+                userManualUseCases: ServiceLocator()
+                    .getIt<UserManualUseCases>(),
+              ),
+            ),
+          ],
+          child: SettingsScreen(),
+        );
 
       case Routes.editProfile:
         return buildPageRoute<T>(
-          providers: [BlocProvider<ErrorCubit>(create: (context) => ErrorCubit())],
+          providers: [
+            BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+          ],
 
           child: EditProfileScreen(),
         );
@@ -161,6 +216,10 @@ class RouteGenerator {
         return buildPageRoute<T>(
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            // BlocProvider<AuthCubit>(
+            //   create: (context) =>
+            //       AuthCubit(authUseCase: ServiceLocator().getIt<AuthUseCase>()),
+            // ),
           ],
           child: ForgetPasswordScreen(),
         );
@@ -175,6 +234,10 @@ class RouteGenerator {
         return buildPageRoute<T>(
           providers: [
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
+            // BlocProvider<AuthCubit>(
+            //   create: (context) =>
+            //       AuthCubit(authUseCase: ServiceLocator().getIt<AuthUseCase>()),
+            // ),
           ],
           child: EnterCodeScreen(),
         );
@@ -274,7 +337,11 @@ case Routes.addInsuranceMembers:
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(body: Center(child: Text("No route defined for ${routeSettings.name}"))),
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text("No route defined for ${routeSettings.name}"),
+            ),
+          ),
         );
     }
   }
@@ -294,7 +361,10 @@ case Routes.addInsuranceMembers:
         settings: routeSettings,
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
-          return RotationTransition(child: child, turns: ReverseAnimation(anim));
+          return RotationTransition(
+            child: child,
+            turns: ReverseAnimation(anim),
+          );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
       );
@@ -314,7 +384,10 @@ case Routes.addInsuranceMembers:
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
             child: child,
-            position: Tween(begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(1.0, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
           );
         },
         transitionDuration: duration ?? pageRouteTransitionDurationGlobal,
@@ -325,7 +398,10 @@ case Routes.addInsuranceMembers:
         pageBuilder: (context, a1, a2) => child,
         transitionsBuilder: (c, anim, a2, child) {
           return SlideTransition(
-            position: Tween(begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0)).animate(anim),
+            position: Tween(
+              begin: const Offset(0.0, 1.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(anim),
             child: child,
           );
         },

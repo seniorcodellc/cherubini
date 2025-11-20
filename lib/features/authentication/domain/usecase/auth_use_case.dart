@@ -1,4 +1,4 @@
-import 'package:cherubini/features/authentication/data/model/request_model/change_password_request_model.dart';
+import 'package:cherubini/features/change_password/data/models/request_model/change_password_request_model.dart';
 import 'package:dartz/dartz.dart';
 import '../../../../config/failures/failure.dart';
 import '../../../../config/network/model/response_model.dart';
@@ -29,9 +29,7 @@ class AuthUseCase {
       authRepo.verify(verifyRequestModel: verifyRequestModel);*/
   Future<Either<Failure, ResponseModel>> forgetPassword({
     required String email,
-  }) async => authRepo.forgetPassword(
-    email: email,
-  );
+  }) async => authRepo.forgetPassword(email: email);
   Future<Either<Failure, ResponseModel>> registerTech({
     required TechSignUpModel techSignUpModel,
   }) async => authRepo.registerTech(techSignUpModel: techSignUpModel);
@@ -71,6 +69,7 @@ class AuthUseCase {
     ChangePasswordRequestModel changePasswordRequestModel,
   ) => authRepo.changePassword(changePasswordRequestModel);
 
-  Future<Either<Failure, ResponseModel>> setPassword({required String password}) =>
-      authRepo.setPassword(password: password);
+  Future<Either<Failure, ResponseModel>> setPassword({
+    required String password,
+  }) => authRepo.setPassword(password: password);
 }

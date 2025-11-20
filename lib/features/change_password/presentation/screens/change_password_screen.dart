@@ -1,12 +1,12 @@
 import 'package:cherubini/core/widgets/custom_background.dart';
-import 'package:cherubini/features/authentication/data/model/request_model/change_password_request_model.dart';
+import 'package:cherubini/features/change_password/data/models/request_model/change_password_request_model.dart';
 import 'package:cherubini/features/authentication/presentation/managers/auth_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_confirm_password_text_field.dart';
 import 'package:cherubini/features/authentication/presentation/widgets/shared_password_text_field.dart';
 
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../exports.dart';
-import '../widgets/custom_login_signup_textfield_text.dart';
+import '../../../authentication/presentation/widgets/custom_login_signup_textfield_text.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
   ChangePasswordScreen({super.key});
@@ -72,10 +72,13 @@ class ChangePasswordScreen extends StatelessWidget {
                           Errors.MATCHING_PASSWORD_ERROR,
                         );
                         if (dontHaveErrors(context)) {
-                          context.read<AuthCubit>().changePassword(ChangePasswordRequestModel(password: oldPasswordController.text,
+                          context.read<AuthCubit>().changePassword(
+                            ChangePasswordRequestModel(
+                              password: oldPasswordController.text,
                               newPassword: newPasswordController.text,
                               confirmPassword: confirmPasswordController.text,
-                              ));
+                            ),
+                          );
                         }
                         if (_formKey.currentState!.validate().isTrue) {}
                       },

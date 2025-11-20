@@ -423,7 +423,7 @@
   "email": "Email",
   "password": "Password",
   "confirmPassword": "Confirm Password",
-  "forgetPassword": "Forgot Password?",
+  "forgetPassword": "Forget Password",
   "haveNoAccount": "don't have an account?",
   "signUpAsMerchant": "Register Merchant",
   "signUpAsTech": "Register Technician",

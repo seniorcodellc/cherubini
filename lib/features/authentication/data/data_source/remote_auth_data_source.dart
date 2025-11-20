@@ -4,7 +4,7 @@ import 'package:cherubini/features/authentication/data/model/response_model/tech
 import 'package:cherubini/features/authentication/data/model/request_model/register_merchant_model.dart';
 
 import '../../../../exports.dart';
-import '../model/request_model/change_password_request_model.dart';
+import '../../../change_password/data/models/request_model/change_password_request_model.dart';
 import '../model/request_model/login_model.dart';
 import '../model/response_model/login_response_model.dart';
 import '../model/request_model/enter_phone_number_request_model.dart';
@@ -30,9 +30,7 @@ abstract class AuthRemoteDataSource {
   Future<ResponseModel> forgetPasswordByPhone({
     required EnterPhoneNumberRequestModel enterPhoneNumberRequestModel,
   });
-   Future<ResponseModel> forgetPassword({
-    required String email,
-  });
+  Future<ResponseModel> forgetPassword({required String email});
   Future<ResponseModel> setPassword({required String password});
   //  Future<ResponseModel> verifyForgetPassword({required VerifyRequestModel verifyRequestModel});
   Future<ResponseModel> resetPassword({
