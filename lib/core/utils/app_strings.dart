@@ -406,7 +406,9 @@ class AppStrings {
   //////////////////////////////////
   static const String selectPreferredLanguage = 'selectPreferredLanguage';
   static const String arabic = 'arabic';
+  static const String arabicLanguage = 'arabicLanguage';
   static const String english = 'english';
+  static const String englishLanguage = 'englishLanguage';
   static const String next = 'next';
   static const String skip = 'skip';
   static const String services = 'services';

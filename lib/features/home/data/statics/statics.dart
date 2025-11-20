@@ -39,7 +39,7 @@ List<QuickActionModel> merchantActionsList = [
 List<QuickActionModel> technicianActionsList = [
   QuickActionModel(
     iconPath: AppAssets.loyalty,
-    title: AppStrings.pointsSummaryTitle.trans,
+    title: AppStrings.pointsSummaryTitle,
     onTap: () {
       Routes.duesRoute.moveTo();
     },
@@ -47,7 +47,7 @@ List<QuickActionModel> technicianActionsList = [
 
   QuickActionModel(
     iconPath: AppAssets.scan,
-    title: AppStrings.scanBarcodeTitle.trans,
+    title: AppStrings.scanBarcodeTitle,
     onTap: () {
       Routes.scanRoute.moveTo();
     },

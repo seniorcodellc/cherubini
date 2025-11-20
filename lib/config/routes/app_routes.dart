@@ -4,6 +4,7 @@ import 'package:cherubini/features/authentication/presentation/managers/governor
 import 'package:cherubini/features/authentication/presentation/managers/merchant_list_cubit.dart';
 import 'package:cherubini/features/authentication/presentation/managers/question_cubit.dart';
 import 'package:cherubini/features/edit_profile/presentation/screens/edit_profile_screen.dart';
+import 'package:cherubini/features/languages/presentation/screens/language_screen.dart';
 import 'package:cherubini/features/on_boarding/presentation/screens/onboarding_screen.dart';
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_tech.dart';
 import 'package:cherubini/features/authentication/presentation/screens/sign_up_as_trader.dart';
@@ -183,6 +184,10 @@ class RouteGenerator {
             BlocProvider<ErrorCubit>(create: (context) => ErrorCubit()),
           ],
           child: ChangePasswordScreen(),
+        );
+        case Routes.selectLanguageRoute:
+        return buildPageRoute<T>(
+          child: LanguageScreen(),
         );
 
       /*

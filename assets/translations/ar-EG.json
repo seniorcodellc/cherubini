@@ -1,4 +1,8 @@
 {
+  "oldPassword": "كلمة المرور القديمه",
+  "newPassword": "كلمة المرور الجديده",
+  "englishLanguage": "English",
+  "arabicLanguage": "اللغة العربية",
   "operationDetails": "نفاصيل العمليه",
   "pointsDeducted": "النقاط المخصومه",
   "techManagementTitle": "إدارة الفنيين",
@@ -92,7 +96,7 @@
   "pointsSummary" : "ملخص\nالنقاط",
   "operationHistory" : "سجل\nالعمليات",
   "scanBarcode":
-  "مسح البار كود",
+  "مسح \nالبار كود",
   "scanBarcodeTitle":
   "مسح الباركود",
   "scanError":

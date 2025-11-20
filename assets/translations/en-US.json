@@ -80,6 +80,8 @@
   "serverError": "Server Error",
   "selectPreferredLanguage": "Select Preferred Language",
   "arabic": "العربية",
+  "englishLanguage": "English",
+  "arabicLanguage": "اللغة العربية",
   "english": "English (US)",
   "next": "Next",
   "skip": "Skip",
@@ -557,5 +559,7 @@
   "verificationQuestion": "verification question",
   "productDetailsAndInformation": "Product Details",
   "operationDetails": "Operation Details",
-  "pointsDeducted": "Points Deducted"
+  "pointsDeducted": "Points Deducted",
+  "oldPassword": "Old Password",
+  "newPassword": "New Password"
 }

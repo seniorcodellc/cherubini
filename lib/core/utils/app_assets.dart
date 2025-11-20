@@ -72,6 +72,7 @@ class AppAssets {
   static String cameraSuccess = "${SvgImages.svgPath}camera_success.svg";
   static String cameraError = "${SvgImages.svgPath}camera_error.svg";
   static String cameraFrame = "${SvgImages.svgPath}camera_frame.svg";
+  static String checkCircle = "${SvgImages.svgPath}check_circle.svg";
 
   //! PNG
 

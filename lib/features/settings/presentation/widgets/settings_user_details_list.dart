@@ -19,21 +19,23 @@ class SettingsUserDetailsList extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             if (settingList[index].name == AppStrings.language) {
-              showCustomDialog(
-                contentPadding: getPadding(horizontal: 0, vertical: 20.h),
-                child: CustomLanguageDialog(
-                  onChange: (isEnglish) {
-                    if (isEnglish.isTrue) {
-                      context.setLocale(AppLocalizationsConstants().enLocale);
-                      context.read<LanguageCubit>().toEnglish();
-                    } else {
-                      context.setLocale(AppLocalizationsConstants().arLocale);
-
-                      context.read<LanguageCubit>().toArabic();
-                    }
-                  },
-                ),
-              );
+              Routes.selectLanguageRoute.moveTo();
+              // showCustomDialog(
+              //   contentPadding: getPadding(horizontal: 0, vertical: 20.h),
+              //   child:
+              //   CustomLanguageDialog(
+              //     onChange: (isEnglish) {
+              //       if (isEnglish.isTrue) {
+              //         context.setLocale(AppLocalizationsConstants().enLocale);
+              //         context.read<LanguageCubit>().toEnglish();
+              //       } else {
+              //         context.setLocale(AppLocalizationsConstants().arLocale);
+              //
+              //         context.read<LanguageCubit>().toArabic();
+              //       }
+              //     },
+              //   ),
+              // );
             } else if (settingList[index].name ==
                 AppStrings.editProfile) {
               Routes.editProfile.moveTo();
